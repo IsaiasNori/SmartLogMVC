@@ -23,6 +23,8 @@ namespace SmartLog.WindowsForms.UserControl
 	{
 		public etipoTextbox tipoTextbox { get; set; } = etipoTextbox.normal;
 		public bool isControle; 
+        public bool CampoObrigatorio { get; set; }
+        public string MensagemObrigatorio { get; set; }
 
 
 		public SuperTextbox()

@@ -29,15 +29,25 @@ namespace SmartLog.WindowsForms
 			lblMensagem.Text = mensagem;
 			if(tipo == eTipoMensagem.Sucesso)
 			{
-				pictureBox1.Image = SmartLog.WindowsForms.Properties.Resources.icon_sucess;
+                lblTitulo.Text = "Sucesso";
+                toolStripTop.BackColor =  Color.FromArgb (128, 255, 128);
+                toolStripBelow.BackColor = Color.FromArgb(128, 255, 128);
+
+                btnOK.Image = SmartLog.WindowsForms.Properties.Resources.icon_sucess;
 			}
 			else if(tipo == eTipoMensagem.Erro)
 			{
-				pictureBox1.Image = SmartLog.WindowsForms.Properties.Resources.icon_erro;
+                lblTitulo.Text = "Erro";
+                toolStripTop.BackColor = Color.FromArgb(236, 45, 30);
+                toolStripBelow.BackColor = Color.FromArgb(236, 45, 30);
+                btnOK.Image = SmartLog.WindowsForms.Properties.Resources.icon_erro;
 			}
 			else
 			{
-				pictureBox1.Image = SmartLog.WindowsForms.Properties.Resources.icon_alert;
+                lblTitulo.Text = "Atenção";
+                toolStripTop.BackColor = Color.FromArgb(255, 255, 128);
+                toolStripBelow.BackColor = Color.FromArgb(255, 255, 128);
+                btnOK.Image = SmartLog.WindowsForms.Properties.Resources.icon_alert;
 			}
 
 		}
@@ -46,5 +56,10 @@ namespace SmartLog.WindowsForms
 		{
 
 		}
-	}
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }
