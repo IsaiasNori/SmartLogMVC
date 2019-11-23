@@ -81,13 +81,7 @@ namespace SmartLog.WindowsForms.Util
 			}
 		}
 		//Método para validar preenchimento dos campos.
-		/*	public static void ValidarCampos(params List<TextBox>) 
-			{
-				if (grupo.Text== "")
-				{
-					ExibirMensagem("Informar os campos", eTipoMensagem.Atencao);
-				}
-			}*/
+		
 		public static void LimparCampos(Control cont)
 		{
 			if (cont is GroupBox)
@@ -107,7 +101,7 @@ namespace SmartLog.WindowsForms.Util
 						(cont.Controls[i] as ComboBox).SelectedValue = -1;
 					}
 				}
-			
+
 			}
 		}
 	}

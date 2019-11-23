@@ -28,9 +28,9 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabCtrlCliente = new System.Windows.Forms.TabControl();
 			this.tabConsultaCli = new System.Windows.Forms.TabPage();
 			this.btnFechaCliente = new System.Windows.Forms.Button();
@@ -42,9 +42,23 @@
 			this.lblNomePesquisa = new System.Windows.Forms.Label();
 			this.btnPesquisarCli = new System.Windows.Forms.Button();
 			this.lblCpfPesquisa = new System.Windows.Forms.Label();
+			this.txtCpfPesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtNomePesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.dgCliente = new System.Windows.Forms.DataGridView();
 			this.tabCadastroCli = new System.Windows.Forms.TabPage();
+			this.btnLimpar = new System.Windows.Forms.Button();
 			this.gbDadosCliente = new System.Windows.Forms.GroupBox();
+			this.dtDataCadastro = new System.Windows.Forms.DateTimePicker();
+			this.txtEmailCli = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtCep = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.lblDataCadastro = new System.Windows.Forms.Label();
+			this.txtNumero = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtBairro = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtLogra = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtTelCli = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtNomeCli = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.dtDataNasc = new System.Windows.Forms.DateTimePicker();
+			this.txtCpfCnpjCli = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblCep = new System.Windows.Forms.Label();
 			this.lblBairro = new System.Windows.Forms.Label();
 			this.lblNumero = new System.Windows.Forms.Label();
@@ -65,20 +79,6 @@
 			this.txtCodigoCli = new System.Windows.Forms.TextBox();
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.btnExcluir = new System.Windows.Forms.Button();
-			this.dtDataNasc = new System.Windows.Forms.DateTimePicker();
-			this.dtDataCadastro = new System.Windows.Forms.DateTimePicker();
-			this.lblDataCadastro = new System.Windows.Forms.Label();
-			this.txtCpfPesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtNomePesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtEmailCli = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtCep = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtNumero = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtBairro = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtLogra = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtTelCli = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtNomeCli = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtCpfCnpjCli = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.btnLimpar = new System.Windows.Forms.Button();
 			this.tabCtrlCliente.SuspendLayout();
 			this.tabConsultaCli.SuspendLayout();
 			this.gbFiltrarCliente.SuspendLayout();
@@ -225,7 +225,7 @@
 			// 
 			this.lblNomePesquisa.AutoSize = true;
 			this.lblNomePesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblNomePesquisa.Location = new System.Drawing.Point(92, 15);
+			this.lblNomePesquisa.Location = new System.Drawing.Point(92, 25);
 			this.lblNomePesquisa.Name = "lblNomePesquisa";
 			this.lblNomePesquisa.Size = new System.Drawing.Size(58, 20);
 			this.lblNomePesquisa.TabIndex = 4;
@@ -254,11 +254,30 @@
 			// 
 			this.lblCpfPesquisa.AutoSize = true;
 			this.lblCpfPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblCpfPesquisa.Location = new System.Drawing.Point(366, 15);
+			this.lblCpfPesquisa.Location = new System.Drawing.Point(366, 25);
 			this.lblCpfPesquisa.Name = "lblCpfPesquisa";
 			this.lblCpfPesquisa.Size = new System.Drawing.Size(40, 20);
 			this.lblCpfPesquisa.TabIndex = 5;
 			this.lblCpfPesquisa.Text = "CPF";
+			// 
+			// txtCpfPesquisar
+			// 
+			this.txtCpfPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtCpfPesquisar.Location = new System.Drawing.Point(370, 48);
+			this.txtCpfPesquisar.MaxLength = 18;
+			this.txtCpfPesquisar.Name = "txtCpfPesquisar";
+			this.txtCpfPesquisar.Size = new System.Drawing.Size(188, 24);
+			this.txtCpfPesquisar.TabIndex = 7;
+			this.txtCpfPesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
+			// 
+			// txtNomePesquisar
+			// 
+			this.txtNomePesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtNomePesquisar.Location = new System.Drawing.Point(96, 48);
+			this.txtNomePesquisar.Name = "txtNomePesquisar";
+			this.txtNomePesquisar.Size = new System.Drawing.Size(252, 24);
+			this.txtNomePesquisar.TabIndex = 6;
+			this.txtNomePesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// dgCliente
 			// 
@@ -272,35 +291,35 @@
 			this.dgCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.dgCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
 			this.dgCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSalmon;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkSalmon;
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.dgCliente.ColumnHeadersHeight = 35;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgCliente.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.InactiveBorder;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightGray;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgCliente.DefaultCellStyle = dataGridViewCellStyle5;
 			this.dgCliente.EnableHeadersVisualStyles = false;
 			this.dgCliente.GridColor = System.Drawing.SystemColors.ActiveCaption;
 			this.dgCliente.Location = new System.Drawing.Point(101, 267);
 			this.dgCliente.Name = "dgCliente";
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
 			this.dgCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
 			this.dgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgCliente.Size = new System.Drawing.Size(859, 293);
@@ -324,6 +343,23 @@
 			this.tabCadastroCli.Size = new System.Drawing.Size(1048, 576);
 			this.tabCadastroCli.TabIndex = 1;
 			this.tabCadastroCli.Text = "Cadastro";
+			// 
+			// btnLimpar
+			// 
+			this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnLimpar.FlatAppearance.BorderSize = 0;
+			this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.btnLimpar.Location = new System.Drawing.Point(562, 477);
+			this.btnLimpar.Name = "btnLimpar";
+			this.btnLimpar.Size = new System.Drawing.Size(139, 39);
+			this.btnLimpar.TabIndex = 70;
+			this.btnLimpar.Text = "Limpar";
+			this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnLimpar.UseVisualStyleBackColor = false;
+			this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
 			// 
 			// gbDadosCliente
 			// 
@@ -360,6 +396,98 @@
 			this.gbDadosCliente.TabIndex = 69;
 			this.gbDadosCliente.TabStop = false;
 			this.gbDadosCliente.Text = "Dados do Cliente";
+			// 
+			// dtDataCadastro
+			// 
+			this.dtDataCadastro.Enabled = false;
+			this.dtDataCadastro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtDataCadastro.Location = new System.Drawing.Point(661, 35);
+			this.dtDataCadastro.Name = "dtDataCadastro";
+			this.dtDataCadastro.Size = new System.Drawing.Size(148, 26);
+			this.dtDataCadastro.TabIndex = 100;
+			// 
+			// txtEmailCli
+			// 
+			this.txtEmailCli.Location = new System.Drawing.Point(371, 209);
+			this.txtEmailCli.Name = "txtEmailCli";
+			this.txtEmailCli.Size = new System.Drawing.Size(190, 26);
+			this.txtEmailCli.TabIndex = 98;
+			this.txtEmailCli.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
+			// txtCep
+			// 
+			this.txtCep.Location = new System.Drawing.Point(101, 271);
+			this.txtCep.Name = "txtCep";
+			this.txtCep.Size = new System.Drawing.Size(168, 26);
+			this.txtCep.TabIndex = 97;
+			this.txtCep.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// lblDataCadastro
+			// 
+			this.lblDataCadastro.AutoSize = true;
+			this.lblDataCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.lblDataCadastro.Location = new System.Drawing.Point(657, 12);
+			this.lblDataCadastro.Name = "lblDataCadastro";
+			this.lblDataCadastro.Size = new System.Drawing.Size(132, 20);
+			this.lblDataCadastro.TabIndex = 99;
+			this.lblDataCadastro.Text = "Data de cadastro";
+			// 
+			// txtNumero
+			// 
+			this.txtNumero.Location = new System.Drawing.Point(370, 337);
+			this.txtNumero.Name = "txtNumero";
+			this.txtNumero.Size = new System.Drawing.Size(80, 26);
+			this.txtNumero.TabIndex = 95;
+			this.txtNumero.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// txtBairro
+			// 
+			this.txtBairro.Location = new System.Drawing.Point(484, 337);
+			this.txtBairro.Name = "txtBairro";
+			this.txtBairro.Size = new System.Drawing.Size(194, 26);
+			this.txtBairro.TabIndex = 96;
+			this.txtBairro.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtLogra
+			// 
+			this.txtLogra.Location = new System.Drawing.Point(101, 339);
+			this.txtLogra.Name = "txtLogra";
+			this.txtLogra.Size = new System.Drawing.Size(249, 26);
+			this.txtLogra.TabIndex = 94;
+			this.txtLogra.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
+			// txtTelCli
+			// 
+			this.txtTelCli.Location = new System.Drawing.Point(101, 209);
+			this.txtTelCli.Name = "txtTelCli";
+			this.txtTelCli.Size = new System.Drawing.Size(167, 26);
+			this.txtTelCli.TabIndex = 93;
+			this.txtTelCli.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
+			// txtNomeCli
+			// 
+			this.txtNomeCli.Location = new System.Drawing.Point(102, 95);
+			this.txtNomeCli.Name = "txtNomeCli";
+			this.txtNomeCli.Size = new System.Drawing.Size(441, 26);
+			this.txtNomeCli.TabIndex = 92;
+			this.txtNomeCli.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// dtDataNasc
+			// 
+			this.dtDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtDataNasc.Location = new System.Drawing.Point(569, 95);
+			this.dtDataNasc.Name = "dtDataNasc";
+			this.dtDataNasc.Size = new System.Drawing.Size(148, 26);
+			this.dtDataNasc.TabIndex = 91;
+			// 
+			// txtCpfCnpjCli
+			// 
+			this.txtCpfCnpjCli.Location = new System.Drawing.Point(371, 154);
+			this.txtCpfCnpjCli.MaxLength = 18;
+			this.txtCpfCnpjCli.Name = "txtCpfCnpjCli";
+			this.txtCpfCnpjCli.Size = new System.Drawing.Size(190, 26);
+			this.txtCpfCnpjCli.TabIndex = 90;
+			this.txtCpfCnpjCli.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
 			// 
 			// lblCep
 			// 
@@ -517,7 +645,7 @@
 			this.btnVoltarCli.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnVoltarCli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnVoltarCli.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_ReturnTab;
-			this.btnVoltarCli.Location = new System.Drawing.Point(643, 484);
+			this.btnVoltarCli.Location = new System.Drawing.Point(724, 477);
 			this.btnVoltarCli.Name = "btnVoltarCli";
 			this.btnVoltarCli.Size = new System.Drawing.Size(139, 39);
 			this.btnVoltarCli.TabIndex = 68;
@@ -553,7 +681,7 @@
 			this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.btnSalvar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Salvar;
-			this.btnSalvar.Location = new System.Drawing.Point(323, 484);
+			this.btnSalvar.Location = new System.Drawing.Point(239, 477);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(139, 39);
 			this.btnSalvar.TabIndex = 56;
@@ -572,7 +700,7 @@
 			this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.btnExcluir.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Excluir;
-			this.btnExcluir.Location = new System.Drawing.Point(485, 484);
+			this.btnExcluir.Location = new System.Drawing.Point(401, 477);
 			this.btnExcluir.Name = "btnExcluir";
 			this.btnExcluir.Size = new System.Drawing.Size(139, 39);
 			this.btnExcluir.TabIndex = 59;
@@ -580,136 +708,6 @@
 			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnExcluir.UseVisualStyleBackColor = false;
-			// 
-			// dtDataNasc
-			// 
-			this.dtDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtDataNasc.Location = new System.Drawing.Point(569, 95);
-			this.dtDataNasc.Name = "dtDataNasc";
-			this.dtDataNasc.Size = new System.Drawing.Size(148, 26);
-			this.dtDataNasc.TabIndex = 91;
-			// 
-			// dtDataCadastro
-			// 
-			this.dtDataCadastro.Enabled = false;
-			this.dtDataCadastro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtDataCadastro.Location = new System.Drawing.Point(661, 35);
-			this.dtDataCadastro.Name = "dtDataCadastro";
-			this.dtDataCadastro.Size = new System.Drawing.Size(148, 26);
-			this.dtDataCadastro.TabIndex = 100;
-			// 
-			// lblDataCadastro
-			// 
-			this.lblDataCadastro.AutoSize = true;
-			this.lblDataCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblDataCadastro.Location = new System.Drawing.Point(657, 12);
-			this.lblDataCadastro.Name = "lblDataCadastro";
-			this.lblDataCadastro.Size = new System.Drawing.Size(132, 20);
-			this.lblDataCadastro.TabIndex = 99;
-			this.lblDataCadastro.Text = "Data de cadastro";
-			// 
-			// txtCpfPesquisar
-			// 
-			this.txtCpfPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtCpfPesquisar.Location = new System.Drawing.Point(370, 48);
-			this.txtCpfPesquisar.MaxLength = 18;
-			this.txtCpfPesquisar.Name = "txtCpfPesquisar";
-			this.txtCpfPesquisar.Size = new System.Drawing.Size(188, 24);
-			this.txtCpfPesquisar.TabIndex = 7;
-			this.txtCpfPesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
-			// 
-			// txtNomePesquisar
-			// 
-			this.txtNomePesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtNomePesquisar.Location = new System.Drawing.Point(96, 48);
-			this.txtNomePesquisar.Name = "txtNomePesquisar";
-			this.txtNomePesquisar.Size = new System.Drawing.Size(252, 24);
-			this.txtNomePesquisar.TabIndex = 6;
-			this.txtNomePesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtEmailCli
-			// 
-			this.txtEmailCli.Location = new System.Drawing.Point(371, 209);
-			this.txtEmailCli.Name = "txtEmailCli";
-			this.txtEmailCli.Size = new System.Drawing.Size(190, 26);
-			this.txtEmailCli.TabIndex = 98;
-			this.txtEmailCli.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
-			// 
-			// txtCep
-			// 
-			this.txtCep.Location = new System.Drawing.Point(101, 271);
-			this.txtCep.Name = "txtCep";
-			this.txtCep.Size = new System.Drawing.Size(168, 26);
-			this.txtCep.TabIndex = 97;
-			this.txtCep.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtNumero
-			// 
-			this.txtNumero.Location = new System.Drawing.Point(370, 337);
-			this.txtNumero.Name = "txtNumero";
-			this.txtNumero.Size = new System.Drawing.Size(80, 26);
-			this.txtNumero.TabIndex = 95;
-			this.txtNumero.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtBairro
-			// 
-			this.txtBairro.Location = new System.Drawing.Point(484, 337);
-			this.txtBairro.Name = "txtBairro";
-			this.txtBairro.Size = new System.Drawing.Size(194, 26);
-			this.txtBairro.TabIndex = 96;
-			this.txtBairro.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtLogra
-			// 
-			this.txtLogra.Location = new System.Drawing.Point(101, 339);
-			this.txtLogra.Name = "txtLogra";
-			this.txtLogra.Size = new System.Drawing.Size(249, 26);
-			this.txtLogra.TabIndex = 94;
-			this.txtLogra.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
-			// 
-			// txtTelCli
-			// 
-			this.txtTelCli.Location = new System.Drawing.Point(101, 209);
-			this.txtTelCli.Name = "txtTelCli";
-			this.txtTelCli.Size = new System.Drawing.Size(167, 26);
-			this.txtTelCli.TabIndex = 93;
-			this.txtTelCli.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
-			// 
-			// txtNomeCli
-			// 
-			this.txtNomeCli.Location = new System.Drawing.Point(102, 95);
-			this.txtNomeCli.Name = "txtNomeCli";
-			this.txtNomeCli.Size = new System.Drawing.Size(441, 26);
-			this.txtNomeCli.TabIndex = 92;
-			this.txtNomeCli.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtCpfCnpjCli
-			// 
-			this.txtCpfCnpjCli.Location = new System.Drawing.Point(371, 154);
-			this.txtCpfCnpjCli.MaxLength = 18;
-			this.txtCpfCnpjCli.Name = "txtCpfCnpjCli";
-			this.txtCpfCnpjCli.Size = new System.Drawing.Size(190, 26);
-			this.txtCpfCnpjCli.TabIndex = 90;
-			this.txtCpfCnpjCli.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
-			// 
-			// btnLimpar
-			// 
-			this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnLimpar.FlatAppearance.BorderSize = 0;
-			this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.btnLimpar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Salvar;
-			this.btnLimpar.Location = new System.Drawing.Point(822, 484);
-			this.btnLimpar.Name = "btnLimpar";
-			this.btnLimpar.Size = new System.Drawing.Size(139, 39);
-			this.btnLimpar.TabIndex = 70;
-			this.btnLimpar.Text = "LIMPAR";
-			this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnLimpar.UseVisualStyleBackColor = false;
-			this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
 			// 
 			// frmCliente
 			// 

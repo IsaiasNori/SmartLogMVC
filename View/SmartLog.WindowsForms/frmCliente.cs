@@ -16,11 +16,11 @@ namespace SmartLog.WindowsForms
 	public partial class frmCliente : Form
 	{
 		ClienteController cliController = new ClienteController();
+		
 		int currentMouseOverRow;
 		int currentIndexRow;
 
 		private int codigoCli;
-
 		public frmCliente()
 		{
 			InitializeComponent();
@@ -54,7 +54,6 @@ namespace SmartLog.WindowsForms
 				int.TryParse(cbEstado.SelectedValue.ToString(), out estado);
 
 				Util.Utils.CarregarComboCidade(estado, ref cbCidade);
-
 			}
 		}
 		private void btnVoltarCli_Click(object sender, EventArgs e)
@@ -70,6 +69,38 @@ namespace SmartLog.WindowsForms
 			codigoCli = 0;
 			tabCtrlCliente.SelectedTab = tabCadastroCli;
 		}
+
+		/*public  bool ValidarCampos()
+		{
+			string msgRetorno= "";
+			
+
+			try
+			{
+				if(txtNomeCli.Text == ""){
+					msgRetorno = "Informar o nome do cliente";
+				}
+			  if (txtCpfCnpjCli.Text == "")
+				{
+					msgRetorno += "Informar o cpf";
+				}
+
+			  if (cbCidade.SelectedValue.ToString() == "")
+				{
+					msgRetorno += "Informar a ciadade";
+				}
+					
+
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+
+
+		}*/
+
 		private void btnSalvar_Click(object sender, EventArgs e)
 		{
 			DateTime dataNasc;
@@ -77,7 +108,7 @@ namespace SmartLog.WindowsForms
 			int numero;
 			int cidade;
 			int estado;
-
+		//	Util.Utils.ValidarCampos(gbDadosCliente);
 			try
 			{
 				DateTime.TryParse(dtDataNasc.Text, out dataNasc);
@@ -109,7 +140,6 @@ namespace SmartLog.WindowsForms
 				tabCtrlCliente.SelectedTab = tabConsultaCli;
 
 				PesquisarCliente();
-
 			}
 			catch (Exception ex)
 			{
@@ -167,10 +197,6 @@ namespace SmartLog.WindowsForms
 			if (dgCliente.DataSource != null)
 			{
 				dgCliente.Columns[0].Visible = false;
-				dgCliente.Columns[0].Visible = false;
-				dgCliente.Columns[0].Visible = false;
-				dgCliente.Columns[0].Visible = false;
-				dgCliente.Columns[0].Visible = false;
 			}
 		}
 		private void btnGridAlterar_Click(object sender, EventArgs e)
@@ -223,13 +249,20 @@ namespace SmartLog.WindowsForms
 				string codigo = dgCliente.SelectedRows[0].Cells[0].Value.ToString();
 
 				int.TryParse(codigo, out codigoCli);
+				if(codigoCli > 0)
+				{
+					Cliente cli = new Cliente(codigoCli);
+					cliController.DeletarController(cli);
 
-				Cliente cli = new Cliente(codigoCli);
-				cliController.DeletarController(cli);
+					Util.Utils.ExibirMensagem("Cliente excluído com sucesso.", eTipoMensagem.Sucesso);
 
-				Util.Utils.ExibirMensagem("Cliente excluído com sucesso.", eTipoMensagem.Sucesso);
-
-				PesquisarCliente();
+					PesquisarCliente();
+				}
+				else
+				{
+					Util.Utils.ExibirMensagem("Selecione um registro para excluir.", eTipoMensagem.Atencao);
+				}
+				
 			}
 			catch (Exception ex)
 			{
