@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BaseView.master.cs" Inherits="WebPresentation.Master.BaseView" %>
+
+<%@ Register Src="~/SideMenu/SideMenuControl.ascx" TagPrefix="uc1" TagName="SideMenuControl" %>
+<%@ Register Src="~/Footer/StandardFooter.ascx" TagPrefix="uc1" TagName="StandardFooter" %>
+<%@ Register Src="~/Header/StandardHeader.ascx" TagPrefix="uc1" TagName="StandardHeader" %>
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../App_Themes/StandardStyle/StandardStyleSheet.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="DivGlobal">
+            <asp:Button ID="SideMenuButton" runat="server" Text="" OnClick="SideMenuButton_Click" BorderStyle="None"/>
+            
+            <div id="DivSide">
+                <uc1:SideMenuControl  id="SideMenuControl" runat="server"/>
+            </div>
+
+            <header>
+                <div class="DivMargin">
+                    <div id="DivLogo" onclick="index();">
+                        <script type="text/javascript">
+                            function index() {
+                                window.location.href = "../Index.aspx";
+                            }
+                        </script>
+                    </div>
+                    <div style="float:left; width:auto; margin:10px auto auto 120px;">
+                        <uc1:StandardHeader runat="server" ID="StandardHeader"/>
+                    </div>
+                </div>
+            </header>
+
+            <div id="DivMiddle">
+                <div class="DivMargin">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" >
+            
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            
+            <footer>
+                <div class="DivMargin">
+                    <uc1:StandardFooter runat="server" id="StandardFooter" />
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ApplicationIcon />
+    <Win32Resource />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controller\ClienteController\EnderecoClienteController.cs" />
+    <Compile Remove="Controller\FuncionarioController\EnderecoFuncionarioController.cs" />
+    <Compile Remove="Controller\StatusVeiculoController.cs" />
+    <Compile Remove="Model\Entidade\pessoa\Atendente.cs" />
+    <Compile Remove="Model\Entidade\pessoa\Gerente.cs" />
+    <Compile Remove="Model\Entidade\pessoa\Habilitacao.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="BaseDados\scriptProcedure.sql" />
+    <None Remove="BaseDados\scriptTabelas.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>
