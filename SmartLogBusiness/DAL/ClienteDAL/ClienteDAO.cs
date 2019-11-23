@@ -17,7 +17,7 @@ namespace SmartLog.DAO
 			{
 
 				LimparParametro();
-				AdicionarParametro("@Operaco", SqlDbType.NVarChar, 4, "INSE");
+				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "INSE");
 				AdicionarParametro("@NomeCli", SqlDbType.NVarChar, 100, nome);
 				AdicionarParametro("@DataNasc", SqlDbType.Date, 10, dataNasc);
 				AdicionarParametro("@TelCli", SqlDbType.NVarChar, 14, telCli);
@@ -55,7 +55,8 @@ namespace SmartLog.DAO
 		{
 			try
 			{
-				AdicionarParametro("@peracao", SqlDbType.NVarChar, 4, "DELE");
+				LimparParametro();
+				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "DELE");
 				AdicionarParametro("@CodCLi", SqlDbType.Int, 10, codCli);
 
 				ExecuteProcedure("pCliente");
@@ -73,6 +74,7 @@ namespace SmartLog.DAO
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "ALTE");
 				AdicionarParametro("@CodCli", SqlDbType.Int, 10, codCli);
 				AdicionarParametro("@NomeCli", SqlDbType.NVarChar, 100, nome);
@@ -93,25 +95,21 @@ namespace SmartLog.DAO
 			}
 			catch (Exception ex)
 			{
-
 				throw new Exception(ex.Message);
 			}
-
 		}
-
 		public DataTable ObterClienteDAO(int codCli)
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "OBTE");
 				AdicionarParametro("@CodCli", SqlDbType.Int, 10, codCli);
 
 				return ExecuteProcedure("pCliente");
-
 			}
 			catch (Exception ex)
 			{
-
 				throw new Exception(ex.Message);
 			}
 		}
@@ -128,7 +126,6 @@ namespace SmartLog.DAO
 			}
 			catch (Exception ex)
 			{
-
 				throw new Exception(ex.Message);
 			}
 		}

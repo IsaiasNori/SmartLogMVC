@@ -1,4 +1,4 @@
-﻿using SmartLog.WindowsForms.DeskTopPresentation.Classes;
+﻿using SmartLog.WindowsForms.Classes;
 using SmartLogBusiness.Controller;
 using SmartLogBusiness.Model.Entidade.pessoa;
 using System;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmartLog.WindowsForms.DeskTopPresentation
+namespace SmartLog.WindowsForms
 {
 	public partial class frmLogin : Form
 	{

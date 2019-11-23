@@ -1,4 +1,4 @@
-﻿using SmartLog.WindowsForms.DeskTopPresentation.Util;
+﻿using SmartLog.WindowsForms.Util;
 using SmartLogBusiness.Controller;
 using SmartLogBusiness.Model.Entidade;
 using SmartLogBusiness.Model.Entidade.pessoa;
@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmartLog.WindowsForms.DeskTopPresentation
+namespace SmartLog.WindowsForms
 {
 	public partial class frmFuncionario : Form
 	{
@@ -27,7 +27,7 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 		private void FormFuncionario_Load(object sender, EventArgs e)
 		{
 			CarregarTipoCargo();
-			CarregarEstado();
+			Utils.CarregarEstado(ref cbEstado);
 		}
 		private void CarregarTipoCargo()
 		{
@@ -39,50 +39,20 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 			cbCargo.DisplayMember = "Cargo";
 			cbCargo.ValueMember = "Cod_Cargo";
 		}
-		private void CarregarEstado()
-		{
-			EstadoController estadoCtrl = new EstadoController();
-			DataTable table = estadoCtrl.CarregarEstado();
-			try
-			{
-				if (table != null)
-				{
-					cbEstado.DataSource = table;
-					cbEstado.DisplayMember = "UF_Estado";
-					cbEstado.ValueMember = "Cod_Estado";
-				}
-
-			}
-			catch (Exception ex)
-			{
-				throw new Exception(ex.Message);
-			}
-		}
 		private void CbEstado_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			try
 			{
-				string codEstado = cbEstado.SelectedValue.ToString();
 				int cod;
+				int.TryParse(cbEstado.SelectedValue.ToString(), out cod);
 
-				int.TryParse(codEstado, out cod);
-				CidadeController cidCtrl = new CidadeController();
-
-				if (cod > 0)
-				{
-					DataTable table = cidCtrl.CarregarCidadeController(cod);
-
-					cbCidade.DataSource = table;
-					cbCidade.DisplayMember = "Nome_Cidade";
-					cbCidade.ValueMember = "Cod_Cidade";
-				}
+				Utils.CarregarComboCidade(cod, ref cbCidade);
 			}
 			catch (Exception ex)
 			{
-				throw new Exception(ex.Message);
+				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-
 		private void BtnSalvar_Click(object sender, EventArgs e)
 		{
 			try
@@ -100,18 +70,49 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 				Enum.TryParse(cbCargo.Text, out cargo);
 
 				Endereco end = new Endereco(txtCep.Text, txtLogra.Text,numero, txtBairro.Text, cidade, estado);
-				Funcionario func = new Funcionario(0,txtNomeFunc.Text,data,txtTelFunc.Text,txtEmail.Text,txtCpfFunc.Text,end,cargo);
+				Funcionario func = new Funcionario(0,txtNomeFunc.Text, txtCpfFunc.Text, data,txtTelFunc.Text,txtEmail.Text,end,cargo);
 				funcCtrl.InserirController(func);
 
 				Utils.ExibirMensagem("Funcionário cadastrado com sucesso", eTipoMensagem.Sucesso);
-
-				
-
 			}
 			catch (Exception ex)
 			{
 
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+			}
+		}
+
+		private void btnVoltarCli_Click(object sender, EventArgs e)
+		{
+			tabctrlFuncionario.SelectedTab = tabConsultaFuncionario;
+		}
+
+		private void btnFechaFuncionario_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void btnNovo_Click(object sender, EventArgs e)
+		{
+			tabctrlFuncionario.SelectedTab = tabCadastroFunc;
+		}
+
+		private void btnPesquisarFunc_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				string cpf;
+				cpf = txtCpfPesquisar.Text.Replace(".", "").Replace("-", "").Replace("/", "");
+
+				Funcionario func = new Funcionario(0, txtNomeFunc.Text, cpf, null, null, null, null, null);
+				DataTable table = funcCtrl.GetDataTable(func);
+
+				dtFuncionario.DataSource = table;
+			}
+			catch (Exception ex)
+			{
+
+				Util.Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
 	}

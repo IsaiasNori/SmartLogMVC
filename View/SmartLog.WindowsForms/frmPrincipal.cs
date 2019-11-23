@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmartLog.WindowsForms.DeskTopPresentation
+namespace SmartLog.WindowsForms
 {
 	public partial class frmPrincipal : Form
 	{
@@ -33,34 +33,17 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 
 		public frmPrincipal()
 		{
-
 			InitializeComponent();
-			
 		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
-
 		private void btnFechar_Click(object sender, EventArgs e)
 		{
-			
 			this.Close();
 		}
 		private void btnCliente_Click(object sender, EventArgs e)
 		{
 			frmCliente cli = new frmCliente();
-
 			CarregarTela(cli, "Cliente");
 		}
-
-		private void panelConteudo_Paint(object sender, PaintEventArgs e)
-		{
-
-
-		}
-
 		private void CarregarTela(Form formulario, string titulo)
 		{
 			if (this.HasChildren)
@@ -76,13 +59,11 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 			btnTituloTela.Visible = true;
 			formulario.Show();
 		}
-
 		private void btnFuncionario_Click(object sender, EventArgs e)
 		{
 			frmFuncionario func = new frmFuncionario();
 			CarregarTela(func, "Funcionário");
 		}
-
 		private void button4_Click(object sender, EventArgs e)
 		{
 			if (this.WindowState == FormWindowState.Maximized)
@@ -94,7 +75,6 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 				this.WindowState = FormWindowState.Maximized;
 			}
 		}
-
 		private void panelCabecalho_MouseDown(object sender, MouseEventArgs e)
 		{
 			if (e.Button != MouseButtons.Left)
@@ -103,10 +83,8 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 			mouseClicked = true;
 			clickedAt = e.Location;
 		}
-
 		private void panelCabecalho_MouseMove(object sender, MouseEventArgs e)
 		{
-
 			if (mouseClicked)
 			{
 				this.Location = new Point(Cursor.Position.X - clickedAt.X, Cursor.Position.Y - clickedAt.Y);
@@ -134,17 +112,6 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 			frmVeiculo vei = new frmVeiculo();
 			CarregarTela(vei, "Veiculo");
 		}
-
-		private void panelCabecalho_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
-
-		private void frmPrincipal_Load(object sender, EventArgs e)
-		{
-
-		}
-
 		private void FrmPrincipal_Shown(object sender, EventArgs e)
 		{
 		//	this.Visible = false;
@@ -166,6 +133,11 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 			//lblNomeUsuario.Text = log.funcLogado.Nome;
 			Relogio.Start();
 		
+
+		}
+
+		private void frmPrincipal_Load(object sender, EventArgs e)
+		{
 
 		}
 	}

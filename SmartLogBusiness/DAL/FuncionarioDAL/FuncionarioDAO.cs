@@ -45,6 +45,7 @@ namespace SmartLog.DAO
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "ALTE");
 				AdicionarParametro("@CodMatricula", SqlDbType.NVarChar, 100, codFunc);
 				AdicionarParametro("@NomeFunc", SqlDbType.NVarChar, 100, nomeFunc);
@@ -74,6 +75,7 @@ namespace SmartLog.DAO
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "DELE");
 				AdicionarParametro("@CodMatricula", SqlDbType.Int, 10, codFun);
 
@@ -90,6 +92,7 @@ namespace SmartLog.DAO
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "GRID");
 				AdicionarParametro("@NomeFunc", SqlDbType.NVarChar, 100, nomeFunc);
 				AdicionarParametro("@CpfFunc", SqlDbType.NVarChar, 15, cpfFunc);
@@ -105,6 +108,7 @@ namespace SmartLog.DAO
 		}
 		public DataTable CarregarFuncionarioDAO(int codFunc)
 		{
+			LimparParametro();
 			AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "OBTE");
 			AdicionarParametro("@CodMatricula", SqlDbType.Int, 10, codFunc);
 			
@@ -114,6 +118,7 @@ namespace SmartLog.DAO
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "LOGA");
 				AdicionarParametro("@EmailFunc", SqlDbType.NVarChar, 40, email);
 				AdicionarParametro("@Senha", SqlDbType.NVarChar, 100, senha);

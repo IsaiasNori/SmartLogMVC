@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmartLog.WindowsForms.DeskTopPresentation.UserControl
+namespace SmartLog.WindowsForms.UserControl
 {
 
 	public enum etipoTextbox
@@ -134,6 +134,10 @@ namespace SmartLog.WindowsForms.DeskTopPresentation.UserControl
 			if (tipoTextbox == etipoTextbox.somenteNumero)
 			{
 				if (!char.IsDigit(e.KeyChar))
+				{
+					e.Handled = true;
+				}
+				if (char.IsControl(e.KeyChar))
 				{
 					e.Handled = true;
 				}

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmartLog.WindowsForms.DeskTopPresentation
+namespace SmartLog.WindowsForms
 {
 	public enum eTipoMensagem
 	{

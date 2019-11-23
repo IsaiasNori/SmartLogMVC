@@ -7,6 +7,11 @@ namespace SmartLogBusiness.Model.Entidade.pessoa
 		public DateTime? DataCadastro { get; private set; }
 		public string CpfCnpj { get; private set; } 
 		public int? CodTipoCli { get; private set; }
+
+		public Cliente()
+		{
+
+		}
 		public Cliente(int cod): base(cod)
 		{
 			

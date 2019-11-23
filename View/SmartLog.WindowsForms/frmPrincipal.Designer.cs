@@ -1,4 +1,4 @@
-﻿namespace SmartLog.WindowsForms.DeskTopPresentation
+﻿namespace SmartLog.WindowsForms
 {
 	partial class frmPrincipal
 	{
@@ -222,7 +222,6 @@
 			this.panelCabecalho.Name = "panelCabecalho";
 			this.panelCabecalho.Size = new System.Drawing.Size(873, 35);
 			this.panelCabecalho.TabIndex = 0;
-			this.panelCabecalho.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCabecalho_Paint);
 			this.panelCabecalho.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCabecalho_MouseDown);
 			this.panelCabecalho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCabecalho_MouseMove);
 			this.panelCabecalho.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelCabecalho_MouseUp);

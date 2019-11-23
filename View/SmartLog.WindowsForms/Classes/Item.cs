@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmartLog.WindowsForms.DeskTopPresentation.Classes
+namespace SmartLog.WindowsForms.Classes
 {
 	public class Item
 	{

@@ -71,15 +71,22 @@ namespace SmartLogBusiness.Controller
 			{
 				DataTable table = dao.ObterClienteDAO(obj.Codigo);
 
+				int numero, cidade, estado;
+
+				
+
 				if (table != null)
 				{
+					int.TryParse(table.Rows[0]["Numero"].ToString(), out numero);
+					int.TryParse(table.Rows[0]["Cod_Cidade"].ToString(), out cidade);
+					int.TryParse(table.Rows[0]["Cod_Estado"].ToString(), out estado);
 
 					Endereco end = new Endereco(table.Rows[0]["Cep"].ToString(),
 												table.Rows[0]["Logradouro"].ToString(),
-												Convert.ToInt32(table.Rows[0]["Numero"]),
+												numero,
 												table.Rows[0]["Bairro"].ToString(),
-												Convert.ToInt32(table.Rows[0]["Cod_Cidade"]),
-												Convert.ToInt32(table.Rows[0]["Cod_Estado"]));
+												cidade,	estado);
+					
 
 					Cliente cli = new Cliente(Convert.ToInt32(table.Rows[0]["Cod_Cliente"]),
 												table.Rows[0]["Nome_Cliente"].ToString(),

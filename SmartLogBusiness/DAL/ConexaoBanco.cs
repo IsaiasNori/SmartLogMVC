@@ -10,7 +10,7 @@ namespace SmartLogBusiness.DAO
 {
 	public abstract class ConexaoBanco
 	{
-		public SqlConnection conexao = new SqlConnection(@"Data Source=ISAIAS-NORI;Initial Catalog=SmartLog;Integrated Security=True");
+		public SqlConnection conexao = new SqlConnection(@"data source = DESKTOP-VH369CI\SQLEXPRESS; initial catalog = SmartLog; user = sa; pwd= bunny");
 		public SqlCommand comando = new SqlCommand();
 		public string msgErro;
 

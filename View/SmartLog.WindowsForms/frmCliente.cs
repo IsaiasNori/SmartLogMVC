@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmartLog.WindowsForms.DeskTopPresentation
+namespace SmartLog.WindowsForms
 {
 	public partial class frmCliente : Form
 	{
@@ -19,57 +19,16 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 		int currentMouseOverRow;
 		int currentIndexRow;
 
+		private int codigoCli;
+
 		public frmCliente()
 		{
 			InitializeComponent();
 		}
-		private void btnSalvar_Click(object sender, EventArgs e)
-		{
-			DateTime dataNasc;
-			int codTipoCli;
-			int numero;
-			int cidade;
-			int estado;
-
-			try
-			{
-				DateTime.TryParse(txtData.Text, out dataNasc);
-
-				int.TryParse(cbTipoCli.SelectedValue.ToString(), out codTipoCli);
-
-				int.TryParse(txtNumero.Text, out numero);
-
-				int.TryParse(cbCidade.SelectedValue.ToString(), out cidade);
-
-				int.TryParse(cbEstado.SelectedValue.ToString(), out estado);
-
-				Endereco end = new Endereco(txtCep.Text, txtLogra.Text, numero, txtBairro.Text, cidade, estado);
-
-				Cliente cli = new Cliente(0, txtNomeCli.Text, txtCpfCnpjCli.Text, System.DateTime.Now, dataNasc, txtTelCli.Text, txtEmailCli.Text, codTipoCli, end);
-				cliController.InserirController(cli);
-				MessageBox.Show("Inserido com sucesso.");
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Erro ao inserir cliente, erro:" + ex.Message);
-			}
-		}
-
 		private void FormCliente_Load(object sender, EventArgs e)
 		{
-			CarregarEstado();
+			Util.Utils.CarregarEstado(ref cbEstado);
 			CarregarTipoCliente();
-		}
-		private void CarregarEstado()
-		{
-			EstadoController estado = new EstadoController();
-			DataTable table = estado.CarregarEstado();
-			if (table != null)
-			{
-				cbEstado.DataSource = table;
-				cbEstado.DisplayMember = "UF_Estado";
-				cbEstado.ValueMember = "Cod_Estado";
-			}
 		}
 		private void CarregarTipoCliente()
 		{
@@ -83,26 +42,80 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 				cbTipoCli.ValueMember = "Cod_TipoCliente";
 			}
 		}
-
 		private void btnPesquisarCli_Click(object sender, EventArgs e)
 		{
+			PesquisarCliente();
+		}
+		private void cbEstado_SelectedIndexChanged_1(object sender, EventArgs e)
+		{
+			int estado;
+			if (cbEstado.SelectedValue != null)
+			{
+				int.TryParse(cbEstado.SelectedValue.ToString(), out estado);
+
+				Util.Utils.CarregarComboCidade(estado, ref cbCidade);
+
+			}
+		}
+		private void btnVoltarCli_Click(object sender, EventArgs e)
+		{
+			tabCtrlCliente.SelectedTab = tabConsultaCli;
+		}
+		private void btnFechaCliente_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+		private void btnNovo_Click(object sender, EventArgs e)
+		{
+			codigoCli = 0;
+			tabCtrlCliente.SelectedTab = tabCadastroCli;
+		}
+		private void btnSalvar_Click(object sender, EventArgs e)
+		{
+			DateTime dataNasc;
+			int codTipoCli;
+			int numero;
+			int cidade;
+			int estado;
+
 			try
 			{
-				string cpf = "";
+				DateTime.TryParse(dtDataNasc.Text, out dataNasc);
 
-				cpf = txtCpfPesquisar.Text.Replace(".", "").Replace("-", "").Replace("/", "");
+				int.TryParse(cbTipoCli.SelectedValue.ToString(), out codTipoCli);
 
-				Cliente cli = new Cliente(0, txtCliPesquisar.Text, cpf, null, null, null, null, null, null);
-				DataTable table = cliController.GetDataTable(cli);
+				int.TryParse(txtNumero.Text, out numero);
 
-				dtCliente.DataSource = table;
+				int.TryParse(cbCidade.SelectedValue.ToString(), out cidade);
+
+				int.TryParse(cbEstado.SelectedValue.ToString(), out estado);
+
+				Endereco end = new Endereco(txtCep.Text, txtLogra.Text, numero, txtBairro.Text, cidade, estado);
+
+				Cliente cli = new Cliente(codigoCli, txtNomeCli.Text, txtCpfCnpjCli.Text, System.DateTime.Now, dataNasc, txtTelCli.Text, txtEmailCli.Text, codTipoCli, end);
+				if (codigoCli == 0)
+				{
+					cliController.InserirController(cli);
+					Util.Utils.ExibirMensagem("Cliente inserido com sucesso.", eTipoMensagem.Sucesso);
+				}
+				else
+				{
+					cliController.AlterarController(cli);
+
+					Util.Utils.ExibirMensagem("Cliente alterado com sucesso.", eTipoMensagem.Sucesso);
+				}
+				Util.Utils.LimparCampos(gbDadosCliente);
+
+				tabCtrlCliente.SelectedTab = tabConsultaCli;
+
+				PesquisarCliente();
+
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message);
+				Util.Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-
 		private void dtCliente_MouseClick(object sender, MouseEventArgs e)
 		{
 			if (e.Button == MouseButtons.Right)
@@ -118,13 +131,12 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 				m.MenuItems.Add(menuEditar);
 				m.MenuItems.Add(menuCopiar);
 
-				currentIndexRow = dtCliente.HitTest(e.X, e.Y).RowIndex;
-				currentMouseOverRow = Convert.ToInt32(dtCliente.Rows[currentIndexRow].Cells[0].Value.ToString());
+				currentIndexRow = dgCliente.HitTest(e.X, e.Y).RowIndex;
+				currentMouseOverRow = Convert.ToInt32(dgCliente.Rows[currentIndexRow].Cells[0].Value.ToString());
 
-				m.Show(dtCliente, new Point(e.X, e.Y));
+				m.Show(dgCliente, new Point(e.X, e.Y));
 			}
 		}
-
 		private void MenuCopiar_Click(object sender, EventArgs e)
 		{
 			var newline = System.Environment.NewLine;
@@ -132,7 +144,7 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 			var clipboard_string = "";
 			int iCol = 0;
 
-			foreach (DataGridViewTextBoxCell colunas in dtCliente.Rows[0].Cells)
+			foreach (DataGridViewTextBoxCell colunas in dgCliente.Rows[0].Cells)
 			{
 
 				if (iCol == 0)
@@ -152,32 +164,99 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 		}
 		private void dtCliente_DataSourceChanged(object sender, EventArgs e)
 		{
-			if (dtCliente.DataSource != null)
+			if (dgCliente.DataSource != null)
 			{
-				dtCliente.Columns[0].Visible = false;
+				dgCliente.Columns[0].Visible = false;
+				dgCliente.Columns[0].Visible = false;
+				dgCliente.Columns[0].Visible = false;
+				dgCliente.Columns[0].Visible = false;
+				dgCliente.Columns[0].Visible = false;
 			}
 		}
-
-		private void cbEstado_SelectedIndexChanged_1(object sender, EventArgs e)
+		private void btnGridAlterar_Click(object sender, EventArgs e)
 		{
-			string codEstado = cbEstado.SelectedValue.ToString();
-
-			CidadeController cidade = new CidadeController();
-
-			int estado;
-
-			int.TryParse(codEstado, out estado);
-
-			if (estado > 0)
+			try
 			{
-				DataTable table = cidade.CarregarCidadeController(estado);
+				if (dgCliente.Rows.Count > 0)
+				{
+					string codigo = dgCliente.SelectedRows[0].Cells[0].Value.ToString();
 
-				cbCidade.DataSource = table;
-				cbCidade.DisplayMember = "Nome_Cidade";
-				cbCidade.ValueMember = "Cod_Cidade";
+					int.TryParse(codigo, out codigoCli);
+					if (codigoCli > 0)
+					{
+						Cliente cli = new Cliente(codigoCli);
+
+						cli = cliController.GetObj(cli);
+
+						txtNomeCli.Text = cli.Nome;
+						dtDataCadastro.Text = cli.DataCadastro.ToString();
+						dtDataNasc.Text = cli.DataNasc.ToString();
+						cbTipoCli.SelectedValue = cli.CodTipoCli.ToString();
+						txtCpfCnpjCli.Text = cli.CpfCnpj.ToString();
+						txtTelCli.Text = cli.Telefone.ToString();
+						txtEmailCli.Text = cli.Email.ToString();
+						txtCep.Text = cli.Endereco.Cep.ToString();
+						cbCidade.SelectedValue = cli.Endereco.CodCidade.ToString();
+						cbEstado.SelectedValue = cli.Endereco.CodEstado.ToString();
+						txtLogra.Text = cli.Endereco.Logradouro.ToString();
+						txtNumero.Text = cli.Endereco.Numero.ToString();
+						txtBairro.Text = cli.Endereco.Bairro.ToString();
+
+						tabCtrlCliente.SelectedTab = tabCadastroCli;
+
+					}
+					else
+					{
+						Util.Utils.ExibirMensagem("Selecione um registro para alterar.", eTipoMensagem.Atencao);
+					}
+				}
 			}
-
+			catch (Exception ex)
+			{
+				Util.Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+			}
 		}
+		private void btnGridExcluir_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				string codigo = dgCliente.SelectedRows[0].Cells[0].Value.ToString();
 
+				int.TryParse(codigo, out codigoCli);
+
+				Cliente cli = new Cliente(codigoCli);
+				cliController.DeletarController(cli);
+
+				Util.Utils.ExibirMensagem("Cliente excluído com sucesso.", eTipoMensagem.Sucesso);
+
+				PesquisarCliente();
+			}
+			catch (Exception ex)
+			{
+				Util.Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+			}
+		}
+		private void btnLimpar_Click(object sender, EventArgs e)
+		{
+			Util.Utils.LimparCampos(gbDadosCliente);
+		}
+		private void PesquisarCliente()
+		{
+			try
+			{
+				string cpf = "";
+
+				cpf = txtCpfPesquisar.Text.Replace(".", "").Replace("-", "").Replace("/", "");
+
+				Cliente cli = new Cliente(0, txtNomePesquisar.Text, cpf, null, null, null, null, null, null);
+				DataTable table = cliController.GetDataTable(cli);
+
+				dgCliente.DataSource = table;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
 	}
 }

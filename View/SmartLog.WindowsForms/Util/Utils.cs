@@ -7,18 +7,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmartLog.WindowsForms.DeskTopPresentation.Util
+namespace SmartLog.WindowsForms.Util
 {
 	public static class Utils
 	{
-
-
+		//Método para exibir mensagem de erros, sucessos ou alertas.
 		public static void ExibirMensagem(string mensagem, eTipoMensagem tipo)
 		{
 			frmMensagem msg = new frmMensagem(mensagem, tipo);
 			msg.ShowDialog();
 
 		}
+		//Método para carregar os combos de cidade.
 		public static void CarregarComboCidade(int codEstado, ref ComboBox combo)
 		{
 			try
@@ -40,7 +40,7 @@ namespace SmartLog.WindowsForms.DeskTopPresentation.Util
 				throw new Exception(ex.Message);
 			}
 		}
-
+		//Método para carregar combos de estado.
 		public static void CarregarEstado(ref ComboBox combo)
 		{
 			try
@@ -61,6 +61,7 @@ namespace SmartLog.WindowsForms.DeskTopPresentation.Util
 				throw new Exception(ex.Message);
 			}
 		}
+		//Método para validar conversão data
 		public static bool IsDate(string data)
 		{
 			try
@@ -68,21 +69,48 @@ namespace SmartLog.WindowsForms.DeskTopPresentation.Util
 				DateTime dataRetorno;
 				DateTime.TryParse(data, out dataRetorno);
 
-				if (dataRetorno.Year > 1900)
+				if (dataRetorno.Year > 1)
 				{
 					return true;
 				}
-
 				return false;
-
 			}
 			catch (Exception ex)
 			{
-
 				return false;
 			}
 		}
-
-
+		//Método para validar preenchimento dos campos.
+		/*	public static void ValidarCampos(params List<TextBox>) 
+			{
+				if (grupo.Text== "")
+				{
+					ExibirMensagem("Informar os campos", eTipoMensagem.Atencao);
+				}
+			}*/
+		public static void LimparCampos(Control cont)
+		{
+			if (cont is GroupBox)
+			{
+				for (int i = 0; i < cont.Controls.Count; i++)
+				{
+					if (cont.Controls[i] is TextBox)
+					{
+						(cont.Controls[i] as TextBox).Text = "";
+					}
+					if (cont.Controls[i] is ComboBox)
+					{
+						(cont.Controls[i] as ComboBox).SelectedIndex = -1;
+					}
+					if (cont.Controls[i] is ComboBox)
+					{
+						(cont.Controls[i] as ComboBox).SelectedValue = -1;
+					}
+				}
+			
+			}
+		}
 	}
 }
+
+

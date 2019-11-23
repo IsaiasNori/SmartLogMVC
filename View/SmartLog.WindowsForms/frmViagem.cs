@@ -1,4 +1,4 @@
-﻿using SmartLog.WindowsForms.DeskTopPresentation.Classes;
+﻿using SmartLog.WindowsForms.Classes;
 using SmartLogBusiness.Controller;
 using SmartLogBusiness.Model.Entidade.pessoa;
 using SmartLogBusiness.Model.Entidade.viagem;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmartLog.WindowsForms.DeskTopPresentation
+namespace SmartLog.WindowsForms
 {
 	public partial class frmViagem : Form
 	{
@@ -23,6 +23,8 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 		}
 		private void FrmViagem_Load(object sender, EventArgs e)
 		{
+			
+
 			Util.Utils.CarregarEstado(ref cbEstadoOrigem);
 			Util.Utils.CarregarEstado(ref cbEstadoDestino);
 
@@ -50,13 +52,11 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 
 		private void BtnVoltarFunc_Click(object sender, EventArgs e)
 		{
-			tabCtrlViagem.TabPages.Remove(tabCadastroViagem);
 			tabCtrlViagem.SelectedTab = tabConsultaViagem;
 		}
 
 		private void BtnNovo_Click(object sender, EventArgs e)
 		{
-			tabCtrlViagem.TabPages.Add(tabCadastroViagem);
 			tabCtrlViagem.SelectedTab = tabCadastroViagem;
 		}
 
@@ -75,6 +75,11 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 
 		//	viagemCtrl.InserirController(vi)
 				
+		}
+
+		private void btnFechaViagem_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 	}
 }

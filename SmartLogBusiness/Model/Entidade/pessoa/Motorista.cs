@@ -12,7 +12,10 @@ namespace SmartLogBusiness.Model.Entidade.pessoa
 		public string CnhNumero { get; private set; }
 		public bool Status { get; private set; }
 
+		public Motorista()
+		{
 
+		}
 		public Motorista(int cod):base(cod)
 		{
 

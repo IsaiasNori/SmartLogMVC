@@ -79,10 +79,11 @@ namespace SmartLogBusiness.Controller
 
 					Funcionario func = new Funcionario(Convert.ToInt32(table.Rows[0]["Cod_Matricula"]),
 													  table.Rows[0]["Nome_Funcionario"].ToString(),
+													  table.Rows[0]["CPF_Funcionario"].ToString(),
 													  Convert.ToDateTime(table.Rows[0]["Data_Nascimento"]),
 													  table.Rows[0]["Telefone_Funcionario"].ToString(),
 													  table.Rows[0]["Email_Funcionario"].ToString(),
-													  table.Rows[0]["CPF_Funcionario"].ToString(),
+													
 													  end, (EnumTipoCargo)Convert.ToInt32(table.Rows[0]["Cod_Cargo"]));
 
 					return func;
@@ -135,10 +136,11 @@ namespace SmartLogBusiness.Controller
 
 					Funcionario func = new Funcionario(Convert.ToInt32(item["Cod_Matricula"]),
 												       item["Nome_Funcionario"].ToString(),
-												  	   Convert.ToDateTime(item["Data_Nascimento"]),
+														item["CPF_Funcionario"].ToString(),
+														Convert.ToDateTime(item["Data_Nascimento"]),
 													   item["Telefone_Funcionario"].ToString(),
 													   item["Email_Funcionario"].ToString(),
-													   item["CPF_Funcionario"].ToString(),
+													 
 													   end, (EnumTipoCargo)Convert.ToInt32(item["Cod_Cargo"]));
 
 					lista.Add(func);
@@ -200,10 +202,11 @@ namespace SmartLogBusiness.Controller
 
 					Funcionario func = new Funcionario(Convert.ToInt32(table.Rows[0]["Cod_Matricula"]),
 													  table.Rows[0]["Nome_Funcionario"].ToString(),
-													  data,
+													  table.Rows[0]["CPF_Funcionario"].ToString(),
+													  Convert.ToDateTime(table.Rows[0]["Data_nascimento"]),
 													  table.Rows[0]["Telefone_Funcionario"].ToString(),
 													  table.Rows[0]["Email_Funcionario"].ToString(),
-													  table.Rows[0]["CPF_Funcionario"].ToString(),
+													 
 													  end, tipo);
 
 					return func;

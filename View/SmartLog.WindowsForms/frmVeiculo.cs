@@ -1,4 +1,4 @@
-﻿using SmartLog.WindowsForms.DeskTopPresentation.Util;
+﻿using SmartLog.WindowsForms.Util;
 using SmartLogBusiness.Controller;
 using SmartLogBusiness.Model.Entidade.veiculo;
 using System;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmartLog.WindowsForms.DeskTopPresentation
+namespace SmartLog.WindowsForms
 {
 	public partial class frmVeiculo : Form
 	{
@@ -35,11 +35,11 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 				List<Marca> lista = marcaCtrl.ListasController();
 				if(lista != null)
 				{
-					combo.Items.Add(new Classes.Item("--Selecione--", -1));
+					combo.Items.Add(new SmartLog.WindowsForms.Classes.Item("--Selecione--", -1));
 
 					foreach(Marca marca in lista)
 					{
-						combo.Items.Add(new Classes.Item(marca.Descricao, marca.CodMarca));
+						combo.Items.Add(new SmartLog.WindowsForms.Classes.Item(marca.Descricao, marca.CodMarca));
 					}
 				}
 			}
@@ -53,12 +53,12 @@ namespace SmartLog.WindowsForms.DeskTopPresentation
 		{
 			try
 			{
-				cbStatus.Items.Add(new Classes.Item("--Selecione--", -1));
-				cbStatus.Items.Add(new Classes.Item("Disponivel",(int)enumStatusVeiculo.Disponivel));
-				cbStatus.Items.Add(new Classes.Item("Transito", (int)enumStatusVeiculo.Transito));
-				cbStatus.Items.Add(new Classes.Item("Manutenção", (int)enumStatusVeiculo.Manutencao));
-				cbStatus.Items.Add(new Classes.Item("Sem Licenciamento", (int)enumStatusVeiculo.SemLicenciamento));
-				cbStatus.Items.Add(new Classes.Item("Desativado", (int)enumStatusVeiculo.Desativado));
+				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("--Selecione--", -1));
+				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Disponivel",(int)enumStatusVeiculo.Disponivel));
+				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Transito", (int)enumStatusVeiculo.Transito));
+				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Manutenção", (int)enumStatusVeiculo.Manutencao));
+				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Sem Licenciamento", (int)enumStatusVeiculo.SemLicenciamento));
+				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Desativado", (int)enumStatusVeiculo.Desativado));
 			}
 			catch (Exception)
 			{

@@ -1,4 +1,4 @@
-﻿namespace SmartLog.WindowsForms.DeskTopPresentation
+﻿namespace SmartLog.WindowsForms
 {
 	partial class frmVeiculo
 	{
@@ -64,13 +64,13 @@
 			this.lblModelo = new System.Windows.Forms.Label();
 			this.lblCodCli = new System.Windows.Forms.Label();
 			this.txtCodigoCli = new System.Windows.Forms.TextBox();
-			this.txtModeloPesquisa = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtDataUltRev = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtKmAtual = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtKmPrev = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtAnoFab = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtRenavam = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtModelo = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
+			this.txtModeloPesquisa = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtDataUltRev = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtKmAtual = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtKmPrev = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtAnoFab = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtRenavam = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtModelo = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.tabctrlVeiculo.SuspendLayout();
 			this.tpConsultaVeiculo.SuspendLayout();
 			this.gbFiltraVeiculo.SuspendLayout();
@@ -556,7 +556,7 @@
 			this.txtModeloPesquisa.Name = "txtModeloPesquisa";
 			this.txtModeloPesquisa.Size = new System.Drawing.Size(188, 28);
 			this.txtModeloPesquisa.TabIndex = 7;
-			this.txtModeloPesquisa.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteLetra;
+			this.txtModeloPesquisa.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// txtDataUltRev
 			// 
@@ -564,7 +564,7 @@
 			this.txtDataUltRev.Name = "txtDataUltRev";
 			this.txtDataUltRev.Size = new System.Drawing.Size(133, 26);
 			this.txtDataUltRev.TabIndex = 19;
-			this.txtDataUltRev.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.data;
+			this.txtDataUltRev.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.data;
 			// 
 			// txtKmAtual
 			// 
@@ -572,7 +572,7 @@
 			this.txtKmAtual.Name = "txtKmAtual";
 			this.txtKmAtual.Size = new System.Drawing.Size(217, 26);
 			this.txtKmAtual.TabIndex = 17;
-			this.txtKmAtual.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteNumero;
+			this.txtKmAtual.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// txtKmPrev
 			// 
@@ -580,7 +580,7 @@
 			this.txtKmPrev.Name = "txtKmPrev";
 			this.txtKmPrev.Size = new System.Drawing.Size(217, 26);
 			this.txtKmPrev.TabIndex = 16;
-			this.txtKmPrev.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteNumero;
+			this.txtKmPrev.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// txtAnoFab
 			// 
@@ -588,7 +588,7 @@
 			this.txtAnoFab.Name = "txtAnoFab";
 			this.txtAnoFab.Size = new System.Drawing.Size(139, 26);
 			this.txtAnoFab.TabIndex = 10;
-			this.txtAnoFab.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteNumero;
+			this.txtAnoFab.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// txtRenavam
 			// 
@@ -596,7 +596,7 @@
 			this.txtRenavam.Name = "txtRenavam";
 			this.txtRenavam.Size = new System.Drawing.Size(217, 26);
 			this.txtRenavam.TabIndex = 4;
-			this.txtRenavam.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.normal;
+			this.txtRenavam.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
 			// 
 			// txtModelo
 			// 
@@ -604,7 +604,7 @@
 			this.txtModelo.Name = "txtModelo";
 			this.txtModelo.Size = new System.Drawing.Size(217, 26);
 			this.txtModelo.TabIndex = 0;
-			this.txtModelo.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteLetra;
+			this.txtModelo.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// frmVeiculo
 			// 

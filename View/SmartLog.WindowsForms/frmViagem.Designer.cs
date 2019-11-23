@@ -1,4 +1,4 @@
-﻿namespace SmartLog.WindowsForms.DeskTopPresentation
+﻿namespace SmartLog.WindowsForms
 {
 	partial class frmViagem
 	{
@@ -35,23 +35,31 @@
 			this.tabConsultaViagem = new System.Windows.Forms.TabPage();
 			this.gbFiltraViagem = new System.Windows.Forms.GroupBox();
 			this.panel3 = new System.Windows.Forms.Panel();
+			this.superTextbox2 = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblClientePesquisar = new System.Windows.Forms.Label();
+			this.superTextbox1 = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblMotoristaPesquisar = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnPesquisarViagem = new System.Windows.Forms.Button();
-			this.btnFechaFuncionario = new System.Windows.Forms.Button();
-			this.btnExcluirGrid = new System.Windows.Forms.Button();
+			this.txtCpfPesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtCliPesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.btnFechaViagem = new System.Windows.Forms.Button();
+			this.btnGridExcluir = new System.Windows.Forms.Button();
 			this.dtCliente = new System.Windows.Forms.DataGridView();
-			this.btnAlterarGrid = new System.Windows.Forms.Button();
+			this.btnGridAlterar = new System.Windows.Forms.Button();
 			this.btnNovo = new System.Windows.Forms.Button();
 			this.tabCadastroViagem = new System.Windows.Forms.TabPage();
 			this.btnVoltarFunc = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.btnEditar = new System.Windows.Forms.Button();
 			this.btnExcluir = new System.Windows.Forms.Button();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.gbDadosDestinoViagem = new System.Windows.Forms.GroupBox();
+			this.txtBairroDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtLograDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtNumeroDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtCepDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.cbEstadoDestino = new System.Windows.Forms.ComboBox();
 			this.label8 = new System.Windows.Forms.Label();
@@ -60,7 +68,11 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.lblCepDestino = new System.Windows.Forms.Label();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.gbDadosOrigemviagem = new System.Windows.Forms.GroupBox();
+			this.txtCepOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtBairroOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtLograOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtNumeroOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblEstado = new System.Windows.Forms.Label();
 			this.cbEstadoOrigem = new System.Windows.Forms.ComboBox();
 			this.lblCidade = new System.Windows.Forms.Label();
@@ -69,13 +81,15 @@
 			this.lblNumero = new System.Windows.Forms.Label();
 			this.lblBairro = new System.Windows.Forms.Label();
 			this.lblCepOrigem = new System.Windows.Forms.Label();
-			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.gbDadosViagem1 = new System.Windows.Forms.GroupBox();
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.lblDataViagem = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
+			this.superTextbox5 = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.cbMotoristaViagem = new System.Windows.Forms.ComboBox();
 			this.label16 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
+			this.superTextbox4 = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.cbClienteViagem = new System.Windows.Forms.ComboBox();
 			this.label15 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
@@ -84,29 +98,15 @@
 			this.label14 = new System.Windows.Forms.Label();
 			this.lblCodCli = new System.Windows.Forms.Label();
 			this.txtCodigoCli = new System.Windows.Forms.TextBox();
-			this.superTextbox2 = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.superTextbox1 = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtCpfPesquisar = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtCliPesquisar = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtBairroDestino = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtLograDestino = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtNumeroDestino = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtCepDestino = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtBairroOrigem = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtLograOrigem = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtNumeroOrigem = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.txtCepOrigem = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.superTextbox5 = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
-			this.superTextbox4 = new SmartLog.WindowsForms.DeskTopPresentation.UserControl.SuperTextbox();
 			this.tabCtrlViagem.SuspendLayout();
 			this.tabConsultaViagem.SuspendLayout();
 			this.gbFiltraViagem.SuspendLayout();
 			this.panel3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dtCliente)).BeginInit();
 			this.tabCadastroViagem.SuspendLayout();
-			this.groupBox2.SuspendLayout();
-			this.groupBox1.SuspendLayout();
-			this.groupBox3.SuspendLayout();
+			this.gbDadosDestinoViagem.SuspendLayout();
+			this.gbDadosOrigemviagem.SuspendLayout();
+			this.gbDadosViagem1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabCtrlViagem
@@ -125,10 +125,10 @@
 			// 
 			this.tabConsultaViagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.tabConsultaViagem.Controls.Add(this.gbFiltraViagem);
-			this.tabConsultaViagem.Controls.Add(this.btnFechaFuncionario);
-			this.tabConsultaViagem.Controls.Add(this.btnExcluirGrid);
+			this.tabConsultaViagem.Controls.Add(this.btnFechaViagem);
+			this.tabConsultaViagem.Controls.Add(this.btnGridExcluir);
 			this.tabConsultaViagem.Controls.Add(this.dtCliente);
-			this.tabConsultaViagem.Controls.Add(this.btnAlterarGrid);
+			this.tabConsultaViagem.Controls.Add(this.btnGridAlterar);
 			this.tabConsultaViagem.Controls.Add(this.btnNovo);
 			this.tabConsultaViagem.Location = new System.Drawing.Point(4, 29);
 			this.tabConsultaViagem.Name = "tabConsultaViagem";
@@ -167,6 +167,14 @@
 			this.panel3.Size = new System.Drawing.Size(733, 160);
 			this.panel3.TabIndex = 9;
 			// 
+			// superTextbox2
+			// 
+			this.superTextbox2.Location = new System.Drawing.Point(255, 38);
+			this.superTextbox2.Name = "superTextbox2";
+			this.superTextbox2.Size = new System.Drawing.Size(200, 26);
+			this.superTextbox2.TabIndex = 15;
+			this.superTextbox2.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
 			// lblClientePesquisar
 			// 
 			this.lblClientePesquisar.AutoSize = true;
@@ -175,6 +183,14 @@
 			this.lblClientePesquisar.Size = new System.Drawing.Size(58, 20);
 			this.lblClientePesquisar.TabIndex = 14;
 			this.lblClientePesquisar.Text = "Cliente";
+			// 
+			// superTextbox1
+			// 
+			this.superTextbox1.Location = new System.Drawing.Point(20, 38);
+			this.superTextbox1.Name = "superTextbox1";
+			this.superTextbox1.Size = new System.Drawing.Size(200, 26);
+			this.superTextbox1.TabIndex = 13;
+			this.superTextbox1.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// lblMotoristaPesquisar
 			// 
@@ -229,43 +245,63 @@
 			this.btnPesquisarViagem.Text = "Pesquisar";
 			this.btnPesquisarViagem.UseVisualStyleBackColor = false;
 			// 
-			// btnFechaFuncionario
+			// txtCpfPesquisar
 			// 
-			this.btnFechaFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnFechaFuncionario.FlatAppearance.BorderSize = 0;
-			this.btnFechaFuncionario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnFechaFuncionario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnFechaFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnFechaFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnFechaFuncionario.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnFechaFuncionario.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_FecharTab;
-			this.btnFechaFuncionario.Location = new System.Drawing.Point(700, 271);
-			this.btnFechaFuncionario.Name = "btnFechaFuncionario";
-			this.btnFechaFuncionario.Size = new System.Drawing.Size(139, 39);
-			this.btnFechaFuncionario.TabIndex = 20;
-			this.btnFechaFuncionario.Text = "Fechar";
-			this.btnFechaFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnFechaFuncionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnFechaFuncionario.UseVisualStyleBackColor = false;
+			this.txtCpfPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtCpfPesquisar.Location = new System.Drawing.Point(256, 118);
+			this.txtCpfPesquisar.MaxLength = 18;
+			this.txtCpfPesquisar.Name = "txtCpfPesquisar";
+			this.txtCpfPesquisar.Size = new System.Drawing.Size(127, 24);
+			this.txtCpfPesquisar.TabIndex = 7;
+			this.txtCpfPesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.data;
 			// 
-			// btnExcluirGrid
+			// txtCliPesquisar
 			// 
-			this.btnExcluirGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnExcluirGrid.FlatAppearance.BorderSize = 0;
-			this.btnExcluirGrid.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnExcluirGrid.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnExcluirGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnExcluirGrid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnExcluirGrid.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnExcluirGrid.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Excluir;
-			this.btnExcluirGrid.Location = new System.Drawing.Point(526, 271);
-			this.btnExcluirGrid.Name = "btnExcluirGrid";
-			this.btnExcluirGrid.Size = new System.Drawing.Size(139, 39);
-			this.btnExcluirGrid.TabIndex = 19;
-			this.btnExcluirGrid.Text = "Excluir";
-			this.btnExcluirGrid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnExcluirGrid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnExcluirGrid.UseVisualStyleBackColor = false;
+			this.txtCliPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtCliPesquisar.Location = new System.Drawing.Point(109, 118);
+			this.txtCliPesquisar.Name = "txtCliPesquisar";
+			this.txtCliPesquisar.Size = new System.Drawing.Size(127, 24);
+			this.txtCliPesquisar.TabIndex = 6;
+			this.txtCliPesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.data;
+			// 
+			// btnFechaViagem
+			// 
+			this.btnFechaViagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnFechaViagem.FlatAppearance.BorderSize = 0;
+			this.btnFechaViagem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnFechaViagem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnFechaViagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnFechaViagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnFechaViagem.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.btnFechaViagem.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_FecharTab;
+			this.btnFechaViagem.Location = new System.Drawing.Point(700, 271);
+			this.btnFechaViagem.Name = "btnFechaViagem";
+			this.btnFechaViagem.Size = new System.Drawing.Size(139, 39);
+			this.btnFechaViagem.TabIndex = 20;
+			this.btnFechaViagem.Text = "Fechar";
+			this.btnFechaViagem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnFechaViagem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnFechaViagem.UseVisualStyleBackColor = false;
+			this.btnFechaViagem.Click += new System.EventHandler(this.btnFechaViagem_Click);
+			// 
+			// btnGridExcluir
+			// 
+			this.btnGridExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnGridExcluir.FlatAppearance.BorderSize = 0;
+			this.btnGridExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnGridExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnGridExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnGridExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnGridExcluir.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.btnGridExcluir.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Excluir;
+			this.btnGridExcluir.Location = new System.Drawing.Point(526, 271);
+			this.btnGridExcluir.Name = "btnGridExcluir";
+			this.btnGridExcluir.Size = new System.Drawing.Size(139, 39);
+			this.btnGridExcluir.TabIndex = 19;
+			this.btnGridExcluir.Text = "Excluir";
+			this.btnGridExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnGridExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnGridExcluir.UseVisualStyleBackColor = false;
 			// 
 			// dtCliente
 			// 
@@ -314,24 +350,24 @@
 			this.dtCliente.TabIndex = 1;
 			this.dtCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtCliente_CellContentClick);
 			// 
-			// btnAlterarGrid
+			// btnGridAlterar
 			// 
-			this.btnAlterarGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnAlterarGrid.FlatAppearance.BorderSize = 0;
-			this.btnAlterarGrid.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnAlterarGrid.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnAlterarGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAlterarGrid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAlterarGrid.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnAlterarGrid.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Alterar;
-			this.btnAlterarGrid.Location = new System.Drawing.Point(354, 271);
-			this.btnAlterarGrid.Name = "btnAlterarGrid";
-			this.btnAlterarGrid.Size = new System.Drawing.Size(139, 39);
-			this.btnAlterarGrid.TabIndex = 18;
-			this.btnAlterarGrid.Text = "Alterar";
-			this.btnAlterarGrid.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnAlterarGrid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnAlterarGrid.UseVisualStyleBackColor = false;
+			this.btnGridAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnGridAlterar.FlatAppearance.BorderSize = 0;
+			this.btnGridAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnGridAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnGridAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnGridAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnGridAlterar.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.btnGridAlterar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Alterar;
+			this.btnGridAlterar.Location = new System.Drawing.Point(354, 271);
+			this.btnGridAlterar.Name = "btnGridAlterar";
+			this.btnGridAlterar.Size = new System.Drawing.Size(139, 39);
+			this.btnGridAlterar.TabIndex = 18;
+			this.btnGridAlterar.Text = "Alterar";
+			this.btnGridAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnGridAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnGridAlterar.UseVisualStyleBackColor = false;
 			// 
 			// btnNovo
 			// 
@@ -361,9 +397,9 @@
 			this.tabCadastroViagem.Controls.Add(this.btnSalvar);
 			this.tabCadastroViagem.Controls.Add(this.btnEditar);
 			this.tabCadastroViagem.Controls.Add(this.btnExcluir);
-			this.tabCadastroViagem.Controls.Add(this.groupBox2);
-			this.tabCadastroViagem.Controls.Add(this.groupBox1);
-			this.tabCadastroViagem.Controls.Add(this.groupBox3);
+			this.tabCadastroViagem.Controls.Add(this.gbDadosDestinoViagem);
+			this.tabCadastroViagem.Controls.Add(this.gbDadosOrigemviagem);
+			this.tabCadastroViagem.Controls.Add(this.gbDadosViagem1);
 			this.tabCadastroViagem.Controls.Add(this.lblCodCli);
 			this.tabCadastroViagem.Controls.Add(this.txtCodigoCli);
 			this.tabCadastroViagem.Location = new System.Drawing.Point(4, 29);
@@ -446,27 +482,59 @@
 			this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnExcluir.UseVisualStyleBackColor = false;
 			// 
-			// groupBox2
+			// gbDadosDestinoViagem
 			// 
-			this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.groupBox2.Controls.Add(this.txtBairroDestino);
-			this.groupBox2.Controls.Add(this.txtLograDestino);
-			this.groupBox2.Controls.Add(this.txtNumeroDestino);
-			this.groupBox2.Controls.Add(this.txtCepDestino);
-			this.groupBox2.Controls.Add(this.label7);
-			this.groupBox2.Controls.Add(this.cbEstadoDestino);
-			this.groupBox2.Controls.Add(this.label8);
-			this.groupBox2.Controls.Add(this.cbCidadeDestino);
-			this.groupBox2.Controls.Add(this.label9);
-			this.groupBox2.Controls.Add(this.label10);
-			this.groupBox2.Controls.Add(this.label11);
-			this.groupBox2.Controls.Add(this.lblCepDestino);
-			this.groupBox2.Location = new System.Drawing.Point(125, 416);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(792, 170);
-			this.groupBox2.TabIndex = 96;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Destino da Viagem";
+			this.gbDadosDestinoViagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.gbDadosDestinoViagem.Controls.Add(this.txtBairroDestino);
+			this.gbDadosDestinoViagem.Controls.Add(this.txtLograDestino);
+			this.gbDadosDestinoViagem.Controls.Add(this.txtNumeroDestino);
+			this.gbDadosDestinoViagem.Controls.Add(this.txtCepDestino);
+			this.gbDadosDestinoViagem.Controls.Add(this.label7);
+			this.gbDadosDestinoViagem.Controls.Add(this.cbEstadoDestino);
+			this.gbDadosDestinoViagem.Controls.Add(this.label8);
+			this.gbDadosDestinoViagem.Controls.Add(this.cbCidadeDestino);
+			this.gbDadosDestinoViagem.Controls.Add(this.label9);
+			this.gbDadosDestinoViagem.Controls.Add(this.label10);
+			this.gbDadosDestinoViagem.Controls.Add(this.label11);
+			this.gbDadosDestinoViagem.Controls.Add(this.lblCepDestino);
+			this.gbDadosDestinoViagem.Location = new System.Drawing.Point(125, 416);
+			this.gbDadosDestinoViagem.Name = "gbDadosDestinoViagem";
+			this.gbDadosDestinoViagem.Size = new System.Drawing.Size(792, 170);
+			this.gbDadosDestinoViagem.TabIndex = 96;
+			this.gbDadosDestinoViagem.TabStop = false;
+			this.gbDadosDestinoViagem.Text = "Destino da Viagem";
+			// 
+			// txtBairroDestino
+			// 
+			this.txtBairroDestino.Location = new System.Drawing.Point(430, 124);
+			this.txtBairroDestino.Name = "txtBairroDestino";
+			this.txtBairroDestino.Size = new System.Drawing.Size(194, 26);
+			this.txtBairroDestino.TabIndex = 82;
+			this.txtBairroDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtLograDestino
+			// 
+			this.txtLograDestino.Location = new System.Drawing.Point(40, 124);
+			this.txtLograDestino.Name = "txtLograDestino";
+			this.txtLograDestino.Size = new System.Drawing.Size(248, 26);
+			this.txtLograDestino.TabIndex = 81;
+			this.txtLograDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtNumeroDestino
+			// 
+			this.txtNumeroDestino.Location = new System.Drawing.Point(329, 124);
+			this.txtNumeroDestino.Name = "txtNumeroDestino";
+			this.txtNumeroDestino.Size = new System.Drawing.Size(80, 26);
+			this.txtNumeroDestino.TabIndex = 80;
+			this.txtNumeroDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// txtCepDestino
+			// 
+			this.txtCepDestino.Location = new System.Drawing.Point(40, 59);
+			this.txtCepDestino.Name = "txtCepDestino";
+			this.txtCepDestino.Size = new System.Drawing.Size(168, 26);
+			this.txtCepDestino.TabIndex = 79;
+			this.txtCepDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// label7
 			// 
@@ -547,28 +615,60 @@
 			this.lblCepDestino.TabIndex = 77;
 			this.lblCepDestino.Text = "CEP";
 			// 
-			// groupBox1
+			// gbDadosOrigemviagem
 			// 
-			this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.groupBox1.Controls.Add(this.txtBairroOrigem);
-			this.groupBox1.Controls.Add(this.txtLograOrigem);
-			this.groupBox1.Controls.Add(this.txtNumeroOrigem);
-			this.groupBox1.Controls.Add(this.txtCepOrigem);
-			this.groupBox1.Controls.Add(this.lblEstado);
-			this.groupBox1.Controls.Add(this.cbEstadoOrigem);
-			this.groupBox1.Controls.Add(this.lblCidade);
-			this.groupBox1.Controls.Add(this.cbCidadeOrigem);
-			this.groupBox1.Controls.Add(this.lblLogradouro);
-			this.groupBox1.Controls.Add(this.lblNumero);
-			this.groupBox1.Controls.Add(this.lblBairro);
-			this.groupBox1.Controls.Add(this.lblCepOrigem);
-			this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.groupBox1.Location = new System.Drawing.Point(125, 239);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(792, 171);
-			this.groupBox1.TabIndex = 69;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Origem da Viagem";
+			this.gbDadosOrigemviagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.gbDadosOrigemviagem.Controls.Add(this.txtCepOrigem);
+			this.gbDadosOrigemviagem.Controls.Add(this.txtBairroOrigem);
+			this.gbDadosOrigemviagem.Controls.Add(this.txtLograOrigem);
+			this.gbDadosOrigemviagem.Controls.Add(this.txtNumeroOrigem);
+			this.gbDadosOrigemviagem.Controls.Add(this.lblEstado);
+			this.gbDadosOrigemviagem.Controls.Add(this.cbEstadoOrigem);
+			this.gbDadosOrigemviagem.Controls.Add(this.lblCidade);
+			this.gbDadosOrigemviagem.Controls.Add(this.cbCidadeOrigem);
+			this.gbDadosOrigemviagem.Controls.Add(this.lblLogradouro);
+			this.gbDadosOrigemviagem.Controls.Add(this.lblNumero);
+			this.gbDadosOrigemviagem.Controls.Add(this.lblBairro);
+			this.gbDadosOrigemviagem.Controls.Add(this.lblCepOrigem);
+			this.gbDadosOrigemviagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.gbDadosOrigemviagem.Location = new System.Drawing.Point(125, 239);
+			this.gbDadosOrigemviagem.Name = "gbDadosOrigemviagem";
+			this.gbDadosOrigemviagem.Size = new System.Drawing.Size(792, 171);
+			this.gbDadosOrigemviagem.TabIndex = 69;
+			this.gbDadosOrigemviagem.TabStop = false;
+			this.gbDadosOrigemviagem.Text = "Origem da Viagem";
+			// 
+			// txtCepOrigem
+			// 
+			this.txtCepOrigem.Location = new System.Drawing.Point(40, 57);
+			this.txtCepOrigem.Name = "txtCepOrigem";
+			this.txtCepOrigem.Size = new System.Drawing.Size(168, 26);
+			this.txtCepOrigem.TabIndex = 82;
+			this.txtCepOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
+			// txtBairroOrigem
+			// 
+			this.txtBairroOrigem.Location = new System.Drawing.Point(430, 123);
+			this.txtBairroOrigem.Name = "txtBairroOrigem";
+			this.txtBairroOrigem.Size = new System.Drawing.Size(194, 26);
+			this.txtBairroOrigem.TabIndex = 81;
+			this.txtBairroOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtLograOrigem
+			// 
+			this.txtLograOrigem.Location = new System.Drawing.Point(41, 123);
+			this.txtLograOrigem.Name = "txtLograOrigem";
+			this.txtLograOrigem.Size = new System.Drawing.Size(248, 26);
+			this.txtLograOrigem.TabIndex = 80;
+			this.txtLograOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtNumeroOrigem
+			// 
+			this.txtNumeroOrigem.Location = new System.Drawing.Point(328, 121);
+			this.txtNumeroOrigem.Name = "txtNumeroOrigem";
+			this.txtNumeroOrigem.Size = new System.Drawing.Size(80, 26);
+			this.txtNumeroOrigem.TabIndex = 79;
+			this.txtNumeroOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// lblEstado
 			// 
@@ -649,29 +749,29 @@
 			this.lblCepOrigem.TabIndex = 77;
 			this.lblCepOrigem.Text = "CEP";
 			// 
-			// groupBox3
+			// gbDadosViagem1
 			// 
-			this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.groupBox3.Controls.Add(this.dateTimePicker1);
-			this.groupBox3.Controls.Add(this.lblDataViagem);
-			this.groupBox3.Controls.Add(this.label1);
-			this.groupBox3.Controls.Add(this.superTextbox5);
-			this.groupBox3.Controls.Add(this.cbMotoristaViagem);
-			this.groupBox3.Controls.Add(this.label16);
-			this.groupBox3.Controls.Add(this.label6);
-			this.groupBox3.Controls.Add(this.superTextbox4);
-			this.groupBox3.Controls.Add(this.cbClienteViagem);
-			this.groupBox3.Controls.Add(this.label15);
-			this.groupBox3.Controls.Add(this.label13);
-			this.groupBox3.Controls.Add(this.cbAtendente);
-			this.groupBox3.Controls.Add(this.cbVeiculo);
-			this.groupBox3.Controls.Add(this.label14);
-			this.groupBox3.Location = new System.Drawing.Point(125, 16);
-			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(792, 217);
-			this.groupBox3.TabIndex = 97;
-			this.groupBox3.TabStop = false;
-			this.groupBox3.Text = "Dados da Viagem";
+			this.gbDadosViagem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.gbDadosViagem1.Controls.Add(this.dateTimePicker1);
+			this.gbDadosViagem1.Controls.Add(this.lblDataViagem);
+			this.gbDadosViagem1.Controls.Add(this.label1);
+			this.gbDadosViagem1.Controls.Add(this.superTextbox5);
+			this.gbDadosViagem1.Controls.Add(this.cbMotoristaViagem);
+			this.gbDadosViagem1.Controls.Add(this.label16);
+			this.gbDadosViagem1.Controls.Add(this.label6);
+			this.gbDadosViagem1.Controls.Add(this.superTextbox4);
+			this.gbDadosViagem1.Controls.Add(this.cbClienteViagem);
+			this.gbDadosViagem1.Controls.Add(this.label15);
+			this.gbDadosViagem1.Controls.Add(this.label13);
+			this.gbDadosViagem1.Controls.Add(this.cbAtendente);
+			this.gbDadosViagem1.Controls.Add(this.cbVeiculo);
+			this.gbDadosViagem1.Controls.Add(this.label14);
+			this.gbDadosViagem1.Location = new System.Drawing.Point(125, 16);
+			this.gbDadosViagem1.Name = "gbDadosViagem1";
+			this.gbDadosViagem1.Size = new System.Drawing.Size(792, 217);
+			this.gbDadosViagem1.TabIndex = 97;
+			this.gbDadosViagem1.TabStop = false;
+			this.gbDadosViagem1.Text = "Dados da Viagem";
 			// 
 			// dateTimePicker1
 			// 
@@ -700,6 +800,14 @@
 			this.label1.TabIndex = 68;
 			this.label1.Text = "Motorista";
 			// 
+			// superTextbox5
+			// 
+			this.superTextbox5.Location = new System.Drawing.Point(535, 167);
+			this.superTextbox5.Name = "superTextbox5";
+			this.superTextbox5.Size = new System.Drawing.Size(138, 26);
+			this.superTextbox5.TabIndex = 91;
+			this.superTextbox5.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
 			// cbMotoristaViagem
 			// 
 			this.cbMotoristaViagem.FormattingEnabled = true;
@@ -726,6 +834,14 @@
 			this.label6.Size = new System.Drawing.Size(58, 20);
 			this.label6.TabIndex = 70;
 			this.label6.Text = "Cliente";
+			// 
+			// superTextbox4
+			// 
+			this.superTextbox4.Location = new System.Drawing.Point(328, 167);
+			this.superTextbox4.Name = "superTextbox4";
+			this.superTextbox4.Size = new System.Drawing.Size(138, 26);
+			this.superTextbox4.TabIndex = 89;
+			this.superTextbox4.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// cbClienteViagem
 			// 
@@ -796,121 +912,6 @@
 			this.txtCodigoCli.Size = new System.Drawing.Size(100, 26);
 			this.txtCodigoCli.TabIndex = 36;
 			// 
-			// superTextbox2
-			// 
-			this.superTextbox2.Location = new System.Drawing.Point(255, 38);
-			this.superTextbox2.Name = "superTextbox2";
-			this.superTextbox2.Size = new System.Drawing.Size(200, 26);
-			this.superTextbox2.TabIndex = 15;
-			this.superTextbox2.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// superTextbox1
-			// 
-			this.superTextbox1.Location = new System.Drawing.Point(20, 38);
-			this.superTextbox1.Name = "superTextbox1";
-			this.superTextbox1.Size = new System.Drawing.Size(200, 26);
-			this.superTextbox1.TabIndex = 13;
-			this.superTextbox1.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtCpfPesquisar
-			// 
-			this.txtCpfPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtCpfPesquisar.Location = new System.Drawing.Point(256, 118);
-			this.txtCpfPesquisar.MaxLength = 18;
-			this.txtCpfPesquisar.Name = "txtCpfPesquisar";
-			this.txtCpfPesquisar.Size = new System.Drawing.Size(127, 24);
-			this.txtCpfPesquisar.TabIndex = 7;
-			this.txtCpfPesquisar.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.data;
-			// 
-			// txtCliPesquisar
-			// 
-			this.txtCliPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtCliPesquisar.Location = new System.Drawing.Point(109, 118);
-			this.txtCliPesquisar.Name = "txtCliPesquisar";
-			this.txtCliPesquisar.Size = new System.Drawing.Size(127, 24);
-			this.txtCliPesquisar.TabIndex = 6;
-			this.txtCliPesquisar.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.data;
-			// 
-			// txtBairroDestino
-			// 
-			this.txtBairroDestino.Location = new System.Drawing.Point(430, 124);
-			this.txtBairroDestino.Name = "txtBairroDestino";
-			this.txtBairroDestino.Size = new System.Drawing.Size(194, 26);
-			this.txtBairroDestino.TabIndex = 82;
-			this.txtBairroDestino.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtLograDestino
-			// 
-			this.txtLograDestino.Location = new System.Drawing.Point(40, 124);
-			this.txtLograDestino.Name = "txtLograDestino";
-			this.txtLograDestino.Size = new System.Drawing.Size(248, 26);
-			this.txtLograDestino.TabIndex = 81;
-			this.txtLograDestino.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtNumeroDestino
-			// 
-			this.txtNumeroDestino.Location = new System.Drawing.Point(329, 124);
-			this.txtNumeroDestino.Name = "txtNumeroDestino";
-			this.txtNumeroDestino.Size = new System.Drawing.Size(80, 26);
-			this.txtNumeroDestino.TabIndex = 80;
-			this.txtNumeroDestino.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtCepDestino
-			// 
-			this.txtCepDestino.Location = new System.Drawing.Point(40, 59);
-			this.txtCepDestino.Name = "txtCepDestino";
-			this.txtCepDestino.Size = new System.Drawing.Size(168, 26);
-			this.txtCepDestino.TabIndex = 79;
-			this.txtCepDestino.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtBairroOrigem
-			// 
-			this.txtBairroOrigem.Location = new System.Drawing.Point(430, 123);
-			this.txtBairroOrigem.Name = "txtBairroOrigem";
-			this.txtBairroOrigem.Size = new System.Drawing.Size(194, 26);
-			this.txtBairroOrigem.TabIndex = 81;
-			this.txtBairroOrigem.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtLograOrigem
-			// 
-			this.txtLograOrigem.Location = new System.Drawing.Point(41, 123);
-			this.txtLograOrigem.Name = "txtLograOrigem";
-			this.txtLograOrigem.Size = new System.Drawing.Size(248, 26);
-			this.txtLograOrigem.TabIndex = 80;
-			this.txtLograOrigem.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtNumeroOrigem
-			// 
-			this.txtNumeroOrigem.Location = new System.Drawing.Point(328, 121);
-			this.txtNumeroOrigem.Name = "txtNumeroOrigem";
-			this.txtNumeroOrigem.Size = new System.Drawing.Size(80, 26);
-			this.txtNumeroOrigem.TabIndex = 79;
-			this.txtNumeroOrigem.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtCepOrigem
-			// 
-			this.txtCepOrigem.Location = new System.Drawing.Point(41, 58);
-			this.txtCepOrigem.Name = "txtCepOrigem";
-			this.txtCepOrigem.Size = new System.Drawing.Size(168, 26);
-			this.txtCepOrigem.TabIndex = 78;
-			this.txtCepOrigem.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// superTextbox5
-			// 
-			this.superTextbox5.Location = new System.Drawing.Point(535, 167);
-			this.superTextbox5.Name = "superTextbox5";
-			this.superTextbox5.Size = new System.Drawing.Size(138, 26);
-			this.superTextbox5.TabIndex = 91;
-			this.superTextbox5.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.normal;
-			// 
-			// superTextbox4
-			// 
-			this.superTextbox4.Location = new System.Drawing.Point(328, 167);
-			this.superTextbox4.Name = "superTextbox4";
-			this.superTextbox4.Size = new System.Drawing.Size(138, 26);
-			this.superTextbox4.TabIndex = 89;
-			this.superTextbox4.tipoTextbox = SmartLog.WindowsForms.DeskTopPresentation.UserControl.etipoTextbox.somenteNumero;
-			// 
 			// frmViagem
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -930,12 +931,12 @@
 			((System.ComponentModel.ISupportInitialize)(this.dtCliente)).EndInit();
 			this.tabCadastroViagem.ResumeLayout(false);
 			this.tabCadastroViagem.PerformLayout();
-			this.groupBox2.ResumeLayout(false);
-			this.groupBox2.PerformLayout();
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
-			this.groupBox3.ResumeLayout(false);
-			this.groupBox3.PerformLayout();
+			this.gbDadosDestinoViagem.ResumeLayout(false);
+			this.gbDadosDestinoViagem.PerformLayout();
+			this.gbDadosOrigemviagem.ResumeLayout(false);
+			this.gbDadosOrigemviagem.PerformLayout();
+			this.gbDadosViagem1.ResumeLayout(false);
+			this.gbDadosViagem1.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -972,12 +973,12 @@
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.ComboBox cbVeiculo;
 		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Button btnFechaFuncionario;
-		private System.Windows.Forms.Button btnExcluirGrid;
-		private System.Windows.Forms.Button btnAlterarGrid;
+		private System.Windows.Forms.Button btnFechaViagem;
+		private System.Windows.Forms.Button btnGridExcluir;
+		private System.Windows.Forms.Button btnGridAlterar;
 		private System.Windows.Forms.Button btnNovo;
 		private System.Windows.Forms.GroupBox gbFiltraViagem;
-		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.GroupBox gbDadosDestinoViagem;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.ComboBox cbEstadoDestino;
 		private System.Windows.Forms.Label label8;
@@ -986,7 +987,7 @@
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label lblCepDestino;
-		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.GroupBox gbDadosOrigemviagem;
 		private System.Windows.Forms.Label lblEstado;
 		private System.Windows.Forms.ComboBox cbEstadoOrigem;
 		private System.Windows.Forms.Label lblCidade;
@@ -995,9 +996,8 @@
 		private System.Windows.Forms.Label lblNumero;
 		private System.Windows.Forms.Label lblBairro;
 		private System.Windows.Forms.Label lblCepOrigem;
-		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.GroupBox gbDadosViagem1;
 		private UserControl.SuperTextbox txtCepDestino;
-		private UserControl.SuperTextbox txtCepOrigem;
 		private UserControl.SuperTextbox txtBairroDestino;
 		private UserControl.SuperTextbox txtLograDestino;
 		private UserControl.SuperTextbox txtNumeroDestino;
@@ -1009,5 +1009,6 @@
 		private System.Windows.Forms.Button btnSalvar;
 		private System.Windows.Forms.Button btnEditar;
 		private System.Windows.Forms.Button btnExcluir;
+		private UserControl.SuperTextbox txtCepOrigem;
 	}
 }

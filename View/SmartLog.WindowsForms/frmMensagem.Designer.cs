@@ -1,4 +1,4 @@
-﻿namespace SmartLog.WindowsForms.DeskTopPresentation
+﻿namespace SmartLog.WindowsForms
 {
 	partial class frmMensagem
 	{

@@ -1,4 +1,4 @@
-﻿namespace SmartLog.WindowsForms.DeskTopPresentation
+﻿namespace SmartLog.WindowsForms
 {
 	partial class frmLogin
 	{
@@ -35,12 +35,12 @@
 			this.panelCabecalho = new System.Windows.Forms.Panel();
 			this.btnMinimizar = new System.Windows.Forms.Button();
 			this.btnFechar = new System.Windows.Forms.Button();
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.pnlLogin = new System.Windows.Forms.Panel();
 			this.txtSenha = new System.Windows.Forms.TextBox();
 			this.txtUsuario = new System.Windows.Forms.TextBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panelCabecalho.SuspendLayout();
-			this.panel1.SuspendLayout();
+			this.pnlLogin.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -140,22 +140,22 @@
 			this.btnFechar.UseVisualStyleBackColor = false;
 			this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
 			// 
-			// panel1
+			// pnlLogin
 			// 
-			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel1.Controls.Add(this.txtSenha);
-			this.panel1.Controls.Add(this.txtUsuario);
-			this.panel1.Controls.Add(this.lblUsuario);
-			this.panel1.Controls.Add(this.lblSenha);
-			this.panel1.Controls.Add(this.linkLabel1);
-			this.panel1.Controls.Add(this.btnLogin);
-			this.panel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.panel1.Location = new System.Drawing.Point(137, 197);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(312, 198);
-			this.panel1.TabIndex = 8;
+			this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.pnlLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pnlLogin.Controls.Add(this.txtSenha);
+			this.pnlLogin.Controls.Add(this.txtUsuario);
+			this.pnlLogin.Controls.Add(this.lblUsuario);
+			this.pnlLogin.Controls.Add(this.lblSenha);
+			this.pnlLogin.Controls.Add(this.linkLabel1);
+			this.pnlLogin.Controls.Add(this.btnLogin);
+			this.pnlLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.pnlLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.pnlLogin.Location = new System.Drawing.Point(137, 197);
+			this.pnlLogin.Name = "pnlLogin";
+			this.pnlLogin.Size = new System.Drawing.Size(312, 198);
+			this.pnlLogin.TabIndex = 8;
 			// 
 			// txtSenha
 			// 
@@ -195,7 +195,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(590, 432);
-			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.pnlLogin);
 			this.Controls.Add(this.panelCabecalho);
 			this.Controls.Add(this.pictureBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -204,8 +204,8 @@
 			this.Text = "Acesso";
 			this.Load += new System.EventHandler(this.frmLogin_Load);
 			this.panelCabecalho.ResumeLayout(false);
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
+			this.pnlLogin.ResumeLayout(false);
+			this.pnlLogin.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
@@ -219,7 +219,7 @@
 		private System.Windows.Forms.Panel panelCabecalho;
 		private System.Windows.Forms.Button btnMinimizar;
 		private System.Windows.Forms.Button btnFechar;
-		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel pnlLogin;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.TextBox txtSenha;
 		private System.Windows.Forms.TextBox txtUsuario;
