@@ -34,27 +34,6 @@ namespace SmartLog.WindowsForms
 		public frmPrincipal()
 		{
 			InitializeComponent();
-            string msg = "";
-
-            msg += "Infomar o nome" + Environment.NewLine;
-            msg += "Infomar o nome" + Environment.NewLine;
-            msg += "Infomar o nome" + Environment.NewLine;
-            msg += "Infomar o nome" + Environment.NewLine;
-            msg += "Infomar o nome" + Environment.NewLine;
-            msg += "Infomar o nome" + Environment.NewLine;
-            msg += "Infomar o nome" + Environment.NewLine;
-            msg += "Infomar o nome" + Environment.NewLine;
-            msg += "Infomar o nome" + Environment.NewLine;
-            msg += "Infomar o nome" + Environment.NewLine;
-            msg += "Infomar o nome" + Environment.NewLine;
-            msg += "Infomar o nome" + Environment.NewLine;
-            msg += "Infomar o nome" + Environment.NewLine;
-
-
-            Util.Utils.ExibirMensagem(msg, eTipoMensagem.Sucesso);
-            Util.Utils.ExibirMensagem(msg, eTipoMensagem.Erro);
-            Util.Utils.ExibirMensagem(msg, eTipoMensagem.Atencao);
-
         }
 		private void btnFechar_Click(object sender, EventArgs e)
 		{
@@ -154,11 +133,6 @@ namespace SmartLog.WindowsForms
 			//lblNomeUsuario.Text = log.funcLogado.Nome;
 			Relogio.Start();
 		
-
-		}
-
-		private void frmPrincipal_Load(object sender, EventArgs e)
-		{
 
 		}
 	}

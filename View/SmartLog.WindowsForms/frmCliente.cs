@@ -16,7 +16,7 @@ namespace SmartLog.WindowsForms
 	public partial class frmCliente : Form
 	{
 		ClienteController cliController = new ClienteController();
-		
+
 		int currentMouseOverRow;
 		int currentIndexRow;
 
@@ -66,6 +66,7 @@ namespace SmartLog.WindowsForms
 		}
 		private void btnNovo_Click(object sender, EventArgs e)
 		{
+			Util.Utils.LimparCampos(gbDadosCliente);
 			codigoCli = 0;
 			tabCtrlCliente.SelectedTab = tabCadastroCli;
 		}
@@ -108,10 +109,17 @@ namespace SmartLog.WindowsForms
 			int numero;
 			int cidade;
 			int estado;
-		//	Util.Utils.ValidarCampos(gbDadosCliente);
+
 			try
 			{
 				DateTime.TryParse(dtDataNasc.Text, out dataNasc);
+
+				if(Util.Utils.IsMaiorIdade(dataNasc)== false)
+				{
+					Util.Utils.ExibirMensagem("É necessário ser maior de 18 anos.", eTipoMensagem.Atencao);
+					dtDataNasc.Focus();
+					return;
+				}
 
 				int.TryParse(cbTipoCli.SelectedValue.ToString(), out codTipoCli);
 
@@ -121,12 +129,13 @@ namespace SmartLog.WindowsForms
 
 				int.TryParse(cbEstado.SelectedValue.ToString(), out estado);
 
-				Endereco end = new Endereco(txtCep.Text, txtLogra.Text, numero, txtBairro.Text, cidade, estado);
+				Endereco end = new Endereco(txtCep.Text, txtLogra.Text, numero, txtBairro.Text, cidade, estado);			
 
 				Cliente cli = new Cliente(codigoCli, txtNomeCli.Text, txtCpfCnpjCli.Text, System.DateTime.Now, dataNasc, txtTelCli.Text, txtEmailCli.Text, codTipoCli, end);
 				if (codigoCli == 0)
 				{
 					cliController.InserirController(cli);
+
 					Util.Utils.ExibirMensagem("Cliente inserido com sucesso.", eTipoMensagem.Sucesso);
 				}
 				else
@@ -144,59 +153,6 @@ namespace SmartLog.WindowsForms
 			catch (Exception ex)
 			{
 				Util.Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
-			}
-		}
-		private void dtCliente_MouseClick(object sender, MouseEventArgs e)
-		{
-			if (e.Button == MouseButtons.Right)
-			{
-				ContextMenu m = new ContextMenu();
-
-				MenuItem menuCopiar = new MenuItem("Copiar");
-				MenuItem menuEditar = new MenuItem("Editar");
-
-				menuCopiar.Click += MenuCopiar_Click;
-				menuEditar.Click += MenuEditar_Click;
-
-				m.MenuItems.Add(menuEditar);
-				m.MenuItems.Add(menuCopiar);
-
-				currentIndexRow = dgCliente.HitTest(e.X, e.Y).RowIndex;
-				currentMouseOverRow = Convert.ToInt32(dgCliente.Rows[currentIndexRow].Cells[0].Value.ToString());
-
-				m.Show(dgCliente, new Point(e.X, e.Y));
-			}
-		}
-		private void MenuCopiar_Click(object sender, EventArgs e)
-		{
-			var newline = System.Environment.NewLine;
-			var tab = "\t";
-			var clipboard_string = "";
-			int iCol = 0;
-
-			foreach (DataGridViewTextBoxCell colunas in dgCliente.Rows[0].Cells)
-			{
-
-				if (iCol == 0)
-				{
-					iCol += 1;
-					continue;
-				}
-
-				clipboard_string += colunas.Value.ToString() + newline;
-
-			}
-			Clipboard.SetText(clipboard_string);
-		}
-		private void MenuEditar_Click(object sender, EventArgs e)
-		{
-			MessageBox.Show(currentMouseOverRow.ToString());
-		}
-		private void dtCliente_DataSourceChanged(object sender, EventArgs e)
-		{
-			if (dgCliente.DataSource != null)
-			{
-				dgCliente.Columns[0].Visible = false;
 			}
 		}
 		private void btnGridAlterar_Click(object sender, EventArgs e)
@@ -249,7 +205,7 @@ namespace SmartLog.WindowsForms
 				string codigo = dgCliente.SelectedRows[0].Cells[0].Value.ToString();
 
 				int.TryParse(codigo, out codigoCli);
-				if(codigoCli > 0)
+				if (codigoCli > 0)
 				{
 					Cliente cli = new Cliente(codigoCli);
 					cliController.DeletarController(cli);
@@ -262,7 +218,7 @@ namespace SmartLog.WindowsForms
 				{
 					Util.Utils.ExibirMensagem("Selecione um registro para excluir.", eTipoMensagem.Atencao);
 				}
-				
+
 			}
 			catch (Exception ex)
 			{
@@ -272,6 +228,13 @@ namespace SmartLog.WindowsForms
 		private void btnLimpar_Click(object sender, EventArgs e)
 		{
 			Util.Utils.LimparCampos(gbDadosCliente);
+		}
+		private void dtCliente_DataSourceChanged(object sender, EventArgs e)
+		{
+			if (dgCliente.DataSource != null)
+			{
+				dgCliente.Columns[0].Visible = false;
+			}
 		}
 		private void PesquisarCliente()
 		{
@@ -290,6 +253,53 @@ namespace SmartLog.WindowsForms
 			{
 				MessageBox.Show(ex.Message);
 			}
+		}
+
+		private void dtCliente_MouseClick(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Right)
+			{
+				ContextMenu m = new ContextMenu();
+
+				MenuItem menuCopiar = new MenuItem("Copiar");
+				MenuItem menuEditar = new MenuItem("Editar");
+
+				menuCopiar.Click += MenuCopiar_Click;
+				menuEditar.Click += MenuEditar_Click;
+
+				m.MenuItems.Add(menuEditar);
+				m.MenuItems.Add(menuCopiar);
+
+				currentIndexRow = dgCliente.HitTest(e.X, e.Y).RowIndex;
+				currentMouseOverRow = Convert.ToInt32(dgCliente.Rows[currentIndexRow].Cells[0].Value.ToString());
+
+				m.Show(dgCliente, new Point(e.X, e.Y));
+			}
+		}
+		private void MenuCopiar_Click(object sender, EventArgs e)
+		{
+			var newline = System.Environment.NewLine;
+			var tab = "\t";
+			var clipboard_string = "";
+			int iCol = 0;
+
+			foreach (DataGridViewTextBoxCell colunas in dgCliente.Rows[0].Cells)
+			{
+
+				if (iCol == 0)
+				{
+					iCol += 1;
+					continue;
+				}
+
+				clipboard_string += colunas.Value.ToString() + newline;
+
+			}
+			Clipboard.SetText(clipboard_string);
+		}
+		private void MenuEditar_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show(currentMouseOverRow.ToString());
 		}
 	}
 }

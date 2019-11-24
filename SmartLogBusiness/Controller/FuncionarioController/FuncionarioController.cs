@@ -63,6 +63,9 @@ namespace SmartLogBusiness.Controller
 			try
 			{
 				DataTable table = dao.CarregarFuncionarioDAO(obj.Codigo);
+
+				int numero, cidade, estado;
+
 				if(obj.Codigo == 0)
 				{
 					throw new Exception("Insira o código para localizar viagem!");
@@ -70,12 +73,15 @@ namespace SmartLogBusiness.Controller
 
 				if (table != null)
 				{
+					int.TryParse(table.Rows[0]["Numero"].ToString(), out numero);
+					int.TryParse(table.Rows[0]["Cod_Cidade"].ToString(), out cidade);
+					int.TryParse(table.Rows[0]["Cod_Estado"].ToString(), out estado); 
+
 					Endereco end = new Endereco(table.Rows[0]["Cep"].ToString(),
 												table.Rows[0]["Logradouro"].ToString(),
-												Convert.ToInt32(table.Rows[0]["Numero"]),
+												numero,
 												table.Rows[0]["Bairro"].ToString(),
-												Convert.ToInt32(table.Rows[0]["Cod_Cidade"]),
-												Convert.ToInt32(table.Rows[0]["Cod_Estado"]));
+												cidade, estado);
 
 					Funcionario func = new Funcionario(Convert.ToInt32(table.Rows[0]["Cod_Matricula"]),
 													  table.Rows[0]["Nome_Funcionario"].ToString(),
@@ -83,7 +89,6 @@ namespace SmartLogBusiness.Controller
 													  Convert.ToDateTime(table.Rows[0]["Data_Nascimento"]),
 													  table.Rows[0]["Telefone_Funcionario"].ToString(),
 													  table.Rows[0]["Email_Funcionario"].ToString(),
-													
 													  end, (EnumTipoCargo)Convert.ToInt32(table.Rows[0]["Cod_Cargo"]));
 
 					return func;

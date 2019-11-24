@@ -8,6 +8,11 @@
 		public string Bairro { get; private set; }
 		public int CodCidade { get; private set; }
 		public int CodEstado { get; private set; }
+
+		public Endereco()
+		{
+
+		}
 		public Endereco(string cep, string logradouro, int numero, string bairro, int codCidade, int codEstado)
 		{
 			Cep = cep;

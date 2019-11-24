@@ -61,6 +61,19 @@ namespace SmartLog.WindowsForms.Util
 				throw new Exception(ex.Message);
 			}
 		}
+		//Método para validar Maior de idade
+		public static bool IsMaiorIdade(DateTime data)
+		{
+			if(System.DateTime.Now.Year -  data.Year >= 18)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
 		//Método para validar conversão data
 		public static bool IsDate(string data)
 		{
