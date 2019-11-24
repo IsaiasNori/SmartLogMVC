@@ -2,6 +2,7 @@
 using System.Web.UI;
 using WebPresentation.ExtensionMethods;
 using SmartLogBusiness.Model.Entidade.pessoa;
+using SmartLogBusiness.Controller;
 
 namespace WebPresentation.ClienteViews
 {
@@ -45,6 +46,9 @@ namespace WebPresentation.ClienteViews
                 string uf = UfDropDownList.SelectedIndex.ToString();
 
                 //criacao da entidade cliente e atribuição dos campos dps chamar metodo da classe controller
+
+                Cliente cliente = new Cliente(0, nome, "0000000",,, telefone, email,,);
+
 
                 MensagemLabel.Text = "Dados Salvos com sucesso";
             }
