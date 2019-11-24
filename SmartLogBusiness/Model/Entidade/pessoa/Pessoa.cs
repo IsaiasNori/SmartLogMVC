@@ -22,6 +22,10 @@ namespace SmartLogBusiness.Model.Entidade.pessoa
 		{
 			Codigo = cod;
 		}
+		public Pessoa(string email)
+		{
+			Email = email;
+		}
 		public Pessoa(int codigo,string nome,  DateTime? dataNasc, string telefone, string email, Endereco endereco)
 		{
 			Codigo = codigo;

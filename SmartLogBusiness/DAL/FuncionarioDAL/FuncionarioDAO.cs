@@ -88,7 +88,7 @@ namespace SmartLog.DAO
 				throw new Exception(ex.Message);
 			}
 		}
-		public DataTable FiltrarFuncionarioDAO(int codFun, string nomeFunc, string cpfFunc)
+		public DataTable FiltrarFuncionarioDAO(string nomeFunc, string cpfFunc)
 		{
 			try
 			{
@@ -96,7 +96,6 @@ namespace SmartLog.DAO
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "GRID");
 				AdicionarParametro("@NomeFunc", SqlDbType.NVarChar, 100, nomeFunc);
 				AdicionarParametro("@CpfFunc", SqlDbType.NVarChar, 15, cpfFunc);
-				AdicionarParametro("@CodMatricula", SqlDbType.Int,10, codFun);
 
 				return ExecuteProcedure("pFuncionario");
 			}

@@ -103,7 +103,6 @@ namespace SmartLog.WindowsForms
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-
 		private void btnVoltarCli_Click(object sender, EventArgs e)
 		{
 			tabctrlFuncionario.SelectedTab = tabConsultaFuncionario;
@@ -124,13 +123,12 @@ namespace SmartLog.WindowsForms
 		{
 			PesquisarFunc();
 		}
-
 		private void btnAlterar_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				string codigo;
-				codigo = dtFuncionario.SelectedRows[0].Cells[0].Value.ToString();
+				codigo = dgFuncionario.SelectedRows[0].Cells[0].Value.ToString();
 
 				int.TryParse(codigo, out codigoFunc);
 
@@ -165,23 +163,6 @@ namespace SmartLog.WindowsForms
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-		private void PesquisarFunc()
-		{
-			try
-			{
-				string cpf;
-				cpf = txtCpfPesquisar.Text.Replace(".", "").Replace("-", "").Replace("/", "");
-
-				Funcionario func = new Funcionario(codigoFunc, txtNomeFunc.Text, cpf, null, null, null, null, null);
-				DataTable table = funcCtrl.GetDataTable(func);
-
-				dtFuncionario.DataSource = table;
-			}
-			catch (Exception ex)
-			{
-				Util.Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
-			}
-		}
 		private void btnLimpar_Click(object sender, EventArgs e)
 		{
 			Utils.LimparCampos(gbDadosFunc);
@@ -190,12 +171,17 @@ namespace SmartLog.WindowsForms
 		{
 			try
 			{
+				string codigo = dgFuncionario.SelectedRows[0].Cells[0].Value.ToString();
+
+				int.TryParse(codigo, out codigoFunc);
 				if(codigoFunc > 0)
 				{
-					if (MessageBox.Show("Deseja realmente excluir este registro?",  MessageBoxButtons.YesNo.ToString())==DialogResult.Yes)
+					if (MessageBox.Show("Deseja realmente excluir este registro?","",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
 					{
 						Funcionario func = new Funcionario(codigoFunc);
 						funcCtrl.DeletarController(func);
+						Utils.ExibirMensagem("Funcionário excluído com sucesso.",eTipoMensagem.Sucesso);
+						PesquisarFunc();
 					}
 				}
 				else
@@ -208,5 +194,31 @@ namespace SmartLog.WindowsForms
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
+
+		private void dtFuncionario_DataSourceChanged(object sender, EventArgs e)
+		{
+			if(dgFuncionario.DataSource != null)
+			{
+				dgFuncionario.Columns[0].Visible = false;
+			}
+		}
+		private void PesquisarFunc()
+		{
+			try
+			{
+				string cpf;
+				cpf = txtCpfPesquisar.Text.Replace(".", "").Replace("-", "").Replace("/", "");
+
+				Funcionario func = new Funcionario(0, txtNomeFunc.Text, cpf, null, null, null, null, null);
+				DataTable table = funcCtrl.GetDataTable(func);
+
+				dgFuncionario.DataSource = table;
+			}
+			catch (Exception ex)
+			{
+				Util.Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+			}
+		}
+
 	}
 }

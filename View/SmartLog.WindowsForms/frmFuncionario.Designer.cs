@@ -31,6 +31,7 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabctrlFuncionario = new System.Windows.Forms.TabControl();
 			this.tabConsultaFuncionario = new System.Windows.Forms.TabPage();
 			this.gbFiltroFunc = new System.Windows.Forms.GroupBox();
@@ -38,27 +39,17 @@
 			this.lblNomePesquisa = new System.Windows.Forms.Label();
 			this.btnPesquisarFunc = new System.Windows.Forms.Button();
 			this.lblCpfPesquisa = new System.Windows.Forms.Label();
-			this.txtCpfPesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtNomePesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.btnFechaFuncionario = new System.Windows.Forms.Button();
 			this.btnExcluir = new System.Windows.Forms.Button();
 			this.btnAlterar = new System.Windows.Forms.Button();
 			this.btnNovo = new System.Windows.Forms.Button();
-			this.dtFuncionario = new System.Windows.Forms.DataGridView();
+			this.dgFuncionario = new System.Windows.Forms.DataGridView();
 			this.tabCadastroFunc = new System.Windows.Forms.TabPage();
 			this.btnLimpar = new System.Windows.Forms.Button();
 			this.btnVoltarCli = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.gbDadosFunc = new System.Windows.Forms.GroupBox();
 			this.dtDataNasc = new System.Windows.Forms.DateTimePicker();
-			this.txtBairro = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtNumero = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtLogra = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtCep = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtTelFunc = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtCpfFunc = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtNomeFunc = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtEmail = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.label16 = new System.Windows.Forms.Label();
 			this.lblBairro = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
@@ -74,11 +65,21 @@
 			this.label7 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.lblNomeFunc = new System.Windows.Forms.Label();
+			this.txtCpfPesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtNomePesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtBairro = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtNumero = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtLogra = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtCep = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtTelFunc = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtCpfFunc = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtNomeFunc = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtEmail = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.tabctrlFuncionario.SuspendLayout();
 			this.tabConsultaFuncionario.SuspendLayout();
 			this.gbFiltroFunc.SuspendLayout();
 			this.pnlFiltroFuncionario.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dtFuncionario)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgFuncionario)).BeginInit();
 			this.tabCadastroFunc.SuspendLayout();
 			this.gbDadosFunc.SuspendLayout();
 			this.SuspendLayout();
@@ -103,7 +104,7 @@
 			this.tabConsultaFuncionario.Controls.Add(this.btnExcluir);
 			this.tabConsultaFuncionario.Controls.Add(this.btnAlterar);
 			this.tabConsultaFuncionario.Controls.Add(this.btnNovo);
-			this.tabConsultaFuncionario.Controls.Add(this.dtFuncionario);
+			this.tabConsultaFuncionario.Controls.Add(this.dgFuncionario);
 			this.tabConsultaFuncionario.Location = new System.Drawing.Point(4, 29);
 			this.tabConsultaFuncionario.Name = "tabConsultaFuncionario";
 			this.tabConsultaFuncionario.Padding = new System.Windows.Forms.Padding(3);
@@ -175,29 +176,6 @@
 			this.lblCpfPesquisa.Size = new System.Drawing.Size(40, 20);
 			this.lblCpfPesquisa.TabIndex = 5;
 			this.lblCpfPesquisa.Text = "CPF";
-			// 
-			// txtCpfPesquisar
-			// 
-			this.txtCpfPesquisar.CampoObrigatorio = false;
-			this.txtCpfPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtCpfPesquisar.Location = new System.Drawing.Point(370, 60);
-			this.txtCpfPesquisar.MaxLength = 18;
-			this.txtCpfPesquisar.MensagemObrigatorio = null;
-			this.txtCpfPesquisar.Name = "txtCpfPesquisar";
-			this.txtCpfPesquisar.Size = new System.Drawing.Size(188, 24);
-			this.txtCpfPesquisar.TabIndex = 7;
-			this.txtCpfPesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
-			// 
-			// txtNomePesquisar
-			// 
-			this.txtNomePesquisar.CampoObrigatorio = false;
-			this.txtNomePesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtNomePesquisar.Location = new System.Drawing.Point(76, 60);
-			this.txtNomePesquisar.MensagemObrigatorio = null;
-			this.txtNomePesquisar.Name = "txtNomePesquisar";
-			this.txtNomePesquisar.Size = new System.Drawing.Size(252, 24);
-			this.txtNomePesquisar.TabIndex = 6;
-			this.txtNomePesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// btnFechaFuncionario
 			// 
@@ -279,51 +257,56 @@
 			this.btnNovo.UseVisualStyleBackColor = false;
 			this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
 			// 
-			// dtFuncionario
+			// dgFuncionario
 			// 
-			this.dtFuncionario.AllowUserToAddRows = false;
-			this.dtFuncionario.AllowUserToDeleteRows = false;
-			this.dtFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.dtFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.dtFuncionario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-			this.dtFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.dtFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.dtFuncionario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-			this.dtFuncionario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSalmon;
+			this.dgFuncionario.AllowUserToAddRows = false;
+			this.dgFuncionario.AllowUserToDeleteRows = false;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dtFuncionario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-			this.dtFuncionario.ColumnHeadersHeight = 35;
+			this.dgFuncionario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.dgFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dgFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgFuncionario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+			this.dgFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.dgFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.dgFuncionario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+			this.dgFuncionario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSalmon;
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dtFuncionario.DefaultCellStyle = dataGridViewCellStyle2;
-			this.dtFuncionario.EnableHeadersVisualStyles = false;
-			this.dtFuncionario.GridColor = System.Drawing.SystemColors.ActiveCaption;
-			this.dtFuncionario.Location = new System.Drawing.Point(59, 315);
-			this.dtFuncionario.Name = "dtFuncionario";
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgFuncionario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this.dgFuncionario.ColumnHeadersHeight = 35;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveBorder;
 			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dtFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-			this.dtFuncionario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-			this.dtFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dtFuncionario.Size = new System.Drawing.Size(861, 272);
-			this.dtFuncionario.TabIndex = 10;
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgFuncionario.DefaultCellStyle = dataGridViewCellStyle3;
+			this.dgFuncionario.EnableHeadersVisualStyles = false;
+			this.dgFuncionario.GridColor = System.Drawing.SystemColors.ActiveCaption;
+			this.dgFuncionario.Location = new System.Drawing.Point(59, 315);
+			this.dgFuncionario.Name = "dgFuncionario";
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			this.dgFuncionario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+			this.dgFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgFuncionario.Size = new System.Drawing.Size(861, 272);
+			this.dgFuncionario.TabIndex = 10;
+			this.dgFuncionario.DataSourceChanged += new System.EventHandler(this.dtFuncionario_DataSourceChanged);
 			// 
 			// tabCadastroFunc
 			// 
@@ -434,94 +417,6 @@
 			this.dtDataNasc.Name = "dtDataNasc";
 			this.dtDataNasc.Size = new System.Drawing.Size(200, 26);
 			this.dtDataNasc.TabIndex = 178;
-			// 
-			// txtBairro
-			// 
-			this.txtBairro.CampoObrigatorio = false;
-			this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtBairro.Location = new System.Drawing.Point(530, 311);
-			this.txtBairro.MensagemObrigatorio = null;
-			this.txtBairro.Name = "txtBairro";
-			this.txtBairro.Size = new System.Drawing.Size(231, 24);
-			this.txtBairro.TabIndex = 177;
-			this.txtBairro.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtNumero
-			// 
-			this.txtNumero.CampoObrigatorio = false;
-			this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtNumero.Location = new System.Drawing.Point(356, 311);
-			this.txtNumero.MensagemObrigatorio = null;
-			this.txtNumero.Name = "txtNumero";
-			this.txtNumero.Size = new System.Drawing.Size(100, 24);
-			this.txtNumero.TabIndex = 176;
-			this.txtNumero.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtLogra
-			// 
-			this.txtLogra.CampoObrigatorio = false;
-			this.txtLogra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtLogra.Location = new System.Drawing.Point(59, 311);
-			this.txtLogra.MensagemObrigatorio = null;
-			this.txtLogra.Name = "txtLogra";
-			this.txtLogra.Size = new System.Drawing.Size(221, 24);
-			this.txtLogra.TabIndex = 175;
-			this.txtLogra.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtCep
-			// 
-			this.txtCep.CampoObrigatorio = false;
-			this.txtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtCep.Location = new System.Drawing.Point(59, 254);
-			this.txtCep.MensagemObrigatorio = null;
-			this.txtCep.Name = "txtCep";
-			this.txtCep.Size = new System.Drawing.Size(221, 24);
-			this.txtCep.TabIndex = 174;
-			this.txtCep.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtTelFunc
-			// 
-			this.txtTelFunc.CampoObrigatorio = false;
-			this.txtTelFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtTelFunc.Location = new System.Drawing.Point(357, 191);
-			this.txtTelFunc.MensagemObrigatorio = null;
-			this.txtTelFunc.Name = "txtTelFunc";
-			this.txtTelFunc.Size = new System.Drawing.Size(124, 24);
-			this.txtTelFunc.TabIndex = 173;
-			this.txtTelFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtCpfFunc
-			// 
-			this.txtCpfFunc.CampoObrigatorio = false;
-			this.txtCpfFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtCpfFunc.Location = new System.Drawing.Point(60, 191);
-			this.txtCpfFunc.MensagemObrigatorio = null;
-			this.txtCpfFunc.Name = "txtCpfFunc";
-			this.txtCpfFunc.Size = new System.Drawing.Size(221, 24);
-			this.txtCpfFunc.TabIndex = 172;
-			this.txtCpfFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
-			// 
-			// txtNomeFunc
-			// 
-			this.txtNomeFunc.CampoObrigatorio = false;
-			this.txtNomeFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtNomeFunc.Location = new System.Drawing.Point(59, 130);
-			this.txtNomeFunc.MensagemObrigatorio = null;
-			this.txtNomeFunc.Name = "txtNomeFunc";
-			this.txtNomeFunc.Size = new System.Drawing.Size(364, 24);
-			this.txtNomeFunc.TabIndex = 170;
-			this.txtNomeFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtEmail
-			// 
-			this.txtEmail.CampoObrigatorio = false;
-			this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtEmail.Location = new System.Drawing.Point(530, 190);
-			this.txtEmail.MensagemObrigatorio = null;
-			this.txtEmail.Name = "txtEmail";
-			this.txtEmail.Size = new System.Drawing.Size(230, 24);
-			this.txtEmail.TabIndex = 169;
-			this.txtEmail.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// label16
 			// 
@@ -672,6 +567,117 @@
 			this.lblNomeFunc.TabIndex = 157;
 			this.lblNomeFunc.Text = "Nome Completo";
 			// 
+			// txtCpfPesquisar
+			// 
+			this.txtCpfPesquisar.CampoObrigatorio = false;
+			this.txtCpfPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtCpfPesquisar.Location = new System.Drawing.Point(370, 60);
+			this.txtCpfPesquisar.MaxLength = 18;
+			this.txtCpfPesquisar.MensagemObrigatorio = null;
+			this.txtCpfPesquisar.Name = "txtCpfPesquisar";
+			this.txtCpfPesquisar.Size = new System.Drawing.Size(188, 24);
+			this.txtCpfPesquisar.TabIndex = 7;
+			this.txtCpfPesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
+			// 
+			// txtNomePesquisar
+			// 
+			this.txtNomePesquisar.CampoObrigatorio = false;
+			this.txtNomePesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtNomePesquisar.Location = new System.Drawing.Point(76, 60);
+			this.txtNomePesquisar.MensagemObrigatorio = null;
+			this.txtNomePesquisar.Name = "txtNomePesquisar";
+			this.txtNomePesquisar.Size = new System.Drawing.Size(252, 24);
+			this.txtNomePesquisar.TabIndex = 6;
+			this.txtNomePesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtBairro
+			// 
+			this.txtBairro.CampoObrigatorio = false;
+			this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtBairro.Location = new System.Drawing.Point(530, 311);
+			this.txtBairro.MensagemObrigatorio = null;
+			this.txtBairro.Name = "txtBairro";
+			this.txtBairro.Size = new System.Drawing.Size(231, 24);
+			this.txtBairro.TabIndex = 177;
+			this.txtBairro.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtNumero
+			// 
+			this.txtNumero.CampoObrigatorio = false;
+			this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtNumero.Location = new System.Drawing.Point(356, 311);
+			this.txtNumero.MensagemObrigatorio = null;
+			this.txtNumero.Name = "txtNumero";
+			this.txtNumero.Size = new System.Drawing.Size(100, 24);
+			this.txtNumero.TabIndex = 176;
+			this.txtNumero.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// txtLogra
+			// 
+			this.txtLogra.CampoObrigatorio = false;
+			this.txtLogra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtLogra.Location = new System.Drawing.Point(59, 311);
+			this.txtLogra.MensagemObrigatorio = null;
+			this.txtLogra.Name = "txtLogra";
+			this.txtLogra.Size = new System.Drawing.Size(221, 24);
+			this.txtLogra.TabIndex = 175;
+			this.txtLogra.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtCep
+			// 
+			this.txtCep.CampoObrigatorio = false;
+			this.txtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtCep.Location = new System.Drawing.Point(59, 254);
+			this.txtCep.MensagemObrigatorio = null;
+			this.txtCep.Name = "txtCep";
+			this.txtCep.Size = new System.Drawing.Size(221, 24);
+			this.txtCep.TabIndex = 174;
+			this.txtCep.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// txtTelFunc
+			// 
+			this.txtTelFunc.CampoObrigatorio = false;
+			this.txtTelFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtTelFunc.Location = new System.Drawing.Point(357, 191);
+			this.txtTelFunc.MensagemObrigatorio = null;
+			this.txtTelFunc.Name = "txtTelFunc";
+			this.txtTelFunc.Size = new System.Drawing.Size(124, 24);
+			this.txtTelFunc.TabIndex = 173;
+			this.txtTelFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// txtCpfFunc
+			// 
+			this.txtCpfFunc.CampoObrigatorio = false;
+			this.txtCpfFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtCpfFunc.Location = new System.Drawing.Point(60, 191);
+			this.txtCpfFunc.MensagemObrigatorio = null;
+			this.txtCpfFunc.Name = "txtCpfFunc";
+			this.txtCpfFunc.Size = new System.Drawing.Size(221, 24);
+			this.txtCpfFunc.TabIndex = 172;
+			this.txtCpfFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
+			// 
+			// txtNomeFunc
+			// 
+			this.txtNomeFunc.CampoObrigatorio = false;
+			this.txtNomeFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtNomeFunc.Location = new System.Drawing.Point(59, 130);
+			this.txtNomeFunc.MensagemObrigatorio = null;
+			this.txtNomeFunc.Name = "txtNomeFunc";
+			this.txtNomeFunc.Size = new System.Drawing.Size(364, 24);
+			this.txtNomeFunc.TabIndex = 170;
+			this.txtNomeFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtEmail
+			// 
+			this.txtEmail.CampoObrigatorio = false;
+			this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtEmail.Location = new System.Drawing.Point(530, 190);
+			this.txtEmail.MensagemObrigatorio = null;
+			this.txtEmail.Name = "txtEmail";
+			this.txtEmail.Size = new System.Drawing.Size(230, 24);
+			this.txtEmail.TabIndex = 169;
+			this.txtEmail.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
 			// frmFuncionario
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -688,7 +694,7 @@
 			this.gbFiltroFunc.ResumeLayout(false);
 			this.pnlFiltroFuncionario.ResumeLayout(false);
 			this.pnlFiltroFuncionario.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dtFuncionario)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgFuncionario)).EndInit();
 			this.tabCadastroFunc.ResumeLayout(false);
 			this.gbDadosFunc.ResumeLayout(false);
 			this.gbDadosFunc.PerformLayout();
@@ -700,7 +706,7 @@
 		private System.Windows.Forms.TabControl tabctrlFuncionario;
 		private System.Windows.Forms.TabPage tabConsultaFuncionario;
 		private System.Windows.Forms.TabPage tabCadastroFunc;
-		private System.Windows.Forms.DataGridView dtFuncionario;
+		private System.Windows.Forms.DataGridView dgFuncionario;
 		private System.Windows.Forms.Button btnNovo;
 		private System.Windows.Forms.Button btnExcluir;
 		private System.Windows.Forms.Button btnAlterar;

@@ -32,23 +32,21 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabctrlVeiculo = new System.Windows.Forms.TabControl();
-			this.tpConsultaVeiculo = new System.Windows.Forms.TabPage();
+			this.tabConsultaVeic = new System.Windows.Forms.TabPage();
 			this.btnFechaFuncionario = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
+			this.btnExcluir = new System.Windows.Forms.Button();
+			this.btnAlterar = new System.Windows.Forms.Button();
 			this.btnNovoVeiculo = new System.Windows.Forms.Button();
 			this.gbFiltraVeiculo = new System.Windows.Forms.GroupBox();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.cbMarcaPesquisa = new System.Windows.Forms.ComboBox();
 			this.lblMarcaPesquisa = new System.Windows.Forms.Label();
 			this.btnPesquisarVeiculo = new System.Windows.Forms.Button();
 			this.lblModeloPesquisa = new System.Windows.Forms.Label();
-			this.dtVeiculo = new System.Windows.Forms.DataGridView();
-			this.tpCadastro = new System.Windows.Forms.TabPage();
+			this.dgVeiculo = new System.Windows.Forms.DataGridView();
+			this.tabCadastroVeic = new System.Windows.Forms.TabPage();
+			this.btnLimpar = new System.Windows.Forms.Button();
 			this.btnVoltarCli = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
-			this.btnEditar = new System.Windows.Forms.Button();
-			this.btnExcluir = new System.Windows.Forms.Button();
 			this.gbDadosVeiculo = new System.Windows.Forms.GroupBox();
 			this.txtData = new System.Windows.Forms.DateTimePicker();
 			this.lblUltimaRevisao = new System.Windows.Forms.Label();
@@ -56,35 +54,36 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.lblAnoFab = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.cbStatus = new System.Windows.Forms.ComboBox();
 			this.lblStatus = new System.Windows.Forms.Label();
 			this.lblRenavam = new System.Windows.Forms.Label();
-			this.cbMarca = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblModelo = new System.Windows.Forms.Label();
 			this.lblCodCli = new System.Windows.Forms.Label();
 			this.txtCodigoCli = new System.Windows.Forms.TextBox();
+			this.cbMarcaPesquisa = new SmartLog.WindowsForms.UserControl.SuperComboBox();
 			this.txtModeloPesquisa = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.cbStatus = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbMarca = new SmartLog.WindowsForms.UserControl.SuperComboBox();
 			this.txtDataUltRev = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtKmAtual = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtKmPrev = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtAnoFab = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtRenavam = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtModelo = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtAnoFab = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.tabctrlVeiculo.SuspendLayout();
-			this.tpConsultaVeiculo.SuspendLayout();
+			this.tabConsultaVeic.SuspendLayout();
 			this.gbFiltraVeiculo.SuspendLayout();
 			this.panel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dtVeiculo)).BeginInit();
-			this.tpCadastro.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgVeiculo)).BeginInit();
+			this.tabCadastroVeic.SuspendLayout();
 			this.gbDadosVeiculo.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabctrlVeiculo
 			// 
 			this.tabctrlVeiculo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.tabctrlVeiculo.Controls.Add(this.tpConsultaVeiculo);
-			this.tabctrlVeiculo.Controls.Add(this.tpCadastro);
+			this.tabctrlVeiculo.Controls.Add(this.tabConsultaVeic);
+			this.tabctrlVeiculo.Controls.Add(this.tabCadastroVeic);
 			this.tabctrlVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tabctrlVeiculo.Location = new System.Drawing.Point(82, 2);
 			this.tabctrlVeiculo.Name = "tabctrlVeiculo";
@@ -92,21 +91,21 @@
 			this.tabctrlVeiculo.Size = new System.Drawing.Size(995, 687);
 			this.tabctrlVeiculo.TabIndex = 1;
 			// 
-			// tpConsultaVeiculo
+			// tabConsultaVeic
 			// 
-			this.tpConsultaVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.tpConsultaVeiculo.Controls.Add(this.btnFechaFuncionario);
-			this.tpConsultaVeiculo.Controls.Add(this.button3);
-			this.tpConsultaVeiculo.Controls.Add(this.button2);
-			this.tpConsultaVeiculo.Controls.Add(this.btnNovoVeiculo);
-			this.tpConsultaVeiculo.Controls.Add(this.gbFiltraVeiculo);
-			this.tpConsultaVeiculo.Controls.Add(this.dtVeiculo);
-			this.tpConsultaVeiculo.Location = new System.Drawing.Point(4, 29);
-			this.tpConsultaVeiculo.Name = "tpConsultaVeiculo";
-			this.tpConsultaVeiculo.Padding = new System.Windows.Forms.Padding(3);
-			this.tpConsultaVeiculo.Size = new System.Drawing.Size(987, 654);
-			this.tpConsultaVeiculo.TabIndex = 0;
-			this.tpConsultaVeiculo.Text = "Consulta";
+			this.tabConsultaVeic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.tabConsultaVeic.Controls.Add(this.btnFechaFuncionario);
+			this.tabConsultaVeic.Controls.Add(this.btnExcluir);
+			this.tabConsultaVeic.Controls.Add(this.btnAlterar);
+			this.tabConsultaVeic.Controls.Add(this.btnNovoVeiculo);
+			this.tabConsultaVeic.Controls.Add(this.gbFiltraVeiculo);
+			this.tabConsultaVeic.Controls.Add(this.dgVeiculo);
+			this.tabConsultaVeic.Location = new System.Drawing.Point(4, 29);
+			this.tabConsultaVeic.Name = "tabConsultaVeic";
+			this.tabConsultaVeic.Padding = new System.Windows.Forms.Padding(3);
+			this.tabConsultaVeic.Size = new System.Drawing.Size(987, 654);
+			this.tabConsultaVeic.TabIndex = 0;
+			this.tabConsultaVeic.Text = "Consulta";
 			// 
 			// btnFechaFuncionario
 			// 
@@ -126,44 +125,47 @@
 			this.btnFechaFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnFechaFuncionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnFechaFuncionario.UseVisualStyleBackColor = false;
+			this.btnFechaFuncionario.Click += new System.EventHandler(this.btnFechaFuncionario_Click);
 			// 
-			// button3
+			// btnExcluir
 			// 
-			this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.button3.FlatAppearance.BorderSize = 0;
-			this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.button3.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Excluir;
-			this.button3.Location = new System.Drawing.Point(478, 236);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(139, 39);
-			this.button3.TabIndex = 19;
-			this.button3.Text = "Excluir";
-			this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button3.UseVisualStyleBackColor = false;
+			this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnExcluir.FlatAppearance.BorderSize = 0;
+			this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnExcluir.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.btnExcluir.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Excluir;
+			this.btnExcluir.Location = new System.Drawing.Point(478, 236);
+			this.btnExcluir.Name = "btnExcluir";
+			this.btnExcluir.Size = new System.Drawing.Size(139, 39);
+			this.btnExcluir.TabIndex = 19;
+			this.btnExcluir.Text = "Excluir";
+			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnExcluir.UseVisualStyleBackColor = false;
+			this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
 			// 
-			// button2
+			// btnAlterar
 			// 
-			this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.button2.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Alterar;
-			this.button2.Location = new System.Drawing.Point(306, 236);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(139, 39);
-			this.button2.TabIndex = 18;
-			this.button2.Text = "Alterar";
-			this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button2.UseVisualStyleBackColor = false;
+			this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnAlterar.FlatAppearance.BorderSize = 0;
+			this.btnAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAlterar.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.btnAlterar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Alterar;
+			this.btnAlterar.Location = new System.Drawing.Point(306, 236);
+			this.btnAlterar.Name = "btnAlterar";
+			this.btnAlterar.Size = new System.Drawing.Size(139, 39);
+			this.btnAlterar.TabIndex = 18;
+			this.btnAlterar.Text = "Alterar";
+			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnAlterar.UseVisualStyleBackColor = false;
+			this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
 			// 
 			// btnNovoVeiculo
 			// 
@@ -210,14 +212,6 @@
 			this.panel3.Size = new System.Drawing.Size(652, 121);
 			this.panel3.TabIndex = 9;
 			// 
-			// cbMarcaPesquisa
-			// 
-			this.cbMarcaPesquisa.FormattingEnabled = true;
-			this.cbMarcaPesquisa.Location = new System.Drawing.Point(44, 46);
-			this.cbMarcaPesquisa.Name = "cbMarcaPesquisa";
-			this.cbMarcaPesquisa.Size = new System.Drawing.Size(186, 28);
-			this.cbMarcaPesquisa.TabIndex = 9;
-			// 
 			// lblMarcaPesquisa
 			// 
 			this.lblMarcaPesquisa.AutoSize = true;
@@ -257,18 +251,18 @@
 			this.lblModeloPesquisa.TabIndex = 5;
 			this.lblModeloPesquisa.Text = "Modelo";
 			// 
-			// dtVeiculo
+			// dgVeiculo
 			// 
-			this.dtVeiculo.AllowUserToAddRows = false;
-			this.dtVeiculo.AllowUserToDeleteRows = false;
-			this.dtVeiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.dgVeiculo.AllowUserToAddRows = false;
+			this.dgVeiculo.AllowUserToDeleteRows = false;
+			this.dgVeiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.dtVeiculo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-			this.dtVeiculo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-			this.dtVeiculo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.dtVeiculo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.dtVeiculo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-			this.dtVeiculo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+			this.dgVeiculo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dgVeiculo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+			this.dgVeiculo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.dgVeiculo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.dgVeiculo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+			this.dgVeiculo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
 			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
 			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -276,8 +270,8 @@
 			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
 			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
 			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dtVeiculo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-			this.dtVeiculo.ColumnHeadersHeight = 50;
+			this.dgVeiculo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			this.dgVeiculo.ColumnHeadersHeight = 50;
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
 			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -285,12 +279,12 @@
 			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dtVeiculo.DefaultCellStyle = dataGridViewCellStyle2;
-			this.dtVeiculo.EnableHeadersVisualStyles = false;
-			this.dtVeiculo.GridColor = System.Drawing.SystemColors.ActiveCaption;
-			this.dtVeiculo.Location = new System.Drawing.Point(38, 294);
-			this.dtVeiculo.Name = "dtVeiculo";
-			this.dtVeiculo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+			this.dgVeiculo.DefaultCellStyle = dataGridViewCellStyle2;
+			this.dgVeiculo.EnableHeadersVisualStyles = false;
+			this.dgVeiculo.GridColor = System.Drawing.SystemColors.ActiveCaption;
+			this.dgVeiculo.Location = new System.Drawing.Point(38, 294);
+			this.dgVeiculo.Name = "dgVeiculo";
+			this.dgVeiculo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
 			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -298,30 +292,45 @@
 			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
 			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dtVeiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-			this.dtVeiculo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-			this.dtVeiculo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dtVeiculo.Size = new System.Drawing.Size(922, 293);
-			this.dtVeiculo.StandardTab = true;
-			this.dtVeiculo.TabIndex = 1;
-			this.dtVeiculo.DataSourceChanged += new System.EventHandler(this.DtVeiculo_DataSourceChanged);
+			this.dgVeiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			this.dgVeiculo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+			this.dgVeiculo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgVeiculo.Size = new System.Drawing.Size(922, 293);
+			this.dgVeiculo.StandardTab = true;
+			this.dgVeiculo.TabIndex = 1;
+			this.dgVeiculo.DataSourceChanged += new System.EventHandler(this.DtVeiculo_DataSourceChanged);
 			// 
-			// tpCadastro
+			// tabCadastroVeic
 			// 
-			this.tpCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.tpCadastro.Controls.Add(this.btnVoltarCli);
-			this.tpCadastro.Controls.Add(this.btnSalvar);
-			this.tpCadastro.Controls.Add(this.btnEditar);
-			this.tpCadastro.Controls.Add(this.btnExcluir);
-			this.tpCadastro.Controls.Add(this.gbDadosVeiculo);
-			this.tpCadastro.Controls.Add(this.lblCodCli);
-			this.tpCadastro.Controls.Add(this.txtCodigoCli);
-			this.tpCadastro.Location = new System.Drawing.Point(4, 29);
-			this.tpCadastro.Name = "tpCadastro";
-			this.tpCadastro.Padding = new System.Windows.Forms.Padding(3);
-			this.tpCadastro.Size = new System.Drawing.Size(987, 654);
-			this.tpCadastro.TabIndex = 1;
-			this.tpCadastro.Text = "Cadastro";
+			this.tabCadastroVeic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.tabCadastroVeic.Controls.Add(this.btnLimpar);
+			this.tabCadastroVeic.Controls.Add(this.btnVoltarCli);
+			this.tabCadastroVeic.Controls.Add(this.btnSalvar);
+			this.tabCadastroVeic.Controls.Add(this.gbDadosVeiculo);
+			this.tabCadastroVeic.Controls.Add(this.lblCodCli);
+			this.tabCadastroVeic.Controls.Add(this.txtCodigoCli);
+			this.tabCadastroVeic.Location = new System.Drawing.Point(4, 29);
+			this.tabCadastroVeic.Name = "tabCadastroVeic";
+			this.tabCadastroVeic.Padding = new System.Windows.Forms.Padding(3);
+			this.tabCadastroVeic.Size = new System.Drawing.Size(987, 654);
+			this.tabCadastroVeic.TabIndex = 1;
+			this.tabCadastroVeic.Text = "Cadastro";
+			// 
+			// btnLimpar
+			// 
+			this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnLimpar.FlatAppearance.BorderSize = 0;
+			this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.btnLimpar.Location = new System.Drawing.Point(455, 505);
+			this.btnLimpar.Name = "btnLimpar";
+			this.btnLimpar.Size = new System.Drawing.Size(139, 39);
+			this.btnLimpar.TabIndex = 81;
+			this.btnLimpar.Text = "Limpar";
+			this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnLimpar.UseVisualStyleBackColor = false;
 			// 
 			// btnVoltarCli
 			// 
@@ -331,7 +340,7 @@
 			this.btnVoltarCli.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnVoltarCli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnVoltarCli.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_ReturnTab;
-			this.btnVoltarCli.Location = new System.Drawing.Point(673, 505);
+			this.btnVoltarCli.Location = new System.Drawing.Point(619, 505);
 			this.btnVoltarCli.Name = "btnVoltarCli";
 			this.btnVoltarCli.Size = new System.Drawing.Size(139, 39);
 			this.btnVoltarCli.TabIndex = 80;
@@ -339,6 +348,7 @@
 			this.btnVoltarCli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnVoltarCli.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnVoltarCli.UseVisualStyleBackColor = false;
+			this.btnVoltarCli.Click += new System.EventHandler(this.btnVoltarCli_Click);
 			// 
 			// btnSalvar
 			// 
@@ -349,7 +359,7 @@
 			this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.btnSalvar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Salvar;
-			this.btnSalvar.Location = new System.Drawing.Point(196, 505);
+			this.btnSalvar.Location = new System.Drawing.Point(296, 505);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(139, 39);
 			this.btnSalvar.TabIndex = 77;
@@ -359,45 +369,12 @@
 			this.btnSalvar.UseVisualStyleBackColor = false;
 			this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
 			// 
-			// btnEditar
-			// 
-			this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnEditar.FlatAppearance.BorderSize = 0;
-			this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.btnEditar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Alterar;
-			this.btnEditar.Location = new System.Drawing.Point(356, 505);
-			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(139, 39);
-			this.btnEditar.TabIndex = 78;
-			this.btnEditar.Text = "Editar";
-			this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnEditar.UseVisualStyleBackColor = false;
-			// 
-			// btnExcluir
-			// 
-			this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnExcluir.FlatAppearance.BorderSize = 0;
-			this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.btnExcluir.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Excluir;
-			this.btnExcluir.Location = new System.Drawing.Point(515, 505);
-			this.btnExcluir.Name = "btnExcluir";
-			this.btnExcluir.Size = new System.Drawing.Size(139, 39);
-			this.btnExcluir.TabIndex = 79;
-			this.btnExcluir.Text = "Excluir";
-			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnExcluir.UseVisualStyleBackColor = false;
-			// 
 			// gbDadosVeiculo
 			// 
 			this.gbDadosVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.gbDadosVeiculo.Controls.Add(this.txtAnoFab);
+			this.gbDadosVeiculo.Controls.Add(this.cbStatus);
+			this.gbDadosVeiculo.Controls.Add(this.cbMarca);
 			this.gbDadosVeiculo.Controls.Add(this.txtData);
 			this.gbDadosVeiculo.Controls.Add(this.txtDataUltRev);
 			this.gbDadosVeiculo.Controls.Add(this.lblUltimaRevisao);
@@ -406,13 +383,10 @@
 			this.gbDadosVeiculo.Controls.Add(this.label5);
 			this.gbDadosVeiculo.Controls.Add(this.label3);
 			this.gbDadosVeiculo.Controls.Add(this.lblAnoFab);
-			this.gbDadosVeiculo.Controls.Add(this.txtAnoFab);
 			this.gbDadosVeiculo.Controls.Add(this.label2);
-			this.gbDadosVeiculo.Controls.Add(this.cbStatus);
 			this.gbDadosVeiculo.Controls.Add(this.lblStatus);
 			this.gbDadosVeiculo.Controls.Add(this.lblRenavam);
 			this.gbDadosVeiculo.Controls.Add(this.txtRenavam);
-			this.gbDadosVeiculo.Controls.Add(this.cbMarca);
 			this.gbDadosVeiculo.Controls.Add(this.label1);
 			this.gbDadosVeiculo.Controls.Add(this.lblModelo);
 			this.gbDadosVeiculo.Controls.Add(this.txtModelo);
@@ -425,8 +399,9 @@
 			// 
 			// txtData
 			// 
+			this.txtData.Enabled = false;
 			this.txtData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.txtData.Location = new System.Drawing.Point(706, 75);
+			this.txtData.Location = new System.Drawing.Point(706, 70);
 			this.txtData.Name = "txtData";
 			this.txtData.Size = new System.Drawing.Size(133, 26);
 			this.txtData.TabIndex = 20;
@@ -476,15 +451,6 @@
 			this.label2.TabIndex = 8;
 			this.label2.Text = "Data de aquisição";
 			// 
-			// cbStatus
-			// 
-			this.cbStatus.FormattingEnabled = true;
-			this.cbStatus.Location = new System.Drawing.Point(526, 70);
-			this.cbStatus.Name = "cbStatus";
-			this.cbStatus.Size = new System.Drawing.Size(156, 28);
-			this.cbStatus.TabIndex = 7;
-			this.cbStatus.Text = "--Selecione--";
-			// 
 			// lblStatus
 			// 
 			this.lblStatus.AutoSize = true;
@@ -502,15 +468,6 @@
 			this.lblRenavam.Size = new System.Drawing.Size(77, 20);
 			this.lblRenavam.TabIndex = 5;
 			this.lblRenavam.Text = "Renavam";
-			// 
-			// cbMarca
-			// 
-			this.cbMarca.FormattingEnabled = true;
-			this.cbMarca.Location = new System.Drawing.Point(31, 70);
-			this.cbMarca.Name = "cbMarca";
-			this.cbMarca.Size = new System.Drawing.Size(217, 28);
-			this.cbMarca.TabIndex = 3;
-			this.cbMarca.Text = "--Selecione--";
 			// 
 			// label1
 			// 
@@ -547,20 +504,54 @@
 			this.txtCodigoCli.Size = new System.Drawing.Size(100, 26);
 			this.txtCodigoCli.TabIndex = 36;
 			// 
+			// cbMarcaPesquisa
+			// 
+			this.cbMarcaPesquisa.CampoObrigatorio = false;
+			this.cbMarcaPesquisa.FormattingEnabled = true;
+			this.cbMarcaPesquisa.Location = new System.Drawing.Point(44, 46);
+			this.cbMarcaPesquisa.MensagemCampoObrigatorio = null;
+			this.cbMarcaPesquisa.Name = "cbMarcaPesquisa";
+			this.cbMarcaPesquisa.Size = new System.Drawing.Size(174, 28);
+			this.cbMarcaPesquisa.TabIndex = 9;
+			// 
 			// txtModeloPesquisa
 			// 
+			this.txtModeloPesquisa.CampoObrigatorio = false;
 			this.txtModeloPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtModeloPesquisa.Location = new System.Drawing.Point(249, 46);
 			this.txtModeloPesquisa.MaxLength = 18;
+			this.txtModeloPesquisa.MensagemObrigatorio = "Informar o Modelo";
 			this.txtModeloPesquisa.Multiline = true;
 			this.txtModeloPesquisa.Name = "txtModeloPesquisa";
 			this.txtModeloPesquisa.Size = new System.Drawing.Size(188, 28);
 			this.txtModeloPesquisa.TabIndex = 7;
 			this.txtModeloPesquisa.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
+			// cbStatus
+			// 
+			this.cbStatus.CampoObrigatorio = true;
+			this.cbStatus.FormattingEnabled = true;
+			this.cbStatus.Location = new System.Drawing.Point(526, 70);
+			this.cbStatus.MensagemCampoObrigatorio = "Selecione o Status";
+			this.cbStatus.Name = "cbStatus";
+			this.cbStatus.Size = new System.Drawing.Size(147, 28);
+			this.cbStatus.TabIndex = 22;
+			// 
+			// cbMarca
+			// 
+			this.cbMarca.CampoObrigatorio = false;
+			this.cbMarca.FormattingEnabled = true;
+			this.cbMarca.Location = new System.Drawing.Point(31, 70);
+			this.cbMarca.MensagemCampoObrigatorio = "Informar a Marca";
+			this.cbMarca.Name = "cbMarca";
+			this.cbMarca.Size = new System.Drawing.Size(217, 28);
+			this.cbMarca.TabIndex = 21;
+			// 
 			// txtDataUltRev
 			// 
+			this.txtDataUltRev.CampoObrigatorio = false;
 			this.txtDataUltRev.Location = new System.Drawing.Point(526, 210);
+			this.txtDataUltRev.MensagemObrigatorio = null;
 			this.txtDataUltRev.Name = "txtDataUltRev";
 			this.txtDataUltRev.Size = new System.Drawing.Size(133, 26);
 			this.txtDataUltRev.TabIndex = 19;
@@ -568,7 +559,9 @@
 			// 
 			// txtKmAtual
 			// 
+			this.txtKmAtual.CampoObrigatorio = false;
 			this.txtKmAtual.Location = new System.Drawing.Point(31, 210);
+			this.txtKmAtual.MensagemObrigatorio = null;
 			this.txtKmAtual.Name = "txtKmAtual";
 			this.txtKmAtual.Size = new System.Drawing.Size(217, 26);
 			this.txtKmAtual.TabIndex = 17;
@@ -576,23 +569,19 @@
 			// 
 			// txtKmPrev
 			// 
+			this.txtKmPrev.CampoObrigatorio = false;
 			this.txtKmPrev.Location = new System.Drawing.Point(287, 210);
+			this.txtKmPrev.MensagemObrigatorio = null;
 			this.txtKmPrev.Name = "txtKmPrev";
 			this.txtKmPrev.Size = new System.Drawing.Size(217, 26);
 			this.txtKmPrev.TabIndex = 16;
 			this.txtKmPrev.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
-			// txtAnoFab
-			// 
-			this.txtAnoFab.Location = new System.Drawing.Point(287, 134);
-			this.txtAnoFab.Name = "txtAnoFab";
-			this.txtAnoFab.Size = new System.Drawing.Size(139, 26);
-			this.txtAnoFab.TabIndex = 10;
-			this.txtAnoFab.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
 			// txtRenavam
 			// 
+			this.txtRenavam.CampoObrigatorio = false;
 			this.txtRenavam.Location = new System.Drawing.Point(31, 134);
+			this.txtRenavam.MensagemObrigatorio = null;
 			this.txtRenavam.Name = "txtRenavam";
 			this.txtRenavam.Size = new System.Drawing.Size(217, 26);
 			this.txtRenavam.TabIndex = 4;
@@ -600,11 +589,23 @@
 			// 
 			// txtModelo
 			// 
+			this.txtModelo.CampoObrigatorio = false;
 			this.txtModelo.Location = new System.Drawing.Point(287, 70);
+			this.txtModelo.MensagemObrigatorio = "Informar o Modelo";
 			this.txtModelo.Name = "txtModelo";
 			this.txtModelo.Size = new System.Drawing.Size(217, 26);
 			this.txtModelo.TabIndex = 0;
-			this.txtModelo.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			this.txtModelo.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
+			// txtAnoFab
+			// 
+			this.txtAnoFab.CampoObrigatorio = false;
+			this.txtAnoFab.Location = new System.Drawing.Point(287, 134);
+			this.txtAnoFab.MensagemObrigatorio = null;
+			this.txtAnoFab.Name = "txtAnoFab";
+			this.txtAnoFab.Size = new System.Drawing.Size(139, 26);
+			this.txtAnoFab.TabIndex = 23;
+			this.txtAnoFab.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
 			// 
 			// frmVeiculo
 			// 
@@ -618,13 +619,13 @@
 			this.Text = "frmVeiculo";
 			this.Load += new System.EventHandler(this.frmVeiculo_Load);
 			this.tabctrlVeiculo.ResumeLayout(false);
-			this.tpConsultaVeiculo.ResumeLayout(false);
+			this.tabConsultaVeic.ResumeLayout(false);
 			this.gbFiltraVeiculo.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dtVeiculo)).EndInit();
-			this.tpCadastro.ResumeLayout(false);
-			this.tpCadastro.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgVeiculo)).EndInit();
+			this.tabCadastroVeic.ResumeLayout(false);
+			this.tabCadastroVeic.PerformLayout();
 			this.gbDadosVeiculo.ResumeLayout(false);
 			this.gbDadosVeiculo.PerformLayout();
 			this.ResumeLayout(false);
@@ -634,20 +635,20 @@
 		#endregion
 
 		private System.Windows.Forms.TabControl tabctrlVeiculo;
-		private System.Windows.Forms.TabPage tpConsultaVeiculo;
-		private System.Windows.Forms.DataGridView dtVeiculo;
+		private System.Windows.Forms.TabPage tabConsultaVeic;
+		private System.Windows.Forms.DataGridView dgVeiculo;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label lblMarcaPesquisa;
 		private System.Windows.Forms.Button btnPesquisarVeiculo;
 		private System.Windows.Forms.Label lblModeloPesquisa;
 		private UserControl.SuperTextbox txtModeloPesquisa;
-		private System.Windows.Forms.TabPage tpCadastro;
+		private System.Windows.Forms.TabPage tabCadastroVeic;
 		private System.Windows.Forms.Label lblCodCli;
 		private System.Windows.Forms.TextBox txtCodigoCli;
 		private System.Windows.Forms.GroupBox gbFiltraVeiculo;
 		private System.Windows.Forms.Button btnFechaFuncionario;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button btnExcluir;
+		private System.Windows.Forms.Button btnAlterar;
 		private System.Windows.Forms.Button btnNovoVeiculo;
 		private System.Windows.Forms.GroupBox gbDadosVeiculo;
 		private System.Windows.Forms.Label lblModelo;
@@ -659,19 +660,18 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label lblAnoFab;
-		private UserControl.SuperTextbox txtAnoFab;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.ComboBox cbStatus;
 		private System.Windows.Forms.Label lblStatus;
 		private System.Windows.Forms.Label lblRenavam;
 		private UserControl.SuperTextbox txtRenavam;
-		private System.Windows.Forms.ComboBox cbMarca;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ComboBox cbMarcaPesquisa;
 		private System.Windows.Forms.Button btnVoltarCli;
 		private System.Windows.Forms.Button btnSalvar;
-		private System.Windows.Forms.Button btnEditar;
-		private System.Windows.Forms.Button btnExcluir;
 		private System.Windows.Forms.DateTimePicker txtData;
+		private System.Windows.Forms.Button btnLimpar;
+		private UserControl.SuperComboBox cbMarca;
+		private UserControl.SuperComboBox cbMarcaPesquisa;
+		private UserControl.SuperComboBox cbStatus;
+		private UserControl.SuperTextbox txtAnoFab;
 	}
 }

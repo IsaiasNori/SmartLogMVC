@@ -207,12 +207,15 @@ namespace SmartLog.WindowsForms
 				int.TryParse(codigo, out codigoCli);
 				if (codigoCli > 0)
 				{
-					Cliente cli = new Cliente(codigoCli);
-					cliController.DeletarController(cli);
+				
+					if (MessageBox.Show("Deseja realmente excluir este registro?", MessageBoxButtons.YesNo.ToString()) == DialogResult.Yes)
+					{
+						Cliente cli = new Cliente(codigoCli);
+						cliController.DeletarController(cli);
 
-					Util.Utils.ExibirMensagem("Cliente excluído com sucesso.", eTipoMensagem.Sucesso);
-
-					PesquisarCliente();
+						Util.Utils.ExibirMensagem("Cliente excluído com sucesso.", eTipoMensagem.Sucesso);
+						PesquisarCliente();
+					}
 				}
 				else
 				{

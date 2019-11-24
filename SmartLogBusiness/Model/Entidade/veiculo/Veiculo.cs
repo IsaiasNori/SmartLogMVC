@@ -24,8 +24,9 @@ namespace SmartLogBusiness.Model.Entidade.veiculo
 			CodMarca = codMarca;
 			Modelo = modelo;
 		}
-        public Veiculo(int codmarca, string modelo, string renavam, enumStatusVeiculo status, DateTime dataAqui, string anoFabricacao,  string quilometragemAtual, string kmPrev, DateTime? dataUltimaRevisão)
+        public Veiculo(int codVeic, int codmarca, string modelo, string renavam, enumStatusVeiculo status, DateTime dataAqui, string anoFabricacao,  string quilometragemAtual, string kmPrev, DateTime? dataUltimaRevisão)
         {
+			CodVei = codVeic;
             CodMarca = codmarca;
             Modelo = modelo;
 			Renavam = renavam;

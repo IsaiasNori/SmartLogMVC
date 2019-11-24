@@ -21,11 +21,47 @@ namespace SmartLog.WindowsForms.UserControl
 	}
 	public partial class SuperTextbox : TextBox
 	{
-		public etipoTextbox tipoTextbox { get; set; } = etipoTextbox.normal;
-		public bool isControle; 
-        public bool CampoObrigatorio { get; set; }
-        public string MensagemObrigatorio { get; set; }
+		public ErrorProvider provider = new ErrorProvider();
 
+		public etipoTextbox tipoTextbox { get; set; } = etipoTextbox.normal;
+		public bool isControle;
+		public bool CampoObrigatorio { get; set; }
+		public string MensagemObrigatorio { get; set; }
+
+		protected override void OnValidating(CancelEventArgs e)
+		{
+			e.Cancel = !VerificarCampoObrigatorio();
+
+		}
+		public bool VerificarCampoObrigatorio()
+		{
+			bool valido = true;
+
+			try
+			{
+				if (CampoObrigatorio)
+				{
+					if (this.Text == "")
+					{
+						provider.SetError(this, MensagemObrigatorio);
+						valido = false;
+					}
+					else
+					{
+						provider.Clear();
+					}
+				}
+
+
+				return valido;
+
+			}
+			catch (Exception)
+			{
+				return false;
+
+			}
+		}
 
 		public SuperTextbox()
 		{
@@ -40,7 +76,7 @@ namespace SmartLog.WindowsForms.UserControl
 				{
 					return;
 				}
-				if(this.Text.Length >= 18)
+				if (this.Text.Length >= 18)
 				{
 					e.Handled = true;
 					return;
@@ -56,11 +92,11 @@ namespace SmartLog.WindowsForms.UserControl
 		private string FormatCPF(string cpfVelho)
 		{
 			string ret = "";
-			
-			
-			if(cpfVelho == "")
+
+
+			if (cpfVelho == "")
 			{
-				return  "";
+				return "";
 			}
 
 
@@ -72,25 +108,25 @@ namespace SmartLog.WindowsForms.UserControl
 			{
 				for (int i = 1; i <= cpfVelho.Length; i++)
 				{
-					
+
 					ret += cpfVelho.Substring(i - 1, 1);
 
 					if (i == 3 || i == 6)
 					{
 						ret += ".";
 					}
-					else if(i == 9)
+					else if (i == 9)
 					{
 						ret += "-";
 					}
-					
+
 				}
 			}
 			else
 			{
 				for (int i = 1; i <= cpfVelho.Length; i++)
 				{
-					
+
 
 					ret += cpfVelho.Substring(i - 1, 1);
 
@@ -118,7 +154,7 @@ namespace SmartLog.WindowsForms.UserControl
 
 
 		}
-		
+
 		protected override void OnLeave(EventArgs e)
 		{
 
@@ -151,7 +187,7 @@ namespace SmartLog.WindowsForms.UserControl
 					return;
 				}
 
-				if (char.IsDigit(e.KeyChar) )
+				if (char.IsDigit(e.KeyChar))
 				{
 					e.Handled = true;
 				}

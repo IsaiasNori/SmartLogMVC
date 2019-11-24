@@ -49,14 +49,15 @@ namespace SmartLog.WindowsForms
 			Util.Utils.CarregarComboCidade(codiEstado, ref cbCidadeDestino);
 
 		}
-
 		private void BtnVoltarFunc_Click(object sender, EventArgs e)
 		{
 			tabCtrlViagem.SelectedTab = tabConsultaViagem;
 		}
-
 		private void BtnNovo_Click(object sender, EventArgs e)
 		{
+			Util.Utils.LimparCampos(gbDadosViagem1);
+			Util.Utils.LimparCampos(gbDadosOrigemviagem);
+			Util.Utils.LimparCampos(gbDadosDestinoViagem);
 			tabCtrlViagem.SelectedTab = tabCadastroViagem;
 		}
 

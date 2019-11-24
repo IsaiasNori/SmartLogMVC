@@ -69,7 +69,7 @@ namespace SmartLogBusiness.Controller
 				
 				if(table != null)
 				{
-					Veiculo vei = new Veiculo(
+					Veiculo vei = new Veiculo(Convert.ToInt32(table.Rows[0]["Cod_Veiculo"]),
 											  Convert.ToInt32(table.Rows[0]["Cod_Marca"]),
 											  table.Rows[0]["Modelo"].ToString(),
 											  table.Rows[0]["Renavam"].ToString(),
@@ -134,7 +134,7 @@ namespace SmartLogBusiness.Controller
 
 				foreach(DataRow item in table.Rows)
 				{
-					Veiculo vei = new Veiculo(
+					Veiculo vei = new Veiculo(Convert.ToInt32(table.Rows[0]["Cod_Veiculo"]),
 											  Convert.ToInt32(table.Rows[0]["Cod_Marca"]),
 											  table.Rows[0]["Modelo"].ToString(),
 											  table.Rows[0]["Renavam"].ToString(),

@@ -50,7 +50,9 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				return dao.FiltrarFuncionarioDAO(obj.Codigo, obj.Nome, obj.Cpf);
+				DataTable table =  dao.FiltrarFuncionarioDAO(obj.Nome, obj.Cpf);
+
+				return table;
 			}
 			catch (Exception ex)
 			{
@@ -65,6 +67,7 @@ namespace SmartLogBusiness.Controller
 				DataTable table = dao.CarregarFuncionarioDAO(obj.Codigo);
 
 				int numero, cidade, estado;
+				DateTime dataNasc;
 
 				if(obj.Codigo == 0)
 				{
@@ -75,7 +78,8 @@ namespace SmartLogBusiness.Controller
 				{
 					int.TryParse(table.Rows[0]["Numero"].ToString(), out numero);
 					int.TryParse(table.Rows[0]["Cod_Cidade"].ToString(), out cidade);
-					int.TryParse(table.Rows[0]["Cod_Estado"].ToString(), out estado); 
+					int.TryParse(table.Rows[0]["Cod_Estado"].ToString(), out estado);
+					DateTime.TryParse(table.Rows[0]["Data_Nascimento"].ToString(), out dataNasc);
 
 					Endereco end = new Endereco(table.Rows[0]["Cep"].ToString(),
 												table.Rows[0]["Logradouro"].ToString(),
@@ -86,7 +90,7 @@ namespace SmartLogBusiness.Controller
 					Funcionario func = new Funcionario(Convert.ToInt32(table.Rows[0]["Cod_Matricula"]),
 													  table.Rows[0]["Nome_Funcionario"].ToString(),
 													  table.Rows[0]["CPF_Funcionario"].ToString(),
-													  Convert.ToDateTime(table.Rows[0]["Data_Nascimento"]),
+													  dataNasc,
 													  table.Rows[0]["Telefone_Funcionario"].ToString(),
 													  table.Rows[0]["Email_Funcionario"].ToString(),
 													  end, (EnumTipoCargo)Convert.ToInt32(table.Rows[0]["Cod_Cargo"]));
@@ -123,7 +127,7 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				DataTable table = dao.FiltrarFuncionarioDAO(obj.Codigo, obj.Nome, obj.Cpf);
+				DataTable table = dao.FiltrarFuncionarioDAO(obj.Nome, obj.Cpf);
 				List<Funcionario> lista = new List<Funcionario>();
 				if (table == null)
 				{
