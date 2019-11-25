@@ -1,4 +1,5 @@
-﻿using SmartLogBusiness.Controller;
+﻿using SmartLog.WindowsForms.UserControl;
+using SmartLogBusiness.Controller;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,20 +20,18 @@ namespace SmartLog.WindowsForms.Util
 
 		}
 		//Método para carregar os combos de cidade.
-		public static void CarregarComboCidade(int codEstado, ref ComboBox combo)
+		public static void CarregarComboCidade(int codEstado, ref SuperComboBox combo)
 		{
 			try
 			{
-				ComboBox cb = combo;
+				
 				CidadeController cidCtrl = new CidadeController();
 
 				if (codEstado > 0)
 				{
 					DataTable table = cidCtrl.CarregarCidadeController(codEstado);
 
-					cb.DataSource = table;
-					cb.DisplayMember = "Nome_Cidade";
-					cb.ValueMember = "Cod_Cidade";
+					combo.CarregaCombo(table, "Cod_Cidade", "Nome_Cidade", UserControl.eTipoMensagem.Selecione);
 				}
 			}
 			catch (Exception ex)
@@ -41,19 +40,16 @@ namespace SmartLog.WindowsForms.Util
 			}
 		}
 		//Método para carregar combos de estado.
-		public static void CarregarEstado(ref ComboBox combo)
+		public static void CarregarEstado(ref SuperComboBox combo)
 		{
 			try
 			{
-				ComboBox cb = combo;
 				EstadoController estadoCtrl = new EstadoController();
 				DataTable table = estadoCtrl.CarregarEstado();
 
 				if (table != null)
 				{
-					cb.DataSource = table;
-					cb.DisplayMember = "UF_Estado";
-					cb.ValueMember = "Cod_Estado";
+					combo.CarregaCombo(table, "Cod_Estado", "UF_Estado", UserControl.eTipoMensagem.Selecione);
 				}
 			}
 			catch (Exception ex)

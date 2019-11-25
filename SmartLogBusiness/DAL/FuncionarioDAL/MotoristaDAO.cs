@@ -1,4 +1,5 @@
 ﻿using SmartLogBusiness.DAO;
+using SmartLogBusiness.Model.Enums;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,10 +9,11 @@ namespace SmartLogBusiness.DAL.FuncionarioDAL
 {
 	public class MotoristaDAO : ConexaoBanco
 	{
-		public void InserirMotoristaDAO(string nome, DateTime dataNasc, string cnhCat, string cnhNum, DateTime cnhVenc, string tel,string email,int status,string cep,string logra,int num,string bairro,int codCidade,int codEstado)
+		public void InserirMotoristaDAO(string nome, DateTime? dataNasc, EnumCnhCategoriaMotorista? cnhCat, string cnhNum, DateTime? cnhVenc, string tel,string email,int status,string cep,string logra,int num,string bairro,int codCidade,int codEstado)
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "INSE");
 				AdicionarParametro("@Nome", SqlDbType.NVarChar, 100, nome);
 				AdicionarParametro("@DataNasc", SqlDbType.DateTime, 10, dataNasc);
@@ -37,10 +39,11 @@ namespace SmartLogBusiness.DAL.FuncionarioDAL
 				throw new Exception(ex.Message);
 			}
 		}
-		public void AlterarMotoristaDAO(int cod,string nome, DateTime dataNasc, string cnhCat, string cnhNum, DateTime cnhVenc, string tel, string email, int status, string cep, string logra, int num, string bairro, int codCidade, int codEstado)
+		public void AlterarMotoristaDAO(int cod,string nome, DateTime? dataNasc, EnumCnhCategoriaMotorista? cnhCat, string cnhNum, DateTime? cnhVenc, string tel, string email, int status, string cep, string logra, int num, string bairro, int codCidade, int codEstado)
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "ALTE");
 				AdicionarParametro("@CodMotorista", SqlDbType.Int, 10, cod);
 				AdicionarParametro("@Nome", SqlDbType.NVarChar, 100, nome);
@@ -71,6 +74,7 @@ namespace SmartLogBusiness.DAL.FuncionarioDAL
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "DELE");
 				AdicionarParametro("@CodMotorista", SqlDbType.Int, 10, cod);
 
@@ -83,12 +87,12 @@ namespace SmartLogBusiness.DAL.FuncionarioDAL
 			}
 
 		}
-		public  DataTable FiltrarMotoristaDAO(int cod, string nome, DateTime cnhVenc, DateTime cnhVencFinal)
+		public  DataTable FiltrarMotoristaDAO(string nome, DateTime? cnhVenc, DateTime? cnhVencFinal)
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "GRID");
-				AdicionarParametro("@CodMotorista", SqlDbType.Int, 10, cod);
 				AdicionarParametro("@NomeMotorista", SqlDbType.NVarChar, 100, nome);
 				AdicionarParametro("@CnhVenc", SqlDbType.Date, 10, cnhVenc);
 				AdicionarParametro("@CnhVencFinal", SqlDbType.DateTime, 10, cnhVencFinal);
@@ -105,7 +109,8 @@ namespace SmartLogBusiness.DAL.FuncionarioDAL
 		{
 			try
 			{
-				AdicionarParametro("@Operaca", SqlDbType.NVarChar, 4, "COMB");
+				LimparParametro();
+				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "COMB");
 				
 				return ExecuteProcedure("pMotorista");
 			}

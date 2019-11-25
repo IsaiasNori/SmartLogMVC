@@ -2,6 +2,7 @@
 using SmartLogBusiness.DAL.FuncionarioDAL;
 using SmartLogBusiness.Model.Entidade;
 using SmartLogBusiness.Model.Entidade.pessoa;
+using SmartLogBusiness.Model.Enums;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,7 +21,7 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("Necessário informar o código para alterar registro.");
 				}
-				dao.AlterarMotoristaDAO(obj.Codigo, obj.Nome, obj.DataNasc, obj.CnhCategoria, obj.CnhNumero.ToString(), obj.CnhVencimento, obj.Telefone, obj.Email, Convert.ToInt32(obj.Status),
+				dao.AlterarMotoristaDAO(obj.Codigo, obj.Nome, obj.DataNasc, obj.CnhCat, obj.CnhNumero.ToString(), obj.CnhVencimento, obj.Telefone, obj.Email, Convert.ToInt32(obj.Status),
 										obj.Endereco.Cep, obj.Endereco.Logradouro, obj.Endereco.Numero, obj.Endereco.Bairro, obj.Endereco.CodCidade, obj.Endereco.CodEstado);
 			}
 			catch (Exception ex)
@@ -50,7 +51,7 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				return dao.FiltrarMotoristaDAO(obj.Codigo, obj.Nome, obj.CnhVencimento,obj.CnhVencFinal);
+				return dao.FiltrarMotoristaDAO(obj.Nome, obj.CnhVencimento,obj.CnhVencFinal);
 
 			}
 			catch (Exception ex)
@@ -79,8 +80,8 @@ namespace SmartLogBusiness.Controller
 												   Convert.ToDateTime(table.Rows[0]["Data_Nascimento"]),
 												   table.Rows[0]["Telefone_Motorista"].ToString(),
 												   table.Rows[0]["Email_Motorista"].ToString(),
-												   Convert.ToBoolean(table.Rows[0]["Status_Motorista"]),end,
-												   table.Rows[0]["CNH_Categoria"].ToString(),
+												   (EnumStatusMotorista)(table.Rows[0]["Status_Motorista"]),end,
+												   (EnumCnhCategoriaMotorista)table.Rows[0]["CNH_Categoria"],
 												   table.Rows[0]["CNH_Numero"].ToString(),
 												   Convert.ToDateTime(table.Rows[0]["CNH_Vencimento"]));
 
@@ -100,7 +101,7 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				dao.InserirMotoristaDAO(obj.Nome, obj.DataNasc, obj.CnhCategoria, obj.CnhNumero.ToString(), obj.CnhVencimento, obj.Telefone, obj.Email, Convert.ToInt32(obj.Status), obj.Endereco.Cep, obj.Endereco.Logradouro, obj.Endereco.Numero,
+				dao.InserirMotoristaDAO(obj.Nome, obj.DataNasc, obj.CnhCat, obj.CnhNumero.ToString(), obj.CnhVencimento, obj.Telefone, obj.Email, Convert.ToInt32(obj.Status), obj.Endereco.Cep, obj.Endereco.Logradouro, obj.Endereco.Numero,
 										obj.Endereco.Bairro, obj.Endereco.CodCidade, obj.Endereco.CodEstado);
 			}
 			catch (Exception ex)
@@ -114,7 +115,7 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				DataTable table = dao.FiltrarMotoristaDAO(obj.Codigo,obj.Nome,obj.CnhVencimento,obj.CnhVencFinal);
+				DataTable table = dao.FiltrarMotoristaDAO(obj.Nome,obj.CnhVencimento,obj.CnhVencFinal);
 				List<Motorista> lista = new List<Motorista>();
 
 				if(table == null)
@@ -136,8 +137,8 @@ namespace SmartLogBusiness.Controller
 												   Convert.ToDateTime(table.Rows[0]["Data_Nascimento"]),
 												   table.Rows[0]["Telefone_Motorista"].ToString(),
 												   table.Rows[0]["Email_Motorista"].ToString(),
-												   Convert.ToBoolean(table.Rows[0]["Status_Motorista"]), end,
-												   table.Rows[0]["CNH_Categoria"].ToString(),
+												   (EnumStatusMotorista)(table.Rows[0]["Status_Motorista"]), end,
+												   (EnumCnhCategoriaMotorista)table.Rows[0]["CNH_Categoria"],
 												   table.Rows[0]["CNH_Numero"].ToString(),
 												   Convert.ToDateTime(table.Rows[0]["CNH_Vencimento"]));
 

@@ -169,6 +169,15 @@ namespace SmartLog.WindowsForms.UserControl
 		}
 		protected override void OnKeyPress(KeyPressEventArgs e)
 		{
+
+			isControle = false;
+
+			if (char.IsControl(e.KeyChar))
+			{
+				isControle = true;
+				return;
+			}
+
 			if (tipoTextbox == etipoTextbox.somenteNumero)
 			{
 				if (!char.IsDigit(e.KeyChar))

@@ -176,6 +176,8 @@ namespace SmartLog.WindowsForms
 			if (dgVeiculo.DataSource != null)
 			{
 				dgVeiculo.Columns[0].Visible = false;
+				
+
 			}
 		}
 		private void Pesquisar()
@@ -274,6 +276,11 @@ namespace SmartLog.WindowsForms
 			{
 				Utils.ExibirMensagem("Selecione um registro para excluir.", eTipoMensagem.Atencao);
 			}
+		}
+
+		private void cbMarca_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

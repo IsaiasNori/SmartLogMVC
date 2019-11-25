@@ -39,6 +39,8 @@
 			this.lblNomePesquisa = new System.Windows.Forms.Label();
 			this.btnPesquisarFunc = new System.Windows.Forms.Button();
 			this.lblCpfPesquisa = new System.Windows.Forms.Label();
+			this.txtCpfPesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtNomePesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.btnFechaFuncionario = new System.Windows.Forms.Button();
 			this.btnExcluir = new System.Windows.Forms.Button();
 			this.btnAlterar = new System.Windows.Forms.Button();
@@ -49,24 +51,10 @@
 			this.btnVoltarCli = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.gbDadosFunc = new System.Windows.Forms.GroupBox();
+			this.cbCargo = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbCidade = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbEstado = new SmartLog.WindowsForms.UserControl.SuperComboBox();
 			this.dtDataNasc = new System.Windows.Forms.DateTimePicker();
-			this.label16 = new System.Windows.Forms.Label();
-			this.lblBairro = new System.Windows.Forms.Label();
-			this.label13 = new System.Windows.Forms.Label();
-			this.lblNumero = new System.Windows.Forms.Label();
-			this.cbCidade = new System.Windows.Forms.ComboBox();
-			this.cbEstado = new System.Windows.Forms.ComboBox();
-			this.lblCidade = new System.Windows.Forms.Label();
-			this.label11 = new System.Windows.Forms.Label();
-			this.cbCargo = new System.Windows.Forms.ComboBox();
-			this.label9 = new System.Windows.Forms.Label();
-			this.lblCargoFunc = new System.Windows.Forms.Label();
-			this.lblDataNascFunc = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.lblNomeFunc = new System.Windows.Forms.Label();
-			this.txtCpfPesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtNomePesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtBairro = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtNumero = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtLogra = new SmartLog.WindowsForms.UserControl.SuperTextbox();
@@ -75,6 +63,18 @@
 			this.txtCpfFunc = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtNomeFunc = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtEmail = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.label16 = new System.Windows.Forms.Label();
+			this.lblBairro = new System.Windows.Forms.Label();
+			this.label13 = new System.Windows.Forms.Label();
+			this.lblNumero = new System.Windows.Forms.Label();
+			this.lblCidade = new System.Windows.Forms.Label();
+			this.label11 = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
+			this.lblCargoFunc = new System.Windows.Forms.Label();
+			this.lblDataNascFunc = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.lblNomeFunc = new System.Windows.Forms.Label();
 			this.tabctrlFuncionario.SuspendLayout();
 			this.tabConsultaFuncionario.SuspendLayout();
 			this.gbFiltroFunc.SuspendLayout();
@@ -89,7 +89,7 @@
 			this.tabctrlFuncionario.Controls.Add(this.tabConsultaFuncionario);
 			this.tabctrlFuncionario.Controls.Add(this.tabCadastroFunc);
 			this.tabctrlFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tabctrlFuncionario.Location = new System.Drawing.Point(63, 2);
+			this.tabctrlFuncionario.Location = new System.Drawing.Point(62, 2);
 			this.tabctrlFuncionario.Name = "tabctrlFuncionario";
 			this.tabctrlFuncionario.SelectedIndex = 0;
 			this.tabctrlFuncionario.Size = new System.Drawing.Size(990, 663);
@@ -176,6 +176,29 @@
 			this.lblCpfPesquisa.Size = new System.Drawing.Size(40, 20);
 			this.lblCpfPesquisa.TabIndex = 5;
 			this.lblCpfPesquisa.Text = "CPF";
+			// 
+			// txtCpfPesquisar
+			// 
+			this.txtCpfPesquisar.CampoObrigatorio = false;
+			this.txtCpfPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtCpfPesquisar.Location = new System.Drawing.Point(370, 60);
+			this.txtCpfPesquisar.MaxLength = 18;
+			this.txtCpfPesquisar.MensagemObrigatorio = null;
+			this.txtCpfPesquisar.Name = "txtCpfPesquisar";
+			this.txtCpfPesquisar.Size = new System.Drawing.Size(188, 24);
+			this.txtCpfPesquisar.TabIndex = 7;
+			this.txtCpfPesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
+			// 
+			// txtNomePesquisar
+			// 
+			this.txtNomePesquisar.CampoObrigatorio = false;
+			this.txtNomePesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtNomePesquisar.Location = new System.Drawing.Point(76, 60);
+			this.txtNomePesquisar.MensagemObrigatorio = null;
+			this.txtNomePesquisar.Name = "txtNomePesquisar";
+			this.txtNomePesquisar.Size = new System.Drawing.Size(252, 24);
+			this.txtNomePesquisar.TabIndex = 6;
+			this.txtNomePesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// btnFechaFuncionario
 			// 
@@ -267,12 +290,12 @@
 			this.dgFuncionario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.dgFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.dgFuncionario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
 			this.dgFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.dgFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.dgFuncionario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-			this.dgFuncionario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			this.dgFuncionario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -302,7 +325,7 @@
 			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
 			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.dgFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-			this.dgFuncionario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+			this.dgFuncionario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
 			this.dgFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgFuncionario.Size = new System.Drawing.Size(861, 272);
 			this.dgFuncionario.TabIndex = 10;
@@ -379,6 +402,9 @@
 			// gbDadosFunc
 			// 
 			this.gbDadosFunc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.gbDadosFunc.Controls.Add(this.cbCargo);
+			this.gbDadosFunc.Controls.Add(this.cbCidade);
+			this.gbDadosFunc.Controls.Add(this.cbEstado);
 			this.gbDadosFunc.Controls.Add(this.dtDataNasc);
 			this.gbDadosFunc.Controls.Add(this.txtBairro);
 			this.gbDadosFunc.Controls.Add(this.txtNumero);
@@ -392,11 +418,8 @@
 			this.gbDadosFunc.Controls.Add(this.lblBairro);
 			this.gbDadosFunc.Controls.Add(this.label13);
 			this.gbDadosFunc.Controls.Add(this.lblNumero);
-			this.gbDadosFunc.Controls.Add(this.cbCidade);
-			this.gbDadosFunc.Controls.Add(this.cbEstado);
 			this.gbDadosFunc.Controls.Add(this.lblCidade);
 			this.gbDadosFunc.Controls.Add(this.label11);
-			this.gbDadosFunc.Controls.Add(this.cbCargo);
 			this.gbDadosFunc.Controls.Add(this.label9);
 			this.gbDadosFunc.Controls.Add(this.lblCargoFunc);
 			this.gbDadosFunc.Controls.Add(this.lblDataNascFunc);
@@ -410,6 +433,37 @@
 			this.gbDadosFunc.TabStop = false;
 			this.gbDadosFunc.Text = "Dados do Funcionário";
 			// 
+			// cbCargo
+			// 
+			this.cbCargo.CampoObrigatorio = true;
+			this.cbCargo.FormattingEnabled = true;
+			this.cbCargo.Location = new System.Drawing.Point(59, 46);
+			this.cbCargo.MensagemCampoObrigatorio = "Selecionar o cargo";
+			this.cbCargo.Name = "cbCargo";
+			this.cbCargo.Size = new System.Drawing.Size(158, 28);
+			this.cbCargo.TabIndex = 181;
+			// 
+			// cbCidade
+			// 
+			this.cbCidade.CampoObrigatorio = true;
+			this.cbCidade.FormattingEnabled = true;
+			this.cbCidade.Location = new System.Drawing.Point(530, 250);
+			this.cbCidade.MensagemCampoObrigatorio = "Selecionar a cidade";
+			this.cbCidade.Name = "cbCidade";
+			this.cbCidade.Size = new System.Drawing.Size(231, 28);
+			this.cbCidade.TabIndex = 180;
+			// 
+			// cbEstado
+			// 
+			this.cbEstado.CampoObrigatorio = true;
+			this.cbEstado.FormattingEnabled = true;
+			this.cbEstado.Location = new System.Drawing.Point(356, 251);
+			this.cbEstado.MensagemCampoObrigatorio = "Seleionar o estado";
+			this.cbEstado.Name = "cbEstado";
+			this.cbEstado.Size = new System.Drawing.Size(82, 28);
+			this.cbEstado.TabIndex = 179;
+			this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.CbEstado_SelectedIndexChanged);
+			// 
 			// dtDataNasc
 			// 
 			this.dtDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -417,178 +471,6 @@
 			this.dtDataNasc.Name = "dtDataNasc";
 			this.dtDataNasc.Size = new System.Drawing.Size(200, 26);
 			this.dtDataNasc.TabIndex = 178;
-			// 
-			// label16
-			// 
-			this.label16.AutoSize = true;
-			this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.label16.Location = new System.Drawing.Point(55, 231);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(41, 20);
-			this.label16.TabIndex = 168;
-			this.label16.Text = "CEP";
-			// 
-			// lblBairro
-			// 
-			this.lblBairro.AutoSize = true;
-			this.lblBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblBairro.Location = new System.Drawing.Point(525, 290);
-			this.lblBairro.Name = "lblBairro";
-			this.lblBairro.Size = new System.Drawing.Size(51, 20);
-			this.lblBairro.TabIndex = 167;
-			this.lblBairro.Text = "Bairro";
-			// 
-			// label13
-			// 
-			this.label13.AutoSize = true;
-			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.label13.Location = new System.Drawing.Point(57, 288);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(91, 20);
-			this.label13.TabIndex = 165;
-			this.label13.Text = "Logradouro";
-			// 
-			// lblNumero
-			// 
-			this.lblNumero.AutoSize = true;
-			this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblNumero.Location = new System.Drawing.Point(352, 291);
-			this.lblNumero.Name = "lblNumero";
-			this.lblNumero.Size = new System.Drawing.Size(26, 20);
-			this.lblNumero.TabIndex = 166;
-			this.lblNumero.Text = "Nº";
-			// 
-			// cbCidade
-			// 
-			this.cbCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.cbCidade.FormattingEnabled = true;
-			this.cbCidade.Location = new System.Drawing.Point(529, 251);
-			this.cbCidade.Name = "cbCidade";
-			this.cbCidade.Size = new System.Drawing.Size(231, 26);
-			this.cbCidade.TabIndex = 154;
-			// 
-			// cbEstado
-			// 
-			this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.cbEstado.FormattingEnabled = true;
-			this.cbEstado.Location = new System.Drawing.Point(356, 254);
-			this.cbEstado.Name = "cbEstado";
-			this.cbEstado.Size = new System.Drawing.Size(73, 26);
-			this.cbEstado.TabIndex = 153;
-			this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.CbEstado_SelectedIndexChanged);
-			// 
-			// lblCidade
-			// 
-			this.lblCidade.AutoSize = true;
-			this.lblCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblCidade.Location = new System.Drawing.Point(525, 228);
-			this.lblCidade.Name = "lblCidade";
-			this.lblCidade.Size = new System.Drawing.Size(59, 20);
-			this.lblCidade.TabIndex = 164;
-			this.lblCidade.Text = "Cidade";
-			// 
-			// label11
-			// 
-			this.label11.AutoSize = true;
-			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.label11.Location = new System.Drawing.Point(352, 230);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(86, 20);
-			this.label11.TabIndex = 163;
-			this.label11.Text = "Estado/UF";
-			// 
-			// cbCargo
-			// 
-			this.cbCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.cbCargo.FormattingEnabled = true;
-			this.cbCargo.Location = new System.Drawing.Point(58, 44);
-			this.cbCargo.Name = "cbCargo";
-			this.cbCargo.Size = new System.Drawing.Size(121, 26);
-			this.cbCargo.TabIndex = 152;
-			this.cbCargo.Text = "--Selecione--";
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.label9.Location = new System.Drawing.Point(57, 168);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(40, 20);
-			this.label9.TabIndex = 161;
-			this.label9.Text = "CPF";
-			// 
-			// lblCargoFunc
-			// 
-			this.lblCargoFunc.AutoSize = true;
-			this.lblCargoFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblCargoFunc.Location = new System.Drawing.Point(55, 22);
-			this.lblCargoFunc.Name = "lblCargoFunc";
-			this.lblCargoFunc.Size = new System.Drawing.Size(52, 20);
-			this.lblCargoFunc.TabIndex = 162;
-			this.lblCargoFunc.Text = "Cargo";
-			// 
-			// lblDataNascFunc
-			// 
-			this.lblDataNascFunc.AutoSize = true;
-			this.lblDataNascFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblDataNascFunc.Location = new System.Drawing.Point(526, 108);
-			this.lblDataNascFunc.Name = "lblDataNascFunc";
-			this.lblDataNascFunc.Size = new System.Drawing.Size(152, 20);
-			this.lblDataNascFunc.TabIndex = 160;
-			this.lblDataNascFunc.Text = "Data de nascimento";
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.label7.Location = new System.Drawing.Point(525, 168);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(53, 20);
-			this.label7.TabIndex = 159;
-			this.label7.Text = "E-mail";
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.label6.Location = new System.Drawing.Point(353, 168);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(71, 20);
-			this.label6.TabIndex = 158;
-			this.label6.Text = "Telefone";
-			// 
-			// lblNomeFunc
-			// 
-			this.lblNomeFunc.AutoSize = true;
-			this.lblNomeFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblNomeFunc.Location = new System.Drawing.Point(55, 108);
-			this.lblNomeFunc.Name = "lblNomeFunc";
-			this.lblNomeFunc.Size = new System.Drawing.Size(123, 20);
-			this.lblNomeFunc.TabIndex = 157;
-			this.lblNomeFunc.Text = "Nome Completo";
-			// 
-			// txtCpfPesquisar
-			// 
-			this.txtCpfPesquisar.CampoObrigatorio = false;
-			this.txtCpfPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtCpfPesquisar.Location = new System.Drawing.Point(370, 60);
-			this.txtCpfPesquisar.MaxLength = 18;
-			this.txtCpfPesquisar.MensagemObrigatorio = null;
-			this.txtCpfPesquisar.Name = "txtCpfPesquisar";
-			this.txtCpfPesquisar.Size = new System.Drawing.Size(188, 24);
-			this.txtCpfPesquisar.TabIndex = 7;
-			this.txtCpfPesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
-			// 
-			// txtNomePesquisar
-			// 
-			this.txtNomePesquisar.CampoObrigatorio = false;
-			this.txtNomePesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtNomePesquisar.Location = new System.Drawing.Point(76, 60);
-			this.txtNomePesquisar.MensagemObrigatorio = null;
-			this.txtNomePesquisar.Name = "txtNomePesquisar";
-			this.txtNomePesquisar.Size = new System.Drawing.Size(252, 24);
-			this.txtNomePesquisar.TabIndex = 6;
-			this.txtNomePesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// txtBairro
 			// 
@@ -678,12 +560,132 @@
 			this.txtEmail.TabIndex = 169;
 			this.txtEmail.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.label16.Location = new System.Drawing.Point(55, 231);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(41, 20);
+			this.label16.TabIndex = 168;
+			this.label16.Text = "CEP";
+			// 
+			// lblBairro
+			// 
+			this.lblBairro.AutoSize = true;
+			this.lblBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.lblBairro.Location = new System.Drawing.Point(525, 290);
+			this.lblBairro.Name = "lblBairro";
+			this.lblBairro.Size = new System.Drawing.Size(51, 20);
+			this.lblBairro.TabIndex = 167;
+			this.lblBairro.Text = "Bairro";
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.label13.Location = new System.Drawing.Point(57, 288);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(91, 20);
+			this.label13.TabIndex = 165;
+			this.label13.Text = "Logradouro";
+			// 
+			// lblNumero
+			// 
+			this.lblNumero.AutoSize = true;
+			this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.lblNumero.Location = new System.Drawing.Point(352, 291);
+			this.lblNumero.Name = "lblNumero";
+			this.lblNumero.Size = new System.Drawing.Size(26, 20);
+			this.lblNumero.TabIndex = 166;
+			this.lblNumero.Text = "Nº";
+			// 
+			// lblCidade
+			// 
+			this.lblCidade.AutoSize = true;
+			this.lblCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.lblCidade.Location = new System.Drawing.Point(525, 228);
+			this.lblCidade.Name = "lblCidade";
+			this.lblCidade.Size = new System.Drawing.Size(59, 20);
+			this.lblCidade.TabIndex = 164;
+			this.lblCidade.Text = "Cidade";
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.label11.Location = new System.Drawing.Point(352, 230);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(86, 20);
+			this.label11.TabIndex = 163;
+			this.label11.Text = "Estado/UF";
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.label9.Location = new System.Drawing.Point(57, 168);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(40, 20);
+			this.label9.TabIndex = 161;
+			this.label9.Text = "CPF";
+			// 
+			// lblCargoFunc
+			// 
+			this.lblCargoFunc.AutoSize = true;
+			this.lblCargoFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.lblCargoFunc.Location = new System.Drawing.Point(55, 22);
+			this.lblCargoFunc.Name = "lblCargoFunc";
+			this.lblCargoFunc.Size = new System.Drawing.Size(52, 20);
+			this.lblCargoFunc.TabIndex = 162;
+			this.lblCargoFunc.Text = "Cargo";
+			// 
+			// lblDataNascFunc
+			// 
+			this.lblDataNascFunc.AutoSize = true;
+			this.lblDataNascFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.lblDataNascFunc.Location = new System.Drawing.Point(526, 108);
+			this.lblDataNascFunc.Name = "lblDataNascFunc";
+			this.lblDataNascFunc.Size = new System.Drawing.Size(152, 20);
+			this.lblDataNascFunc.TabIndex = 160;
+			this.lblDataNascFunc.Text = "Data de nascimento";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.label7.Location = new System.Drawing.Point(525, 168);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(53, 20);
+			this.label7.TabIndex = 159;
+			this.label7.Text = "E-mail";
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.label6.Location = new System.Drawing.Point(353, 168);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(71, 20);
+			this.label6.TabIndex = 158;
+			this.label6.Text = "Telefone";
+			// 
+			// lblNomeFunc
+			// 
+			this.lblNomeFunc.AutoSize = true;
+			this.lblNomeFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.lblNomeFunc.Location = new System.Drawing.Point(55, 108);
+			this.lblNomeFunc.Name = "lblNomeFunc";
+			this.lblNomeFunc.Size = new System.Drawing.Size(123, 20);
+			this.lblNomeFunc.TabIndex = 157;
+			this.lblNomeFunc.Text = "Nome Completo";
+			// 
 			// frmFuncionario
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.ClientSize = new System.Drawing.Size(1095, 728);
+			this.ClientSize = new System.Drawing.Size(1115, 682);
 			this.Controls.Add(this.tabctrlFuncionario);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "frmFuncionario";
@@ -731,11 +733,8 @@
 		private System.Windows.Forms.Label lblBairro;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label lblNumero;
-		private System.Windows.Forms.ComboBox cbCidade;
-		private System.Windows.Forms.ComboBox cbEstado;
 		private System.Windows.Forms.Label lblCidade;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.ComboBox cbCargo;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label lblCargoFunc;
 		private System.Windows.Forms.Label lblDataNascFunc;
@@ -746,5 +745,8 @@
 		private System.Windows.Forms.Button btnSalvar;
 		private System.Windows.Forms.Button btnLimpar;
 		private System.Windows.Forms.DateTimePicker dtDataNasc;
+		private UserControl.SuperComboBox cbCidade;
+		private UserControl.SuperComboBox cbEstado;
+		private UserControl.SuperComboBox cbCargo;
 	}
 }

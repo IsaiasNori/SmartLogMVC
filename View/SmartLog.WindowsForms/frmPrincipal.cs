@@ -12,6 +12,7 @@ namespace SmartLog.WindowsForms
 {
 	public partial class frmPrincipal : Form
 	{
+		
 
 		public bool mouseClicked = false;
 		Point clickedAt;
@@ -29,12 +30,12 @@ namespace SmartLog.WindowsForms
 			}
 		}
 
-	
+
 
 		public frmPrincipal()
 		{
 			InitializeComponent();
-        }
+		}
 		private void btnFechar_Click(object sender, EventArgs e)
 		{
 			this.Close();
@@ -61,8 +62,24 @@ namespace SmartLog.WindowsForms
 		}
 		private void btnFuncionario_Click(object sender, EventArgs e)
 		{
-			frmFuncionario func = new frmFuncionario();
-			CarregarTela(func, "Funcionário");
+			ContextMenu menu = new ContextMenu();
+
+			MenuItem itemFunc = new MenuItem("Funcionario", BtnFunc_Click);
+			MenuItem itemMoto = new MenuItem("Motorista", BtnMotorista_Click);
+		
+			menu.MenuItems.Add(itemFunc);
+			menu.MenuItems.Add(itemMoto);
+			menu.Show(btnFuncionario, new Point(175, btnFuncionario.Location.X +10));
+		}
+		private void BtnFunc_Click(object sender, EventArgs e)
+		{
+				frmFuncionario func = new frmFuncionario();
+				CarregarTela(func, "Funcionário");
+		}
+		private void BtnMotorista_Click(object sender, EventArgs e)
+		{
+			frmMotorista moto = new frmMotorista();
+			CarregarTela(moto, "Motorista");
 		}
 		private void button4_Click(object sender, EventArgs e)
 		{
@@ -114,7 +131,7 @@ namespace SmartLog.WindowsForms
 		}
 		private void FrmPrincipal_Shown(object sender, EventArgs e)
 		{
-		//	this.Visible = false;
+			//	this.Visible = false;
 			/*frmLogin log = new frmLogin();
 			log.ShowDialog();
 
@@ -132,7 +149,7 @@ namespace SmartLog.WindowsForms
 
 			//lblNomeUsuario.Text = log.funcLogado.Nome;
 			Relogio.Start();
-		
+
 
 		}
 	}

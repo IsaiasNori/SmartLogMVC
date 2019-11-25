@@ -1,4 +1,5 @@
 ﻿using SmartLog.WindowsForms.Classes;
+using SmartLog.WindowsForms.Util;
 using SmartLogBusiness.Controller;
 using SmartLogBusiness.Model.Entidade.pessoa;
 using SmartLogBusiness.Model.Entidade.viagem;
@@ -28,25 +29,20 @@ namespace SmartLog.WindowsForms
 			Util.Utils.CarregarEstado(ref cbEstadoOrigem);
 			Util.Utils.CarregarEstado(ref cbEstadoDestino);
 
-			//MessageBox.Show(Session.Instance.UserID.ToString());
 		}
 		
 		
 		private void CbEstado_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
-			int codiEstado;
-			int.TryParse(cbEstadoOrigem.SelectedValue.ToString(), out codiEstado);
-
-			Util.Utils.CarregarComboCidade(codiEstado, ref cbCidadeOrigem);
+			
+			Util.Utils.CarregarComboCidade(cbEstadoOrigem.PegarComboSelecionado(), ref cbCidadeOrigem);
 			
 		}
 		private void CbEstadoDestino_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			int codiEstado;
-			int.TryParse(cbEstadoDestino.SelectedValue.ToString(), out codiEstado);
-
-			Util.Utils.CarregarComboCidade(codiEstado, ref cbCidadeDestino);
+			
+			Util.Utils.CarregarComboCidade(cbEstadoDestino.PegarComboSelecionado(), ref cbCidadeDestino);
 
 		}
 		private void BtnVoltarFunc_Click(object sender, EventArgs e)
@@ -81,6 +77,17 @@ namespace SmartLog.WindowsForms
 		private void btnFechaViagem_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void cbEstadoOrigem_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			
+			Utils.CarregarComboCidade(cbEstadoOrigem.PegarComboSelecionado(), ref cbCidadeOrigem);
+		}
+
+		private void cbEstadoDestino_SelectedIndexChanged_1(object sender, EventArgs e)
+		{
+			Utils.CarregarComboCidade(cbEstadoDestino.PegarComboSelecionado(), ref cbCidadeDestino);
 		}
 	}
 }

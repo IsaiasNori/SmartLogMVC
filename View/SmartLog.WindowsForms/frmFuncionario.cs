@@ -51,14 +51,7 @@ namespace SmartLog.WindowsForms
 		{
 			try
 			{
-				if(cbEstado.SelectedValue != null)
-				{
-					int cod;
-					int.TryParse(cbEstado.SelectedValue.ToString(), out cod);
-
-					Utils.CarregarComboCidade(cod, ref cbCidade);
-
-				}
+				Utils.CarregarComboCidade(cbEstado.PegarComboSelecionado(), ref cbCidade);
 			}
 			catch (Exception ex)
 			{
@@ -69,21 +62,20 @@ namespace SmartLog.WindowsForms
 		{
 			try
 			{
-				int numero,cidade, estado;
+				if (ValidateChildren() == false)
+				{
+					return;
+				}
+				int numero;
 
 				int.TryParse(txtNumero.Text, out numero);
-				int.TryParse(cbCidade.SelectedValue.ToString(), out cidade);
-				int.TryParse(cbEstado.SelectedValue.ToString(), out estado);
 
 				DateTime data;
 				DateTime.TryParse(dtDataNasc.Text, out data);
 
-				EnumTipoCargo cargo;
-				Enum.TryParse(cbCargo.Text, out cargo);
-
-				Endereco end = new Endereco(txtCep.Text, txtLogra.Text,numero, txtBairro.Text, cidade, estado);
-				Funcionario func = new Funcionario(codigoFunc,txtNomeFunc.Text, txtCpfFunc.Text.Replace(".", "").Replace("-", "").Replace("/", ""), data,txtTelFunc.Text,txtEmail.Text,end,cargo);
-				if(codigoFunc > 0)
+				Endereco end = new Endereco(txtCep.Text, txtLogra.Text, numero, txtBairro.Text, cbCidade.PegarComboSelecionado(), cbEstado.PegarComboSelecionado());
+				Funcionario func = new Funcionario(codigoFunc, txtNomeFunc.Text, txtCpfFunc.Text.Replace(".", "").Replace("-", "").Replace("/", ""), data, txtTelFunc.Text, txtEmail.Text, end, (EnumTipoCargo)cbCargo.PegarComboSelecionado());
+				if (codigoFunc > 0)
 				{
 					funcCtrl.AlterarController(func);
 					Utils.ExibirMensagem("Funcionário alterado com sucesso", eTipoMensagem.Sucesso);
@@ -107,12 +99,10 @@ namespace SmartLog.WindowsForms
 		{
 			tabctrlFuncionario.SelectedTab = tabConsultaFuncionario;
 		}
-
 		private void btnFechaFuncionario_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
-
 		private void btnNovo_Click(object sender, EventArgs e)
 		{
 			Utils.LimparCampos(gbDadosFunc);
@@ -136,7 +126,7 @@ namespace SmartLog.WindowsForms
 				{
 					Funcionario func = new Funcionario(codigoFunc);
 
-					func =  funcCtrl.GetObj(func);
+					func = funcCtrl.GetObj(func);
 
 					cbCargo.SelectedValue = func.TipoCargo;
 					txtNomeFunc.Text = func.Nome;
@@ -174,13 +164,13 @@ namespace SmartLog.WindowsForms
 				string codigo = dgFuncionario.SelectedRows[0].Cells[0].Value.ToString();
 
 				int.TryParse(codigo, out codigoFunc);
-				if(codigoFunc > 0)
+				if (codigoFunc > 0)
 				{
-					if (MessageBox.Show("Deseja realmente excluir este registro?","",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+					if (MessageBox.Show("Deseja realmente excluir este registro?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
 					{
 						Funcionario func = new Funcionario(codigoFunc);
 						funcCtrl.DeletarController(func);
-						Utils.ExibirMensagem("Funcionário excluído com sucesso.",eTipoMensagem.Sucesso);
+						Utils.ExibirMensagem("Funcionário excluído com sucesso.", eTipoMensagem.Sucesso);
 						PesquisarFunc();
 					}
 				}
@@ -194,10 +184,9 @@ namespace SmartLog.WindowsForms
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-
 		private void dtFuncionario_DataSourceChanged(object sender, EventArgs e)
 		{
-			if(dgFuncionario.DataSource != null)
+			if (dgFuncionario.DataSource != null)
 			{
 				dgFuncionario.Columns[0].Visible = false;
 			}
@@ -219,6 +208,5 @@ namespace SmartLog.WindowsForms
 				Util.Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-
 	}
 }

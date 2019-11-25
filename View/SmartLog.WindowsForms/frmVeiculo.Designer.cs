@@ -39,37 +39,37 @@
 			this.btnNovoVeiculo = new System.Windows.Forms.Button();
 			this.gbFiltraVeiculo = new System.Windows.Forms.GroupBox();
 			this.panel3 = new System.Windows.Forms.Panel();
+			this.cbMarcaPesquisa = new SmartLog.WindowsForms.UserControl.SuperComboBox();
 			this.lblMarcaPesquisa = new System.Windows.Forms.Label();
 			this.btnPesquisarVeiculo = new System.Windows.Forms.Button();
 			this.lblModeloPesquisa = new System.Windows.Forms.Label();
+			this.txtModeloPesquisa = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.dgVeiculo = new System.Windows.Forms.DataGridView();
 			this.tabCadastroVeic = new System.Windows.Forms.TabPage();
 			this.btnLimpar = new System.Windows.Forms.Button();
 			this.btnVoltarCli = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.gbDadosVeiculo = new System.Windows.Forms.GroupBox();
+			this.txtAnoFab = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.cbStatus = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbMarca = new SmartLog.WindowsForms.UserControl.SuperComboBox();
 			this.txtData = new System.Windows.Forms.DateTimePicker();
+			this.txtDataUltRev = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblUltimaRevisao = new System.Windows.Forms.Label();
+			this.txtKmAtual = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtKmPrev = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.lblAnoFab = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.lblStatus = new System.Windows.Forms.Label();
 			this.lblRenavam = new System.Windows.Forms.Label();
+			this.txtRenavam = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblModelo = new System.Windows.Forms.Label();
+			this.txtModelo = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblCodCli = new System.Windows.Forms.Label();
 			this.txtCodigoCli = new System.Windows.Forms.TextBox();
-			this.cbMarcaPesquisa = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.txtModeloPesquisa = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.cbStatus = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.cbMarca = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.txtDataUltRev = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtKmAtual = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtKmPrev = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtRenavam = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtModelo = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtAnoFab = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.tabctrlVeiculo.SuspendLayout();
 			this.tabConsultaVeic.SuspendLayout();
 			this.gbFiltraVeiculo.SuspendLayout();
@@ -212,6 +212,16 @@
 			this.panel3.Size = new System.Drawing.Size(652, 121);
 			this.panel3.TabIndex = 9;
 			// 
+			// cbMarcaPesquisa
+			// 
+			this.cbMarcaPesquisa.CampoObrigatorio = false;
+			this.cbMarcaPesquisa.FormattingEnabled = true;
+			this.cbMarcaPesquisa.Location = new System.Drawing.Point(44, 46);
+			this.cbMarcaPesquisa.MensagemCampoObrigatorio = null;
+			this.cbMarcaPesquisa.Name = "cbMarcaPesquisa";
+			this.cbMarcaPesquisa.Size = new System.Drawing.Size(174, 28);
+			this.cbMarcaPesquisa.TabIndex = 9;
+			// 
 			// lblMarcaPesquisa
 			// 
 			this.lblMarcaPesquisa.AutoSize = true;
@@ -251,13 +261,26 @@
 			this.lblModeloPesquisa.TabIndex = 5;
 			this.lblModeloPesquisa.Text = "Modelo";
 			// 
+			// txtModeloPesquisa
+			// 
+			this.txtModeloPesquisa.CampoObrigatorio = false;
+			this.txtModeloPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtModeloPesquisa.Location = new System.Drawing.Point(249, 46);
+			this.txtModeloPesquisa.MaxLength = 18;
+			this.txtModeloPesquisa.MensagemObrigatorio = "Informar o Modelo";
+			this.txtModeloPesquisa.Multiline = true;
+			this.txtModeloPesquisa.Name = "txtModeloPesquisa";
+			this.txtModeloPesquisa.Size = new System.Drawing.Size(188, 28);
+			this.txtModeloPesquisa.TabIndex = 7;
+			this.txtModeloPesquisa.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
 			// dgVeiculo
 			// 
 			this.dgVeiculo.AllowUserToAddRows = false;
 			this.dgVeiculo.AllowUserToDeleteRows = false;
 			this.dgVeiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.dgVeiculo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dgVeiculo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
 			this.dgVeiculo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
 			this.dgVeiculo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.dgVeiculo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -293,7 +316,8 @@
 			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
 			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.dgVeiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-			this.dgVeiculo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+			this.dgVeiculo.RowHeadersWidth = 100;
+			this.dgVeiculo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			this.dgVeiculo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgVeiculo.Size = new System.Drawing.Size(922, 293);
 			this.dgVeiculo.StandardTab = true;
@@ -397,6 +421,37 @@
 			this.gbDadosVeiculo.TabStop = false;
 			this.gbDadosVeiculo.Text = "Dados do Veículo";
 			// 
+			// txtAnoFab
+			// 
+			this.txtAnoFab.CampoObrigatorio = false;
+			this.txtAnoFab.Location = new System.Drawing.Point(287, 134);
+			this.txtAnoFab.MensagemObrigatorio = null;
+			this.txtAnoFab.Name = "txtAnoFab";
+			this.txtAnoFab.Size = new System.Drawing.Size(139, 26);
+			this.txtAnoFab.TabIndex = 23;
+			this.txtAnoFab.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
+			// cbStatus
+			// 
+			this.cbStatus.CampoObrigatorio = true;
+			this.cbStatus.FormattingEnabled = true;
+			this.cbStatus.Location = new System.Drawing.Point(526, 70);
+			this.cbStatus.MensagemCampoObrigatorio = "Selecione o Status";
+			this.cbStatus.Name = "cbStatus";
+			this.cbStatus.Size = new System.Drawing.Size(147, 28);
+			this.cbStatus.TabIndex = 22;
+			// 
+			// cbMarca
+			// 
+			this.cbMarca.CampoObrigatorio = false;
+			this.cbMarca.FormattingEnabled = true;
+			this.cbMarca.Location = new System.Drawing.Point(31, 70);
+			this.cbMarca.MensagemCampoObrigatorio = "Informar a Marca";
+			this.cbMarca.Name = "cbMarca";
+			this.cbMarca.Size = new System.Drawing.Size(217, 28);
+			this.cbMarca.TabIndex = 21;
+			this.cbMarca.SelectedIndexChanged += new System.EventHandler(this.cbMarca_SelectedIndexChanged);
+			// 
 			// txtData
 			// 
 			this.txtData.Enabled = false;
@@ -406,6 +461,16 @@
 			this.txtData.Size = new System.Drawing.Size(133, 26);
 			this.txtData.TabIndex = 20;
 			// 
+			// txtDataUltRev
+			// 
+			this.txtDataUltRev.CampoObrigatorio = false;
+			this.txtDataUltRev.Location = new System.Drawing.Point(526, 210);
+			this.txtDataUltRev.MensagemObrigatorio = null;
+			this.txtDataUltRev.Name = "txtDataUltRev";
+			this.txtDataUltRev.Size = new System.Drawing.Size(133, 26);
+			this.txtDataUltRev.TabIndex = 19;
+			this.txtDataUltRev.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.data;
+			// 
 			// lblUltimaRevisao
 			// 
 			this.lblUltimaRevisao.AutoSize = true;
@@ -414,6 +479,26 @@
 			this.lblUltimaRevisao.Size = new System.Drawing.Size(134, 20);
 			this.lblUltimaRevisao.TabIndex = 18;
 			this.lblUltimaRevisao.Text = "Ultima revisão em";
+			// 
+			// txtKmAtual
+			// 
+			this.txtKmAtual.CampoObrigatorio = false;
+			this.txtKmAtual.Location = new System.Drawing.Point(31, 210);
+			this.txtKmAtual.MensagemObrigatorio = null;
+			this.txtKmAtual.Name = "txtKmAtual";
+			this.txtKmAtual.Size = new System.Drawing.Size(217, 26);
+			this.txtKmAtual.TabIndex = 17;
+			this.txtKmAtual.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// txtKmPrev
+			// 
+			this.txtKmPrev.CampoObrigatorio = false;
+			this.txtKmPrev.Location = new System.Drawing.Point(287, 210);
+			this.txtKmPrev.MensagemObrigatorio = null;
+			this.txtKmPrev.Name = "txtKmPrev";
+			this.txtKmPrev.Size = new System.Drawing.Size(217, 26);
+			this.txtKmPrev.TabIndex = 16;
+			this.txtKmPrev.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// label5
 			// 
@@ -469,6 +554,16 @@
 			this.lblRenavam.TabIndex = 5;
 			this.lblRenavam.Text = "Renavam";
 			// 
+			// txtRenavam
+			// 
+			this.txtRenavam.CampoObrigatorio = false;
+			this.txtRenavam.Location = new System.Drawing.Point(31, 134);
+			this.txtRenavam.MensagemObrigatorio = null;
+			this.txtRenavam.Name = "txtRenavam";
+			this.txtRenavam.Size = new System.Drawing.Size(217, 26);
+			this.txtRenavam.TabIndex = 4;
+			this.txtRenavam.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -487,6 +582,16 @@
 			this.lblModelo.TabIndex = 1;
 			this.lblModelo.Text = "Modelo";
 			// 
+			// txtModelo
+			// 
+			this.txtModelo.CampoObrigatorio = false;
+			this.txtModelo.Location = new System.Drawing.Point(287, 70);
+			this.txtModelo.MensagemObrigatorio = "Informar o Modelo";
+			this.txtModelo.Name = "txtModelo";
+			this.txtModelo.Size = new System.Drawing.Size(217, 26);
+			this.txtModelo.TabIndex = 0;
+			this.txtModelo.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
 			// lblCodCli
 			// 
 			this.lblCodCli.AutoSize = true;
@@ -503,109 +608,6 @@
 			this.txtCodigoCli.Name = "txtCodigoCli";
 			this.txtCodigoCli.Size = new System.Drawing.Size(100, 26);
 			this.txtCodigoCli.TabIndex = 36;
-			// 
-			// cbMarcaPesquisa
-			// 
-			this.cbMarcaPesquisa.CampoObrigatorio = false;
-			this.cbMarcaPesquisa.FormattingEnabled = true;
-			this.cbMarcaPesquisa.Location = new System.Drawing.Point(44, 46);
-			this.cbMarcaPesquisa.MensagemCampoObrigatorio = null;
-			this.cbMarcaPesquisa.Name = "cbMarcaPesquisa";
-			this.cbMarcaPesquisa.Size = new System.Drawing.Size(174, 28);
-			this.cbMarcaPesquisa.TabIndex = 9;
-			// 
-			// txtModeloPesquisa
-			// 
-			this.txtModeloPesquisa.CampoObrigatorio = false;
-			this.txtModeloPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtModeloPesquisa.Location = new System.Drawing.Point(249, 46);
-			this.txtModeloPesquisa.MaxLength = 18;
-			this.txtModeloPesquisa.MensagemObrigatorio = "Informar o Modelo";
-			this.txtModeloPesquisa.Multiline = true;
-			this.txtModeloPesquisa.Name = "txtModeloPesquisa";
-			this.txtModeloPesquisa.Size = new System.Drawing.Size(188, 28);
-			this.txtModeloPesquisa.TabIndex = 7;
-			this.txtModeloPesquisa.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// cbStatus
-			// 
-			this.cbStatus.CampoObrigatorio = true;
-			this.cbStatus.FormattingEnabled = true;
-			this.cbStatus.Location = new System.Drawing.Point(526, 70);
-			this.cbStatus.MensagemCampoObrigatorio = "Selecione o Status";
-			this.cbStatus.Name = "cbStatus";
-			this.cbStatus.Size = new System.Drawing.Size(147, 28);
-			this.cbStatus.TabIndex = 22;
-			// 
-			// cbMarca
-			// 
-			this.cbMarca.CampoObrigatorio = false;
-			this.cbMarca.FormattingEnabled = true;
-			this.cbMarca.Location = new System.Drawing.Point(31, 70);
-			this.cbMarca.MensagemCampoObrigatorio = "Informar a Marca";
-			this.cbMarca.Name = "cbMarca";
-			this.cbMarca.Size = new System.Drawing.Size(217, 28);
-			this.cbMarca.TabIndex = 21;
-			// 
-			// txtDataUltRev
-			// 
-			this.txtDataUltRev.CampoObrigatorio = false;
-			this.txtDataUltRev.Location = new System.Drawing.Point(526, 210);
-			this.txtDataUltRev.MensagemObrigatorio = null;
-			this.txtDataUltRev.Name = "txtDataUltRev";
-			this.txtDataUltRev.Size = new System.Drawing.Size(133, 26);
-			this.txtDataUltRev.TabIndex = 19;
-			this.txtDataUltRev.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.data;
-			// 
-			// txtKmAtual
-			// 
-			this.txtKmAtual.CampoObrigatorio = false;
-			this.txtKmAtual.Location = new System.Drawing.Point(31, 210);
-			this.txtKmAtual.MensagemObrigatorio = null;
-			this.txtKmAtual.Name = "txtKmAtual";
-			this.txtKmAtual.Size = new System.Drawing.Size(217, 26);
-			this.txtKmAtual.TabIndex = 17;
-			this.txtKmAtual.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtKmPrev
-			// 
-			this.txtKmPrev.CampoObrigatorio = false;
-			this.txtKmPrev.Location = new System.Drawing.Point(287, 210);
-			this.txtKmPrev.MensagemObrigatorio = null;
-			this.txtKmPrev.Name = "txtKmPrev";
-			this.txtKmPrev.Size = new System.Drawing.Size(217, 26);
-			this.txtKmPrev.TabIndex = 16;
-			this.txtKmPrev.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtRenavam
-			// 
-			this.txtRenavam.CampoObrigatorio = false;
-			this.txtRenavam.Location = new System.Drawing.Point(31, 134);
-			this.txtRenavam.MensagemObrigatorio = null;
-			this.txtRenavam.Name = "txtRenavam";
-			this.txtRenavam.Size = new System.Drawing.Size(217, 26);
-			this.txtRenavam.TabIndex = 4;
-			this.txtRenavam.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
-			// 
-			// txtModelo
-			// 
-			this.txtModelo.CampoObrigatorio = false;
-			this.txtModelo.Location = new System.Drawing.Point(287, 70);
-			this.txtModelo.MensagemObrigatorio = "Informar o Modelo";
-			this.txtModelo.Name = "txtModelo";
-			this.txtModelo.Size = new System.Drawing.Size(217, 26);
-			this.txtModelo.TabIndex = 0;
-			this.txtModelo.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
-			// 
-			// txtAnoFab
-			// 
-			this.txtAnoFab.CampoObrigatorio = false;
-			this.txtAnoFab.Location = new System.Drawing.Point(287, 134);
-			this.txtAnoFab.MensagemObrigatorio = null;
-			this.txtAnoFab.Name = "txtAnoFab";
-			this.txtAnoFab.Size = new System.Drawing.Size(139, 26);
-			this.txtAnoFab.TabIndex = 23;
-			this.txtAnoFab.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
 			// 
 			// frmVeiculo
 			// 

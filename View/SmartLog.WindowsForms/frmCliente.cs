@@ -30,31 +30,9 @@ namespace SmartLog.WindowsForms
 			Util.Utils.CarregarEstado(ref cbEstado);
 			CarregarTipoCliente();
 		}
-		private void CarregarTipoCliente()
-		{
-			TipoClienteController cli = new TipoClienteController();
-			DataTable table = cli.CarregarTipoClienteController();
-
-			if (table != null)
-			{
-				cbTipoCli.DataSource = table;
-				cbTipoCli.DisplayMember = "Descricao";
-				cbTipoCli.ValueMember = "Cod_TipoCliente";
-			}
-		}
 		private void btnPesquisarCli_Click(object sender, EventArgs e)
 		{
 			PesquisarCliente();
-		}
-		private void cbEstado_SelectedIndexChanged_1(object sender, EventArgs e)
-		{
-			int estado;
-			if (cbEstado.SelectedValue != null)
-			{
-				int.TryParse(cbEstado.SelectedValue.ToString(), out estado);
-
-				Util.Utils.CarregarComboCidade(estado, ref cbCidade);
-			}
 		}
 		private void btnVoltarCli_Click(object sender, EventArgs e)
 		{
@@ -112,24 +90,25 @@ namespace SmartLog.WindowsForms
 
 			try
 			{
+
+				if (ValidateChildren() == false)
+				{
+					return;
+				}
 				DateTime.TryParse(dtDataNasc.Text, out dataNasc);
 
-				if(Util.Utils.IsMaiorIdade(dataNasc)== false)
+				if (Util.Utils.IsMaiorIdade(dataNasc) == false)
 				{
 					Util.Utils.ExibirMensagem("É necessário ser maior de 18 anos.", eTipoMensagem.Atencao);
 					dtDataNasc.Focus();
 					return;
 				}
 
-				int.TryParse(cbTipoCli.SelectedValue.ToString(), out codTipoCli);
+				int.TryParse(cbTipoCli.ToString(), out codTipoCli);
 
 				int.TryParse(txtNumero.Text, out numero);
 
-				int.TryParse(cbCidade.SelectedValue.ToString(), out cidade);
-
-				int.TryParse(cbEstado.SelectedValue.ToString(), out estado);
-
-				Endereco end = new Endereco(txtCep.Text, txtLogra.Text, numero, txtBairro.Text, cidade, estado);			
+				Endereco end = new Endereco(txtCep.Text, txtLogra.Text, numero, txtBairro.Text, cbCidade.PegarComboSelecionado(), cbEstado.PegarComboSelecionado());
 
 				Cliente cli = new Cliente(codigoCli, txtNomeCli.Text, txtCpfCnpjCli.Text, System.DateTime.Now, dataNasc, txtTelCli.Text, txtEmailCli.Text, codTipoCli, end);
 				if (codigoCli == 0)
@@ -144,6 +123,7 @@ namespace SmartLog.WindowsForms
 
 					Util.Utils.ExibirMensagem("Cliente alterado com sucesso.", eTipoMensagem.Sucesso);
 				}
+
 				Util.Utils.LimparCampos(gbDadosCliente);
 
 				tabCtrlCliente.SelectedTab = tabConsultaCli;
@@ -207,7 +187,7 @@ namespace SmartLog.WindowsForms
 				int.TryParse(codigo, out codigoCli);
 				if (codigoCli > 0)
 				{
-				
+
 					if (MessageBox.Show("Deseja realmente excluir este registro?", MessageBoxButtons.YesNo.ToString()) == DialogResult.Yes)
 					{
 						Cliente cli = new Cliente(codigoCli);
@@ -257,7 +237,16 @@ namespace SmartLog.WindowsForms
 				MessageBox.Show(ex.Message);
 			}
 		}
+		private void CarregarTipoCliente()
+		{
+			TipoClienteController cli = new TipoClienteController();
+			DataTable table = cli.CarregarTipoClienteController();
 
+			if (table != null)
+			{
+				cbTipoCli.CarregaCombo(table, "Cod_TipoCliente", "Descricao", UserControl.eTipoMensagem.Selecione);
+			}
+		}
 		private void dtCliente_MouseClick(object sender, MouseEventArgs e)
 		{
 			if (e.Button == MouseButtons.Right)
@@ -303,6 +292,17 @@ namespace SmartLog.WindowsForms
 		private void MenuEditar_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show(currentMouseOverRow.ToString());
+		}
+		private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				Util.Utils.CarregarComboCidade(cbEstado.PegarComboSelecionado(), ref cbCidade);
+			}
+			catch (Exception ex)
+			{
+				Util.Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+			}
 		}
 	}
 }
