@@ -37,5 +37,6 @@ namespace WebPresentation.SideMenu
         {
             FuncionarioPanel.PanelAction();
         }
+
     }
 }
