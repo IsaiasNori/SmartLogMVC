@@ -27,7 +27,6 @@ namespace SmartLogBusiness.Controller
 				throw new Exception(ex.Message);
 			}
 		}
-
 		public void DeletarController(Veiculo obj)
 		{
 			try
@@ -43,7 +42,6 @@ namespace SmartLogBusiness.Controller
 				throw new Exception(ex.Message);
 			}
 		}
-
 		public DataTable GetDataTable(Veiculo obj)
 		{
 			try
@@ -56,7 +54,6 @@ namespace SmartLogBusiness.Controller
 				throw new Exception(ex.Message);
 			}
 		}
-
 		public Veiculo GetObj(Veiculo obj)
 		{
 			try
@@ -149,6 +146,17 @@ namespace SmartLogBusiness.Controller
 					lista.Add(vei);
 				}
 				return lista;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
+		}
+		public DataTable CarregarComboVeiculo()
+		{
+			try
+			{
+				return dao.CarregarVeiculoDAO();
 			}
 			catch (Exception ex)
 			{

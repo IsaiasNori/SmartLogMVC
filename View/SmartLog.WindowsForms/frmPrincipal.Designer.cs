@@ -30,6 +30,7 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.panelMenu = new System.Windows.Forms.Panel();
+			this.button1 = new System.Windows.Forms.Button();
 			this.btnAjuda = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btnManutencao = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
 			// panelMenu
 			// 
 			this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.panelMenu.Controls.Add(this.button1);
 			this.panelMenu.Controls.Add(this.btnAjuda);
 			this.panelMenu.Controls.Add(this.pictureBox1);
 			this.panelMenu.Controls.Add(this.btnManutencao);
@@ -69,6 +71,27 @@
 			this.panelMenu.Name = "panelMenu";
 			this.panelMenu.Size = new System.Drawing.Size(190, 665);
 			this.panelMenu.TabIndex = 0;
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.Transparent;
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
+			this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+			this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.button1.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Logout;
+			this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+			this.button1.Location = new System.Drawing.Point(3, 484);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(187, 51);
+			this.button1.TabIndex = 6;
+			this.button1.Text = " Sair";
+			this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button1.UseVisualStyleBackColor = false;
 			// 
 			// btnAjuda
 			// 
@@ -192,6 +215,7 @@
 			// btnCliente
 			// 
 			this.btnCliente.BackColor = System.Drawing.Color.Transparent;
+			this.btnCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnCliente.FlatAppearance.BorderSize = 0;
 			this.btnCliente.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
 			this.btnCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
@@ -201,7 +225,7 @@
 			this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnCliente.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MenuCliente;
 			this.btnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnCliente.Location = new System.Drawing.Point(3, 163);
+			this.btnCliente.Location = new System.Drawing.Point(3, 159);
 			this.btnCliente.Name = "btnCliente";
 			this.btnCliente.Size = new System.Drawing.Size(187, 51);
 			this.btnCliente.TabIndex = 0;
@@ -329,9 +353,8 @@
 			this.lblNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblNomeUsuario.Location = new System.Drawing.Point(392, 6);
 			this.lblNomeUsuario.Name = "lblNomeUsuario";
-			this.lblNomeUsuario.Size = new System.Drawing.Size(51, 16);
+			this.lblNomeUsuario.Size = new System.Drawing.Size(0, 16);
 			this.lblNomeUsuario.TabIndex = 3;
-			this.lblNomeUsuario.Text = "label1";
 			// 
 			// lblData
 			// 
@@ -375,6 +398,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frmTeste";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+			this.Load += new System.EventHandler(this.frmPrincipal_Load);
 			this.Shown += new System.EventHandler(this.FrmPrincipal_Shown);
 			this.panelMenu.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -407,5 +431,6 @@
 		private System.Windows.Forms.Button btnAjuda;
 		private System.Windows.Forms.Button btnTituloTela;
 		private System.Windows.Forms.Label lblTituloTela;
+		private System.Windows.Forms.Button button1;
 	}
 }

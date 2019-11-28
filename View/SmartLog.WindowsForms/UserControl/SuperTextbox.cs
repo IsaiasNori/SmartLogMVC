@@ -17,7 +17,8 @@ namespace SmartLog.WindowsForms.UserControl
 		somenteNumero = 2,
 		somenteLetra = 3,
 		cpf = 4,
-		data = 5
+		data = 5,
+		numerosDecimais = 6
 	}
 	public partial class SuperTextbox : TextBox
 	{
@@ -30,7 +31,14 @@ namespace SmartLog.WindowsForms.UserControl
 
 		protected override void OnValidating(CancelEventArgs e)
 		{
-			e.Cancel = !VerificarCampoObrigatorio();
+			if (isControle == false)
+			{
+				e.Cancel = !VerificarCampoObrigatorio();
+			}
+
+			isControle = false;
+
+
 
 		}
 		public bool VerificarCampoObrigatorio()
@@ -67,6 +75,20 @@ namespace SmartLog.WindowsForms.UserControl
 		{
 			InitializeComponent();
 		}
+
+		protected override void OnLostFocus(EventArgs e)
+		{
+			 if (tipoTextbox == etipoTextbox.numerosDecimais)
+			{
+
+			
+				if (Util.Utils.IsNumeric(this.Text))
+				{
+					this.Text = Convert.ToDecimal(this.Text).ToString("N2");
+				}
+
+			}
+		}
 		protected override void OnKeyDown(KeyEventArgs e)
 		{
 			//07.825.880/0001-84
@@ -84,11 +106,9 @@ namespace SmartLog.WindowsForms.UserControl
 
 				this.Text = FormatCPF(this.Text);
 				this.SelectionStart = this.Text.Length;
-
-
 			}
+			
 		}
-
 		private string FormatCPF(string cpfVelho)
 		{
 			string ret = "";
@@ -154,9 +174,9 @@ namespace SmartLog.WindowsForms.UserControl
 
 
 		}
-
 		protected override void OnLeave(EventArgs e)
 		{
+			isControle = true;
 
 			if (tipoTextbox == etipoTextbox.cpf)
 			{
@@ -167,6 +187,7 @@ namespace SmartLog.WindowsForms.UserControl
 				base.OnLeave(e);
 			}
 		}
+		
 		protected override void OnKeyPress(KeyPressEventArgs e)
 		{
 
@@ -218,6 +239,19 @@ namespace SmartLog.WindowsForms.UserControl
 				{
 					e.Handled = true;
 				}
+			}
+			else if (tipoTextbox == etipoTextbox.numerosDecimais)
+			{
+				if (!char.IsDigit(e.KeyChar))
+				{
+					e.Handled = true;
+				}
+				if (char.IsControl(e.KeyChar) || e.KeyChar.ToString() == "." || e.KeyChar.ToString() == ",")
+				{
+					e.Handled = false;
+				}
+
+
 
 			}
 		}

@@ -121,6 +121,9 @@
   <data name="icon_FecharTab" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_fecharTab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_NewWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_NewWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_MenuManutencao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_MenuManutencao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -135,6 +138,9 @@
   </data>
   <data name="icon_MinApplication" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_MinApplication.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_NovoWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_NovoWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_MinimizarApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_MinimizarApp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,20 +169,20 @@
   <data name="icon_MenuAjuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_MenuAjuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_erro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_erro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_MenuViagem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_MenuViagem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_erro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_erro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_MaxPreto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_MaxPreto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo_SmartLog" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_SmartLog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_MaxPreto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_MaxPreto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_Alterar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_Alterar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,6 +211,9 @@
   <data name="icon_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_Backspace1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_Backspace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_MenuVeiculo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_MenuVeiculo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,7 +226,7 @@
   <data name="LogoV11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoV11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_Backspace1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_Backspace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_Logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_Logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

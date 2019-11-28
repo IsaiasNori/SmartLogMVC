@@ -34,6 +34,7 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabctrlFuncionario = new System.Windows.Forms.TabControl();
 			this.tabConsultaFuncionario = new System.Windows.Forms.TabPage();
+			this.dgFuncionario = new System.Windows.Forms.DataGridView();
 			this.gbFiltroFunc = new System.Windows.Forms.GroupBox();
 			this.pnlFiltroFuncionario = new System.Windows.Forms.Panel();
 			this.lblNomePesquisa = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
 			this.btnExcluir = new System.Windows.Forms.Button();
 			this.btnAlterar = new System.Windows.Forms.Button();
 			this.btnNovo = new System.Windows.Forms.Button();
-			this.dgFuncionario = new System.Windows.Forms.DataGridView();
 			this.tabCadastroFunc = new System.Windows.Forms.TabPage();
 			this.btnLimpar = new System.Windows.Forms.Button();
 			this.btnVoltarCli = new System.Windows.Forms.Button();
@@ -77,9 +77,9 @@
 			this.lblNomeFunc = new System.Windows.Forms.Label();
 			this.tabctrlFuncionario.SuspendLayout();
 			this.tabConsultaFuncionario.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgFuncionario)).BeginInit();
 			this.gbFiltroFunc.SuspendLayout();
 			this.pnlFiltroFuncionario.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgFuncionario)).BeginInit();
 			this.tabCadastroFunc.SuspendLayout();
 			this.gbDadosFunc.SuspendLayout();
 			this.SuspendLayout();
@@ -99,18 +99,72 @@
 			// 
 			this.tabConsultaFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.tabConsultaFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.tabConsultaFuncionario.Controls.Add(this.dgFuncionario);
 			this.tabConsultaFuncionario.Controls.Add(this.gbFiltroFunc);
 			this.tabConsultaFuncionario.Controls.Add(this.btnFechaFuncionario);
 			this.tabConsultaFuncionario.Controls.Add(this.btnExcluir);
 			this.tabConsultaFuncionario.Controls.Add(this.btnAlterar);
 			this.tabConsultaFuncionario.Controls.Add(this.btnNovo);
-			this.tabConsultaFuncionario.Controls.Add(this.dgFuncionario);
 			this.tabConsultaFuncionario.Location = new System.Drawing.Point(4, 29);
 			this.tabConsultaFuncionario.Name = "tabConsultaFuncionario";
 			this.tabConsultaFuncionario.Padding = new System.Windows.Forms.Padding(3);
 			this.tabConsultaFuncionario.Size = new System.Drawing.Size(982, 630);
 			this.tabConsultaFuncionario.TabIndex = 0;
 			this.tabConsultaFuncionario.Text = "Consulta";
+			// 
+			// dgFuncionario
+			// 
+			this.dgFuncionario.AllowUserToAddRows = false;
+			this.dgFuncionario.AllowUserToDeleteRows = false;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.dgFuncionario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.dgFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dgFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgFuncionario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+			this.dgFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.dgFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.dgFuncionario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+			this.dgFuncionario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgFuncionario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this.dgFuncionario.ColumnHeadersHeight = 35;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgFuncionario.DefaultCellStyle = dataGridViewCellStyle3;
+			this.dgFuncionario.EnableHeadersVisualStyles = false;
+			this.dgFuncionario.GridColor = System.Drawing.SystemColors.ActiveCaption;
+			this.dgFuncionario.Location = new System.Drawing.Point(59, 302);
+			this.dgFuncionario.Name = "dgFuncionario";
+			this.dgFuncionario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Menu;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			this.dgFuncionario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+			this.dgFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgFuncionario.Size = new System.Drawing.Size(859, 293);
+			this.dgFuncionario.TabIndex = 11;
+			this.dgFuncionario.DataSourceChanged += new System.EventHandler(this.dgFuncionario_DataSourceChanged);
+			this.dgFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncionario_CellContentClick);
 			// 
 			// gbFiltroFunc
 			// 
@@ -160,7 +214,7 @@
 			this.btnPesquisarFunc.Location = new System.Drawing.Point(593, 45);
 			this.btnPesquisarFunc.Name = "btnPesquisarFunc";
 			this.btnPesquisarFunc.Size = new System.Drawing.Size(139, 39);
-			this.btnPesquisarFunc.TabIndex = 8;
+			this.btnPesquisarFunc.TabIndex = 3;
 			this.btnPesquisarFunc.Text = "Pesquisar";
 			this.btnPesquisarFunc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnPesquisarFunc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -186,7 +240,7 @@
 			this.txtCpfPesquisar.MensagemObrigatorio = null;
 			this.txtCpfPesquisar.Name = "txtCpfPesquisar";
 			this.txtCpfPesquisar.Size = new System.Drawing.Size(188, 24);
-			this.txtCpfPesquisar.TabIndex = 7;
+			this.txtCpfPesquisar.TabIndex = 2;
 			this.txtCpfPesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
 			// 
 			// txtNomePesquisar
@@ -197,7 +251,7 @@
 			this.txtNomePesquisar.MensagemObrigatorio = null;
 			this.txtNomePesquisar.Name = "txtNomePesquisar";
 			this.txtNomePesquisar.Size = new System.Drawing.Size(252, 24);
-			this.txtNomePesquisar.TabIndex = 6;
+			this.txtNomePesquisar.TabIndex = 1;
 			this.txtNomePesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// btnFechaFuncionario
@@ -213,7 +267,7 @@
 			this.btnFechaFuncionario.Location = new System.Drawing.Point(693, 244);
 			this.btnFechaFuncionario.Name = "btnFechaFuncionario";
 			this.btnFechaFuncionario.Size = new System.Drawing.Size(139, 39);
-			this.btnFechaFuncionario.TabIndex = 16;
+			this.btnFechaFuncionario.TabIndex = 7;
 			this.btnFechaFuncionario.Text = "Fechar";
 			this.btnFechaFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnFechaFuncionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -233,7 +287,7 @@
 			this.btnExcluir.Location = new System.Drawing.Point(519, 244);
 			this.btnExcluir.Name = "btnExcluir";
 			this.btnExcluir.Size = new System.Drawing.Size(139, 39);
-			this.btnExcluir.TabIndex = 14;
+			this.btnExcluir.TabIndex = 6;
 			this.btnExcluir.Text = "Excluir";
 			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -253,7 +307,7 @@
 			this.btnAlterar.Location = new System.Drawing.Point(347, 244);
 			this.btnAlterar.Name = "btnAlterar";
 			this.btnAlterar.Size = new System.Drawing.Size(139, 39);
-			this.btnAlterar.TabIndex = 13;
+			this.btnAlterar.TabIndex = 5;
 			this.btnAlterar.Text = "Alterar";
 			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -273,63 +327,12 @@
 			this.btnNovo.Location = new System.Drawing.Point(176, 244);
 			this.btnNovo.Name = "btnNovo";
 			this.btnNovo.Size = new System.Drawing.Size(139, 39);
-			this.btnNovo.TabIndex = 12;
+			this.btnNovo.TabIndex = 4;
 			this.btnNovo.Text = "Novo";
 			this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnNovo.UseVisualStyleBackColor = false;
 			this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-			// 
-			// dgFuncionario
-			// 
-			this.dgFuncionario.AllowUserToAddRows = false;
-			this.dgFuncionario.AllowUserToDeleteRows = false;
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-			this.dgFuncionario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-			this.dgFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.dgFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-			this.dgFuncionario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-			this.dgFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.dgFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.dgFuncionario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-			this.dgFuncionario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSalmon;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgFuncionario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-			this.dgFuncionario.ColumnHeadersHeight = 35;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgFuncionario.DefaultCellStyle = dataGridViewCellStyle3;
-			this.dgFuncionario.EnableHeadersVisualStyles = false;
-			this.dgFuncionario.GridColor = System.Drawing.SystemColors.ActiveCaption;
-			this.dgFuncionario.Location = new System.Drawing.Point(59, 315);
-			this.dgFuncionario.Name = "dgFuncionario";
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-			this.dgFuncionario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-			this.dgFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgFuncionario.Size = new System.Drawing.Size(861, 272);
-			this.dgFuncionario.TabIndex = 10;
-			this.dgFuncionario.DataSourceChanged += new System.EventHandler(this.dtFuncionario_DataSourceChanged);
 			// 
 			// tabCadastroFunc
 			// 
@@ -356,7 +359,7 @@
 			this.btnLimpar.Location = new System.Drawing.Point(432, 492);
 			this.btnLimpar.Name = "btnLimpar";
 			this.btnLimpar.Size = new System.Drawing.Size(139, 39);
-			this.btnLimpar.TabIndex = 190;
+			this.btnLimpar.TabIndex = 14;
 			this.btnLimpar.Text = "Limpar";
 			this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnLimpar.UseVisualStyleBackColor = false;
@@ -373,7 +376,7 @@
 			this.btnVoltarCli.Location = new System.Drawing.Point(588, 492);
 			this.btnVoltarCli.Name = "btnVoltarCli";
 			this.btnVoltarCli.Size = new System.Drawing.Size(139, 39);
-			this.btnVoltarCli.TabIndex = 189;
+			this.btnVoltarCli.TabIndex = 15;
 			this.btnVoltarCli.Text = "Voltar";
 			this.btnVoltarCli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnVoltarCli.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -392,7 +395,7 @@
 			this.btnSalvar.Location = new System.Drawing.Point(275, 492);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(139, 39);
-			this.btnSalvar.TabIndex = 186;
+			this.btnSalvar.TabIndex = 13;
 			this.btnSalvar.Text = "Salvar";
 			this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -441,7 +444,8 @@
 			this.cbCargo.MensagemCampoObrigatorio = "Selecionar o cargo";
 			this.cbCargo.Name = "cbCargo";
 			this.cbCargo.Size = new System.Drawing.Size(158, 28);
-			this.cbCargo.TabIndex = 181;
+			this.cbCargo.TabIndex = 1;
+			this.cbCargo.SelectedIndexChanged += new System.EventHandler(this.cbCargo_SelectedIndexChanged);
 			// 
 			// cbCidade
 			// 
@@ -451,7 +455,7 @@
 			this.cbCidade.MensagemCampoObrigatorio = "Selecionar a cidade";
 			this.cbCidade.Name = "cbCidade";
 			this.cbCidade.Size = new System.Drawing.Size(231, 28);
-			this.cbCidade.TabIndex = 180;
+			this.cbCidade.TabIndex = 9;
 			// 
 			// cbEstado
 			// 
@@ -460,8 +464,8 @@
 			this.cbEstado.Location = new System.Drawing.Point(356, 251);
 			this.cbEstado.MensagemCampoObrigatorio = "Seleionar o estado";
 			this.cbEstado.Name = "cbEstado";
-			this.cbEstado.Size = new System.Drawing.Size(82, 28);
-			this.cbEstado.TabIndex = 179;
+			this.cbEstado.Size = new System.Drawing.Size(125, 28);
+			this.cbEstado.TabIndex = 8;
 			this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.CbEstado_SelectedIndexChanged);
 			// 
 			// dtDataNasc
@@ -470,7 +474,7 @@
 			this.dtDataNasc.Location = new System.Drawing.Point(529, 131);
 			this.dtDataNasc.Name = "dtDataNasc";
 			this.dtDataNasc.Size = new System.Drawing.Size(200, 26);
-			this.dtDataNasc.TabIndex = 178;
+			this.dtDataNasc.TabIndex = 3;
 			// 
 			// txtBairro
 			// 
@@ -480,7 +484,7 @@
 			this.txtBairro.MensagemObrigatorio = null;
 			this.txtBairro.Name = "txtBairro";
 			this.txtBairro.Size = new System.Drawing.Size(231, 24);
-			this.txtBairro.TabIndex = 177;
+			this.txtBairro.TabIndex = 12;
 			this.txtBairro.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// txtNumero
@@ -490,8 +494,8 @@
 			this.txtNumero.Location = new System.Drawing.Point(356, 311);
 			this.txtNumero.MensagemObrigatorio = null;
 			this.txtNumero.Name = "txtNumero";
-			this.txtNumero.Size = new System.Drawing.Size(100, 24);
-			this.txtNumero.TabIndex = 176;
+			this.txtNumero.Size = new System.Drawing.Size(125, 24);
+			this.txtNumero.TabIndex = 11;
 			this.txtNumero.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// txtLogra
@@ -502,7 +506,7 @@
 			this.txtLogra.MensagemObrigatorio = null;
 			this.txtLogra.Name = "txtLogra";
 			this.txtLogra.Size = new System.Drawing.Size(221, 24);
-			this.txtLogra.TabIndex = 175;
+			this.txtLogra.TabIndex = 10;
 			this.txtLogra.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// txtCep
@@ -513,7 +517,7 @@
 			this.txtCep.MensagemObrigatorio = null;
 			this.txtCep.Name = "txtCep";
 			this.txtCep.Size = new System.Drawing.Size(221, 24);
-			this.txtCep.TabIndex = 174;
+			this.txtCep.TabIndex = 7;
 			this.txtCep.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// txtTelFunc
@@ -524,41 +528,41 @@
 			this.txtTelFunc.MensagemObrigatorio = null;
 			this.txtTelFunc.Name = "txtTelFunc";
 			this.txtTelFunc.Size = new System.Drawing.Size(124, 24);
-			this.txtTelFunc.TabIndex = 173;
-			this.txtTelFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			this.txtTelFunc.TabIndex = 5;
+			this.txtTelFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
 			// 
 			// txtCpfFunc
 			// 
-			this.txtCpfFunc.CampoObrigatorio = false;
+			this.txtCpfFunc.CampoObrigatorio = true;
 			this.txtCpfFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtCpfFunc.Location = new System.Drawing.Point(60, 191);
-			this.txtCpfFunc.MensagemObrigatorio = null;
+			this.txtCpfFunc.MensagemObrigatorio = "Informar CPF";
 			this.txtCpfFunc.Name = "txtCpfFunc";
 			this.txtCpfFunc.Size = new System.Drawing.Size(221, 24);
-			this.txtCpfFunc.TabIndex = 172;
+			this.txtCpfFunc.TabIndex = 4;
 			this.txtCpfFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
 			// 
 			// txtNomeFunc
 			// 
-			this.txtNomeFunc.CampoObrigatorio = false;
+			this.txtNomeFunc.CampoObrigatorio = true;
 			this.txtNomeFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtNomeFunc.Location = new System.Drawing.Point(59, 130);
-			this.txtNomeFunc.MensagemObrigatorio = null;
+			this.txtNomeFunc.MensagemObrigatorio = "Informar o nome";
 			this.txtNomeFunc.Name = "txtNomeFunc";
 			this.txtNomeFunc.Size = new System.Drawing.Size(364, 24);
-			this.txtNomeFunc.TabIndex = 170;
+			this.txtNomeFunc.TabIndex = 2;
 			this.txtNomeFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// txtEmail
 			// 
-			this.txtEmail.CampoObrigatorio = false;
+			this.txtEmail.CampoObrigatorio = true;
 			this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtEmail.Location = new System.Drawing.Point(530, 190);
-			this.txtEmail.MensagemObrigatorio = null;
+			this.txtEmail.MensagemObrigatorio = "Informar o Email";
 			this.txtEmail.Name = "txtEmail";
 			this.txtEmail.Size = new System.Drawing.Size(230, 24);
-			this.txtEmail.TabIndex = 169;
-			this.txtEmail.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			this.txtEmail.TabIndex = 6;
+			this.txtEmail.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
 			// 
 			// label16
 			// 
@@ -693,10 +697,10 @@
 			this.Load += new System.EventHandler(this.FormFuncionario_Load);
 			this.tabctrlFuncionario.ResumeLayout(false);
 			this.tabConsultaFuncionario.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dgFuncionario)).EndInit();
 			this.gbFiltroFunc.ResumeLayout(false);
 			this.pnlFiltroFuncionario.ResumeLayout(false);
 			this.pnlFiltroFuncionario.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgFuncionario)).EndInit();
 			this.tabCadastroFunc.ResumeLayout(false);
 			this.gbDadosFunc.ResumeLayout(false);
 			this.gbDadosFunc.PerformLayout();
@@ -708,7 +712,6 @@
 		private System.Windows.Forms.TabControl tabctrlFuncionario;
 		private System.Windows.Forms.TabPage tabConsultaFuncionario;
 		private System.Windows.Forms.TabPage tabCadastroFunc;
-		private System.Windows.Forms.DataGridView dgFuncionario;
 		private System.Windows.Forms.Button btnNovo;
 		private System.Windows.Forms.Button btnExcluir;
 		private System.Windows.Forms.Button btnAlterar;
@@ -748,5 +751,6 @@
 		private UserControl.SuperComboBox cbCidade;
 		private UserControl.SuperComboBox cbEstado;
 		private UserControl.SuperComboBox cbCargo;
+		private System.Windows.Forms.DataGridView dgFuncionario;
 	}
 }

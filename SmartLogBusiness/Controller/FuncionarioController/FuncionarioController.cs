@@ -50,7 +50,7 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				DataTable table =  dao.FiltrarFuncionarioDAO(obj.Nome, obj.Cpf);
+				DataTable table = dao.FiltrarFuncionarioDAO(obj.Nome, obj.Cpf);
 
 				return table;
 			}
@@ -69,9 +69,9 @@ namespace SmartLogBusiness.Controller
 				int numero, cidade, estado;
 				DateTime dataNasc;
 
-				if(obj.Codigo == 0)
+				if (obj.Codigo == 0)
 				{
-					throw new Exception("Insira o código para localizar viagem!");
+					throw new Exception("Insira o código para localizar funcionário!");
 				}
 
 				if (table != null)
@@ -133,7 +133,7 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("Funcionário não localizado.");
 				}
-				
+
 				foreach (DataRow item in table.Rows)
 				{
 					Endereco end = new Endereco(item["Cep"].ToString(),
@@ -144,12 +144,12 @@ namespace SmartLogBusiness.Controller
 												Convert.ToInt32(item["Cod_Estado"]));
 
 					Funcionario func = new Funcionario(Convert.ToInt32(item["Cod_Matricula"]),
-												       item["Nome_Funcionario"].ToString(),
+													   item["Nome_Funcionario"].ToString(),
 														item["CPF_Funcionario"].ToString(),
 														Convert.ToDateTime(item["Data_Nascimento"]),
 													   item["Telefone_Funcionario"].ToString(),
 													   item["Email_Funcionario"].ToString(),
-													 
+
 													   end, (EnumTipoCargo)Convert.ToInt32(item["Cod_Cargo"]));
 
 					lista.Add(func);
@@ -165,42 +165,39 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				if(obj.Email == "" || obj.Senha == "")
+				if (obj.Email == "" || obj.Senha == "")
 				{
 					throw new Exception("Informe um usuário/senha.");
 				}
 
-
-				DataTable table = dao.LogarDAO(obj.Email,obj.Senha);
-				
+				DataTable table = dao.LogarDAO(obj.Email, obj.Senha);
 
 				if (table != null && table.Rows.Count != 0)
 				{
-
 					int numero;
 					int.TryParse(table.Rows[0]["Numero"].ToString(), out numero);
 
 					int cidade;
 					int.TryParse(table.Rows[0]["Cod_Cidade"].ToString(), out cidade);
+
 					int estado;
 					int.TryParse(table.Rows[0]["Cod_Estado"].ToString(), out estado);
 
 					DateTime data;
 					DateTime.TryParse(table.Rows[0]["Data_Nascimento"].ToString(), out data);
+
 					Endereco end = new Endereco(table.Rows[0]["Cep"].ToString(),
 												table.Rows[0]["Logradouro"].ToString(),
 												numero,
 												table.Rows[0]["Bairro"].ToString(),
 												cidade, estado);
 
-
-
 					int cargo;
 					int.TryParse(table.Rows[0]["Cod_Cargo"].ToString(), out cargo);
 
 					EnumTipoCargo tipo;
 
-					if(cargo == 0)
+					if (cargo == 0)
 					{
 						tipo = EnumTipoCargo.Atendente;
 					}
@@ -212,10 +209,10 @@ namespace SmartLogBusiness.Controller
 					Funcionario func = new Funcionario(Convert.ToInt32(table.Rows[0]["Cod_Matricula"]),
 													  table.Rows[0]["Nome_Funcionario"].ToString(),
 													  table.Rows[0]["CPF_Funcionario"].ToString(),
-													  Convert.ToDateTime(table.Rows[0]["Data_nascimento"]),
+													  data,
 													  table.Rows[0]["Telefone_Funcionario"].ToString(),
 													  table.Rows[0]["Email_Funcionario"].ToString(),
-													 
+
 													  end, tipo);
 
 					return func;
@@ -227,7 +224,17 @@ namespace SmartLogBusiness.Controller
 			}
 			catch (Exception ex)
 			{
-
+				throw new Exception(ex.Message);
+			}
+		}
+		public DataTable CarregarComboFuncionario()
+		{
+			try
+			{
+				return dao.CarregarComboFuncionario();
+			}
+			catch (Exception ex)
+			{
 				throw new Exception(ex.Message);
 			}
 		}

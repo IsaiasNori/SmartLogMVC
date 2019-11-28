@@ -15,9 +15,9 @@ namespace SmartLogBusiness.DAL.FuncionarioDAL
 			{
 				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "INSE");
-				AdicionarParametro("@Nome", SqlDbType.NVarChar, 100, nome);
+				AdicionarParametro("@NomeMotorista", SqlDbType.NVarChar, 100, nome);
 				AdicionarParametro("@DataNasc", SqlDbType.DateTime, 10, dataNasc);
-				AdicionarParametro("@CnhCat", SqlDbType.NVarChar, 2, cnhCat);
+				AdicionarParametro("@CnhCat", SqlDbType.Int, 10, cnhCat);
 				AdicionarParametro("@CnhNum", SqlDbType.NVarChar, 11, cnhNum);
 				AdicionarParametro("@CnhVenc", SqlDbType.DateTime, 10, cnhVenc);
 				AdicionarParametro("@Telefone", SqlDbType.NVarChar, 14, tel);
@@ -46,9 +46,9 @@ namespace SmartLogBusiness.DAL.FuncionarioDAL
 				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "ALTE");
 				AdicionarParametro("@CodMotorista", SqlDbType.Int, 10, cod);
-				AdicionarParametro("@Nome", SqlDbType.NVarChar, 100, nome);
+				AdicionarParametro("@NomeMotorista", SqlDbType.NVarChar, 100, nome);
 				AdicionarParametro("@DataNasc", SqlDbType.DateTime, 10, dataNasc);
-				AdicionarParametro("@CnhCat", SqlDbType.NVarChar, 2, cnhCat);
+				AdicionarParametro("@CnhCat", SqlDbType.Int,10, cnhCat);
 				AdicionarParametro("@CnhNum", SqlDbType.NVarChar, 11, cnhNum);
 				AdicionarParametro("@CnhVenc", SqlDbType.DateTime, 10, cnhVenc);
 				AdicionarParametro("@Telefone", SqlDbType.NVarChar, 14, tel);
@@ -105,12 +105,16 @@ namespace SmartLogBusiness.DAL.FuncionarioDAL
 				throw new Exception(ex.Message);
 			}
 		}
-		public DataTable CarregarComboMotoristaDAO()
+		public DataTable CarregarComboMotoristaDAO(int StatusMotorista)
 		{
 			try
 			{
 				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "COMB");
+				if (StatusMotorista > 0)
+				{
+					AdicionarParametro("@Status", SqlDbType.Int, 10, StatusMotorista);
+				}
 				
 				return ExecuteProcedure("pMotorista");
 			}

@@ -28,6 +28,7 @@ namespace SmartLog.WindowsForms
 		private void FormCliente_Load(object sender, EventArgs e)
 		{
 			Util.Utils.CarregarEstado(ref cbEstado);
+		
 			CarregarTipoCliente();
 		}
 		private void btnPesquisarCli_Click(object sender, EventArgs e)
@@ -83,14 +84,9 @@ namespace SmartLog.WindowsForms
 		private void btnSalvar_Click(object sender, EventArgs e)
 		{
 			DateTime dataNasc;
-			int codTipoCli;
 			int numero;
-			int cidade;
-			int estado;
-
 			try
 			{
-
 				if (ValidateChildren() == false)
 				{
 					return;
@@ -104,13 +100,11 @@ namespace SmartLog.WindowsForms
 					return;
 				}
 
-				int.TryParse(cbTipoCli.ToString(), out codTipoCli);
-
 				int.TryParse(txtNumero.Text, out numero);
 
 				Endereco end = new Endereco(txtCep.Text, txtLogra.Text, numero, txtBairro.Text, cbCidade.PegarComboSelecionado(), cbEstado.PegarComboSelecionado());
 
-				Cliente cli = new Cliente(codigoCli, txtNomeCli.Text, txtCpfCnpjCli.Text, System.DateTime.Now, dataNasc, txtTelCli.Text, txtEmailCli.Text, codTipoCli, end);
+				Cliente cli = new Cliente(codigoCli, txtNomeCli.Text, txtCpfCnpjCli.Text, System.DateTime.Now, dataNasc, txtTelCli.Text, txtEmailCli.Text, cbTipoCli.PegarComboSelecionado(), end);
 				if (codigoCli == 0)
 				{
 					cliController.InserirController(cli);
@@ -139,7 +133,7 @@ namespace SmartLog.WindowsForms
 		{
 			try
 			{
-				if (dgCliente.Rows.Count > 0)
+				if (dgCliente.SelectedRows.Count > 0)
 				{
 					string codigo = dgCliente.SelectedRows[0].Cells[0].Value.ToString();
 
@@ -153,19 +147,18 @@ namespace SmartLog.WindowsForms
 						txtNomeCli.Text = cli.Nome;
 						dtDataCadastro.Text = cli.DataCadastro.ToString();
 						dtDataNasc.Text = cli.DataNasc.ToString();
-						cbTipoCli.SelectedValue = cli.CodTipoCli.ToString();
+						cbTipoCli.PosicionarCombo(cli.CodTipoCli);
 						txtCpfCnpjCli.Text = cli.CpfCnpj.ToString();
 						txtTelCli.Text = cli.Telefone.ToString();
 						txtEmailCli.Text = cli.Email.ToString();
 						txtCep.Text = cli.Endereco.Cep.ToString();
-						cbCidade.SelectedValue = cli.Endereco.CodCidade.ToString();
-						cbEstado.SelectedValue = cli.Endereco.CodEstado.ToString();
+						cbEstado.PosicionarCombo(cli.Endereco.CodEstado);
+						cbCidade.PosicionarCombo(cli.Endereco.CodCidade);
 						txtLogra.Text = cli.Endereco.Logradouro.ToString();
 						txtNumero.Text = cli.Endereco.Numero.ToString();
 						txtBairro.Text = cli.Endereco.Bairro.ToString();
 
 						tabCtrlCliente.SelectedTab = tabCadastroCli;
-
 					}
 					else
 					{
@@ -188,7 +181,7 @@ namespace SmartLog.WindowsForms
 				if (codigoCli > 0)
 				{
 
-					if (MessageBox.Show("Deseja realmente excluir este registro?", MessageBoxButtons.YesNo.ToString()) == DialogResult.Yes)
+					if (MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de registro",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
 					{
 						Cliente cli = new Cliente(codigoCli);
 						cliController.DeletarController(cli);
@@ -217,6 +210,7 @@ namespace SmartLog.WindowsForms
 			if (dgCliente.DataSource != null)
 			{
 				dgCliente.Columns[0].Visible = false;
+				dgCliente.AutoResizeColumns();
 			}
 		}
 		private void PesquisarCliente()
@@ -231,6 +225,7 @@ namespace SmartLog.WindowsForms
 				DataTable table = cliController.GetDataTable(cli);
 
 				dgCliente.DataSource = table;
+				dgCliente.ClearSelection();
 			}
 			catch (Exception ex)
 			{

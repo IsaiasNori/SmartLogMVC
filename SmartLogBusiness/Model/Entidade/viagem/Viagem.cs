@@ -18,9 +18,14 @@ namespace SmartLogBusiness.Model.Entidade.viagem
         public Motorista Motorista { get; private set; }
         public Cliente Cliente { get; private set; }
 		public Funcionario Atendente { get; private set; }
-        public StatusViagem Status { get; private set; }
+        public EnumStatusViagem Status { get; private set; }
 		public Veiculo CodVeiculo { get; private set; }
-        public Viagem(int codigo,DateTime dataVi, string distancia, decimal valor,Endereco origem, string compleOrig, Endereco destino, string compleDest, Cliente cliente, Veiculo codVei, Motorista motorista,  Funcionario atendente)
+
+		public Viagem (int codigo)
+		{
+			CodViagem = codigo;
+		}
+        public Viagem(int codigo,DateTime dataVi, string distancia, decimal valor,Endereco origem, string compleOrig, Endereco destino, string compleDest, Cliente cliente, Veiculo codVei, Motorista motorista,  Funcionario atendente, EnumStatusViagem status)
 		{
 			CodViagem = codigo;
 			DataViagem = dataVi;
@@ -34,25 +39,16 @@ namespace SmartLogBusiness.Model.Entidade.viagem
             Motorista = motorista;
             Cliente = cliente;
 			Atendente = atendente;
-            Status = 0;
+			Status = status;
         }
+		
 		//Construtor para filtrar
-		public Viagem(int codigo, DateTime dataVi, DateTime dataViFinal, string distancia, decimal valor, Endereco origem, string compleOrig, Endereco destino, string compleDest, Cliente cliente, Veiculo codVei, Motorista motorista, Funcionario atendente)
+		public Viagem(DateTime dataVi, DateTime dataViFinal, Cliente cliente, Motorista motorista)
 		{
-			CodViagem = codigo;
 			DataViagem = dataVi;
 			DataViagemFinal = dataViFinal;
-			DistanciaKm = distancia;
-			Valor = valor;
-			Origem = origem;
-			ComplementoOrigem = compleOrig;
-			Destino = destino;
-			ComplementoDestino = compleDest;
-			CodVeiculo = codVei;
 			Motorista = motorista;
 			Cliente = cliente;
-			Atendente = atendente;
-			Status = 0;
 		}
 
 	}

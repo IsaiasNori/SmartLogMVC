@@ -23,6 +23,13 @@ namespace SmartLog.WindowsForms
 		{
 			InitializeComponent();
 		}
+		private void frmMotorista_Load(object sender, EventArgs e)
+		{
+			Utils.CarregarStatusMotorista(ref cbStatus);
+			Utils.CarregarEstado(ref cbEstado);
+			Utils.CarregarCnhCategoria(ref cbCnhCategoria);
+		}
+
 		private void btnPesquisarMotorista_Click(object sender, EventArgs e)
 		{
 			Pesquisar();
@@ -46,7 +53,7 @@ namespace SmartLog.WindowsForms
 		}
 		private void btnVoltar_Click(object sender, EventArgs e)
 		{
-			tabCtrlMotorista.SelectedTab = tabCadastroMotorista;
+			tabCtrlMotorista.SelectedTab = tabConsultaMotorista;
 		}
 		private void btnLimpar_Click(object sender, EventArgs e)
 		{
@@ -62,7 +69,7 @@ namespace SmartLog.WindowsForms
 		{
 			try
 			{
-				if(ValidateChildren() == false)
+				if (ValidateChildren() == false)
 				{
 					return;
 				}
@@ -72,7 +79,7 @@ namespace SmartLog.WindowsForms
 					dtDataNasc.Focus();
 					return;
 				}
-				
+
 				int numero;
 				int.TryParse(txtNumero.Text, out numero);
 
@@ -101,18 +108,6 @@ namespace SmartLog.WindowsForms
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-		private void CarregarStatusMotorista()
-		{
-			try
-			{
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Ativo", (int)EnumStatusMotorista.Ativo));
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Inativo", (int)EnumStatusMotorista.Inativo));
-			}
-			catch (Exception ex)
-			{
-				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
-			}
-		}
 		private void Pesquisar()
 		{
 			try
@@ -130,22 +125,22 @@ namespace SmartLog.WindowsForms
 				Motorista moto = new Motorista(0, txtMotoristaPesquisa.Text, null, null, null, null, null, null, null, datainicial, dataFinal);
 
 				DataTable table = motoCtrl.GetDataTable(moto);
-
 				dgMotorista.DataSource = table;
+				dgMotorista.ClearSelection();
 			}
 			catch (Exception ex)
 			{
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-
 		private void dgMotorista_DataSourceChanged(object sender, EventArgs e)
 		{
 			try
 			{
 				if (dgMotorista.DataSource != null)
 				{
-					dgMotorista.SelectedColumns[0].Visible = false;
+					dgMotorista.Columns[0].Visible = false;
+					dgMotorista.AutoResizeColumns();
 				}
 			}
 			catch (Exception ex)
@@ -153,7 +148,6 @@ namespace SmartLog.WindowsForms
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-
 		private void btnGridAlterar_Click(object sender, EventArgs e)
 		{
 			try
@@ -176,7 +170,7 @@ namespace SmartLog.WindowsForms
 						txtTelMoto.Text = moto.Telefone;
 						txtEmail.Text = moto.Email;
 						txtCnhNum.Text = moto.CnhNumero;
-						cbCnhCategoria.PosicionarCombo(moto.CnhNumero);
+						cbCnhCategoria.PosicionarCombo(moto.CnhCat);
 						dtCnhVenc.Value = Convert.ToDateTime(moto.CnhVencimento);
 						txtCep.Text = moto.Endereco.Cep;
 						cbEstado.PosicionarCombo(moto.Endereco.CodEstado);
@@ -186,12 +180,55 @@ namespace SmartLog.WindowsForms
 						txtBairro.Text = moto.Endereco.Bairro;
 
 						tabCtrlMotorista.SelectedTab = tabCadastroMotorista;
-
 					}
 				}
 				else
 				{
 					Utils.ExibirMensagem("Selecione um registro para alterar.", eTipoMensagem.Atencao);
+				}
+			}
+			catch (Exception ex)
+			{
+				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+			}
+		}
+		private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				Utils.CarregarComboCidade(cbEstado.PegarComboSelecionado(), ref cbCidade);
+			}
+			catch (Exception ex)
+			{
+				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+			}
+		}
+		private void btnGridExcluir_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (dgMotorista.SelectedRows.Count > 0)
+				{
+					string codigo = dgMotorista.SelectedRows[0].Cells[0].Value.ToString();
+
+
+					int.TryParse(codigo, out codigoMoto);
+
+					if (codigoMoto > 0)
+					{
+						Motorista moto = new Motorista(codigoMoto);
+						if (MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+						{
+							motoCtrl.DeletarController(moto);
+
+							Utils.ExibirMensagem("Motorista excluído com sucesso.", eTipoMensagem.Sucesso);
+							Pesquisar();
+						}
+					}
+				}
+				else
+				{
+					Utils.ExibirMensagem("Selecione um registro para excluir.",eTipoMensagem.Atencao);
 				}
 			}
 			catch (Exception ex)

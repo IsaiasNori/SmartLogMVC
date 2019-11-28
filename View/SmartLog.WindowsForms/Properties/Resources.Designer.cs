@@ -173,6 +173,16 @@ namespace SmartLog.WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_Logout {
+            get {
+                object obj = ResourceManager.GetObject("icon_Logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_MaxApplication1 {
             get {
                 object obj = ResourceManager.GetObject("icon_MaxApplication1", resourceCulture);
@@ -303,9 +313,29 @@ namespace SmartLog.WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_NewWhite {
+            get {
+                object obj = ResourceManager.GetObject("icon_NewWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_Novo {
             get {
                 object obj = ResourceManager.GetObject("icon_Novo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_NovoWhite {
+            get {
+                object obj = ResourceManager.GetObject("icon_NovoWhite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

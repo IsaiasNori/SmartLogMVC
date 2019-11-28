@@ -29,11 +29,9 @@ namespace SmartLogBusiness.Controller
 			}
 			catch (Exception ex)
 			{
-
 				throw new Exception(ex.Message);
 			}
 		}
-
 		public void DeletarController(Cliente obj)
 		{
 			try
@@ -62,9 +60,6 @@ namespace SmartLogBusiness.Controller
 				throw new Exception(ex.Message);
 			}
 		}
-
-		
-
 		public Cliente GetObj(Cliente obj)
 		{
 			try
@@ -72,8 +67,6 @@ namespace SmartLogBusiness.Controller
 				DataTable table = dao.ObterClienteDAO(obj.Codigo);
 
 				int numero, cidade, estado;
-
-				
 
 				if (table != null)
 				{
@@ -156,7 +149,17 @@ namespace SmartLogBusiness.Controller
 				}
 
 				return lista;
-
+			}
+			catch (Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
+		}
+		public DataTable ComboCliente()
+		{
+			try
+			{
+				return dao.ComboCliente();
 			}
 			catch (Exception ex)
 			{

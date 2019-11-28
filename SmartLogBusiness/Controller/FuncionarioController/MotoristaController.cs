@@ -17,7 +17,7 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				if(obj.Codigo == 0)
+				if (obj.Codigo == 0)
 				{
 					throw new Exception("Necessário informar o código para alterar registro.");
 				}
@@ -34,7 +34,7 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				if(obj.Codigo == 0)
+				if (obj.Codigo == 0)
 				{
 					throw new Exception("Necessário informar o código para excluir registro.");
 				}
@@ -47,11 +47,24 @@ namespace SmartLogBusiness.Controller
 			}
 		}
 
+		public DataTable ComboMotorista(int StatusMotorista)
+		{
+			try
+			{
+				return dao.CarregarComboMotoristaDAO(StatusMotorista);
+			}
+			catch (Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
+
+		}
+
 		public DataTable GetDataTable(Motorista obj)
 		{
 			try
 			{
-				return dao.FiltrarMotoristaDAO(obj.Nome, obj.CnhVencimento,obj.CnhVencFinal);
+				return dao.FiltrarMotoristaDAO(obj.Nome, obj.CnhVencimento, obj.CnhVencFinal);
 
 			}
 			catch (Exception ex)
@@ -66,11 +79,11 @@ namespace SmartLogBusiness.Controller
 			try
 			{
 				DataTable table = dao.CarregarMotoristaDAO(obj.Codigo);
-				if(table != null)
+				if (table != null)
 				{
 					Endereco end = new Endereco(table.Rows[0]["Cep"].ToString(),
 												table.Rows[0]["Logradouro"].ToString(),
-											    Convert.ToInt32(table.Rows[0]["Numero"]),
+												Convert.ToInt32(table.Rows[0]["Numero"]),
 												table.Rows[0]["Bairro"].ToString(),
 												Convert.ToInt32(table.Rows[0]["Cod_Cidade"]),
 												Convert.ToInt32(table.Rows[0]["Cod_Estado"]));
@@ -80,7 +93,7 @@ namespace SmartLogBusiness.Controller
 												   Convert.ToDateTime(table.Rows[0]["Data_Nascimento"]),
 												   table.Rows[0]["Telefone_Motorista"].ToString(),
 												   table.Rows[0]["Email_Motorista"].ToString(),
-												   (EnumStatusMotorista)(table.Rows[0]["Status_Motorista"]),end,
+												   (EnumStatusMotorista)(table.Rows[0]["Status_Motorista"]), end,
 												   (EnumCnhCategoriaMotorista)table.Rows[0]["CNH_Categoria"],
 												   table.Rows[0]["CNH_Numero"].ToString(),
 												   Convert.ToDateTime(table.Rows[0]["CNH_Vencimento"]));
@@ -115,15 +128,15 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				DataTable table = dao.FiltrarMotoristaDAO(obj.Nome,obj.CnhVencimento,obj.CnhVencFinal);
+				DataTable table = dao.FiltrarMotoristaDAO(obj.Nome, obj.CnhVencimento, obj.CnhVencFinal);
 				List<Motorista> lista = new List<Motorista>();
 
-				if(table == null)
+				if (table == null)
 				{
 					throw new Exception("Funcionário não localizado.");
 				}
 
-				foreach(DataRow item in table.Rows)
+				foreach (DataRow item in table.Rows)
 				{
 					Endereco end = new Endereco(table.Rows[0]["Cep"].ToString(),
 												table.Rows[0]["Logradouro"].ToString(),

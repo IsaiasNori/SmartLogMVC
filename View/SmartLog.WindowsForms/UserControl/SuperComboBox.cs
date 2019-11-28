@@ -21,9 +21,20 @@ namespace SmartLog.WindowsForms.UserControl
 		public bool CampoObrigatorio { get; set; }
 		public string MensagemCampoObrigatorio { get; set; }
 
+		public bool isControle;
+
+		protected override void OnLeave(EventArgs e)
+		{
+			isControle = true;
+		}
 		protected override void OnValidating(CancelEventArgs e)
 		{
-			e.Cancel = !VerificarCampoObrigatorio();
+			if (isControle == false)
+			{
+				e.Cancel = !VerificarCampoObrigatorio();
+			}
+
+			isControle = false;
 		}
 
 		public bool VerificarCampoObrigatorio()
@@ -90,7 +101,7 @@ namespace SmartLog.WindowsForms.UserControl
 				comb = (int)i.Value;
 				return comb;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				return -1;
 				

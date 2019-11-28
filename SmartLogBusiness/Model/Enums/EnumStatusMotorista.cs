@@ -6,8 +6,9 @@ namespace SmartLogBusiness.Model.Enums
 {
 	public enum EnumStatusMotorista
 	{
-		Inativo = 0,
-		Ativo=1
+		Ativo = 1,
+		Inativo = 2
+		
 
 	}
 }

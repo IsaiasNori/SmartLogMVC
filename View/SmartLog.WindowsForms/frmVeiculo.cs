@@ -26,43 +26,8 @@ namespace SmartLog.WindowsForms
 		private void frmVeiculo_Load(object sender, EventArgs e)
 		{
 			CarregarMarca();
-			CarregarStatusVeiculo();
+			Utils.CarregarStatusVeiculo(ref cbStatus);
 		}
-		private void CarregarMarca()
-		{
-			try
-			{
-				MarcaController marcaCtrl = new MarcaController();
-				DataTable table = marcaCtrl.CarregarComborMarcaController();
-
-				cbMarca.CarregaCombo(table,  "Cod_Marca", "Descricao",UserControl.eTipoMensagem.Selecione);
-				cbMarcaPesquisa.CarregaCombo(table, "Cod_Marca", "Descricao", UserControl.eTipoMensagem.Selecione);
-
-			}
-			catch (Exception)
-			{
-
-				throw;
-			}
-		}
-		private void CarregarStatusVeiculo()
-		{
-			try
-			{
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("--Selecione--", -1));
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Disponivel", (int)enumStatusVeiculo.Disponivel));
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Transito", (int)enumStatusVeiculo.Transito));
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Manutenção", (int)enumStatusVeiculo.Manutencao));
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Sem Licenciamento", (int)enumStatusVeiculo.SemLicenciamento));
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Desativado", (int)enumStatusVeiculo.Desativado));
-			}
-			catch (Exception)
-			{
-
-				throw;
-			}
-		}
-
 		private void btnNovoVeiculo_Click(object sender, EventArgs e)
 		{
 			codigoVeic = 0;
@@ -74,11 +39,6 @@ namespace SmartLog.WindowsForms
 		{
 			try
 			{
-				//if (VerificarCamposObrigatoriosInformados() == false)
-				//{
-				//	return;
-				//}
-
 				if (ValidateChildren() == false)
 				{
 					return;
@@ -126,7 +86,7 @@ namespace SmartLog.WindowsForms
 
 			try
 			{
-				
+
 
 				if (txtModelo.Text == "")
 				{
@@ -170,14 +130,12 @@ namespace SmartLog.WindowsForms
 		{
 			Pesquisar();
 		}
-
 		private void DtVeiculo_DataSourceChanged(object sender, EventArgs e)
 		{
 			if (dgVeiculo.DataSource != null)
 			{
 				dgVeiculo.Columns[0].Visible = false;
-				
-
+				dgVeiculo.AutoResizeColumns();
 			}
 		}
 		private void Pesquisar()
@@ -214,12 +172,11 @@ namespace SmartLog.WindowsForms
 		{
 			this.Close();
 		}
-
 		private void btnAlterar_Click(object sender, EventArgs e)
 		{
 			try
 			{
-				if (dgVeiculo.Rows.Count > 0)
+				if (dgVeiculo.SelectedRows.Count > 0)
 				{
 					string codigo = dgVeiculo.SelectedRows[0].Cells[0].Value.ToString();
 					int.TryParse(codigo, out codigoVeic);
@@ -255,21 +212,23 @@ namespace SmartLog.WindowsForms
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-
 		private void btnExcluir_Click(object sender, EventArgs e)
 		{
-			string codigo = dgVeiculo.SelectedRows[0].Cells[0].Value.ToString();
-			int.TryParse(codigo, out codigoVeic);
-
-			if (codigoVeic > 0)
+			if (dgVeiculo.SelectedRows.Count > 0)
 			{
-				if (MessageBox.Show("Deseja realmente excluir este registro?", "",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
-				{
-					Veiculo vei = new Veiculo(codigoVeic);
-					veiCtrl.DeletarController(vei);
+				string codigo = dgVeiculo.SelectedRows[0].Cells[0].Value.ToString();
+				int.TryParse(codigo, out codigoVeic);
 
-					Utils.ExibirMensagem("Veículo excluído com sucesso.", eTipoMensagem.Sucesso);
-					Pesquisar();
+				if (codigoVeic > 0)
+				{
+					if (MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+					{
+						Veiculo vei = new Veiculo(codigoVeic);
+						veiCtrl.DeletarController(vei);
+
+						Utils.ExibirMensagem("Veículo excluído com sucesso.", eTipoMensagem.Sucesso);
+						Pesquisar();
+					}
 				}
 			}
 			else
@@ -277,10 +236,23 @@ namespace SmartLog.WindowsForms
 				Utils.ExibirMensagem("Selecione um registro para excluir.", eTipoMensagem.Atencao);
 			}
 		}
-
-		private void cbMarca_SelectedIndexChanged(object sender, EventArgs e)
+		private void CarregarMarca()
 		{
+			try
+			{
+				MarcaController marcaCtrl = new MarcaController();
+				DataTable table = marcaCtrl.CarregarComborMarcaController();
 
+				cbMarca.CarregaCombo(table, "Cod_Marca", "Descricao", UserControl.eTipoMensagem.Selecione);
+				cbMarcaPesquisa.CarregaCombo(table, "Cod_Marca", "Descricao", UserControl.eTipoMensagem.Selecione);
+
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
 		}
+
 	}
 }

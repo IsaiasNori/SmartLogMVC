@@ -47,7 +47,7 @@ namespace WebPresentation.ClienteViews
 
                 //criacao da entidade cliente e atribuição dos campos dps chamar metodo da classe controller
 
-                Cliente cliente = new Cliente(0, nome, "0000000",,, telefone, email,,);
+            //    Cliente cliente = new Cliente(0, nome, "0000000",,, telefone, email,,);
 
 
                 MensagemLabel.Text = "Dados Salvos com sucesso";

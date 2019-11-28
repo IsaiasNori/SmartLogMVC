@@ -230,6 +230,9 @@
     <None Include="Resources\icon_MinimizarApp.png" />
     <None Include="Resources\icon_Backspace.jpg" />
     <None Include="Resources\icon_Backspace.png" />
+    <None Include="Resources\icon_NovoWhite.png" />
+    <None Include="Resources\icon_NewWhite.png" />
+    <None Include="Resources\icon_Logout.png" />
     <Content Include="Resources\LogoV9.jpg" />
     <None Include="Resources\icon_alert.png" />
     <None Include="Resources\icon_erro.png" />
