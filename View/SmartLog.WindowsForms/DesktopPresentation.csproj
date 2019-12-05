@@ -163,49 +163,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Logo_SmartLog.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_CloseApplication.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_MinimizarApplication.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icon_search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_Alterar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_salvar.fw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_Excluir.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_ReturnTab.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_fecharTab.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_close.fw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_Novo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_MenuCliente.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_MenuFuncionario.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\LogoV11.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\LogoV11.fw.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_MenuVeiculo.png" />
@@ -217,26 +181,21 @@
     <None Include="Resources\icon_MenuManutencao.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icon_MaxApplication.png" />
-    <None Include="Resources\icon_MinApplication.png" />
     <None Include="Resources\Logo.png" />
     <None Include="Resources\icon_MenuAjuda.png" />
-    <None Include="Resources\icon_MaxPreto.jpg" />
-    <None Include="Resources\icon_MaximizarWhiteBlack.png" />
-    <None Include="Resources\icon_MaximizarWhite.png" />
     <None Include="Resources\icon_MAxWhite.png" />
-    <None Include="Resources\icon_CloseApp.png" />
     <None Include="Resources\icon_CloseApp2.png" />
     <None Include="Resources\icon_MinimizarApp.png" />
-    <None Include="Resources\icon_Backspace.jpg" />
-    <None Include="Resources\icon_Backspace.png" />
-    <None Include="Resources\icon_NovoWhite.png" />
-    <None Include="Resources\icon_NewWhite.png" />
     <None Include="Resources\icon_Logout.png" />
-    <Content Include="Resources\LogoV9.jpg" />
     <None Include="Resources\icon_alert.png" />
     <None Include="Resources\icon_erro.png" />
-    <Content Include="Resources\icon_MaximizarApplication.png" />
+    <None Include="Resources\icon_Salvar.png.png" />
+    <None Include="Resources\iconEdit1.png" />
+    <None Include="Resources\icon_Limpar1.png" />
+    <None Include="Resources\iconVoltar.fw1.png" />
+    <None Include="Resources\icon_New1.png" />
+    <None Include="Resources\iconExcluir1.png" />
+    <None Include="Resources\iconFechar5.png" />
     <Content Include="Resources\icon_sucess.png" />
     <None Include="Resources\icon_sucess1.png" />
   </ItemGroup>

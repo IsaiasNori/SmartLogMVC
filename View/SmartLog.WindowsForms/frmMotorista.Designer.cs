@@ -34,26 +34,41 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabCtrlMotorista = new System.Windows.Forms.TabControl();
 			this.tabConsultaMotorista = new System.Windows.Forms.TabPage();
-			this.dgMotorista = new System.Windows.Forms.DataGridView();
-			this.gbFiltrarMotorista = new System.Windows.Forms.GroupBox();
-			this.chkVencimentoCnh = new System.Windows.Forms.CheckBox();
-			this.btnPesquisarMotorista = new System.Windows.Forms.Button();
-			this.dtCnhVencFinal = new System.Windows.Forms.DateTimePicker();
-			this.dtCnhVencPesquisa = new System.Windows.Forms.DateTimePicker();
-			this.lblIntervaloData = new System.Windows.Forms.Label();
-			this.lblMotoristaPesquisa = new System.Windows.Forms.Label();
 			this.btnFechaMotorista = new System.Windows.Forms.Button();
 			this.btnGridExcluir = new System.Windows.Forms.Button();
-			this.btnNovo = new System.Windows.Forms.Button();
 			this.btnGridAlterar = new System.Windows.Forms.Button();
+			this.btnNovo = new System.Windows.Forms.Button();
+			this.dgMotorista = new System.Windows.Forms.DataGridView();
+			this.gbFiltrarMotorista = new System.Windows.Forms.GroupBox();
+			this.pnlFiltrarCliente = new System.Windows.Forms.Panel();
+			this.chkVencimentoCnh = new System.Windows.Forms.CheckBox();
+			this.lblMotoristaPesquisa = new System.Windows.Forms.Label();
+			this.btnPesquisarMotorista = new System.Windows.Forms.Button();
+			this.txtMotoristaPesquisa = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.dtCnhVencFinal = new System.Windows.Forms.DateTimePicker();
+			this.lblIntervaloData = new System.Windows.Forms.Label();
+			this.dtCnhVencPesquisa = new System.Windows.Forms.DateTimePicker();
 			this.tabCadastroMotorista = new System.Windows.Forms.TabPage();
 			this.btnLimpar = new System.Windows.Forms.Button();
+			this.btnVoltar = new System.Windows.Forms.Button();
 			this.gbDadosMotorista = new System.Windows.Forms.GroupBox();
+			this.cbCnhCategoria = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbCidade = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbEstado = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbStatus = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.txtEmail = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblEmail = new System.Windows.Forms.Label();
 			this.lblCnhCat = new System.Windows.Forms.Label();
 			this.dtCnhVenc = new System.Windows.Forms.DateTimePicker();
 			this.lblCnhVenc = new System.Windows.Forms.Label();
+			this.txtCep = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtNumero = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtBairro = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtLogra = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtTelMoto = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtNomeMoto = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.dtDataNasc = new System.Windows.Forms.DateTimePicker();
+			this.txtCnhNum = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblCep = new System.Windows.Forms.Label();
 			this.lblBairro = new System.Windows.Forms.Label();
 			this.lblNumero = new System.Windows.Forms.Label();
@@ -65,29 +80,14 @@
 			this.lblDataNasc = new System.Windows.Forms.Label();
 			this.lblTelMoto = new System.Windows.Forms.Label();
 			this.lblNome = new System.Windows.Forms.Label();
-			this.btnVoltar = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
-			this.pnlFiltrarCliente = new System.Windows.Forms.Panel();
-			this.txtMotoristaPesquisa = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.cbCnhCategoria = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.cbCidade = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.cbEstado = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.cbStatus = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.txtEmail = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtCep = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtNumero = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtBairro = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtLogra = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtTelMoto = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtNomeMoto = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtCnhNum = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.tabCtrlMotorista.SuspendLayout();
 			this.tabConsultaMotorista.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgMotorista)).BeginInit();
 			this.gbFiltrarMotorista.SuspendLayout();
+			this.pnlFiltrarCliente.SuspendLayout();
 			this.tabCadastroMotorista.SuspendLayout();
 			this.gbDadosMotorista.SuspendLayout();
-			this.pnlFiltrarCliente.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabCtrlMotorista
@@ -107,18 +107,102 @@
 			// tabConsultaMotorista
 			// 
 			this.tabConsultaMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.tabConsultaMotorista.Controls.Add(this.dgMotorista);
-			this.tabConsultaMotorista.Controls.Add(this.gbFiltrarMotorista);
 			this.tabConsultaMotorista.Controls.Add(this.btnFechaMotorista);
 			this.tabConsultaMotorista.Controls.Add(this.btnGridExcluir);
-			this.tabConsultaMotorista.Controls.Add(this.btnNovo);
 			this.tabConsultaMotorista.Controls.Add(this.btnGridAlterar);
+			this.tabConsultaMotorista.Controls.Add(this.btnNovo);
+			this.tabConsultaMotorista.Controls.Add(this.dgMotorista);
+			this.tabConsultaMotorista.Controls.Add(this.gbFiltrarMotorista);
 			this.tabConsultaMotorista.Location = new System.Drawing.Point(4, 29);
 			this.tabConsultaMotorista.Name = "tabConsultaMotorista";
 			this.tabConsultaMotorista.Padding = new System.Windows.Forms.Padding(3);
 			this.tabConsultaMotorista.Size = new System.Drawing.Size(845, 589);
 			this.tabConsultaMotorista.TabIndex = 0;
 			this.tabConsultaMotorista.Text = "Consulta";
+			// 
+			// btnFechaMotorista
+			// 
+			this.btnFechaMotorista.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnFechaMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.btnFechaMotorista.FlatAppearance.BorderSize = 0;
+			this.btnFechaMotorista.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnFechaMotorista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnFechaMotorista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnFechaMotorista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnFechaMotorista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnFechaMotorista.Image = global::SmartLog.WindowsForms.Properties.Resources.iconFechar;
+			this.btnFechaMotorista.Location = new System.Drawing.Point(610, 243);
+			this.btnFechaMotorista.Name = "btnFechaMotorista";
+			this.btnFechaMotorista.Size = new System.Drawing.Size(139, 39);
+			this.btnFechaMotorista.TabIndex = 11;
+			this.btnFechaMotorista.Text = "Fechar";
+			this.btnFechaMotorista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnFechaMotorista.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnFechaMotorista.UseVisualStyleBackColor = false;
+			this.btnFechaMotorista.Click += new System.EventHandler(this.btnFechaMotorista_Click);
+			// 
+			// btnGridExcluir
+			// 
+			this.btnGridExcluir.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnGridExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.btnGridExcluir.FlatAppearance.BorderSize = 0;
+			this.btnGridExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnGridExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnGridExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnGridExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnGridExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnGridExcluir.Image = global::SmartLog.WindowsForms.Properties.Resources.iconExcluir;
+			this.btnGridExcluir.Location = new System.Drawing.Point(436, 243);
+			this.btnGridExcluir.Name = "btnGridExcluir";
+			this.btnGridExcluir.Size = new System.Drawing.Size(139, 39);
+			this.btnGridExcluir.TabIndex = 10;
+			this.btnGridExcluir.Text = "Excluir";
+			this.btnGridExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnGridExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnGridExcluir.UseVisualStyleBackColor = false;
+			this.btnGridExcluir.Click += new System.EventHandler(this.btnGridExcluir_Click);
+			// 
+			// btnGridAlterar
+			// 
+			this.btnGridAlterar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnGridAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.btnGridAlterar.FlatAppearance.BorderSize = 0;
+			this.btnGridAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnGridAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnGridAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnGridAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnGridAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnGridAlterar.Image = global::SmartLog.WindowsForms.Properties.Resources.iconEdit;
+			this.btnGridAlterar.Location = new System.Drawing.Point(264, 243);
+			this.btnGridAlterar.Name = "btnGridAlterar";
+			this.btnGridAlterar.Size = new System.Drawing.Size(139, 39);
+			this.btnGridAlterar.TabIndex = 9;
+			this.btnGridAlterar.Text = "Alterar";
+			this.btnGridAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnGridAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnGridAlterar.UseVisualStyleBackColor = false;
+			this.btnGridAlterar.Click += new System.EventHandler(this.btnGridAlterar_Click);
+			// 
+			// btnNovo
+			// 
+			this.btnNovo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.btnNovo.FlatAppearance.BorderSize = 0;
+			this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnNovo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnNovo.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_New;
+			this.btnNovo.Location = new System.Drawing.Point(93, 243);
+			this.btnNovo.Name = "btnNovo";
+			this.btnNovo.Size = new System.Drawing.Size(139, 39);
+			this.btnNovo.TabIndex = 8;
+			this.btnNovo.Text = "Novo";
+			this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnNovo.UseVisualStyleBackColor = false;
+			this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
 			// 
 			// dgMotorista
 			// 
@@ -186,6 +270,22 @@
 			this.gbFiltrarMotorista.TabStop = false;
 			this.gbFiltrarMotorista.Text = "Filtros";
 			// 
+			// pnlFiltrarCliente
+			// 
+			this.pnlFiltrarCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.pnlFiltrarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.pnlFiltrarCliente.Controls.Add(this.chkVencimentoCnh);
+			this.pnlFiltrarCliente.Controls.Add(this.lblMotoristaPesquisa);
+			this.pnlFiltrarCliente.Controls.Add(this.btnPesquisarMotorista);
+			this.pnlFiltrarCliente.Controls.Add(this.txtMotoristaPesquisa);
+			this.pnlFiltrarCliente.Controls.Add(this.dtCnhVencFinal);
+			this.pnlFiltrarCliente.Controls.Add(this.lblIntervaloData);
+			this.pnlFiltrarCliente.Controls.Add(this.dtCnhVencPesquisa);
+			this.pnlFiltrarCliente.Location = new System.Drawing.Point(6, 34);
+			this.pnlFiltrarCliente.Name = "pnlFiltrarCliente";
+			this.pnlFiltrarCliente.Size = new System.Drawing.Size(681, 152);
+			this.pnlFiltrarCliente.TabIndex = 10;
+			// 
 			// chkVencimentoCnh
 			// 
 			this.chkVencimentoCnh.AutoSize = true;
@@ -196,6 +296,15 @@
 			this.chkVencimentoCnh.Text = "Filtrar por Vencimento CNH";
 			this.chkVencimentoCnh.UseVisualStyleBackColor = true;
 			this.chkVencimentoCnh.CheckedChanged += new System.EventHandler(this.chkVencimentoCnh_CheckedChanged);
+			// 
+			// lblMotoristaPesquisa
+			// 
+			this.lblMotoristaPesquisa.AutoSize = true;
+			this.lblMotoristaPesquisa.Location = new System.Drawing.Point(48, 10);
+			this.lblMotoristaPesquisa.Name = "lblMotoristaPesquisa";
+			this.lblMotoristaPesquisa.Size = new System.Drawing.Size(75, 20);
+			this.lblMotoristaPesquisa.TabIndex = 0;
+			this.lblMotoristaPesquisa.Text = "Motorista";
 			// 
 			// btnPesquisarMotorista
 			// 
@@ -216,6 +325,16 @@
 			this.btnPesquisarMotorista.UseVisualStyleBackColor = false;
 			this.btnPesquisarMotorista.Click += new System.EventHandler(this.btnPesquisarMotorista_Click);
 			// 
+			// txtMotoristaPesquisa
+			// 
+			this.txtMotoristaPesquisa.CampoObrigatorio = false;
+			this.txtMotoristaPesquisa.Location = new System.Drawing.Point(52, 33);
+			this.txtMotoristaPesquisa.MensagemObrigatorio = null;
+			this.txtMotoristaPesquisa.Name = "txtMotoristaPesquisa";
+			this.txtMotoristaPesquisa.Size = new System.Drawing.Size(233, 26);
+			this.txtMotoristaPesquisa.TabIndex = 1;
+			this.txtMotoristaPesquisa.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
 			// dtCnhVencFinal
 			// 
 			this.dtCnhVencFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -223,14 +342,6 @@
 			this.dtCnhVencFinal.Name = "dtCnhVencFinal";
 			this.dtCnhVencFinal.Size = new System.Drawing.Size(131, 26);
 			this.dtCnhVencFinal.TabIndex = 4;
-			// 
-			// dtCnhVencPesquisa
-			// 
-			this.dtCnhVencPesquisa.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtCnhVencPesquisa.Location = new System.Drawing.Point(385, 36);
-			this.dtCnhVencPesquisa.Name = "dtCnhVencPesquisa";
-			this.dtCnhVencPesquisa.Size = new System.Drawing.Size(128, 26);
-			this.dtCnhVencPesquisa.TabIndex = 3;
 			// 
 			// lblIntervaloData
 			// 
@@ -241,105 +352,20 @@
 			this.lblIntervaloData.TabIndex = 3;
 			this.lblIntervaloData.Text = "à";
 			// 
-			// lblMotoristaPesquisa
+			// dtCnhVencPesquisa
 			// 
-			this.lblMotoristaPesquisa.AutoSize = true;
-			this.lblMotoristaPesquisa.Location = new System.Drawing.Point(48, 10);
-			this.lblMotoristaPesquisa.Name = "lblMotoristaPesquisa";
-			this.lblMotoristaPesquisa.Size = new System.Drawing.Size(75, 20);
-			this.lblMotoristaPesquisa.TabIndex = 0;
-			this.lblMotoristaPesquisa.Text = "Motorista";
-			// 
-			// btnFechaMotorista
-			// 
-			this.btnFechaMotorista.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnFechaMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnFechaMotorista.FlatAppearance.BorderSize = 0;
-			this.btnFechaMotorista.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnFechaMotorista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnFechaMotorista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnFechaMotorista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnFechaMotorista.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnFechaMotorista.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_FecharTab;
-			this.btnFechaMotorista.Location = new System.Drawing.Point(616, 248);
-			this.btnFechaMotorista.Name = "btnFechaMotorista";
-			this.btnFechaMotorista.Size = new System.Drawing.Size(139, 39);
-			this.btnFechaMotorista.TabIndex = 9;
-			this.btnFechaMotorista.Text = "Fechar";
-			this.btnFechaMotorista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnFechaMotorista.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnFechaMotorista.UseVisualStyleBackColor = false;
-			this.btnFechaMotorista.Click += new System.EventHandler(this.btnFechaMotorista_Click);
-			// 
-			// btnGridExcluir
-			// 
-			this.btnGridExcluir.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnGridExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnGridExcluir.FlatAppearance.BorderSize = 0;
-			this.btnGridExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnGridExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnGridExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnGridExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnGridExcluir.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnGridExcluir.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Excluir;
-			this.btnGridExcluir.Location = new System.Drawing.Point(442, 248);
-			this.btnGridExcluir.Name = "btnGridExcluir";
-			this.btnGridExcluir.Size = new System.Drawing.Size(139, 39);
-			this.btnGridExcluir.TabIndex = 8;
-			this.btnGridExcluir.Text = "Excluir";
-			this.btnGridExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnGridExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnGridExcluir.UseVisualStyleBackColor = false;
-			this.btnGridExcluir.Click += new System.EventHandler(this.btnGridExcluir_Click);
-			// 
-			// btnNovo
-			// 
-			this.btnNovo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnNovo.FlatAppearance.BorderSize = 0;
-			this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnNovo.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnNovo.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Novo;
-			this.btnNovo.Location = new System.Drawing.Point(99, 248);
-			this.btnNovo.Name = "btnNovo";
-			this.btnNovo.Size = new System.Drawing.Size(139, 39);
-			this.btnNovo.TabIndex = 6;
-			this.btnNovo.Text = "Novo";
-			this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnNovo.UseVisualStyleBackColor = false;
-			this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-			// 
-			// btnGridAlterar
-			// 
-			this.btnGridAlterar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnGridAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnGridAlterar.FlatAppearance.BorderSize = 0;
-			this.btnGridAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnGridAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnGridAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnGridAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnGridAlterar.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnGridAlterar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Alterar;
-			this.btnGridAlterar.Location = new System.Drawing.Point(270, 248);
-			this.btnGridAlterar.Name = "btnGridAlterar";
-			this.btnGridAlterar.Size = new System.Drawing.Size(139, 39);
-			this.btnGridAlterar.TabIndex = 7;
-			this.btnGridAlterar.Text = "Alterar";
-			this.btnGridAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnGridAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnGridAlterar.UseVisualStyleBackColor = false;
-			this.btnGridAlterar.Click += new System.EventHandler(this.btnGridAlterar_Click);
+			this.dtCnhVencPesquisa.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtCnhVencPesquisa.Location = new System.Drawing.Point(385, 36);
+			this.dtCnhVencPesquisa.Name = "dtCnhVencPesquisa";
+			this.dtCnhVencPesquisa.Size = new System.Drawing.Size(128, 26);
+			this.dtCnhVencPesquisa.TabIndex = 3;
 			// 
 			// tabCadastroMotorista
 			// 
 			this.tabCadastroMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.tabCadastroMotorista.Controls.Add(this.btnLimpar);
-			this.tabCadastroMotorista.Controls.Add(this.gbDadosMotorista);
 			this.tabCadastroMotorista.Controls.Add(this.btnVoltar);
+			this.tabCadastroMotorista.Controls.Add(this.gbDadosMotorista);
 			this.tabCadastroMotorista.Controls.Add(this.btnSalvar);
 			this.tabCadastroMotorista.Location = new System.Drawing.Point(4, 29);
 			this.tabCadastroMotorista.Name = "tabCadastroMotorista";
@@ -350,20 +376,44 @@
 			// 
 			// btnLimpar
 			// 
-			this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnLimpar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnLimpar.FlatAppearance.BorderSize = 0;
 			this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
 			this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.btnLimpar.Location = new System.Drawing.Point(359, 472);
+			this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnLimpar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Limpar;
+			this.btnLimpar.Location = new System.Drawing.Point(357, 471);
 			this.btnLimpar.Name = "btnLimpar";
 			this.btnLimpar.Size = new System.Drawing.Size(139, 39);
-			this.btnLimpar.TabIndex = 16;
+			this.btnLimpar.TabIndex = 107;
 			this.btnLimpar.Text = "Limpar";
 			this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnLimpar.UseVisualStyleBackColor = false;
 			this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+			// 
+			// btnVoltar
+			// 
+			this.btnVoltar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.btnVoltar.FlatAppearance.BorderSize = 0;
+			this.btnVoltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnVoltar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnVoltar.Image = global::SmartLog.WindowsForms.Properties.Resources.iconVoltar_fw;
+			this.btnVoltar.Location = new System.Drawing.Point(519, 471);
+			this.btnVoltar.Name = "btnVoltar";
+			this.btnVoltar.Size = new System.Drawing.Size(139, 39);
+			this.btnVoltar.TabIndex = 108;
+			this.btnVoltar.Text = "Voltar";
+			this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnVoltar.UseVisualStyleBackColor = false;
+			this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
 			// 
 			// gbDadosMotorista
 			// 
@@ -403,6 +453,57 @@
 			this.gbDadosMotorista.TabStop = false;
 			this.gbDadosMotorista.Text = "Dados do Motorista";
 			// 
+			// cbCnhCategoria
+			// 
+			this.cbCnhCategoria.CampoObrigatorio = true;
+			this.cbCnhCategoria.FormattingEnabled = true;
+			this.cbCnhCategoria.Location = new System.Drawing.Point(355, 232);
+			this.cbCnhCategoria.MensagemCampoObrigatorio = null;
+			this.cbCnhCategoria.Name = "cbCnhCategoria";
+			this.cbCnhCategoria.Size = new System.Drawing.Size(116, 28);
+			this.cbCnhCategoria.TabIndex = 7;
+			// 
+			// cbCidade
+			// 
+			this.cbCidade.CampoObrigatorio = true;
+			this.cbCidade.FormattingEnabled = true;
+			this.cbCidade.Location = new System.Drawing.Point(544, 288);
+			this.cbCidade.MensagemCampoObrigatorio = null;
+			this.cbCidade.Name = "cbCidade";
+			this.cbCidade.Size = new System.Drawing.Size(194, 28);
+			this.cbCidade.TabIndex = 11;
+			// 
+			// cbEstado
+			// 
+			this.cbEstado.CampoObrigatorio = true;
+			this.cbEstado.FormattingEnabled = true;
+			this.cbEstado.Location = new System.Drawing.Point(355, 288);
+			this.cbEstado.MensagemCampoObrigatorio = null;
+			this.cbEstado.Name = "cbEstado";
+			this.cbEstado.Size = new System.Drawing.Size(116, 28);
+			this.cbEstado.TabIndex = 10;
+			this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.cbEstado_SelectedIndexChanged);
+			// 
+			// cbStatus
+			// 
+			this.cbStatus.CampoObrigatorio = true;
+			this.cbStatus.FormattingEnabled = true;
+			this.cbStatus.Location = new System.Drawing.Point(78, 55);
+			this.cbStatus.MensagemCampoObrigatorio = null;
+			this.cbStatus.Name = "cbStatus";
+			this.cbStatus.Size = new System.Drawing.Size(137, 28);
+			this.cbStatus.TabIndex = 1;
+			// 
+			// txtEmail
+			// 
+			this.txtEmail.CampoObrigatorio = true;
+			this.txtEmail.Location = new System.Drawing.Point(543, 169);
+			this.txtEmail.MensagemObrigatorio = null;
+			this.txtEmail.Name = "txtEmail";
+			this.txtEmail.Size = new System.Drawing.Size(194, 26);
+			this.txtEmail.TabIndex = 5;
+			this.txtEmail.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
 			// lblEmail
 			// 
 			this.lblEmail.AutoSize = true;
@@ -441,6 +542,66 @@
 			this.lblCnhVenc.TabIndex = 101;
 			this.lblCnhVenc.Text = "Vencimento CNH";
 			// 
+			// txtCep
+			// 
+			this.txtCep.CampoObrigatorio = true;
+			this.txtCep.Location = new System.Drawing.Point(77, 290);
+			this.txtCep.MensagemObrigatorio = null;
+			this.txtCep.Name = "txtCep";
+			this.txtCep.Size = new System.Drawing.Size(168, 26);
+			this.txtCep.TabIndex = 9;
+			this.txtCep.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// txtNumero
+			// 
+			this.txtNumero.CampoObrigatorio = true;
+			this.txtNumero.Location = new System.Drawing.Point(355, 358);
+			this.txtNumero.MensagemObrigatorio = null;
+			this.txtNumero.Name = "txtNumero";
+			this.txtNumero.Size = new System.Drawing.Size(107, 26);
+			this.txtNumero.TabIndex = 13;
+			this.txtNumero.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// txtBairro
+			// 
+			this.txtBairro.CampoObrigatorio = true;
+			this.txtBairro.Location = new System.Drawing.Point(543, 358);
+			this.txtBairro.MensagemObrigatorio = null;
+			this.txtBairro.Name = "txtBairro";
+			this.txtBairro.Size = new System.Drawing.Size(194, 26);
+			this.txtBairro.TabIndex = 14;
+			this.txtBairro.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtLogra
+			// 
+			this.txtLogra.CampoObrigatorio = true;
+			this.txtLogra.Location = new System.Drawing.Point(77, 358);
+			this.txtLogra.MensagemObrigatorio = null;
+			this.txtLogra.Name = "txtLogra";
+			this.txtLogra.Size = new System.Drawing.Size(249, 26);
+			this.txtLogra.TabIndex = 12;
+			this.txtLogra.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
+			// txtTelMoto
+			// 
+			this.txtTelMoto.CampoObrigatorio = true;
+			this.txtTelMoto.Location = new System.Drawing.Point(355, 169);
+			this.txtTelMoto.MensagemObrigatorio = null;
+			this.txtTelMoto.Name = "txtTelMoto";
+			this.txtTelMoto.Size = new System.Drawing.Size(167, 26);
+			this.txtTelMoto.TabIndex = 4;
+			this.txtTelMoto.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// txtNomeMoto
+			// 
+			this.txtNomeMoto.CampoObrigatorio = true;
+			this.txtNomeMoto.Location = new System.Drawing.Point(78, 114);
+			this.txtNomeMoto.MensagemObrigatorio = "Informar o nome";
+			this.txtNomeMoto.Name = "txtNomeMoto";
+			this.txtNomeMoto.Size = new System.Drawing.Size(459, 26);
+			this.txtNomeMoto.TabIndex = 2;
+			this.txtNomeMoto.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
 			// dtDataNasc
 			// 
 			this.dtDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -448,6 +609,17 @@
 			this.dtDataNasc.Name = "dtDataNasc";
 			this.dtDataNasc.Size = new System.Drawing.Size(148, 26);
 			this.dtDataNasc.TabIndex = 3;
+			// 
+			// txtCnhNum
+			// 
+			this.txtCnhNum.CampoObrigatorio = true;
+			this.txtCnhNum.Location = new System.Drawing.Point(77, 228);
+			this.txtCnhNum.MaxLength = 18;
+			this.txtCnhNum.MensagemObrigatorio = null;
+			this.txtCnhNum.Name = "txtCnhNum";
+			this.txtCnhNum.Size = new System.Drawing.Size(190, 26);
+			this.txtCnhNum.TabIndex = 6;
+			this.txtCnhNum.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// lblCep
 			// 
@@ -559,190 +731,26 @@
 			this.lblNome.TabIndex = 69;
 			this.lblNome.Text = "Nome Completo";
 			// 
-			// btnVoltar
-			// 
-			this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnVoltar.FlatAppearance.BorderSize = 0;
-			this.btnVoltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnVoltar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_ReturnTab;
-			this.btnVoltar.Location = new System.Drawing.Point(521, 472);
-			this.btnVoltar.Name = "btnVoltar";
-			this.btnVoltar.Size = new System.Drawing.Size(139, 39);
-			this.btnVoltar.TabIndex = 17;
-			this.btnVoltar.Text = "Voltar";
-			this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnVoltar.UseVisualStyleBackColor = false;
-			this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-			// 
 			// btnSalvar
 			// 
-			this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnSalvar.FlatAppearance.BorderSize = 0;
 			this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
 			this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.btnSalvar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Salvar;
-			this.btnSalvar.Location = new System.Drawing.Point(200, 472);
+			this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnSalvar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Salvar_png;
+			this.btnSalvar.Location = new System.Drawing.Point(198, 471);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(139, 39);
-			this.btnSalvar.TabIndex = 15;
+			this.btnSalvar.TabIndex = 106;
 			this.btnSalvar.Text = "Salvar";
 			this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnSalvar.UseVisualStyleBackColor = false;
 			this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-			// 
-			// pnlFiltrarCliente
-			// 
-			this.pnlFiltrarCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.pnlFiltrarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.pnlFiltrarCliente.Controls.Add(this.chkVencimentoCnh);
-			this.pnlFiltrarCliente.Controls.Add(this.lblMotoristaPesquisa);
-			this.pnlFiltrarCliente.Controls.Add(this.btnPesquisarMotorista);
-			this.pnlFiltrarCliente.Controls.Add(this.txtMotoristaPesquisa);
-			this.pnlFiltrarCliente.Controls.Add(this.dtCnhVencFinal);
-			this.pnlFiltrarCliente.Controls.Add(this.lblIntervaloData);
-			this.pnlFiltrarCliente.Controls.Add(this.dtCnhVencPesquisa);
-			this.pnlFiltrarCliente.Location = new System.Drawing.Point(6, 34);
-			this.pnlFiltrarCliente.Name = "pnlFiltrarCliente";
-			this.pnlFiltrarCliente.Size = new System.Drawing.Size(681, 152);
-			this.pnlFiltrarCliente.TabIndex = 10;
-			// 
-			// txtMotoristaPesquisa
-			// 
-			this.txtMotoristaPesquisa.CampoObrigatorio = false;
-			this.txtMotoristaPesquisa.Location = new System.Drawing.Point(52, 33);
-			this.txtMotoristaPesquisa.MensagemObrigatorio = null;
-			this.txtMotoristaPesquisa.Name = "txtMotoristaPesquisa";
-			this.txtMotoristaPesquisa.Size = new System.Drawing.Size(233, 26);
-			this.txtMotoristaPesquisa.TabIndex = 1;
-			this.txtMotoristaPesquisa.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// cbCnhCategoria
-			// 
-			this.cbCnhCategoria.CampoObrigatorio = true;
-			this.cbCnhCategoria.FormattingEnabled = true;
-			this.cbCnhCategoria.Location = new System.Drawing.Point(355, 232);
-			this.cbCnhCategoria.MensagemCampoObrigatorio = null;
-			this.cbCnhCategoria.Name = "cbCnhCategoria";
-			this.cbCnhCategoria.Size = new System.Drawing.Size(116, 28);
-			this.cbCnhCategoria.TabIndex = 7;
-			// 
-			// cbCidade
-			// 
-			this.cbCidade.CampoObrigatorio = true;
-			this.cbCidade.FormattingEnabled = true;
-			this.cbCidade.Location = new System.Drawing.Point(544, 288);
-			this.cbCidade.MensagemCampoObrigatorio = null;
-			this.cbCidade.Name = "cbCidade";
-			this.cbCidade.Size = new System.Drawing.Size(194, 28);
-			this.cbCidade.TabIndex = 11;
-			// 
-			// cbEstado
-			// 
-			this.cbEstado.CampoObrigatorio = true;
-			this.cbEstado.FormattingEnabled = true;
-			this.cbEstado.Location = new System.Drawing.Point(355, 288);
-			this.cbEstado.MensagemCampoObrigatorio = null;
-			this.cbEstado.Name = "cbEstado";
-			this.cbEstado.Size = new System.Drawing.Size(116, 28);
-			this.cbEstado.TabIndex = 10;
-			this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.cbEstado_SelectedIndexChanged);
-			// 
-			// cbStatus
-			// 
-			this.cbStatus.CampoObrigatorio = true;
-			this.cbStatus.FormattingEnabled = true;
-			this.cbStatus.Location = new System.Drawing.Point(78, 55);
-			this.cbStatus.MensagemCampoObrigatorio = null;
-			this.cbStatus.Name = "cbStatus";
-			this.cbStatus.Size = new System.Drawing.Size(137, 28);
-			this.cbStatus.TabIndex = 1;
-			// 
-			// txtEmail
-			// 
-			this.txtEmail.CampoObrigatorio = true;
-			this.txtEmail.Location = new System.Drawing.Point(543, 169);
-			this.txtEmail.MensagemObrigatorio = null;
-			this.txtEmail.Name = "txtEmail";
-			this.txtEmail.Size = new System.Drawing.Size(194, 26);
-			this.txtEmail.TabIndex = 5;
-			this.txtEmail.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
-			// 
-			// txtCep
-			// 
-			this.txtCep.CampoObrigatorio = true;
-			this.txtCep.Location = new System.Drawing.Point(77, 290);
-			this.txtCep.MensagemObrigatorio = null;
-			this.txtCep.Name = "txtCep";
-			this.txtCep.Size = new System.Drawing.Size(168, 26);
-			this.txtCep.TabIndex = 9;
-			this.txtCep.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtNumero
-			// 
-			this.txtNumero.CampoObrigatorio = true;
-			this.txtNumero.Location = new System.Drawing.Point(355, 358);
-			this.txtNumero.MensagemObrigatorio = null;
-			this.txtNumero.Name = "txtNumero";
-			this.txtNumero.Size = new System.Drawing.Size(107, 26);
-			this.txtNumero.TabIndex = 13;
-			this.txtNumero.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtBairro
-			// 
-			this.txtBairro.CampoObrigatorio = true;
-			this.txtBairro.Location = new System.Drawing.Point(543, 358);
-			this.txtBairro.MensagemObrigatorio = null;
-			this.txtBairro.Name = "txtBairro";
-			this.txtBairro.Size = new System.Drawing.Size(194, 26);
-			this.txtBairro.TabIndex = 14;
-			this.txtBairro.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtLogra
-			// 
-			this.txtLogra.CampoObrigatorio = true;
-			this.txtLogra.Location = new System.Drawing.Point(77, 358);
-			this.txtLogra.MensagemObrigatorio = null;
-			this.txtLogra.Name = "txtLogra";
-			this.txtLogra.Size = new System.Drawing.Size(249, 26);
-			this.txtLogra.TabIndex = 12;
-			this.txtLogra.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
-			// 
-			// txtTelMoto
-			// 
-			this.txtTelMoto.CampoObrigatorio = true;
-			this.txtTelMoto.Location = new System.Drawing.Point(355, 169);
-			this.txtTelMoto.MensagemObrigatorio = null;
-			this.txtTelMoto.Name = "txtTelMoto";
-			this.txtTelMoto.Size = new System.Drawing.Size(167, 26);
-			this.txtTelMoto.TabIndex = 4;
-			this.txtTelMoto.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtNomeMoto
-			// 
-			this.txtNomeMoto.CampoObrigatorio = true;
-			this.txtNomeMoto.Location = new System.Drawing.Point(78, 114);
-			this.txtNomeMoto.MensagemObrigatorio = "Informar o nome";
-			this.txtNomeMoto.Name = "txtNomeMoto";
-			this.txtNomeMoto.Size = new System.Drawing.Size(459, 26);
-			this.txtNomeMoto.TabIndex = 2;
-			this.txtNomeMoto.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtCnhNum
-			// 
-			this.txtCnhNum.CampoObrigatorio = true;
-			this.txtCnhNum.Location = new System.Drawing.Point(77, 228);
-			this.txtCnhNum.MaxLength = 18;
-			this.txtCnhNum.MensagemObrigatorio = null;
-			this.txtCnhNum.Name = "txtCnhNum";
-			this.txtCnhNum.Size = new System.Drawing.Size(190, 26);
-			this.txtCnhNum.TabIndex = 6;
-			this.txtCnhNum.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// frmMotorista
 			// 
@@ -759,11 +767,11 @@
 			this.tabConsultaMotorista.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgMotorista)).EndInit();
 			this.gbFiltrarMotorista.ResumeLayout(false);
+			this.pnlFiltrarCliente.ResumeLayout(false);
+			this.pnlFiltrarCliente.PerformLayout();
 			this.tabCadastroMotorista.ResumeLayout(false);
 			this.gbDadosMotorista.ResumeLayout(false);
 			this.gbDadosMotorista.PerformLayout();
-			this.pnlFiltrarCliente.ResumeLayout(false);
-			this.pnlFiltrarCliente.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -773,7 +781,6 @@
 		private System.Windows.Forms.TabControl tabCtrlMotorista;
 		private System.Windows.Forms.TabPage tabConsultaMotorista;
 		private System.Windows.Forms.TabPage tabCadastroMotorista;
-		private System.Windows.Forms.Button btnLimpar;
 		private System.Windows.Forms.GroupBox gbDadosMotorista;
 		private UserControl.SuperTextbox txtEmail;
 		private System.Windows.Forms.Label lblEmail;
@@ -799,8 +806,6 @@
 		private System.Windows.Forms.Label lblDataNasc;
 		private System.Windows.Forms.Label lblTelMoto;
 		private System.Windows.Forms.Label lblNome;
-		private System.Windows.Forms.Button btnVoltar;
-		private System.Windows.Forms.Button btnSalvar;
 		private System.Windows.Forms.GroupBox gbFiltrarMotorista;
 		private System.Windows.Forms.DateTimePicker dtCnhVencFinal;
 		private System.Windows.Forms.DateTimePicker dtCnhVencPesquisa;
@@ -808,10 +813,6 @@
 		private UserControl.SuperTextbox txtMotoristaPesquisa;
 		private System.Windows.Forms.Label lblMotoristaPesquisa;
 		private System.Windows.Forms.Button btnPesquisarMotorista;
-		private System.Windows.Forms.Button btnFechaMotorista;
-		private System.Windows.Forms.Button btnGridExcluir;
-		private System.Windows.Forms.Button btnNovo;
-		private System.Windows.Forms.Button btnGridAlterar;
 		private System.Windows.Forms.CheckBox chkVencimentoCnh;
 		private UserControl.SuperComboBox cbCnhCategoria;
 		private UserControl.SuperComboBox cbCidade;
@@ -819,5 +820,12 @@
 		private UserControl.SuperComboBox cbStatus;
 		private System.Windows.Forms.DataGridView dgMotorista;
 		private System.Windows.Forms.Panel pnlFiltrarCliente;
+		private System.Windows.Forms.Button btnLimpar;
+		private System.Windows.Forms.Button btnVoltar;
+		private System.Windows.Forms.Button btnSalvar;
+		private System.Windows.Forms.Button btnFechaMotorista;
+		private System.Windows.Forms.Button btnGridExcluir;
+		private System.Windows.Forms.Button btnGridAlterar;
+		private System.Windows.Forms.Button btnNovo;
 	}
 }

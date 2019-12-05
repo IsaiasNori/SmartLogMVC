@@ -138,16 +138,44 @@ namespace SmartLog.WindowsForms.Util
 
 		}
 
-		//Método para validar Maior de idade
+		//Método para validar Maior Idade
 		public static bool IsMaiorIdade(DateTime data)
 		{
-			if (System.DateTime.Now.Year - data.Year >= 18)
+			try
 			{
+				if (System.DateTime.Now.Year - data.Year < 18)
+				{
+					Utils.ExibirMensagem("É necessário ser maior de 18 anos.", eTipoMensagem.Atencao);
+
+					return false;
+				}
+
 				return true;
+
+			}
+			catch (Exception ex)
+			{
+				Utils.ExibirMensagem(ex.Message,eTipoMensagem.Erro);
+				return false;
+			}
+		}
+		//Método para validar regra de negócio --Motorista
+		public static bool IsTemIdadeParaMotorista(DateTime data)
+		{
+			if (System.DateTime.Now.Year - data.Year < 18)
+			{
+				Utils.ExibirMensagem("Não é possivel cadastrar motorista menor de idade.", eTipoMensagem.Atencao);
+
+				return false;
+			}
+			else if (System.DateTime.Now.Year - data.Year > 60)
+			{
+				Utils.ExibirMensagem("Não é possivel cadastrar motorista com mais de 60 anos.", eTipoMensagem.Atencao);
+				return false;
 			}
 			else
 			{
-				return false;
+				return true;
 			}
 		}
 
@@ -216,7 +244,7 @@ namespace SmartLog.WindowsForms.Util
 			}
 			catch (Exception)
 			{
-				
+
 			}
 		}
 	}

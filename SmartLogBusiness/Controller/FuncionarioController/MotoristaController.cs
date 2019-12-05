@@ -47,11 +47,11 @@ namespace SmartLogBusiness.Controller
 			}
 		}
 
-		public DataTable ComboMotorista(int StatusMotorista)
+		public DataTable ComboMotorista()
 		{
 			try
 			{
-				return dao.CarregarComboMotoristaDAO(StatusMotorista);
+				return dao.CarregarComboMotoristaDAO();
 			}
 			catch (Exception ex)
 			{

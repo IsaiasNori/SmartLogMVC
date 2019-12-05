@@ -105,16 +105,16 @@ namespace SmartLogBusiness.DAL.FuncionarioDAL
 				throw new Exception(ex.Message);
 			}
 		}
-		public DataTable CarregarComboMotoristaDAO(int StatusMotorista)
+		public DataTable CarregarComboMotoristaDAO()
 		{
 			try
 			{
 				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "COMB");
-				if (StatusMotorista > 0)
+				/*if (StatusMotorista > 0)
 				{
 					AdicionarParametro("@Status", SqlDbType.Int, 10, StatusMotorista);
-				}
+				}*/
 				
 				return ExecuteProcedure("pMotorista");
 			}

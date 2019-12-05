@@ -50,7 +50,12 @@ namespace SmartLog.WindowsForms
 				{
 					dataUltima = Convert.ToDateTime(txtDataUltRev.Text);
 				}
-
+				if (System.DateTime.Now.Year - Convert.ToInt32(txtAnoFab.Text) >= 9 )
+				{
+					txtAnoFab.Focus();
+					Utils.ExibirMensagem("Não é possível cadastrar veículo com 9 anos ou mais de uso.", eTipoMensagem.Atencao);
+					return;
+				}
 				Veiculo vei = new Veiculo(codigoVeic,
 										   cbMarca.PegarComboSelecionado(),
 										   txtModelo.Text,
@@ -164,11 +169,11 @@ namespace SmartLog.WindowsForms
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-		private void btnVoltarCli_Click(object sender, EventArgs e)
+		private void btnVoltar_Click(object sender, EventArgs e)
 		{
 			tabctrlVeiculo.SelectedTab = tabConsultaVeic;
 		}
-		private void btnFechaFuncionario_Click(object sender, EventArgs e)
+		private void btnFechaVeiculo_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
@@ -254,5 +259,9 @@ namespace SmartLog.WindowsForms
 			}
 		}
 
+		private void btnLimpar_Click(object sender, EventArgs e)
+		{
+			Utils.LimparCampos(gbDadosVeiculo);
+		}
 	}
 }

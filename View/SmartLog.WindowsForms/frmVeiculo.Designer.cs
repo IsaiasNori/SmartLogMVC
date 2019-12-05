@@ -34,11 +34,11 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabctrlVeiculo = new System.Windows.Forms.TabControl();
 			this.tabConsultaVeic = new System.Windows.Forms.TabPage();
-			this.dgVeiculo = new System.Windows.Forms.DataGridView();
-			this.btnFechaFuncionario = new System.Windows.Forms.Button();
+			this.btnFechaVeiculo = new System.Windows.Forms.Button();
 			this.btnExcluir = new System.Windows.Forms.Button();
 			this.btnAlterar = new System.Windows.Forms.Button();
 			this.btnNovoVeiculo = new System.Windows.Forms.Button();
+			this.dgVeiculo = new System.Windows.Forms.DataGridView();
 			this.gbFiltraVeiculo = new System.Windows.Forms.GroupBox();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.cbMarcaPesquisa = new SmartLog.WindowsForms.UserControl.SuperComboBox();
@@ -48,7 +48,7 @@
 			this.txtModeloPesquisa = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.tabCadastroVeic = new System.Windows.Forms.TabPage();
 			this.btnLimpar = new System.Windows.Forms.Button();
-			this.btnVoltarCli = new System.Windows.Forms.Button();
+			this.btnVoltar = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.gbDadosVeiculo = new System.Windows.Forms.GroupBox();
 			this.txtAnoFab = new SmartLog.WindowsForms.UserControl.SuperTextbox();
@@ -100,11 +100,11 @@
 			// tabConsultaVeic
 			// 
 			this.tabConsultaVeic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.tabConsultaVeic.Controls.Add(this.dgVeiculo);
-			this.tabConsultaVeic.Controls.Add(this.btnFechaFuncionario);
+			this.tabConsultaVeic.Controls.Add(this.btnFechaVeiculo);
 			this.tabConsultaVeic.Controls.Add(this.btnExcluir);
 			this.tabConsultaVeic.Controls.Add(this.btnAlterar);
 			this.tabConsultaVeic.Controls.Add(this.btnNovoVeiculo);
+			this.tabConsultaVeic.Controls.Add(this.dgVeiculo);
 			this.tabConsultaVeic.Controls.Add(this.gbFiltraVeiculo);
 			this.tabConsultaVeic.Location = new System.Drawing.Point(4, 33);
 			this.tabConsultaVeic.Name = "tabConsultaVeic";
@@ -112,6 +112,90 @@
 			this.tabConsultaVeic.Size = new System.Drawing.Size(987, 650);
 			this.tabConsultaVeic.TabIndex = 0;
 			this.tabConsultaVeic.Text = "Consulta";
+			// 
+			// btnFechaVeiculo
+			// 
+			this.btnFechaVeiculo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnFechaVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.btnFechaVeiculo.FlatAppearance.BorderSize = 0;
+			this.btnFechaVeiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnFechaVeiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnFechaVeiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnFechaVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnFechaVeiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnFechaVeiculo.Image = global::SmartLog.WindowsForms.Properties.Resources.iconFechar;
+			this.btnFechaVeiculo.Location = new System.Drawing.Point(698, 254);
+			this.btnFechaVeiculo.Name = "btnFechaVeiculo";
+			this.btnFechaVeiculo.Size = new System.Drawing.Size(139, 39);
+			this.btnFechaVeiculo.TabIndex = 25;
+			this.btnFechaVeiculo.Text = "Fechar";
+			this.btnFechaVeiculo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnFechaVeiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnFechaVeiculo.UseVisualStyleBackColor = false;
+			this.btnFechaVeiculo.Click += new System.EventHandler(this.btnFechaVeiculo_Click);
+			// 
+			// btnExcluir
+			// 
+			this.btnExcluir.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.btnExcluir.FlatAppearance.BorderSize = 0;
+			this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnExcluir.Image = global::SmartLog.WindowsForms.Properties.Resources.iconExcluir;
+			this.btnExcluir.Location = new System.Drawing.Point(524, 254);
+			this.btnExcluir.Name = "btnExcluir";
+			this.btnExcluir.Size = new System.Drawing.Size(139, 39);
+			this.btnExcluir.TabIndex = 24;
+			this.btnExcluir.Text = "Excluir";
+			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnExcluir.UseVisualStyleBackColor = false;
+			this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+			// 
+			// btnAlterar
+			// 
+			this.btnAlterar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.btnAlterar.FlatAppearance.BorderSize = 0;
+			this.btnAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnAlterar.Image = global::SmartLog.WindowsForms.Properties.Resources.iconEdit;
+			this.btnAlterar.Location = new System.Drawing.Point(352, 254);
+			this.btnAlterar.Name = "btnAlterar";
+			this.btnAlterar.Size = new System.Drawing.Size(139, 39);
+			this.btnAlterar.TabIndex = 23;
+			this.btnAlterar.Text = "Alterar";
+			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnAlterar.UseVisualStyleBackColor = false;
+			this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+			// 
+			// btnNovoVeiculo
+			// 
+			this.btnNovoVeiculo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnNovoVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.btnNovoVeiculo.FlatAppearance.BorderSize = 0;
+			this.btnNovoVeiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnNovoVeiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnNovoVeiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnNovoVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnNovoVeiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnNovoVeiculo.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_New;
+			this.btnNovoVeiculo.Location = new System.Drawing.Point(181, 254);
+			this.btnNovoVeiculo.Name = "btnNovoVeiculo";
+			this.btnNovoVeiculo.Size = new System.Drawing.Size(139, 39);
+			this.btnNovoVeiculo.TabIndex = 22;
+			this.btnNovoVeiculo.Text = "Novo";
+			this.btnNovoVeiculo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnNovoVeiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnNovoVeiculo.UseVisualStyleBackColor = false;
+			this.btnNovoVeiculo.Click += new System.EventHandler(this.btnNovoVeiculo_Click);
 			// 
 			// dgVeiculo
 			// 
@@ -165,90 +249,6 @@
 			this.dgVeiculo.Size = new System.Drawing.Size(922, 293);
 			this.dgVeiculo.TabIndex = 21;
 			this.dgVeiculo.DataSourceChanged += new System.EventHandler(this.DtVeiculo_DataSourceChanged);
-			// 
-			// btnFechaFuncionario
-			// 
-			this.btnFechaFuncionario.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnFechaFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnFechaFuncionario.FlatAppearance.BorderSize = 0;
-			this.btnFechaFuncionario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnFechaFuncionario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnFechaFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnFechaFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnFechaFuncionario.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnFechaFuncionario.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_FecharTab;
-			this.btnFechaFuncionario.Location = new System.Drawing.Point(688, 246);
-			this.btnFechaFuncionario.Name = "btnFechaFuncionario";
-			this.btnFechaFuncionario.Size = new System.Drawing.Size(139, 39);
-			this.btnFechaFuncionario.TabIndex = 20;
-			this.btnFechaFuncionario.Text = "Fechar";
-			this.btnFechaFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnFechaFuncionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnFechaFuncionario.UseVisualStyleBackColor = false;
-			this.btnFechaFuncionario.Click += new System.EventHandler(this.btnFechaFuncionario_Click);
-			// 
-			// btnExcluir
-			// 
-			this.btnExcluir.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnExcluir.FlatAppearance.BorderSize = 0;
-			this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnExcluir.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnExcluir.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Excluir;
-			this.btnExcluir.Location = new System.Drawing.Point(514, 246);
-			this.btnExcluir.Name = "btnExcluir";
-			this.btnExcluir.Size = new System.Drawing.Size(139, 39);
-			this.btnExcluir.TabIndex = 19;
-			this.btnExcluir.Text = "Excluir";
-			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnExcluir.UseVisualStyleBackColor = false;
-			this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-			// 
-			// btnAlterar
-			// 
-			this.btnAlterar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnAlterar.FlatAppearance.BorderSize = 0;
-			this.btnAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAlterar.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnAlterar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Alterar;
-			this.btnAlterar.Location = new System.Drawing.Point(342, 246);
-			this.btnAlterar.Name = "btnAlterar";
-			this.btnAlterar.Size = new System.Drawing.Size(139, 39);
-			this.btnAlterar.TabIndex = 18;
-			this.btnAlterar.Text = "Alterar";
-			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnAlterar.UseVisualStyleBackColor = false;
-			this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-			// 
-			// btnNovoVeiculo
-			// 
-			this.btnNovoVeiculo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnNovoVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnNovoVeiculo.FlatAppearance.BorderSize = 0;
-			this.btnNovoVeiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnNovoVeiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnNovoVeiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnNovoVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnNovoVeiculo.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnNovoVeiculo.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Novo;
-			this.btnNovoVeiculo.Location = new System.Drawing.Point(171, 246);
-			this.btnNovoVeiculo.Name = "btnNovoVeiculo";
-			this.btnNovoVeiculo.Size = new System.Drawing.Size(139, 39);
-			this.btnNovoVeiculo.TabIndex = 17;
-			this.btnNovoVeiculo.Text = "Novo";
-			this.btnNovoVeiculo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnNovoVeiculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnNovoVeiculo.UseVisualStyleBackColor = false;
-			this.btnNovoVeiculo.Click += new System.EventHandler(this.btnNovoVeiculo_Click);
 			// 
 			// gbFiltraVeiculo
 			// 
@@ -349,7 +349,7 @@
 			// 
 			this.tabCadastroVeic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.tabCadastroVeic.Controls.Add(this.btnLimpar);
-			this.tabCadastroVeic.Controls.Add(this.btnVoltarCli);
+			this.tabCadastroVeic.Controls.Add(this.btnVoltar);
 			this.tabCadastroVeic.Controls.Add(this.btnSalvar);
 			this.tabCadastroVeic.Controls.Add(this.gbDadosVeiculo);
 			this.tabCadastroVeic.Controls.Add(this.lblCodCli);
@@ -364,53 +364,59 @@
 			// btnLimpar
 			// 
 			this.btnLimpar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnLimpar.FlatAppearance.BorderSize = 0;
 			this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
 			this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.btnLimpar.Location = new System.Drawing.Point(418, 370);
+			this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnLimpar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Limpar;
+			this.btnLimpar.Location = new System.Drawing.Point(414, 386);
 			this.btnLimpar.Name = "btnLimpar";
 			this.btnLimpar.Size = new System.Drawing.Size(139, 39);
-			this.btnLimpar.TabIndex = 81;
+			this.btnLimpar.TabIndex = 40;
 			this.btnLimpar.Text = "Limpar";
 			this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnLimpar.UseVisualStyleBackColor = false;
+			this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
 			// 
-			// btnVoltarCli
+			// btnVoltar
 			// 
-			this.btnVoltarCli.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnVoltarCli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnVoltarCli.FlatAppearance.BorderSize = 0;
-			this.btnVoltarCli.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnVoltarCli.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnVoltarCli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnVoltarCli.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_ReturnTab;
-			this.btnVoltarCli.Location = new System.Drawing.Point(582, 370);
-			this.btnVoltarCli.Name = "btnVoltarCli";
-			this.btnVoltarCli.Size = new System.Drawing.Size(139, 39);
-			this.btnVoltarCli.TabIndex = 80;
-			this.btnVoltarCli.Text = "Voltar";
-			this.btnVoltarCli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnVoltarCli.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnVoltarCli.UseVisualStyleBackColor = false;
-			this.btnVoltarCli.Click += new System.EventHandler(this.btnVoltarCli_Click);
+			this.btnVoltar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.btnVoltar.FlatAppearance.BorderSize = 0;
+			this.btnVoltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnVoltar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnVoltar.Image = global::SmartLog.WindowsForms.Properties.Resources.iconVoltar_fw;
+			this.btnVoltar.Location = new System.Drawing.Point(576, 386);
+			this.btnVoltar.Name = "btnVoltar";
+			this.btnVoltar.Size = new System.Drawing.Size(139, 39);
+			this.btnVoltar.TabIndex = 41;
+			this.btnVoltar.Text = "Voltar";
+			this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnVoltar.UseVisualStyleBackColor = false;
+			this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
 			// 
 			// btnSalvar
 			// 
 			this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnSalvar.FlatAppearance.BorderSize = 0;
 			this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
 			this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.btnSalvar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Salvar;
-			this.btnSalvar.Location = new System.Drawing.Point(259, 370);
+			this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnSalvar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Salvar_png;
+			this.btnSalvar.Location = new System.Drawing.Point(255, 386);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(139, 39);
-			this.btnSalvar.TabIndex = 77;
+			this.btnSalvar.TabIndex = 39;
 			this.btnSalvar.Text = "Salvar";
 			this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -455,7 +461,7 @@
 			this.txtAnoFab.Name = "txtAnoFab";
 			this.txtAnoFab.Size = new System.Drawing.Size(139, 26);
 			this.txtAnoFab.TabIndex = 23;
-			this.txtAnoFab.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			this.txtAnoFab.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// cbStatus
 			// 
@@ -689,10 +695,6 @@
 		private System.Windows.Forms.Label lblCodCli;
 		private System.Windows.Forms.TextBox txtCodigoCli;
 		private System.Windows.Forms.GroupBox gbFiltraVeiculo;
-		private System.Windows.Forms.Button btnFechaFuncionario;
-		private System.Windows.Forms.Button btnExcluir;
-		private System.Windows.Forms.Button btnAlterar;
-		private System.Windows.Forms.Button btnNovoVeiculo;
 		private System.Windows.Forms.GroupBox gbDadosVeiculo;
 		private System.Windows.Forms.Label lblModelo;
 		private UserControl.SuperTextbox txtModelo;
@@ -708,14 +710,18 @@
 		private System.Windows.Forms.Label lblRenavam;
 		private UserControl.SuperTextbox txtRenavam;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button btnVoltarCli;
-		private System.Windows.Forms.Button btnSalvar;
 		private System.Windows.Forms.DateTimePicker txtData;
-		private System.Windows.Forms.Button btnLimpar;
 		private UserControl.SuperComboBox cbMarca;
 		private UserControl.SuperComboBox cbMarcaPesquisa;
 		private UserControl.SuperComboBox cbStatus;
 		private UserControl.SuperTextbox txtAnoFab;
 		private System.Windows.Forms.DataGridView dgVeiculo;
+		private System.Windows.Forms.Button btnFechaVeiculo;
+		private System.Windows.Forms.Button btnExcluir;
+		private System.Windows.Forms.Button btnAlterar;
+		private System.Windows.Forms.Button btnNovoVeiculo;
+		private System.Windows.Forms.Button btnLimpar;
+		private System.Windows.Forms.Button btnVoltar;
+		private System.Windows.Forms.Button btnSalvar;
 	}
 }

@@ -90,87 +90,13 @@ namespace SmartLog.WindowsForms
 		}
 		private void btnGridAlterar_Click(object sender, EventArgs e)
 		{
-			try
-			{
-				if (dgViagem.SelectedRows.Count > 0)
-				{
-					string codigo = dgViagem.SelectedRows[0].Cells[0].Value.ToString();
-					int.TryParse(codigo, out codigoViagem);
 
-					if (codigoViagem > 0)
-					{
-						Viagem viagem = new Viagem(codigoViagem);
-
-						viagem = viagemCtrl.GetObj(viagem);
-
-						dtDataViagem.Value = viagem.DataViagem;
-						cbStatus.PosicionarCombo(viagem.Status);
-						cbMotoristaViagem.PosicionarCombo(viagem.Motorista.Codigo);
-						cbVeiculo.PosicionarCombo(viagem.CodVeiculo.CodVei);
-						cbAtendente.PosicionarCombo(viagem.Atendente.Codigo);
-						cbCliente.PosicionarCombo(viagem.Cliente.Codigo);
-						txtValor.Text = viagem.Valor.ToString();
-						txtDistancia.Text = viagem.DistanciaKm;
-
-						txtCepOrigem.Text = viagem.Origem.Cep;
-						cbEstadoOrigem.PosicionarCombo(viagem.Origem.CodEstado);
-						cbCidadeOrigem.PosicionarCombo(viagem.Origem.CodCidade);
-						txtLograOrigem.Text = viagem.Origem.Logradouro;
-						txtNumeroOrigem.Text = viagem.Origem.Numero.ToString();
-						txtBairroOrigem.Text = viagem.Origem.Bairro;
-
-						txtCepDestino.Text = viagem.Destino.Cep;
-						cbEstadoDestino.PosicionarCombo(viagem.Destino.CodEstado);
-						cbCidadeDestino.PosicionarCombo(viagem.Destino.CodCidade);
-						txtLograDestino.Text = viagem.Destino.Logradouro;
-						txtNumeroDestino.Text = viagem.Destino.Numero.ToString();
-						txtBairroDestino.Text = viagem.Destino.Bairro;
-
-						tabCtrlViagem.SelectedTab = tabCadastroViagem;
-					}
-				}
-				else
-				{
-					Utils.ExibirMensagem("Selecione um registro para alterar.", eTipoMensagem.Atencao);
-				}
-			}
-			catch (Exception ex)
-			{
-				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
-			}
 		}
 		private void btnGridExcluir_Click(object sender, EventArgs e)
 		{
-			try
-			{
-				if (dgViagem.SelectedRows.Count > 0)
-				{
-					string codigo = dgViagem.SelectedRows[0].Cells[0].Value.ToString();
-					int.TryParse(codigo, out codigoViagem);
 
-					if (codigoViagem > 0)
-					{
-						Viagem viagem = new Viagem(codigoViagem);
-
-						if (MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-						{
-							viagemCtrl.DeletarController(viagem);
-							Utils.ExibirMensagem("Registro excluído com sucesso.", eTipoMensagem.Sucesso);
-							Pesquisar();
-						}
-					}
-				}
-				else
-				{
-					Utils.ExibirMensagem("Para excluir um registro, é necessário seleciona-lo.", eTipoMensagem.Atencao);
-				}
-			}
-			catch (Exception ex)
-			{
-				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
-			}
 		}
-		private void BtnVoltarFunc_Click(object sender, EventArgs e)
+		private void BtnVoltar_Click(object sender, EventArgs e)
 		{
 			tabCtrlViagem.SelectedTab = tabConsultaViagem;
 		}
@@ -247,11 +173,18 @@ namespace SmartLog.WindowsForms
 		{
 			try
 			{
+				DateTime? dtInicio = null;
+				DateTime? dtFim = null;
+				if (chkData.Checked)
+				{
+					dtInicio = dtDataInicio.Value;
+					dtFim = dtDataFim.Value; 
+				}
 				Cliente cli = new Cliente(cbClientePesquisa.PegarComboSelecionado());
 
 				Motorista motorista = new Motorista(cbMotoristaPesquisar.PegarComboSelecionado());
 
-				Viagem viagem = new Viagem(dtDataInicio.Value, dtDataFim.Value, cli, motorista);
+				Viagem viagem = new Viagem(dtInicio, dtFim, cli, motorista);
 
 				DataTable table = viagemCtrl.GetDataTable(viagem);
 
@@ -271,7 +204,7 @@ namespace SmartLog.WindowsForms
 				MotoristaController motoristaCtrl = new MotoristaController();
 				if (tableMotorista == null)
 				{
-					tableMotorista = motoristaCtrl.ComboMotorista((int)EnumStatusMotorista.Ativo);
+					tableMotorista = motoristaCtrl.ComboMotorista();
 				}
 
 				combo.CarregaCombo(tableMotorista, "Cod_Motorista", "Nome_Motorista", UserControl.eTipoMensagem.Selecione);
@@ -335,6 +268,20 @@ namespace SmartLog.WindowsForms
 			{
 				dgViagem.Columns[0].Visible = false;
 				dgViagem.AutoResizeColumns();
+			}
+		}
+
+		private void chkData_CheckedChanged(object sender, EventArgs e)
+		{
+			if (chkData.Checked)
+			{
+				dtDataInicio.Enabled = true;
+				dtDataFim.Enabled = true;
+			}
+			else
+			{
+				dtDataInicio.Enabled = false; ;
+				dtDataFim.Enabled = false;
 			}
 		}
 	}

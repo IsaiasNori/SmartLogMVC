@@ -73,13 +73,10 @@ namespace SmartLog.WindowsForms
 				{
 					return;
 				}
-				if (Utils.IsMaiorIdade(dtDataNasc.Value) == false)
+				if (Utils.IsTemIdadeParaMotorista(dtDataNasc.Value) == false)
 				{
-					Utils.ExibirMensagem("Não é possivel cadastrar motorista menor de idade.", eTipoMensagem.Atencao);
-					dtDataNasc.Focus();
 					return;
 				}
-
 				int numero;
 				int.TryParse(txtNumero.Text, out numero);
 

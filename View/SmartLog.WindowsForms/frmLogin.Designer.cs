@@ -33,7 +33,6 @@
 			this.lblSenha = new System.Windows.Forms.Label();
 			this.lblUsuario = new System.Windows.Forms.Label();
 			this.panelCabecalho = new System.Windows.Forms.Panel();
-			this.btnMinimizar = new System.Windows.Forms.Button();
 			this.btnFechar = new System.Windows.Forms.Button();
 			this.pnlLogin = new System.Windows.Forms.Panel();
 			this.txtSenha = new System.Windows.Forms.TextBox();
@@ -57,11 +56,13 @@
 			// 
 			// btnLogin
 			// 
-			this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnLogin.FlatAppearance.BorderSize = 0;
+			this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnLogin.ForeColor = System.Drawing.Color.Black;
+			this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnLogin.Location = new System.Drawing.Point(66, 143);
 			this.btnLogin.Name = "btnLogin";
 			this.btnLogin.Size = new System.Drawing.Size(177, 30);
@@ -95,28 +96,12 @@
 			// panelCabecalho
 			// 
 			this.panelCabecalho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
-			this.panelCabecalho.Controls.Add(this.btnMinimizar);
 			this.panelCabecalho.Controls.Add(this.btnFechar);
 			this.panelCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelCabecalho.Location = new System.Drawing.Point(0, 0);
 			this.panelCabecalho.Name = "panelCabecalho";
 			this.panelCabecalho.Size = new System.Drawing.Size(590, 45);
 			this.panelCabecalho.TabIndex = 7;
-			// 
-			// btnMinimizar
-			// 
-			this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
-			this.btnMinimizar.FlatAppearance.BorderSize = 0;
-			this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-			this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
-			this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnMinimizar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MinimizarApp;
-			this.btnMinimizar.Location = new System.Drawing.Point(506, 7);
-			this.btnMinimizar.Name = "btnMinimizar";
-			this.btnMinimizar.Size = new System.Drawing.Size(31, 32);
-			this.btnMinimizar.TabIndex = 3;
-			this.btnMinimizar.UseVisualStyleBackColor = false;
 			// 
 			// btnFechar
 			// 
@@ -125,8 +110,8 @@
 			this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
 			this.btnFechar.FlatAppearance.BorderSize = 0;
-			this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-			this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
+			this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnFechar.ForeColor = System.Drawing.Color.White;
@@ -143,7 +128,6 @@
 			// pnlLogin
 			// 
 			this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.pnlLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pnlLogin.Controls.Add(this.txtSenha);
 			this.pnlLogin.Controls.Add(this.txtUsuario);
 			this.pnlLogin.Controls.Add(this.lblUsuario);
@@ -152,7 +136,7 @@
 			this.pnlLogin.Controls.Add(this.btnLogin);
 			this.pnlLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 			this.pnlLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.pnlLogin.Location = new System.Drawing.Point(131, 250);
+			this.pnlLogin.Location = new System.Drawing.Point(130, 223);
 			this.pnlLogin.Name = "pnlLogin";
 			this.pnlLogin.Size = new System.Drawing.Size(312, 198);
 			this.pnlLogin.TabIndex = 8;
@@ -217,7 +201,6 @@
 		private System.Windows.Forms.Label lblSenha;
 		private System.Windows.Forms.Label lblUsuario;
 		private System.Windows.Forms.Panel panelCabecalho;
-		private System.Windows.Forms.Button btnMinimizar;
 		private System.Windows.Forms.Button btnFechar;
 		private System.Windows.Forms.Panel pnlLogin;
 		private System.Windows.Forms.PictureBox pictureBox1;

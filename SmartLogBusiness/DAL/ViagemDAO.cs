@@ -8,7 +8,7 @@ namespace SmartLogBusiness.DAL
 {
 	public class ViagemDAO : ConexaoBanco
 	{
-		public bool InserirViagemDAO(DateTime dataViagem, string distancia, decimal valor,
+		public bool InserirViagemDAO(DateTime? dataViagem, string distancia, decimal valor,
 			string cepOrigem, string lograOrigem, int numOrigem, string compleOrigem, string bairroOrigem, string cidadeOrigem, string ufOrigem,
 			string cepDestino, string lograDestino, int numDestino, string compleDestino, string bairroDestino, string cidadeDestino, string ufDestino,
 			int codCli, int codVeiculo, int codMotorista, int codAtendente, int status)
@@ -49,7 +49,7 @@ namespace SmartLogBusiness.DAL
 				throw new Exception(ex.Message);
 			}
 		}
-		public bool AlterarViagemDAO(int codVi,DateTime dataViagem, string distancia, decimal valor,
+		public bool AlterarViagemDAO(int codVi,DateTime? dataViagem, string distancia, decimal valor,
 			string cepOrigem, string lograOrigem, int numOrigem, string compleOrigem, string bairroOrigem, string cidadeOrigem, string ufOrigem,
 			string cepDestino, string lograDestino, int numDestino, string compleDestino, string bairroDestino, string cidadeDestino, string ufDestino,
 			int codCli, int codVeiculo, int codMotorista, int codAtendente, int status)
@@ -108,7 +108,7 @@ namespace SmartLogBusiness.DAL
 				throw new Exception(ex.Message);
 			}
 		}
-		public DataTable FiltrarViagemDAO(DateTime data, DateTime dataFinal, int codMotorista, int codCliente)
+		public DataTable FiltrarViagemDAO(DateTime? data, DateTime? dataFinal, int codMotorista, int codCliente)
 		{
 			try
 			{

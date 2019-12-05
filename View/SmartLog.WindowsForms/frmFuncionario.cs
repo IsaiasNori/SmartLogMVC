@@ -28,7 +28,7 @@ namespace SmartLog.WindowsForms
 		{
 			CarregarTipoCargo();
 			Utils.CarregarEstado(ref cbEstado);
-		
+
 		}
 		private void BtnSalvar_Click(object sender, EventArgs e)
 		{
@@ -81,7 +81,7 @@ namespace SmartLog.WindowsForms
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-		private void btnVoltarCli_Click(object sender, EventArgs e)
+		private void btnVoltarFunc_Click(object sender, EventArgs e)
 		{
 			tabctrlFuncionario.SelectedTab = tabConsultaFuncionario;
 		}
@@ -103,31 +103,35 @@ namespace SmartLog.WindowsForms
 		{
 			try
 			{
-				string codigo;
-				codigo = dgFuncionario.SelectedRows[0].Cells[0].Value.ToString();
-
-				int.TryParse(codigo, out codigoFunc);
-
-				if (codigoFunc > 0)
+				if (dgFuncionario.SelectedRows.Count > 0)
 				{
-					Funcionario func = new Funcionario(codigoFunc);
+					string codigo;
+					codigo = dgFuncionario.SelectedRows[0].Cells[0].Value.ToString();
 
-					func = funcCtrl.GetObj(func);
+					int.TryParse(codigo, out codigoFunc);
 
-					cbCargo.PosicionarCombo(func.TipoCargo);
-					txtNomeFunc.Text = func.Nome;
-					dtDataNasc.Text = func.DataNasc.ToString();
-					txtCpfFunc.Text = func.Cpf;
-					txtTelFunc.Text = func.Telefone;
-					txtEmail.Text = func.Email;
-					txtCep.Text = func.Endereco.Cep;
-					cbEstado.PosicionarCombo(func.Endereco.CodEstado);
-					cbCidade.PosicionarCombo(func.Endereco.CodCidade);
-					txtLogra.Text = func.Endereco.Logradouro;
-					txtNumero.Text = func.Endereco.Numero.ToString();
-					txtBairro.Text = func.Endereco.Bairro;
+					if (codigoFunc > 0)
+					{
+						Funcionario func = new Funcionario(codigoFunc);
 
-					tabctrlFuncionario.SelectedTab = tabCadastroFunc;
+						func = funcCtrl.GetObj(func);
+
+						cbCargo.PosicionarCombo(func.TipoCargo);
+						txtNomeFunc.Text = func.Nome;
+						dtDataNasc.Text = func.DataNasc.ToString();
+						txtCpfFunc.Text = func.Cpf;
+						txtTelFunc.Text = func.Telefone;
+						txtEmail.Text = func.Email;
+						txtCep.Text = func.Endereco.Cep;
+						cbEstado.PosicionarCombo(func.Endereco.CodEstado);
+						cbCidade.PosicionarCombo(func.Endereco.CodCidade);
+						txtLogra.Text = func.Endereco.Logradouro;
+						txtNumero.Text = func.Endereco.Numero.ToString();
+						txtBairro.Text = func.Endereco.Bairro;
+
+						tabctrlFuncionario.SelectedTab = tabCadastroFunc;
+					}
+
 				}
 				else
 				{
@@ -147,17 +151,20 @@ namespace SmartLog.WindowsForms
 		{
 			try
 			{
-				string codigo = dgFuncionario.SelectedRows[0].Cells[0].Value.ToString();
-
-				int.TryParse(codigo, out codigoFunc);
-				if (codigoFunc > 0)
+				if (dgFuncionario.SelectedRows.Count > 0)
 				{
-					if (MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+					string codigo = dgFuncionario.SelectedRows[0].Cells[0].Value.ToString();
+
+					int.TryParse(codigo, out codigoFunc);
+					if (codigoFunc > 0)
 					{
-						Funcionario func = new Funcionario(codigoFunc);
-						funcCtrl.DeletarController(func);
-						Utils.ExibirMensagem("Funcionário excluído com sucesso.", eTipoMensagem.Sucesso);
-						PesquisarFunc();
+						if (MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+						{
+							Funcionario func = new Funcionario(codigoFunc);
+							funcCtrl.DeletarController(func);
+							Utils.ExibirMensagem("Funcionário excluído com sucesso.", eTipoMensagem.Sucesso);
+							PesquisarFunc();
+						}
 					}
 				}
 				else
@@ -165,6 +172,7 @@ namespace SmartLog.WindowsForms
 					Utils.ExibirMensagem("Selecione um registro para excluir.", eTipoMensagem.Atencao);
 				}
 			}
+
 			catch (Exception ex)
 			{
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
@@ -182,7 +190,7 @@ namespace SmartLog.WindowsForms
 		{
 			try
 			{
-				string cpf="";
+				string cpf = "";
 				cpf = txtCpfPesquisar.Text.Replace(".", "").Replace("-", "").Replace("/", "");
 
 				Funcionario func = new Funcionario(0, txtNomePesquisar.Text, cpf, null, null, null, null, null);
@@ -225,9 +233,5 @@ namespace SmartLog.WindowsForms
 			}
 		}
 
-		private void dgFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
 	}
 }

@@ -17,6 +17,7 @@ namespace SmartLog.WindowsForms
 	{
 
 		public Funcionario funcLogado;
+		ErrorProvider provider = new ErrorProvider();
 		public frmLogin()
 		{
 			InitializeComponent();
@@ -28,26 +29,44 @@ namespace SmartLog.WindowsForms
 
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
-			FuncionarioController funcCtrl = new FuncionarioController();
-			Funcionario func = new Funcionario(txtUsuario.Text, txtSenha.Text);
-
-			try
+			if(txtUsuario.Text == "" || txtUsuario.Text == "Informe o usuário")
 			{
-				func = funcCtrl.LogarController(func);
-				if(func.Codigo == 0)
-				{
-					MessageBox.Show("Usuario;senha inválido.");
-				}
-				else
-				{
-					Session.Instance.UserID = func.Codigo;
-					funcLogado = func;
-					this.Close();
-				}
+				provider.SetError(txtUsuario, "Informar usuário.");
+				txtUsuario.Focus();
+				return;
 			}
-			catch (Exception ex)
+			else if(txtSenha.Text == "" || txtSenha.Text == "Informe a senha")
 			{
-				MessageBox.Show(ex.Message);
+				provider.SetError(txtSenha, "Informar senha.");
+				txtSenha.Focus();
+				return;
+			}
+			else
+			{
+				provider.Clear();
+
+				FuncionarioController funcCtrl = new FuncionarioController();
+				Funcionario func = new Funcionario(txtUsuario.Text, txtSenha.Text);
+
+				try
+				{
+					func = funcCtrl.LogarController(func);
+					if (func.Codigo == 0)
+					{
+						MessageBox.Show("Usuario;senha inválido.");
+					}
+					else
+					{
+						Session.Instance.UserID = func.Codigo;
+						funcLogado = func;
+						this.Close();
+					}
+				}
+				catch (Exception ex)
+				{
+					Util.Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+				}
+
 			}
 		}
 		private void frmLogin_Load(object sender, EventArgs e)
@@ -92,6 +111,11 @@ namespace SmartLog.WindowsForms
 				txtUsuario.ForeColor = Color.Black;
 				txtUsuario.Text = "";
 			}
+		}
+
+		private void btnMinimizar_Click(object sender, EventArgs e)
+		{
+			this.WindowState = FormWindowState.Minimized;
 		}
 	}
 }

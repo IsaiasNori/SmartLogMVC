@@ -7,8 +7,8 @@ namespace SmartLogBusiness.Model.Entidade.viagem
 	public class Viagem
 	{
 		public int CodViagem{get; private set;}
-		public DateTime DataViagem { get; private set; }
-		public DateTime DataViagemFinal { get; private set; }
+		public DateTime? DataViagem { get; private set; }
+		public DateTime? DataViagemFinal { get; private set; }
 		public string DistanciaKm { get; private set; }
 		public decimal Valor { get; private set; }
 		public Endereco Origem { get; private set; }
@@ -43,7 +43,7 @@ namespace SmartLogBusiness.Model.Entidade.viagem
         }
 		
 		//Construtor para filtrar
-		public Viagem(DateTime dataVi, DateTime dataViFinal, Cliente cliente, Motorista motorista)
+		public Viagem(DateTime? dataVi, DateTime? dataViFinal, Cliente cliente, Motorista motorista)
 		{
 			DataViagem = dataVi;
 			DataViagemFinal = dataViFinal;

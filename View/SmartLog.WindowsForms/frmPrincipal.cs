@@ -153,9 +153,13 @@ namespace SmartLog.WindowsForms
 			CarregarTela(vei, "Veiculo");
 		}
 
-		private void frmPrincipal_Load(object sender, EventArgs e)
+		private void btnSair_Click(object sender, EventArgs e)
 		{
+			if(MessageBox.Show("Deseja realmente fechar a aplicação?","Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+				this.Close();
 
+			}
 		}
 	}
 }
