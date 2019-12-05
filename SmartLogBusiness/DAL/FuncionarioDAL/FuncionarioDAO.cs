@@ -30,7 +30,6 @@ namespace SmartLog.DAO
 				AdicionarParametro("@CodCidade", SqlDbType.Int, 10, codCidade);
 				AdicionarParametro("@CodEstado", SqlDbType.Int, 10, codEstado);
 
-
 				ExecuteProcedure("pFuncionario");
 			}
 			catch (Exception ex)
@@ -88,15 +87,14 @@ namespace SmartLog.DAO
 				throw new Exception(ex.Message);
 			}
 		}
-		public DataTable FiltrarFuncionarioDAO(int codFun, string nomeFunc, string cpfFunc)
+		public DataTable FiltrarFuncionarioDAO(string nomeFunc, string cpfFunc)
 		{
 			try
 			{
 				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "GRID");
 				AdicionarParametro("@NomeFunc", SqlDbType.NVarChar, 100, nomeFunc);
-				AdicionarParametro("@CpfFunc", SqlDbType.NVarChar, 15, cpfFunc);
-				AdicionarParametro("@CodMatricula", SqlDbType.Int,10, codFun);
+				AdicionarParametro("@CpfFunc", SqlDbType.NVarChar, 20, cpfFunc);
 
 				return ExecuteProcedure("pFuncionario");
 			}
@@ -127,7 +125,20 @@ namespace SmartLog.DAO
 			}
 			catch (Exception ex)
 			{
+				throw new Exception(ex.Message);
+			}
+		}
+		public DataTable CarregarComboFuncionario()
+		{
+			try
+			{
+				LimparParametro();
+				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "COMB");
 
+				return ExecuteProcedure("pFuncionario");
+			}
+			catch (Exception ex)
+			{
 				throw new Exception(ex.Message);
 			}
 		}

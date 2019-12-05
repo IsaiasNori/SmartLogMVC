@@ -81,7 +81,7 @@ namespace SmartLog.DAO
 				AdicionarParametro("@DataNasc", SqlDbType.Date, 10, date);
 				AdicionarParametro("@TelCli", SqlDbType.NVarChar, 14, telCli);
 				AdicionarParametro("@EmailCli", SqlDbType.NVarChar, 40, emailCli);
-				AdicionarParametro("@CpfCnpjCli", SqlDbType.NVarChar, 20, cpfCnpjCli);
+				AdicionarParametro("@CpfCnpj", SqlDbType.NVarChar, 20, cpfCnpjCli);
 				AdicionarParametro("@CodTipoCli", SqlDbType.Int, 10, codTipoCli);
 				AdicionarParametro("@Cep", SqlDbType.NVarChar, 10, cep);
 				AdicionarParametro("@Logra", SqlDbType.NVarChar, 100, logra);
@@ -121,6 +121,20 @@ namespace SmartLog.DAO
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "GRID");
 				AdicionarParametro("@NomeCli", SqlDbType.NVarChar, 100, nome);
 				AdicionarParametro("@CpfCnpj", SqlDbType.NVarChar, 20, cpfCnpj);
+
+				return ExecuteProcedure("pCliente");
+			}
+			catch (Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
+		}
+		public DataTable ComboCliente()
+		{
+			try
+			{
+				LimparParametro();
+				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "COMB");
 
 				return ExecuteProcedure("pCliente");
 			}

@@ -1,10 +1,9 @@
 ﻿namespace SmartLogBusiness.Model.Entidade.viagem
 {
-    public enum StatusViagem : int
+    public enum EnumStatusViagem : int
     {
-        Pendente = 0,
-        Transito = 1,
-        Finalizada = 3,
-        SemStatus = 4
+        Pendente = 1,
+        EmTransito = 2,
+        Finalizada = 3
     }
 }

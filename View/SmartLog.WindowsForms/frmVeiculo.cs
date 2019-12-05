@@ -1,4 +1,5 @@
-﻿using SmartLog.WindowsForms.Util;
+﻿using SmartLog.WindowsForms.UserControl;
+using SmartLog.WindowsForms.Util;
 using SmartLogBusiness.Controller;
 using SmartLogBusiness.Model.Entidade.veiculo;
 using System;
@@ -16,6 +17,7 @@ namespace SmartLog.WindowsForms
 	public partial class frmVeiculo : Form
 	{
 		private VeiculoController veiCtrl = new VeiculoController();
+		int codigoVeic;
 		public frmVeiculo()
 		{
 			InitializeComponent();
@@ -23,67 +25,24 @@ namespace SmartLog.WindowsForms
 
 		private void frmVeiculo_Load(object sender, EventArgs e)
 		{
-			CarregarMarca(ref cbMarca);
-			CarregarMarca(ref cbMarcaPesquisa);
-			CarregarStatusVeiculo();
+			CarregarMarca();
+			Utils.CarregarStatusVeiculo(ref cbStatus);
 		}
-		private void CarregarMarca(ref ComboBox combo)
-		{
-			try
-			{
-				MarcaController marcaCtrl = new MarcaController();
-				List<Marca> lista = marcaCtrl.ListasController();
-				if(lista != null)
-				{
-					combo.Items.Add(new SmartLog.WindowsForms.Classes.Item("--Selecione--", -1));
-
-					foreach(Marca marca in lista)
-					{
-						combo.Items.Add(new SmartLog.WindowsForms.Classes.Item(marca.Descricao, marca.CodMarca));
-					}
-				}
-			}
-			catch (Exception)
-			{
-
-				throw;
-			}
-		}
-		private void CarregarStatusVeiculo()
-		{
-			try
-			{
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("--Selecione--", -1));
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Disponivel",(int)enumStatusVeiculo.Disponivel));
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Transito", (int)enumStatusVeiculo.Transito));
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Manutenção", (int)enumStatusVeiculo.Manutencao));
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Sem Licenciamento", (int)enumStatusVeiculo.SemLicenciamento));
-				cbStatus.Items.Add(new SmartLog.WindowsForms.Classes.Item("Desativado", (int)enumStatusVeiculo.Desativado));
-			}
-			catch (Exception)
-			{
-
-				throw;
-			}
-		}
-
 		private void btnNovoVeiculo_Click(object sender, EventArgs e)
 		{
-			tabctrlVeiculo.SelectTab("tpCadastro");
+			codigoVeic = 0;
+			Utils.LimparCampos(gbDadosVeiculo);
+			tabctrlVeiculo.SelectedTab = tabCadastroVeic;
 		}
 
 		private void btnSalvar_Click(object sender, EventArgs e)
 		{
 			try
 			{
-
-
-				if(VerificarCamposObrigatoriosInformados() == false)
+				if (ValidateChildren() == false)
 				{
 					return;
 				}
-
-
 
 				DateTime? dataUltima = new DateTime();
 
@@ -92,63 +51,66 @@ namespace SmartLog.WindowsForms
 					dataUltima = Convert.ToDateTime(txtDataUltRev.Text);
 				}
 
-				Classes.Item status = (Classes.Item)cbStatus.SelectedItem;
-				Classes.Item marca = (Classes.Item)cbMarca.SelectedItem;
-				
-
-
-
-
-
-				Veiculo vei = new Veiculo(Convert.ToInt32(marca.Value),
+				Veiculo vei = new Veiculo(codigoVeic,
+										   cbMarca.PegarComboSelecionado(),
 										   txtModelo.Text,
 										   txtRenavam.Text,
-										   (enumStatusVeiculo)status.Value,
+										   (enumStatusVeiculo)cbStatus.PegarComboSelecionado(),
 										   txtData.Value,
 										   txtAnoFab.Text,
 										   txtKmAtual.Text,
-										   txtKmPrev.Text,dataUltima
-										   );
-				veiCtrl.InserirController(vei);
-
-				Utils.ExibirMensagem("Veiculo inserido com sucesso", eTipoMensagem.Sucesso);
-
-
+										   txtKmPrev.Text, dataUltima);
+				if (codigoVeic == 0)
+				{
+					veiCtrl.InserirController(vei);
+					Utils.ExibirMensagem("Veiculo inserido com sucesso", eTipoMensagem.Sucesso);
+				}
+				else
+				{
+					veiCtrl.AlterarController(vei);
+					Utils.ExibirMensagem("Veiculo alterado com sucesso", eTipoMensagem.Sucesso);
+				}
+				Utils.LimparCampos(gbDadosVeiculo);
+				tabctrlVeiculo.SelectedTab = tabConsultaVeic;
+				Pesquisar();
 			}
 			catch (Exception ex)
 			{
 				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
-
 		private bool VerificarCamposObrigatoriosInformados()
 		{
-			
-			string mensagem = ""; 
 
+			string mensagem = "";
 
 			try
 			{
-				if(txtModelo.Text == "")
+
+
+				if (txtModelo.Text == "")
 				{
-					mensagem += "Informar o modelo" + Environment.NewLine; ;
+					mensagem += "Informar o modelo" + Environment.NewLine;
+					txtModelo.Focus();
 				}
-				if(txtRenavam.Text == "")
+				if (txtRenavam.Text == "")
 				{
-					mensagem += "Informar o renavem" + Environment.NewLine; ;
+					mensagem += "Informar o renavem" + Environment.NewLine;
+					txtRenavam.Focus();
 				}
 
-				Classes.Item item = (Classes.Item)cbStatus.SelectedItem;
-				if(item==null || item.Value.ToString() == "-1")
+
+				if (cbStatus.VerificarCampoObrigatorio())
 				{
-					mensagem += "Informar o status" + Environment.NewLine; ;
+
 				}
-				Classes.Item marca = (Classes.Item)cbMarca.SelectedItem;
-				if(marca==null || marca.Value.ToString() == "-1")
+
+				if (cbMarca.PegarComboSelecionado() <= 0)
 				{
 					mensagem += "Informar a marca" + Environment.NewLine;
+					cbMarca.Focus();
 				}
-				if(mensagem == "")
+				if (mensagem == "")
 				{
 					return true;
 				}
@@ -157,37 +119,133 @@ namespace SmartLog.WindowsForms
 					Utils.ExibirMensagem(mensagem, eTipoMensagem.Atencao);
 					return false;
 				}
-
-
-
 			}
 			catch (Exception ex)
 			{
-
+				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 				return false;
 			}
 		}
-
 		private void btnPesquisarVeiculo_Click(object sender, EventArgs e)
+		{
+			Pesquisar();
+		}
+		private void DtVeiculo_DataSourceChanged(object sender, EventArgs e)
+		{
+			if (dgVeiculo.DataSource != null)
+			{
+				dgVeiculo.Columns[0].Visible = false;
+				dgVeiculo.AutoResizeColumns();
+			}
+		}
+		private void Pesquisar()
 		{
 			try
 			{
-				int codmarca= 0 ;
+				int codmarca = 0;
 
 				Classes.Item marca = (Classes.Item)cbMarcaPesquisa.SelectedItem;
 				if (marca != null)
 				{
-					if((int)marca.Value != -1)
-					codmarca = Convert.ToInt32(marca.Value);
+					if ((int)marca.Value != -1)
+						codmarca = Convert.ToInt32(marca.Value);
 				}
 
 				Veiculo vei = new Veiculo(codmarca, txtModeloPesquisa.Text);
 				DataTable table = veiCtrl.GetDataTable(vei);
 
-				if(table != null)
+				if (table != null)
 				{
-					dtVeiculo.DataSource = table;
+					dgVeiculo.DataSource = table;
 				}
+			}
+			catch (Exception ex)
+			{
+				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+			}
+		}
+		private void btnVoltarCli_Click(object sender, EventArgs e)
+		{
+			tabctrlVeiculo.SelectedTab = tabConsultaVeic;
+		}
+		private void btnFechaFuncionario_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+		private void btnAlterar_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (dgVeiculo.SelectedRows.Count > 0)
+				{
+					string codigo = dgVeiculo.SelectedRows[0].Cells[0].Value.ToString();
+					int.TryParse(codigo, out codigoVeic);
+
+
+					if (codigoVeic > 0)
+					{
+						Veiculo veic = new Veiculo(codigoVeic);
+
+						veic = veiCtrl.GetObj(veic);
+
+						cbStatus.PosicionarCombo((int)veic.Status);
+						cbMarca.PosicionarCombo(veic.CodMarca);
+						txtModelo.Text = veic.Modelo;
+						cbStatus.SelectedValue = veic.Status;
+						txtData.Text = veic.DataAquisicao.ToString();
+						txtAnoFab.Text = veic.AnoFabricacao;
+						txtRenavam.Text = veic.Renavam;
+						txtKmAtual.Text = veic.KmAtual;
+						txtKmPrev.Text = veic.KmPrev;
+						txtDataUltRev.Text = veic.DataUltimaRevisão.ToString();
+
+						tabctrlVeiculo.SelectedTab = tabCadastroVeic;
+					}
+				}
+				else
+				{
+					Utils.ExibirMensagem("Selecione um registro para efetuar alteração.", eTipoMensagem.Atencao);
+				}
+			}
+			catch (Exception ex)
+			{
+				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+			}
+		}
+		private void btnExcluir_Click(object sender, EventArgs e)
+		{
+			if (dgVeiculo.SelectedRows.Count > 0)
+			{
+				string codigo = dgVeiculo.SelectedRows[0].Cells[0].Value.ToString();
+				int.TryParse(codigo, out codigoVeic);
+
+				if (codigoVeic > 0)
+				{
+					if (MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+					{
+						Veiculo vei = new Veiculo(codigoVeic);
+						veiCtrl.DeletarController(vei);
+
+						Utils.ExibirMensagem("Veículo excluído com sucesso.", eTipoMensagem.Sucesso);
+						Pesquisar();
+					}
+				}
+			}
+			else
+			{
+				Utils.ExibirMensagem("Selecione um registro para excluir.", eTipoMensagem.Atencao);
+			}
+		}
+		private void CarregarMarca()
+		{
+			try
+			{
+				MarcaController marcaCtrl = new MarcaController();
+				DataTable table = marcaCtrl.CarregarComborMarcaController();
+
+				cbMarca.CarregaCombo(table, "Cod_Marca", "Descricao", UserControl.eTipoMensagem.Selecione);
+				cbMarcaPesquisa.CarregaCombo(table, "Cod_Marca", "Descricao", UserControl.eTipoMensagem.Selecione);
+
 			}
 			catch (Exception)
 			{
@@ -196,12 +254,5 @@ namespace SmartLog.WindowsForms
 			}
 		}
 
-		private void DtVeiculo_DataSourceChanged(object sender, EventArgs e)
-		{
-			if(dtVeiculo.DataSource != null)
-			{
-				dtVeiculo.Columns[0].Visible = false;
-			}
-		}
 	}
 }

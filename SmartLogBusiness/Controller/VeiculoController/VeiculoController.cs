@@ -27,7 +27,6 @@ namespace SmartLogBusiness.Controller
 				throw new Exception(ex.Message);
 			}
 		}
-
 		public void DeletarController(Veiculo obj)
 		{
 			try
@@ -43,7 +42,6 @@ namespace SmartLogBusiness.Controller
 				throw new Exception(ex.Message);
 			}
 		}
-
 		public DataTable GetDataTable(Veiculo obj)
 		{
 			try
@@ -56,7 +54,6 @@ namespace SmartLogBusiness.Controller
 				throw new Exception(ex.Message);
 			}
 		}
-
 		public Veiculo GetObj(Veiculo obj)
 		{
 			try
@@ -69,7 +66,7 @@ namespace SmartLogBusiness.Controller
 				
 				if(table != null)
 				{
-					Veiculo vei = new Veiculo(
+					Veiculo vei = new Veiculo(Convert.ToInt32(table.Rows[0]["Cod_Veiculo"]),
 											  Convert.ToInt32(table.Rows[0]["Cod_Marca"]),
 											  table.Rows[0]["Modelo"].ToString(),
 											  table.Rows[0]["Renavam"].ToString(),
@@ -134,7 +131,7 @@ namespace SmartLogBusiness.Controller
 
 				foreach(DataRow item in table.Rows)
 				{
-					Veiculo vei = new Veiculo(
+					Veiculo vei = new Veiculo(Convert.ToInt32(table.Rows[0]["Cod_Veiculo"]),
 											  Convert.ToInt32(table.Rows[0]["Cod_Marca"]),
 											  table.Rows[0]["Modelo"].ToString(),
 											  table.Rows[0]["Renavam"].ToString(),
@@ -149,6 +146,17 @@ namespace SmartLogBusiness.Controller
 					lista.Add(vei);
 				}
 				return lista;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
+		}
+		public DataTable CarregarComboVeiculo()
+		{
+			try
+			{
+				return dao.CarregarVeiculoDAO();
 			}
 			catch (Exception ex)
 			{

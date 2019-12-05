@@ -26,14 +26,14 @@
 
     <asp:Button ID="MenuVeiculoButton" runat="server" Text="Veículo" Height="35px" Width="180px" CssClass="LateralButtonParent" OnClick="MenuVeiculoButton_Click" BorderStyle="None" />
     <asp:Panel ID="VeiculoPanel" runat="server" Width="180px">
-        <asp:Button ID="NewVeiculoButton" runat="server" Text="Novo" Height="35px" Width="180px" CssClass="LateralButtonChild" BorderStyle="None" />
+        <asp:Button ID="NewVeiculoButton" runat="server" Text="Novo" Height="35px" Width="180px" CssClass="LateralButtonChild" BorderStyle="None" PostBackUrl="~/VeiculoViews/NewVeiculoView.aspx" />
         <asp:Button ID="SearchVeiculoButton" runat="server" Text="Busca" Height="35px" Width="180px" CssClass="LateralButtonChild" BorderStyle="None" />
         <asp:Button ID="ListVeiculoButton" runat="server" Text="Lista" Height="35px" Width="180px" CssClass="LateralButtonChild" BorderStyle="None" />
     </asp:Panel>
 
     <asp:Button ID="MenuFuncionarioButton" runat="server" Text="Funcionário" Height="35px" Width="180px" CssClass="LateralButtonParent" OnClick="MenuFuncionarioButton_Click" BorderStyle="None" />
     <asp:Panel ID="FuncionarioPanel" runat="server" Width="180px">
-        <asp:Button ID="NewFuncionarioButton" runat="server" Text="Novo" Height="35px" Width="180px" CssClass="LateralButtonChild" BorderStyle="None" />
+        <asp:Button ID="NewFuncionarioButton" runat="server" Text="Novo" Height="35px" Width="180px" CssClass="LateralButtonChild" BorderStyle="None" PostBackUrl="~/FuncionarioViews/NewFuncionarioView.aspx" />
         <asp:Button ID="SeacrhFuncionarioButton" runat="server" Text="Busca" Height="35px" Width="180px" CssClass="LateralButtonChild" BorderStyle="None" />
         <asp:Button ID="ListFuncionarioButton" runat="server" Text="Lista" Height="35px" Width="180px" CssClass="LateralButtonChild" BorderStyle="None" />
     </asp:Panel>

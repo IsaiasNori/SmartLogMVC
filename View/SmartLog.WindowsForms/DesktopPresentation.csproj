@@ -78,6 +78,12 @@
     <Compile Include="frmMensagem.Designer.cs">
       <DependentUpon>frmMensagem.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMotorista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMotorista.Designer.cs">
+      <DependentUpon>frmMotorista.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMensagem.resx">
       <DependentUpon>frmMensagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMotorista.resx">
+      <DependentUpon>frmMotorista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -212,6 +221,18 @@
     <None Include="Resources\icon_MinApplication.png" />
     <None Include="Resources\Logo.png" />
     <None Include="Resources\icon_MenuAjuda.png" />
+    <None Include="Resources\icon_MaxPreto.jpg" />
+    <None Include="Resources\icon_MaximizarWhiteBlack.png" />
+    <None Include="Resources\icon_MaximizarWhite.png" />
+    <None Include="Resources\icon_MAxWhite.png" />
+    <None Include="Resources\icon_CloseApp.png" />
+    <None Include="Resources\icon_CloseApp2.png" />
+    <None Include="Resources\icon_MinimizarApp.png" />
+    <None Include="Resources\icon_Backspace.jpg" />
+    <None Include="Resources\icon_Backspace.png" />
+    <None Include="Resources\icon_NovoWhite.png" />
+    <None Include="Resources\icon_NewWhite.png" />
+    <None Include="Resources\icon_Logout.png" />
     <Content Include="Resources\LogoV9.jpg" />
     <None Include="Resources\icon_alert.png" />
     <None Include="Resources\icon_erro.png" />

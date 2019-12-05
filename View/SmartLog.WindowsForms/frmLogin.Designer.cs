@@ -94,7 +94,7 @@
 			// 
 			// panelCabecalho
 			// 
-			this.panelCabecalho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.panelCabecalho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.panelCabecalho.Controls.Add(this.btnMinimizar);
 			this.panelCabecalho.Controls.Add(this.btnFechar);
 			this.panelCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
@@ -111,7 +111,7 @@
 			this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
 			this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
 			this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnMinimizar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MinApplication;
+			this.btnMinimizar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MinimizarApp;
 			this.btnMinimizar.Location = new System.Drawing.Point(506, 7);
 			this.btnMinimizar.Name = "btnMinimizar";
 			this.btnMinimizar.Size = new System.Drawing.Size(31, 32);
@@ -130,7 +130,7 @@
 			this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnFechar.ForeColor = System.Drawing.Color.White;
-			this.btnFechar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_CloseApplication;
+			this.btnFechar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_CloseApp2;
 			this.btnFechar.Location = new System.Drawing.Point(543, 3);
 			this.btnFechar.Name = "btnFechar";
 			this.btnFechar.Size = new System.Drawing.Size(35, 36);
@@ -152,7 +152,7 @@
 			this.pnlLogin.Controls.Add(this.btnLogin);
 			this.pnlLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 			this.pnlLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.pnlLogin.Location = new System.Drawing.Point(137, 197);
+			this.pnlLogin.Location = new System.Drawing.Point(131, 250);
 			this.pnlLogin.Name = "pnlLogin";
 			this.pnlLogin.Size = new System.Drawing.Size(312, 198);
 			this.pnlLogin.TabIndex = 8;
@@ -182,11 +182,11 @@
 			// pictureBox1
 			// 
 			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox1.Image = global::SmartLog.WindowsForms.Properties.Resources.LogoV11_fw;
-			this.pictureBox1.Location = new System.Drawing.Point(221, 63);
+			this.pictureBox1.Image = global::SmartLog.WindowsForms.Properties.Resources.Logo;
+			this.pictureBox1.Location = new System.Drawing.Point(157, 37);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(141, 128);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.Size = new System.Drawing.Size(265, 211);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 9;
 			this.pictureBox1.TabStop = false;
 			// 
@@ -194,7 +194,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(590, 432);
+			this.ClientSize = new System.Drawing.Size(590, 460);
 			this.Controls.Add(this.pnlLogin);
 			this.Controls.Add(this.panelCabecalho);
 			this.Controls.Add(this.pictureBox1);

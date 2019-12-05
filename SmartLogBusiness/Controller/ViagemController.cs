@@ -26,15 +26,13 @@ namespace SmartLogBusiness.Controller
 							  obj.Origem.Numero, obj.ComplementoOrigem, obj.Origem.Bairro, obj.Origem.CodCidade.ToString(), obj.Origem.CodEstado.ToString(),
 							  obj.Destino.Cep, obj.Destino.Logradouro, obj.Destino.Numero, obj.ComplementoDestino, obj.Destino.Bairro,
 							  obj.Destino.CodCidade.ToString(), obj.Destino.CodEstado.ToString(), obj.Cliente.Codigo,
-							  Convert.ToInt32(obj.CodVeiculo), obj.Motorista.Codigo, Convert.ToInt32(obj.Atendente));
+							  Convert.ToInt32(obj.CodVeiculo.CodVei), obj.Motorista.Codigo, Convert.ToInt32(obj.Atendente.Codigo), (int)obj.Status);
 			}
 			catch (Exception ex)
 			{
-
 				throw new Exception(ex.Message);
 			}
 		}
-
 		public void DeletarController(Viagem obj)
 		{
 			try
@@ -51,20 +49,17 @@ namespace SmartLogBusiness.Controller
 				throw new Exception(ex.Message);
 			}
 		}
-
 		public DataTable GetDataTable(Viagem obj)
 		{
 			try
 			{
-				return dao.FiltrarViagemDAO(obj.DataViagem, obj.DataViagemFinal,Convert.ToInt32(obj.Motorista), Convert.ToInt32(obj.Cliente));
+				return dao.FiltrarViagemDAO(obj.DataViagem, obj.DataViagemFinal,Convert.ToInt32(obj.Motorista.Codigo), Convert.ToInt32(obj.Cliente.Codigo));
 			}
 			catch (Exception ex)
 			{
-
 				throw new Exception(ex.Message);
 			}
 		}
-
 		public Viagem GetObj(Viagem obj)
 		{
 			try
@@ -81,15 +76,15 @@ namespace SmartLogBusiness.Controller
 										table.Rows[0]["Lograd_Origem"].ToString(),
 										Convert.ToInt32(table.Rows[0]["Numero_Origem"]),
 										table.Rows[0]["Bairro_Origem"].ToString(),
-										Convert.ToInt32(table.Rows[0]["Cidade_Origem"]),
-										Convert.ToInt32(table.Rows[0]["UF_Origem"]));
+										Convert.ToInt32(table.Rows[0]["Cod_CidadeOrigem"]),
+										Convert.ToInt32(table.Rows[0]["Cod_UFOrigem"]));
 
 					Endereco endDestino = new Endereco(table.Rows[0]["Cep_Destino"].ToString(),
 										table.Rows[0]["Lograd_Destino"].ToString(),
 										Convert.ToInt32(table.Rows[0]["Numero_Destino"]),
 										table.Rows[0]["Bairro_Destino"].ToString(),
-										Convert.ToInt32(table.Rows[0]["Cidade_Destino"]),
-										Convert.ToInt32(table.Rows[0]["UF_Destino"]));
+										Convert.ToInt32(table.Rows[0]["Cod_CidadeDestino"]),
+										Convert.ToInt32(table.Rows[0]["Cod_UFDestino"]));
 
 					Cliente cli = new Cliente(Convert.ToInt32(table.Rows[0]["Cod_Cliente"]));
 					ClienteController cliCtrl = new ClienteController();
@@ -103,7 +98,7 @@ namespace SmartLogBusiness.Controller
 					Motorista moto = new Motorista(Convert.ToInt32(table.Rows[0]["Cod_Motorista"]));
 
 					FuncionarioController funcCtrl = new FuncionarioController();
-					Funcionario func = new Funcionario();
+					Funcionario func = new Funcionario(Convert.ToInt32(table.Rows[0]["Cod_Atendente"]));
 					func = funcCtrl.GetObj(func);
 
 					Viagem viagem = new Viagem(Convert.ToInt32(table.Rows[0]["Cod_Viagem"]),
@@ -111,7 +106,7 @@ namespace SmartLogBusiness.Controller
 										table.Rows[0]["Distancia_Km"].ToString(),
 										Convert.ToDecimal(table.Rows[0]["Valor"]),
 										endOrigem, table.Rows[0]["Complemento_Origem"].ToString(),
-										endDestino, table.Rows[0]["Complemento_Destino"].ToString(), cli, vei, moto, func);
+										endDestino, table.Rows[0]["Complemento_Destino"].ToString(), cli, vei, moto, func, (EnumStatusViagem)table.Rows[0]["Status"]);
 					return viagem;
 				}
 				else
@@ -126,24 +121,22 @@ namespace SmartLogBusiness.Controller
 				throw new Exception(ex.Message);
 			}
 		}
-
 		public void InserirController(Viagem obj)
 		{
 			try
 			{
+			
 				dao.InserirViagemDAO(obj.DataViagem, obj.DistanciaKm, obj.Valor, obj.Origem.Cep, obj.Origem.Logradouro,
 							  obj.Origem.Numero, obj.ComplementoOrigem, obj.Origem.Bairro, obj.Origem.CodCidade.ToString(), obj.Origem.CodEstado.ToString(),
 							  obj.Destino.Cep, obj.Destino.Logradouro, obj.Destino.Numero, obj.ComplementoDestino, obj.Destino.Bairro,
 							  obj.Destino.CodCidade.ToString(), obj.Destino.CodEstado.ToString(), obj.Cliente.Codigo,
-							  Convert.ToInt32(obj.CodVeiculo), obj.Motorista.Codigo, Convert.ToInt32(obj.Atendente));
+							  Convert.ToInt32(obj.CodVeiculo.CodVei), obj.Motorista.Codigo, Convert.ToInt32(obj.Atendente.Codigo), (int)obj.Status);
 			}
 			catch (Exception ex)
 			{
-
 				throw new Exception(ex.Message);
 			}
 		}
-
 		public List<Viagem> ListasController(Viagem obj)
 		{
 			try
@@ -160,15 +153,15 @@ namespace SmartLogBusiness.Controller
 					table.Rows[0]["Lograd_Origem"].ToString(),
 					Convert.ToInt32(table.Rows[0]["Numero_Origem"]),
 					table.Rows[0]["Bairro_Origem"].ToString(),
-					Convert.ToInt32(table.Rows[0]["Cidade_Origem"]),
-					Convert.ToInt32(table.Rows[0]["UF_Origem"]));
+					Convert.ToInt32(table.Rows[0]["Cod_CidadeOrigem"]),
+					Convert.ToInt32(table.Rows[0]["Cod_UFOrigem"]));
 
 					Endereco endDestino = new Endereco(table.Rows[0]["Cep_Destino"].ToString(),
 										table.Rows[0]["Lograd_Destino"].ToString(),
 										Convert.ToInt32(table.Rows[0]["Numero_Destino"]),
 										table.Rows[0]["Bairro_Destino"].ToString(),
-										Convert.ToInt32(table.Rows[0]["Cidade_Destino"]),
-										Convert.ToInt32(table.Rows[0]["UF_Destino"]));
+										Convert.ToInt32(table.Rows[0]["Cod_CidadeDestino"]),
+										Convert.ToInt32(table.Rows[0]["Cod_UFDestino"]));
 
 					Cliente cli = new Cliente(Convert.ToInt32(table.Rows[0]["Cod_Cliente"]));
 					ClienteController cliCtrl = new ClienteController();
@@ -182,7 +175,7 @@ namespace SmartLogBusiness.Controller
 					Motorista moto = new Motorista(Convert.ToInt32(table.Rows[0]["Cod_Motorista"]));
 
 					FuncionarioController funcCtrl = new FuncionarioController();
-					Funcionario func = new Funcionario();
+					Funcionario func = new Funcionario(Convert.ToInt32(table.Rows[0]["Cod_Matricula"]));
 					func = funcCtrl.GetObj(func);
 
 					Viagem viagem = new Viagem(Convert.ToInt32(table.Rows[0]["Cod_Viagem"]),
@@ -190,7 +183,7 @@ namespace SmartLogBusiness.Controller
 										table.Rows[0]["Distancia_Km"].ToString(),
 										Convert.ToDecimal(table.Rows[0]["Valor"]),
 										endOrigem, table.Rows[0]["Complemento_Origem"].ToString(),
-										endDestino, table.Rows[0]["Complemento_Destino"].ToString(), cli, vei, moto, func);
+										endDestino, table.Rows[0]["Complemento_Destino"].ToString(), cli, vei, moto, func, (EnumStatusViagem)table.Rows[0]["Status"]);
 					lista.Add(viagem);
 				}
 				return lista;

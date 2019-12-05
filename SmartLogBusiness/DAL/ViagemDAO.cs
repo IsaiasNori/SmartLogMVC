@@ -11,10 +11,11 @@ namespace SmartLogBusiness.DAL
 		public bool InserirViagemDAO(DateTime dataViagem, string distancia, decimal valor,
 			string cepOrigem, string lograOrigem, int numOrigem, string compleOrigem, string bairroOrigem, string cidadeOrigem, string ufOrigem,
 			string cepDestino, string lograDestino, int numDestino, string compleDestino, string bairroDestino, string cidadeDestino, string ufDestino,
-			int codCli, int codVeiculo, int codMotorista, int codAtendente)
+			int codCli, int codVeiculo, int codMotorista, int codAtendente, int status)
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "INSE");
 				AdicionarParametro("@DataVi", SqlDbType.DateTime, 10, dataViagem);
 				AdicionarParametro("@DistanciaKm", SqlDbType.NVarChar, 10, distancia);
@@ -37,6 +38,7 @@ namespace SmartLogBusiness.DAL
 				AdicionarParametro("@CodVei", SqlDbType.Int, 10, codVeiculo);
 				AdicionarParametro("@CodAte", SqlDbType.Int, 10, codAtendente);
 				AdicionarParametro("@CodMot", SqlDbType.Int, 10, codMotorista);
+				AdicionarParametro("Status", SqlDbType.Int, 10, status);
 
 				ExecuteProcedure("pViagem");
 
@@ -50,10 +52,11 @@ namespace SmartLogBusiness.DAL
 		public bool AlterarViagemDAO(int codVi,DateTime dataViagem, string distancia, decimal valor,
 			string cepOrigem, string lograOrigem, int numOrigem, string compleOrigem, string bairroOrigem, string cidadeOrigem, string ufOrigem,
 			string cepDestino, string lograDestino, int numDestino, string compleDestino, string bairroDestino, string cidadeDestino, string ufDestino,
-			int codCli, int codVeiculo, int codMotorista, int codAtendente)
+			int codCli, int codVeiculo, int codMotorista, int codAtendente, int status)
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "ALTE");
 				AdicionarParametro("@CodVi", SqlDbType.Int, 10, codVi);
 				AdicionarParametro("@DataVi", SqlDbType.DateTime, 10, dataViagem);
@@ -77,6 +80,7 @@ namespace SmartLogBusiness.DAL
 				AdicionarParametro("@CodVei", SqlDbType.Int, 10, codVeiculo);
 				AdicionarParametro("@CodAte", SqlDbType.Int, 10, codAtendente);
 				AdicionarParametro("@CodMot", SqlDbType.Int, 10, codMotorista);
+				AdicionarParametro("@Status", SqlDbType.Int, 10, status);
 
 				ExecuteProcedure("pViagem");
 
@@ -91,6 +95,7 @@ namespace SmartLogBusiness.DAL
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "DELE");
 				AdicionarParametro("@CodVi", SqlDbType.Int, 10, codViagem);
 
@@ -125,6 +130,7 @@ namespace SmartLogBusiness.DAL
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "OBTE");
 				AdicionarParametro("@CodVi", SqlDbType.Int, 10, codVi);
 

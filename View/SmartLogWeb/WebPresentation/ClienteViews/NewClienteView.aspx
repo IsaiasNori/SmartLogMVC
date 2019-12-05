@@ -51,7 +51,8 @@
         </div>
         <div class="CamposDiv">
             <asp:Label ID="Label9" runat="server" Text="UF:" CssClass="CamposLabel"></asp:Label>
-            <asp:DropDownList ID="UfDropDownList" runat="server" Width="50px" CssClass="CamposTextBox"></asp:DropDownList>
+            <asp:DropDownList ID="UfDropDownList" runat="server" Width="50px" CssClass="CamposTextBox" AutoPostBack="True" ForeColor="Black">
+            </asp:DropDownList>
         </div>
         <div class="CamposDiv">
             <span id="GroupButtons" >

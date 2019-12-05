@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using WebPresentation.ExtensionMethods;
-using SmartLogBusiness.Model.Entidade.pessoa;
+using System.Data;
+using System.Data.SqlClient;
 using SmartLogBusiness.Controller;
+
 
 namespace WebPresentation.ClienteViews
 {
@@ -11,6 +14,7 @@ namespace WebPresentation.ClienteViews
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            CarregarEstado();
         }
 
         protected void SalvarButton_Click(object sender, EventArgs e)
@@ -45,9 +49,7 @@ namespace WebPresentation.ClienteViews
                 string cidade = CidadeTextBox.Text;
                 string uf = UfDropDownList.SelectedIndex.ToString();
 
-                //criacao da entidade cliente e atribuição dos campos dps chamar metodo da classe controller
-
-                Cliente cliente = new Cliente(0, nome, "0000000",,, telefone, email,,);
+               
 
 
                 MensagemLabel.Text = "Dados Salvos com sucesso";
@@ -71,6 +73,27 @@ namespace WebPresentation.ClienteViews
             MensagemLabel.ClearText();
         }
 
-        
+        private void CarregarEstado()
+        {
+            try
+            {
+                EstadoController estadoCtrl = new EstadoController();
+                DataTable table = estadoCtrl.CarregarEstado();
+
+                if (table != null)
+                {
+                    foreach(DataRow r in table.Rows)
+                    {
+                        ListItem listItem = new ListItem(r[1].ToString(),r[0].ToString());
+                        UfDropDownList.Items.Add(listItem.Text);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }

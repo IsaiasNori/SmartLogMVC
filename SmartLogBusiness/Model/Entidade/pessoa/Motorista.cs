@@ -1,16 +1,17 @@
-﻿using System;
+﻿using SmartLogBusiness.Model.Enums;
+using System;
 
 namespace SmartLogBusiness.Model.Entidade.pessoa
 {
     public class Motorista : Pessoa
     {
 		
-		public DateTime DataNasc { get; private set; }
-		public DateTime CnhVencimento { get; private set; }
-		public DateTime CnhVencFinal { get; private set; }
-		public string CnhCategoria { get; private  set; }
+		public DateTime? DataNasc { get; private set; }
+		public DateTime? CnhVencimento { get; private set; }
+		public DateTime? CnhVencFinal { get; private set; }
 		public string CnhNumero { get; private set; }
-		public bool Status { get; private set; }
+		public EnumCnhCategoriaMotorista? CnhCat { get; private set; }
+		public EnumStatusMotorista? Status { get; private set; }
 
 		public Motorista()
 		{
@@ -20,25 +21,25 @@ namespace SmartLogBusiness.Model.Entidade.pessoa
 		{
 
 		}
-		public Motorista(int codigo,string nome, DateTime dataNasc, string telefone, string email, bool status, Endereco endereco, string cnhCat, string cnhNum, DateTime cnhVenc, DateTime cnhVencFinal)
+		public Motorista(int codigo,string nome, DateTime? dataNasc, string telefone, string email, EnumStatusMotorista? status, Endereco endereco, EnumCnhCategoriaMotorista? cnhCat, string cnhNum, DateTime? cnhVenc, DateTime? cnhVencFinal)
             : base(codigo,nome, dataNasc, telefone, email,  endereco)
         {
 			
 			DataNasc = dataNasc;
 			CnhVencimento = cnhVenc;
 			CnhVencFinal = cnhVencFinal;
-			CnhCategoria = cnhCat;
+			CnhCat = cnhCat;
 			CnhNumero = cnhNum;
 			Status = status;
         }
 
-		public Motorista(int codigo, string nome, DateTime dataNasc, string telefone, string email, bool status, Endereco endereco, string cnhCat, string cnhNum, DateTime cnhVenc)
+		public Motorista(int codigo, string nome, DateTime dataNasc, string telefone, string email, EnumStatusMotorista? status, Endereco endereco, EnumCnhCategoriaMotorista? cnhCat, string cnhNum, DateTime cnhVenc)
 			: base(codigo,nome, dataNasc, telefone, email, endereco)
 		{
 			
 			DataNasc = dataNasc;
 			CnhVencimento = cnhVenc;
-			CnhCategoria = cnhCat;
+			CnhCat = cnhCat;
 			CnhNumero = cnhNum;
 			Status = status;
 		}

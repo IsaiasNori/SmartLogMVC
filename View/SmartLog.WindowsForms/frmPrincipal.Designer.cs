@@ -30,6 +30,7 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.panelMenu = new System.Windows.Forms.Panel();
+			this.button1 = new System.Windows.Forms.Button();
 			this.btnAjuda = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btnManutencao = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@
 			this.btnFuncionario = new System.Windows.Forms.Button();
 			this.btnCliente = new System.Windows.Forms.Button();
 			this.panelCabecalho = new System.Windows.Forms.Panel();
+			this.lblTituloTela = new System.Windows.Forms.Label();
 			this.btnMinimizar = new System.Windows.Forms.Button();
 			this.btnTituloTela = new System.Windows.Forms.Button();
 			this.btnRestaurar = new System.Windows.Forms.Button();
@@ -55,7 +57,8 @@
 			// 
 			// panelMenu
 			// 
-			this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(146)))), ((int)(((byte)(208)))));
+			this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.panelMenu.Controls.Add(this.button1);
 			this.panelMenu.Controls.Add(this.btnAjuda);
 			this.panelMenu.Controls.Add(this.pictureBox1);
 			this.panelMenu.Controls.Add(this.btnManutencao);
@@ -69,16 +72,37 @@
 			this.panelMenu.Size = new System.Drawing.Size(190, 665);
 			this.panelMenu.TabIndex = 0;
 			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.Transparent;
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
+			this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+			this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.button1.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Logout;
+			this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+			this.button1.Location = new System.Drawing.Point(3, 484);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(187, 51);
+			this.button1.TabIndex = 6;
+			this.button1.Text = " Sair";
+			this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button1.UseVisualStyleBackColor = false;
+			// 
 			// btnAjuda
 			// 
 			this.btnAjuda.BackColor = System.Drawing.Color.Transparent;
 			this.btnAjuda.FlatAppearance.BorderSize = 0;
-			this.btnAjuda.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+			this.btnAjuda.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
 			this.btnAjuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnAjuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnAjuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnAjuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-			this.btnAjuda.ForeColor = System.Drawing.Color.Black;
+			this.btnAjuda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnAjuda.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MenuAjuda;
 			this.btnAjuda.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.btnAjuda.Location = new System.Drawing.Point(3, 430);
@@ -94,7 +118,7 @@
 			// 
 			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox1.Image = global::SmartLog.WindowsForms.Properties.Resources.Logo;
-			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Location = new System.Drawing.Point(3, 0);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(190, 164);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -105,12 +129,12 @@
 			// 
 			this.btnManutencao.BackColor = System.Drawing.Color.Transparent;
 			this.btnManutencao.FlatAppearance.BorderSize = 0;
-			this.btnManutencao.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+			this.btnManutencao.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
 			this.btnManutencao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnManutencao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnManutencao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnManutencao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-			this.btnManutencao.ForeColor = System.Drawing.Color.Black;
+			this.btnManutencao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnManutencao.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MenuManutencao;
 			this.btnManutencao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnManutencao.Location = new System.Drawing.Point(3, 376);
@@ -126,12 +150,12 @@
 			// 
 			this.btnViagem.BackColor = System.Drawing.Color.Transparent;
 			this.btnViagem.FlatAppearance.BorderSize = 0;
-			this.btnViagem.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+			this.btnViagem.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
 			this.btnViagem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnViagem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnViagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnViagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-			this.btnViagem.ForeColor = System.Drawing.Color.Black;
+			this.btnViagem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnViagem.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MenuViagem;
 			this.btnViagem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnViagem.Location = new System.Drawing.Point(3, 216);
@@ -148,12 +172,12 @@
 			// 
 			this.btnVeiculo.BackColor = System.Drawing.Color.Transparent;
 			this.btnVeiculo.FlatAppearance.BorderSize = 0;
-			this.btnVeiculo.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+			this.btnVeiculo.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
 			this.btnVeiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnVeiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnVeiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-			this.btnVeiculo.ForeColor = System.Drawing.Color.Black;
+			this.btnVeiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnVeiculo.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MenuVeiculo;
 			this.btnVeiculo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnVeiculo.Location = new System.Drawing.Point(3, 269);
@@ -170,12 +194,12 @@
 			// 
 			this.btnFuncionario.BackColor = System.Drawing.Color.Transparent;
 			this.btnFuncionario.FlatAppearance.BorderSize = 0;
-			this.btnFuncionario.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+			this.btnFuncionario.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
 			this.btnFuncionario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnFuncionario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-			this.btnFuncionario.ForeColor = System.Drawing.Color.Black;
+			this.btnFuncionario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnFuncionario.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MenuFuncionario;
 			this.btnFuncionario.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.btnFuncionario.Location = new System.Drawing.Point(3, 323);
@@ -191,16 +215,17 @@
 			// btnCliente
 			// 
 			this.btnCliente.BackColor = System.Drawing.Color.Transparent;
+			this.btnCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnCliente.FlatAppearance.BorderSize = 0;
-			this.btnCliente.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+			this.btnCliente.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
 			this.btnCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-			this.btnCliente.ForeColor = System.Drawing.Color.Black;
+			this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnCliente.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MenuCliente;
 			this.btnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnCliente.Location = new System.Drawing.Point(3, 163);
+			this.btnCliente.Location = new System.Drawing.Point(3, 159);
 			this.btnCliente.Name = "btnCliente";
 			this.btnCliente.Size = new System.Drawing.Size(187, 51);
 			this.btnCliente.TabIndex = 0;
@@ -212,7 +237,8 @@
 			// 
 			// panelCabecalho
 			// 
-			this.panelCabecalho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(146)))), ((int)(((byte)(208)))));
+			this.panelCabecalho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.panelCabecalho.Controls.Add(this.lblTituloTela);
 			this.panelCabecalho.Controls.Add(this.btnMinimizar);
 			this.panelCabecalho.Controls.Add(this.btnTituloTela);
 			this.panelCabecalho.Controls.Add(this.btnRestaurar);
@@ -226,15 +252,26 @@
 			this.panelCabecalho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCabecalho_MouseMove);
 			this.panelCabecalho.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelCabecalho_MouseUp);
 			// 
+			// lblTituloTela
+			// 
+			this.lblTituloTela.AutoSize = true;
+			this.lblTituloTela.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTituloTela.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.lblTituloTela.Location = new System.Drawing.Point(52, 5);
+			this.lblTituloTela.Name = "lblTituloTela";
+			this.lblTituloTela.Size = new System.Drawing.Size(90, 24);
+			this.lblTituloTela.TabIndex = 5;
+			this.lblTituloTela.Text = "SmartLog";
+			// 
 			// btnMinimizar
 			// 
 			this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
 			this.btnMinimizar.FlatAppearance.BorderSize = 0;
-			this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnMinimizar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MinApplication;
+			this.btnMinimizar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MinimizarApp;
 			this.btnMinimizar.Location = new System.Drawing.Point(765, 3);
 			this.btnMinimizar.Name = "btnMinimizar";
 			this.btnMinimizar.Size = new System.Drawing.Size(37, 32);
@@ -262,10 +299,10 @@
 			this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnRestaurar.BackColor = System.Drawing.Color.Transparent;
 			this.btnRestaurar.FlatAppearance.BorderSize = 0;
-			this.btnRestaurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnRestaurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnRestaurar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MaxApplication1;
+			this.btnRestaurar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MAxWhite;
 			this.btnRestaurar.Location = new System.Drawing.Point(800, 1);
 			this.btnRestaurar.Name = "btnRestaurar";
 			this.btnRestaurar.Size = new System.Drawing.Size(37, 34);
@@ -280,12 +317,12 @@
 			this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
 			this.btnFechar.FlatAppearance.BorderSize = 0;
-			this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnFechar.ForeColor = System.Drawing.Color.White;
-			this.btnFechar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_CloseApplication;
+			this.btnFechar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_CloseApp2;
 			this.btnFechar.Location = new System.Drawing.Point(837, 1);
 			this.btnFechar.Name = "btnFechar";
 			this.btnFechar.Size = new System.Drawing.Size(33, 34);
@@ -299,7 +336,7 @@
 			// 
 			this.panelRodape.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.panelRodape.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(146)))), ((int)(((byte)(208)))));
+			this.panelRodape.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.panelRodape.Controls.Add(this.lblNomeUsuario);
 			this.panelRodape.Controls.Add(this.lblData);
 			this.panelRodape.Controls.Add(this.lblUsuario);
@@ -316,9 +353,8 @@
 			this.lblNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblNomeUsuario.Location = new System.Drawing.Point(392, 6);
 			this.lblNomeUsuario.Name = "lblNomeUsuario";
-			this.lblNomeUsuario.Size = new System.Drawing.Size(51, 16);
+			this.lblNomeUsuario.Size = new System.Drawing.Size(0, 16);
 			this.lblNomeUsuario.TabIndex = 3;
-			this.lblNomeUsuario.Text = "label1";
 			// 
 			// lblData
 			// 
@@ -351,7 +387,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.ClientSize = new System.Drawing.Size(873, 700);
 			this.Controls.Add(this.panelMenu);
 			this.Controls.Add(this.panelRodape);
@@ -367,6 +403,7 @@
 			this.panelMenu.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panelCabecalho.ResumeLayout(false);
+			this.panelCabecalho.PerformLayout();
 			this.panelRodape.ResumeLayout(false);
 			this.panelRodape.PerformLayout();
 			this.ResumeLayout(false);
@@ -393,5 +430,7 @@
 		private System.Windows.Forms.Label lblNomeUsuario;
 		private System.Windows.Forms.Button btnAjuda;
 		private System.Windows.Forms.Button btnTituloTela;
+		private System.Windows.Forms.Label lblTituloTela;
+		private System.Windows.Forms.Button button1;
 	}
 }

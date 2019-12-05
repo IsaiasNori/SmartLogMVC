@@ -31,8 +31,10 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabctrlFuncionario = new System.Windows.Forms.TabControl();
 			this.tabConsultaFuncionario = new System.Windows.Forms.TabPage();
+			this.dgFuncionario = new System.Windows.Forms.DataGridView();
 			this.gbFiltroFunc = new System.Windows.Forms.GroupBox();
 			this.pnlFiltroFuncionario = new System.Windows.Forms.Panel();
 			this.lblNomePesquisa = new System.Windows.Forms.Label();
@@ -41,34 +43,32 @@
 			this.txtCpfPesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtNomePesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.btnFechaFuncionario = new System.Windows.Forms.Button();
-			this.btnGridExcluir = new System.Windows.Forms.Button();
-			this.btnGridAlterar = new System.Windows.Forms.Button();
+			this.btnExcluir = new System.Windows.Forms.Button();
+			this.btnAlterar = new System.Windows.Forms.Button();
 			this.btnNovo = new System.Windows.Forms.Button();
-			this.dtFuncionario = new System.Windows.Forms.DataGridView();
 			this.tabCadastroFunc = new System.Windows.Forms.TabPage();
+			this.btnLimpar = new System.Windows.Forms.Button();
 			this.btnVoltarCli = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
-			this.btnExcluir = new System.Windows.Forms.Button();
-			this.btnEditar = new System.Windows.Forms.Button();
 			this.gbDadosFunc = new System.Windows.Forms.GroupBox();
+			this.cbCargo = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbCidade = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbEstado = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.dtDataNasc = new System.Windows.Forms.DateTimePicker();
 			this.txtBairro = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtNumero = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtLogra = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtCep = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtTelFunc = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtCpfFunc = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtData = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtNomeFunc = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtEmail = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.label16 = new System.Windows.Forms.Label();
 			this.lblBairro = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.lblNumero = new System.Windows.Forms.Label();
-			this.cbCidade = new System.Windows.Forms.ComboBox();
-			this.cbEstado = new System.Windows.Forms.ComboBox();
 			this.lblCidade = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
-			this.cbCargo = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.lblCargoFunc = new System.Windows.Forms.Label();
 			this.lblDataNascFunc = new System.Windows.Forms.Label();
@@ -77,9 +77,9 @@
 			this.lblNomeFunc = new System.Windows.Forms.Label();
 			this.tabctrlFuncionario.SuspendLayout();
 			this.tabConsultaFuncionario.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgFuncionario)).BeginInit();
 			this.gbFiltroFunc.SuspendLayout();
 			this.pnlFiltroFuncionario.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dtFuncionario)).BeginInit();
 			this.tabCadastroFunc.SuspendLayout();
 			this.gbDadosFunc.SuspendLayout();
 			this.SuspendLayout();
@@ -89,7 +89,7 @@
 			this.tabctrlFuncionario.Controls.Add(this.tabConsultaFuncionario);
 			this.tabctrlFuncionario.Controls.Add(this.tabCadastroFunc);
 			this.tabctrlFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tabctrlFuncionario.Location = new System.Drawing.Point(63, 2);
+			this.tabctrlFuncionario.Location = new System.Drawing.Point(62, 2);
 			this.tabctrlFuncionario.Name = "tabctrlFuncionario";
 			this.tabctrlFuncionario.SelectedIndex = 0;
 			this.tabctrlFuncionario.Size = new System.Drawing.Size(990, 663);
@@ -99,18 +99,72 @@
 			// 
 			this.tabConsultaFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.tabConsultaFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.tabConsultaFuncionario.Controls.Add(this.dgFuncionario);
 			this.tabConsultaFuncionario.Controls.Add(this.gbFiltroFunc);
 			this.tabConsultaFuncionario.Controls.Add(this.btnFechaFuncionario);
-			this.tabConsultaFuncionario.Controls.Add(this.btnGridExcluir);
-			this.tabConsultaFuncionario.Controls.Add(this.btnGridAlterar);
+			this.tabConsultaFuncionario.Controls.Add(this.btnExcluir);
+			this.tabConsultaFuncionario.Controls.Add(this.btnAlterar);
 			this.tabConsultaFuncionario.Controls.Add(this.btnNovo);
-			this.tabConsultaFuncionario.Controls.Add(this.dtFuncionario);
 			this.tabConsultaFuncionario.Location = new System.Drawing.Point(4, 29);
 			this.tabConsultaFuncionario.Name = "tabConsultaFuncionario";
 			this.tabConsultaFuncionario.Padding = new System.Windows.Forms.Padding(3);
 			this.tabConsultaFuncionario.Size = new System.Drawing.Size(982, 630);
 			this.tabConsultaFuncionario.TabIndex = 0;
 			this.tabConsultaFuncionario.Text = "Consulta";
+			// 
+			// dgFuncionario
+			// 
+			this.dgFuncionario.AllowUserToAddRows = false;
+			this.dgFuncionario.AllowUserToDeleteRows = false;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.dgFuncionario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.dgFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dgFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgFuncionario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+			this.dgFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.dgFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.dgFuncionario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+			this.dgFuncionario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgFuncionario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this.dgFuncionario.ColumnHeadersHeight = 35;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgFuncionario.DefaultCellStyle = dataGridViewCellStyle3;
+			this.dgFuncionario.EnableHeadersVisualStyles = false;
+			this.dgFuncionario.GridColor = System.Drawing.SystemColors.ActiveCaption;
+			this.dgFuncionario.Location = new System.Drawing.Point(59, 302);
+			this.dgFuncionario.Name = "dgFuncionario";
+			this.dgFuncionario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Menu;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			this.dgFuncionario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+			this.dgFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgFuncionario.Size = new System.Drawing.Size(859, 293);
+			this.dgFuncionario.TabIndex = 11;
+			this.dgFuncionario.DataSourceChanged += new System.EventHandler(this.dgFuncionario_DataSourceChanged);
+			this.dgFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFuncionario_CellContentClick);
 			// 
 			// gbFiltroFunc
 			// 
@@ -160,7 +214,7 @@
 			this.btnPesquisarFunc.Location = new System.Drawing.Point(593, 45);
 			this.btnPesquisarFunc.Name = "btnPesquisarFunc";
 			this.btnPesquisarFunc.Size = new System.Drawing.Size(139, 39);
-			this.btnPesquisarFunc.TabIndex = 8;
+			this.btnPesquisarFunc.TabIndex = 3;
 			this.btnPesquisarFunc.Text = "Pesquisar";
 			this.btnPesquisarFunc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnPesquisarFunc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -179,21 +233,25 @@
 			// 
 			// txtCpfPesquisar
 			// 
+			this.txtCpfPesquisar.CampoObrigatorio = false;
 			this.txtCpfPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtCpfPesquisar.Location = new System.Drawing.Point(370, 60);
 			this.txtCpfPesquisar.MaxLength = 18;
+			this.txtCpfPesquisar.MensagemObrigatorio = null;
 			this.txtCpfPesquisar.Name = "txtCpfPesquisar";
 			this.txtCpfPesquisar.Size = new System.Drawing.Size(188, 24);
-			this.txtCpfPesquisar.TabIndex = 7;
+			this.txtCpfPesquisar.TabIndex = 2;
 			this.txtCpfPesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
 			// 
 			// txtNomePesquisar
 			// 
+			this.txtNomePesquisar.CampoObrigatorio = false;
 			this.txtNomePesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtNomePesquisar.Location = new System.Drawing.Point(76, 60);
+			this.txtNomePesquisar.MensagemObrigatorio = null;
 			this.txtNomePesquisar.Name = "txtNomePesquisar";
 			this.txtNomePesquisar.Size = new System.Drawing.Size(252, 24);
-			this.txtNomePesquisar.TabIndex = 6;
+			this.txtNomePesquisar.TabIndex = 1;
 			this.txtNomePesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// btnFechaFuncionario
@@ -209,50 +267,52 @@
 			this.btnFechaFuncionario.Location = new System.Drawing.Point(693, 244);
 			this.btnFechaFuncionario.Name = "btnFechaFuncionario";
 			this.btnFechaFuncionario.Size = new System.Drawing.Size(139, 39);
-			this.btnFechaFuncionario.TabIndex = 16;
+			this.btnFechaFuncionario.TabIndex = 7;
 			this.btnFechaFuncionario.Text = "Fechar";
 			this.btnFechaFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnFechaFuncionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnFechaFuncionario.UseVisualStyleBackColor = false;
 			this.btnFechaFuncionario.Click += new System.EventHandler(this.btnFechaFuncionario_Click);
 			// 
-			// btnGridExcluir
+			// btnExcluir
 			// 
-			this.btnGridExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnGridExcluir.FlatAppearance.BorderSize = 0;
-			this.btnGridExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnGridExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnGridExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnGridExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnGridExcluir.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnGridExcluir.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Excluir;
-			this.btnGridExcluir.Location = new System.Drawing.Point(519, 244);
-			this.btnGridExcluir.Name = "btnGridExcluir";
-			this.btnGridExcluir.Size = new System.Drawing.Size(139, 39);
-			this.btnGridExcluir.TabIndex = 14;
-			this.btnGridExcluir.Text = "Excluir";
-			this.btnGridExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnGridExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnGridExcluir.UseVisualStyleBackColor = false;
+			this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnExcluir.FlatAppearance.BorderSize = 0;
+			this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnExcluir.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.btnExcluir.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Excluir;
+			this.btnExcluir.Location = new System.Drawing.Point(519, 244);
+			this.btnExcluir.Name = "btnExcluir";
+			this.btnExcluir.Size = new System.Drawing.Size(139, 39);
+			this.btnExcluir.TabIndex = 6;
+			this.btnExcluir.Text = "Excluir";
+			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnExcluir.UseVisualStyleBackColor = false;
+			this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
 			// 
-			// btnGridAlterar
+			// btnAlterar
 			// 
-			this.btnGridAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnGridAlterar.FlatAppearance.BorderSize = 0;
-			this.btnGridAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnGridAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnGridAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnGridAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnGridAlterar.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.btnGridAlterar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Alterar;
-			this.btnGridAlterar.Location = new System.Drawing.Point(347, 244);
-			this.btnGridAlterar.Name = "btnGridAlterar";
-			this.btnGridAlterar.Size = new System.Drawing.Size(139, 39);
-			this.btnGridAlterar.TabIndex = 13;
-			this.btnGridAlterar.Text = "Alterar";
-			this.btnGridAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnGridAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnGridAlterar.UseVisualStyleBackColor = false;
+			this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnAlterar.FlatAppearance.BorderSize = 0;
+			this.btnAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAlterar.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.btnAlterar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Alterar;
+			this.btnAlterar.Location = new System.Drawing.Point(347, 244);
+			this.btnAlterar.Name = "btnAlterar";
+			this.btnAlterar.Size = new System.Drawing.Size(139, 39);
+			this.btnAlterar.TabIndex = 5;
+			this.btnAlterar.Text = "Alterar";
+			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnAlterar.UseVisualStyleBackColor = false;
+			this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
 			// 
 			// btnNovo
 			// 
@@ -267,66 +327,19 @@
 			this.btnNovo.Location = new System.Drawing.Point(176, 244);
 			this.btnNovo.Name = "btnNovo";
 			this.btnNovo.Size = new System.Drawing.Size(139, 39);
-			this.btnNovo.TabIndex = 12;
+			this.btnNovo.TabIndex = 4;
 			this.btnNovo.Text = "Novo";
 			this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnNovo.UseVisualStyleBackColor = false;
 			this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
 			// 
-			// dtFuncionario
-			// 
-			this.dtFuncionario.AllowUserToAddRows = false;
-			this.dtFuncionario.AllowUserToDeleteRows = false;
-			this.dtFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.dtFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.dtFuncionario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-			this.dtFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.dtFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.dtFuncionario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-			this.dtFuncionario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSalmon;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dtFuncionario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-			this.dtFuncionario.ColumnHeadersHeight = 35;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dtFuncionario.DefaultCellStyle = dataGridViewCellStyle2;
-			this.dtFuncionario.EnableHeadersVisualStyles = false;
-			this.dtFuncionario.GridColor = System.Drawing.SystemColors.ActiveCaption;
-			this.dtFuncionario.Location = new System.Drawing.Point(59, 315);
-			this.dtFuncionario.Name = "dtFuncionario";
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonFace;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dtFuncionario.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-			this.dtFuncionario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-			this.dtFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dtFuncionario.Size = new System.Drawing.Size(861, 272);
-			this.dtFuncionario.TabIndex = 10;
-			// 
 			// tabCadastroFunc
 			// 
 			this.tabCadastroFunc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.tabCadastroFunc.Controls.Add(this.btnLimpar);
 			this.tabCadastroFunc.Controls.Add(this.btnVoltarCli);
 			this.tabCadastroFunc.Controls.Add(this.btnSalvar);
-			this.tabCadastroFunc.Controls.Add(this.btnExcluir);
-			this.tabCadastroFunc.Controls.Add(this.btnEditar);
 			this.tabCadastroFunc.Controls.Add(this.gbDadosFunc);
 			this.tabCadastroFunc.Location = new System.Drawing.Point(4, 29);
 			this.tabCadastroFunc.Name = "tabCadastroFunc";
@@ -334,6 +347,23 @@
 			this.tabCadastroFunc.Size = new System.Drawing.Size(982, 630);
 			this.tabCadastroFunc.TabIndex = 1;
 			this.tabCadastroFunc.Text = "Cadastro";
+			// 
+			// btnLimpar
+			// 
+			this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnLimpar.FlatAppearance.BorderSize = 0;
+			this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.btnLimpar.Location = new System.Drawing.Point(432, 492);
+			this.btnLimpar.Name = "btnLimpar";
+			this.btnLimpar.Size = new System.Drawing.Size(139, 39);
+			this.btnLimpar.TabIndex = 14;
+			this.btnLimpar.Text = "Limpar";
+			this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnLimpar.UseVisualStyleBackColor = false;
+			this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
 			// 
 			// btnVoltarCli
 			// 
@@ -343,10 +373,10 @@
 			this.btnVoltarCli.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnVoltarCli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnVoltarCli.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_ReturnTab;
-			this.btnVoltarCli.Location = new System.Drawing.Point(679, 525);
+			this.btnVoltarCli.Location = new System.Drawing.Point(588, 492);
 			this.btnVoltarCli.Name = "btnVoltarCli";
 			this.btnVoltarCli.Size = new System.Drawing.Size(139, 39);
-			this.btnVoltarCli.TabIndex = 189;
+			this.btnVoltarCli.TabIndex = 15;
 			this.btnVoltarCli.Text = "Voltar";
 			this.btnVoltarCli.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnVoltarCli.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -362,73 +392,37 @@
 			this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.btnSalvar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Salvar;
-			this.btnSalvar.Location = new System.Drawing.Point(202, 525);
+			this.btnSalvar.Location = new System.Drawing.Point(275, 492);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(139, 39);
-			this.btnSalvar.TabIndex = 186;
+			this.btnSalvar.TabIndex = 13;
 			this.btnSalvar.Text = "Salvar";
 			this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnSalvar.UseVisualStyleBackColor = false;
 			this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
 			// 
-			// btnExcluir
-			// 
-			this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnExcluir.FlatAppearance.BorderSize = 0;
-			this.btnExcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.btnExcluir.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Excluir;
-			this.btnExcluir.Location = new System.Drawing.Point(521, 525);
-			this.btnExcluir.Name = "btnExcluir";
-			this.btnExcluir.Size = new System.Drawing.Size(139, 39);
-			this.btnExcluir.TabIndex = 188;
-			this.btnExcluir.Text = "Excluir";
-			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnExcluir.UseVisualStyleBackColor = false;
-			// 
-			// btnEditar
-			// 
-			this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.btnEditar.FlatAppearance.BorderSize = 0;
-			this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.btnEditar.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_Alterar;
-			this.btnEditar.Location = new System.Drawing.Point(362, 525);
-			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(139, 39);
-			this.btnEditar.TabIndex = 187;
-			this.btnEditar.Text = "Editar";
-			this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnEditar.UseVisualStyleBackColor = false;
-			// 
 			// gbDadosFunc
 			// 
 			this.gbDadosFunc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.gbDadosFunc.Controls.Add(this.cbCargo);
+			this.gbDadosFunc.Controls.Add(this.cbCidade);
+			this.gbDadosFunc.Controls.Add(this.cbEstado);
+			this.gbDadosFunc.Controls.Add(this.dtDataNasc);
 			this.gbDadosFunc.Controls.Add(this.txtBairro);
 			this.gbDadosFunc.Controls.Add(this.txtNumero);
 			this.gbDadosFunc.Controls.Add(this.txtLogra);
 			this.gbDadosFunc.Controls.Add(this.txtCep);
 			this.gbDadosFunc.Controls.Add(this.txtTelFunc);
 			this.gbDadosFunc.Controls.Add(this.txtCpfFunc);
-			this.gbDadosFunc.Controls.Add(this.txtData);
 			this.gbDadosFunc.Controls.Add(this.txtNomeFunc);
 			this.gbDadosFunc.Controls.Add(this.txtEmail);
 			this.gbDadosFunc.Controls.Add(this.label16);
 			this.gbDadosFunc.Controls.Add(this.lblBairro);
 			this.gbDadosFunc.Controls.Add(this.label13);
 			this.gbDadosFunc.Controls.Add(this.lblNumero);
-			this.gbDadosFunc.Controls.Add(this.cbCidade);
-			this.gbDadosFunc.Controls.Add(this.cbEstado);
 			this.gbDadosFunc.Controls.Add(this.lblCidade);
 			this.gbDadosFunc.Controls.Add(this.label11);
-			this.gbDadosFunc.Controls.Add(this.cbCargo);
 			this.gbDadosFunc.Controls.Add(this.label9);
 			this.gbDadosFunc.Controls.Add(this.lblCargoFunc);
 			this.gbDadosFunc.Controls.Add(this.lblDataNascFunc);
@@ -442,86 +436,133 @@
 			this.gbDadosFunc.TabStop = false;
 			this.gbDadosFunc.Text = "Dados do Funcionário";
 			// 
+			// cbCargo
+			// 
+			this.cbCargo.CampoObrigatorio = true;
+			this.cbCargo.FormattingEnabled = true;
+			this.cbCargo.Location = new System.Drawing.Point(59, 46);
+			this.cbCargo.MensagemCampoObrigatorio = "Selecionar o cargo";
+			this.cbCargo.Name = "cbCargo";
+			this.cbCargo.Size = new System.Drawing.Size(158, 28);
+			this.cbCargo.TabIndex = 1;
+			this.cbCargo.SelectedIndexChanged += new System.EventHandler(this.cbCargo_SelectedIndexChanged);
+			// 
+			// cbCidade
+			// 
+			this.cbCidade.CampoObrigatorio = true;
+			this.cbCidade.FormattingEnabled = true;
+			this.cbCidade.Location = new System.Drawing.Point(530, 250);
+			this.cbCidade.MensagemCampoObrigatorio = "Selecionar a cidade";
+			this.cbCidade.Name = "cbCidade";
+			this.cbCidade.Size = new System.Drawing.Size(231, 28);
+			this.cbCidade.TabIndex = 9;
+			// 
+			// cbEstado
+			// 
+			this.cbEstado.CampoObrigatorio = true;
+			this.cbEstado.FormattingEnabled = true;
+			this.cbEstado.Location = new System.Drawing.Point(356, 251);
+			this.cbEstado.MensagemCampoObrigatorio = "Seleionar o estado";
+			this.cbEstado.Name = "cbEstado";
+			this.cbEstado.Size = new System.Drawing.Size(125, 28);
+			this.cbEstado.TabIndex = 8;
+			this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.CbEstado_SelectedIndexChanged);
+			// 
+			// dtDataNasc
+			// 
+			this.dtDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtDataNasc.Location = new System.Drawing.Point(529, 131);
+			this.dtDataNasc.Name = "dtDataNasc";
+			this.dtDataNasc.Size = new System.Drawing.Size(200, 26);
+			this.dtDataNasc.TabIndex = 3;
+			// 
 			// txtBairro
 			// 
+			this.txtBairro.CampoObrigatorio = false;
 			this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtBairro.Location = new System.Drawing.Point(530, 311);
+			this.txtBairro.MensagemObrigatorio = null;
 			this.txtBairro.Name = "txtBairro";
 			this.txtBairro.Size = new System.Drawing.Size(231, 24);
-			this.txtBairro.TabIndex = 177;
+			this.txtBairro.TabIndex = 12;
 			this.txtBairro.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// txtNumero
 			// 
+			this.txtNumero.CampoObrigatorio = false;
 			this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtNumero.Location = new System.Drawing.Point(356, 311);
+			this.txtNumero.MensagemObrigatorio = null;
 			this.txtNumero.Name = "txtNumero";
-			this.txtNumero.Size = new System.Drawing.Size(100, 24);
-			this.txtNumero.TabIndex = 176;
+			this.txtNumero.Size = new System.Drawing.Size(125, 24);
+			this.txtNumero.TabIndex = 11;
 			this.txtNumero.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// txtLogra
 			// 
+			this.txtLogra.CampoObrigatorio = false;
 			this.txtLogra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtLogra.Location = new System.Drawing.Point(59, 311);
+			this.txtLogra.MensagemObrigatorio = null;
 			this.txtLogra.Name = "txtLogra";
 			this.txtLogra.Size = new System.Drawing.Size(221, 24);
-			this.txtLogra.TabIndex = 175;
+			this.txtLogra.TabIndex = 10;
 			this.txtLogra.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// txtCep
 			// 
+			this.txtCep.CampoObrigatorio = false;
 			this.txtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtCep.Location = new System.Drawing.Point(59, 254);
+			this.txtCep.MensagemObrigatorio = null;
 			this.txtCep.Name = "txtCep";
 			this.txtCep.Size = new System.Drawing.Size(221, 24);
-			this.txtCep.TabIndex = 174;
+			this.txtCep.TabIndex = 7;
 			this.txtCep.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// txtTelFunc
 			// 
+			this.txtTelFunc.CampoObrigatorio = false;
 			this.txtTelFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtTelFunc.Location = new System.Drawing.Point(357, 191);
+			this.txtTelFunc.MensagemObrigatorio = null;
 			this.txtTelFunc.Name = "txtTelFunc";
 			this.txtTelFunc.Size = new System.Drawing.Size(124, 24);
-			this.txtTelFunc.TabIndex = 173;
-			this.txtTelFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			this.txtTelFunc.TabIndex = 5;
+			this.txtTelFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
 			// 
 			// txtCpfFunc
 			// 
+			this.txtCpfFunc.CampoObrigatorio = true;
 			this.txtCpfFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtCpfFunc.Location = new System.Drawing.Point(60, 191);
+			this.txtCpfFunc.MensagemObrigatorio = "Informar CPF";
 			this.txtCpfFunc.Name = "txtCpfFunc";
 			this.txtCpfFunc.Size = new System.Drawing.Size(221, 24);
-			this.txtCpfFunc.TabIndex = 172;
+			this.txtCpfFunc.TabIndex = 4;
 			this.txtCpfFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
-			// 
-			// txtData
-			// 
-			this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtData.Location = new System.Drawing.Point(530, 130);
-			this.txtData.Name = "txtData";
-			this.txtData.Size = new System.Drawing.Size(230, 24);
-			this.txtData.TabIndex = 171;
-			this.txtData.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.data;
 			// 
 			// txtNomeFunc
 			// 
+			this.txtNomeFunc.CampoObrigatorio = true;
 			this.txtNomeFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtNomeFunc.Location = new System.Drawing.Point(59, 130);
+			this.txtNomeFunc.MensagemObrigatorio = "Informar o nome";
 			this.txtNomeFunc.Name = "txtNomeFunc";
 			this.txtNomeFunc.Size = new System.Drawing.Size(364, 24);
-			this.txtNomeFunc.TabIndex = 170;
+			this.txtNomeFunc.TabIndex = 2;
 			this.txtNomeFunc.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// txtEmail
 			// 
+			this.txtEmail.CampoObrigatorio = true;
 			this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.txtEmail.Location = new System.Drawing.Point(530, 190);
+			this.txtEmail.MensagemObrigatorio = "Informar o Email";
 			this.txtEmail.Name = "txtEmail";
 			this.txtEmail.Size = new System.Drawing.Size(230, 24);
-			this.txtEmail.TabIndex = 169;
-			this.txtEmail.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			this.txtEmail.TabIndex = 6;
+			this.txtEmail.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
 			// 
 			// label16
 			// 
@@ -563,25 +604,6 @@
 			this.lblNumero.TabIndex = 166;
 			this.lblNumero.Text = "Nº";
 			// 
-			// cbCidade
-			// 
-			this.cbCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.cbCidade.FormattingEnabled = true;
-			this.cbCidade.Location = new System.Drawing.Point(529, 251);
-			this.cbCidade.Name = "cbCidade";
-			this.cbCidade.Size = new System.Drawing.Size(231, 26);
-			this.cbCidade.TabIndex = 154;
-			// 
-			// cbEstado
-			// 
-			this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.cbEstado.FormattingEnabled = true;
-			this.cbEstado.Location = new System.Drawing.Point(356, 254);
-			this.cbEstado.Name = "cbEstado";
-			this.cbEstado.Size = new System.Drawing.Size(73, 26);
-			this.cbEstado.TabIndex = 153;
-			this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.CbEstado_SelectedIndexChanged);
-			// 
 			// lblCidade
 			// 
 			this.lblCidade.AutoSize = true;
@@ -601,15 +623,6 @@
 			this.label11.Size = new System.Drawing.Size(86, 20);
 			this.label11.TabIndex = 163;
 			this.label11.Text = "Estado/UF";
-			// 
-			// cbCargo
-			// 
-			this.cbCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.cbCargo.FormattingEnabled = true;
-			this.cbCargo.Location = new System.Drawing.Point(58, 44);
-			this.cbCargo.Name = "cbCargo";
-			this.cbCargo.Size = new System.Drawing.Size(121, 26);
-			this.cbCargo.TabIndex = 152;
 			// 
 			// label9
 			// 
@@ -635,7 +648,7 @@
 			// 
 			this.lblDataNascFunc.AutoSize = true;
 			this.lblDataNascFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblDataNascFunc.Location = new System.Drawing.Point(527, 108);
+			this.lblDataNascFunc.Location = new System.Drawing.Point(526, 108);
 			this.lblDataNascFunc.Name = "lblDataNascFunc";
 			this.lblDataNascFunc.Size = new System.Drawing.Size(152, 20);
 			this.lblDataNascFunc.TabIndex = 160;
@@ -676,7 +689,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.ClientSize = new System.Drawing.Size(1095, 728);
+			this.ClientSize = new System.Drawing.Size(1115, 682);
 			this.Controls.Add(this.tabctrlFuncionario);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "frmFuncionario";
@@ -684,10 +697,10 @@
 			this.Load += new System.EventHandler(this.FormFuncionario_Load);
 			this.tabctrlFuncionario.ResumeLayout(false);
 			this.tabConsultaFuncionario.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dgFuncionario)).EndInit();
 			this.gbFiltroFunc.ResumeLayout(false);
 			this.pnlFiltroFuncionario.ResumeLayout(false);
 			this.pnlFiltroFuncionario.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dtFuncionario)).EndInit();
 			this.tabCadastroFunc.ResumeLayout(false);
 			this.gbDadosFunc.ResumeLayout(false);
 			this.gbDadosFunc.PerformLayout();
@@ -699,10 +712,9 @@
 		private System.Windows.Forms.TabControl tabctrlFuncionario;
 		private System.Windows.Forms.TabPage tabConsultaFuncionario;
 		private System.Windows.Forms.TabPage tabCadastroFunc;
-		private System.Windows.Forms.DataGridView dtFuncionario;
 		private System.Windows.Forms.Button btnNovo;
-		private System.Windows.Forms.Button btnGridExcluir;
-		private System.Windows.Forms.Button btnGridAlterar;
+		private System.Windows.Forms.Button btnExcluir;
+		private System.Windows.Forms.Button btnAlterar;
 		private System.Windows.Forms.Button btnFechaFuncionario;
 		private System.Windows.Forms.GroupBox gbFiltroFunc;
 		private System.Windows.Forms.Panel pnlFiltroFuncionario;
@@ -718,18 +730,14 @@
 		private UserControl.SuperTextbox txtCep;
 		private UserControl.SuperTextbox txtTelFunc;
 		private UserControl.SuperTextbox txtCpfFunc;
-		private UserControl.SuperTextbox txtData;
 		private UserControl.SuperTextbox txtNomeFunc;
 		private UserControl.SuperTextbox txtEmail;
 		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Label lblBairro;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label lblNumero;
-		private System.Windows.Forms.ComboBox cbCidade;
-		private System.Windows.Forms.ComboBox cbEstado;
 		private System.Windows.Forms.Label lblCidade;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.ComboBox cbCargo;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label lblCargoFunc;
 		private System.Windows.Forms.Label lblDataNascFunc;
@@ -738,7 +746,11 @@
 		private System.Windows.Forms.Label lblNomeFunc;
 		private System.Windows.Forms.Button btnVoltarCli;
 		private System.Windows.Forms.Button btnSalvar;
-		private System.Windows.Forms.Button btnExcluir;
-		private System.Windows.Forms.Button btnEditar;
+		private System.Windows.Forms.Button btnLimpar;
+		private System.Windows.Forms.DateTimePicker dtDataNasc;
+		private UserControl.SuperComboBox cbCidade;
+		private UserControl.SuperComboBox cbEstado;
+		private UserControl.SuperComboBox cbCargo;
+		private System.Windows.Forms.DataGridView dgFuncionario;
 	}
 }
