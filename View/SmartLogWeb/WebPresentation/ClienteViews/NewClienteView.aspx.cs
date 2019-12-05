@@ -2,10 +2,9 @@
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebPresentation.ExtensionMethods;
-using SmartLogBusiness.Model.Entidade.pessoa;
-using SmartLogBusiness.Controller;
 using System.Data;
 using System.Data.SqlClient;
+using SmartLogBusiness.Controller;
 
 
 namespace WebPresentation.ClienteViews
@@ -52,9 +51,11 @@ namespace WebPresentation.ClienteViews
 
                 //criacao da entidade cliente e atribuição dos campos dps chamar metodo da classe controller
 
+<<<<<<< HEAD
                 //Cliente cliente = new Cliente(0, nome, "0000000",,, telefone, email,,);
-
+=======
             //    Cliente cliente = new Cliente(0, nome, "0000000",,, telefone, email,,);
+>>>>>>> c25ee8fd04a6f70d9000d45c2a774dec39978efc
 
 
                 MensagemLabel.Text = "Dados Salvos com sucesso";
