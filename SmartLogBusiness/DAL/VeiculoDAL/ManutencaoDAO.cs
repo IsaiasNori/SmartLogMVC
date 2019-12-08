@@ -8,10 +8,11 @@ namespace SmartLogBusiness.DAL
 {
 	public class ManutencaoDAO : ConexaoBanco
 	{
-		public void InserirManutencaoDAO(DateTime dataEntrada, DateTime prevSaida, string descricao, int codVei)
+		public void InserirManutencaoDAO(DateTime? dataEntrada, DateTime? prevSaida, string descricao, int codVei)
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "INSE");
 				AdicionarParametro("@DataEntrada", SqlDbType.Date, 10, dataEntrada);
 				AdicionarParametro("@PrevSaida", SqlDbType.Date, 10, prevSaida);
@@ -27,10 +28,11 @@ namespace SmartLogBusiness.DAL
 				throw new Exception(ex.Message);
 			}
 		}
-		public void AlterarManutencaoDAO(int codManu, DateTime dataEntrada, DateTime prevSaida, string descricao, int codVeiculo)
+		public void AlterarManutencaoDAO(int codManu, DateTime? dataEntrada, DateTime? prevSaida, string descricao, int codVeiculo)
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "ALTE");
 				AdicionarParametro("@CodManu", SqlDbType.Int, 10, codManu);
 				AdicionarParametro("@DataEntrada", SqlDbType.Date, 10, dataEntrada);
@@ -51,6 +53,7 @@ namespace SmartLogBusiness.DAL
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "DELE");
 				AdicionarParametro("@CodManu", SqlDbType.Int, 10, codManu);
 
@@ -67,6 +70,7 @@ namespace SmartLogBusiness.DAL
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "CONV");
 				AdicionarParametro("@CodVeic", SqlDbType.Int, 10, codVeiculo);
 
@@ -78,16 +82,18 @@ namespace SmartLogBusiness.DAL
 				throw new Exception(ex.Message);
 			}
 		}
-		public DataTable GridManutencaoDAO(DateTime dataEntrada, DateTime prevSaida, string descServico, DateTime dataEntradaFinal,DateTime prevSaidaFinal)
+		public DataTable GridManutencaoDAO(DateTime? dataEntrada, DateTime? prevSaida, string descServico, DateTime? dataEntradaFinal,DateTime? prevSaidaFinal)
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "GRID");
 				AdicionarParametro("@DataEntrada", SqlDbType.DateTime, 10, dataEntrada);
 				AdicionarParametro("@DataEntradaFinal", SqlDbType.DateTime, 10, dataEntradaFinal);
 				AdicionarParametro("@PrevSaida", SqlDbType.DateTime, 10, prevSaidaFinal);
 				AdicionarParametro("@PrevSaidaFinal", SqlDbType.DateTime, 10, prevSaidaFinal);
-				AdicionarParametro("@Descricao_Servico", SqlDbType.NVarChar, 100, descServico);
+				AdicionarParametro("@DescServico", SqlDbType.NVarChar, 100, descServico);
+
 				return ExecuteProcedure("pManutencao");
 			}
 			catch (Exception ex)
@@ -100,6 +106,7 @@ namespace SmartLogBusiness.DAL
 		{
 			try
 			{
+				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "OBTE");
 				AdicionarParametro("@CodManu", SqlDbType.Int, 10, codManu);
 

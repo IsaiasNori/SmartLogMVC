@@ -198,6 +198,7 @@ namespace SmartLog.WindowsForms
 
 				dgFuncionario.DataSource = table;
 				dgFuncionario.AutoResizeColumns();
+				dgFuncionario.ClearSelection();
 			}
 			catch (Exception ex)
 			{

@@ -13,6 +13,9 @@ namespace SmartLogBusiness.Controller
 	public class MotoristaController : IControllerBase<Motorista>
 	{
 		MotoristaDAO dao = new MotoristaDAO();
+		DateTime dataNasc, cnhVencimento;
+		int cnhCategoria, codStatus, codCidade, codEstado, numero;
+		
 		public void AlterarController(Motorista obj)
 		{
 			try
@@ -21,8 +24,60 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("Necessário informar o código para alterar registro.");
 				}
-				dao.AlterarMotoristaDAO(obj.Codigo, obj.Nome, obj.DataNasc, obj.CnhCat, obj.CnhNumero.ToString(), obj.CnhVencimento, obj.Telefone, obj.Email, Convert.ToInt32(obj.Status),
-										obj.Endereco.Cep, obj.Endereco.Logradouro, obj.Endereco.Numero, obj.Endereco.Bairro, obj.Endereco.CodCidade, obj.Endereco.CodEstado);
+				if (obj.Nome == "")
+				{
+					throw new Exception("O campo nome deve estar preenchido, para salvar motorista.");
+				}
+				if (obj.DataNasc.Value != System.DateTime.Now && obj.DataNasc.Value.Year > 18)
+				{
+					if (obj.DataNasc.Value.Year < 60)
+					{
+						DateTime.TryParse(obj.DataNasc.ToString(), out dataNasc);
+					}
+					else
+					{
+						throw new Exception("Não é possível salvar motorista com mais de 60 anos.");
+					}
+				}
+				else
+				{
+					throw new Exception("Informe uma data de nascimento válida.");
+				}
+				if (obj.CnhCat == 0)
+				{
+					throw new Exception("Selecione a categoria da CNH.");
+				}
+				else
+				{
+					int.TryParse(obj.CnhCat.ToString(), out cnhCategoria);
+				}
+				if (obj.CnhVencimento != System.DateTime.Now && obj.CnhVencimento.Value != null)
+				{
+					DateTime.TryParse(obj.DataNasc.ToString(), out cnhVencimento);
+				}
+				else
+				{
+					throw new Exception("Preencha a data de validade para CNH.");
+				}
+				if (obj.Telefone == "")
+				{
+					throw new Exception("O campo Telefone deve estar preenchido.");
+				}
+				if (obj.Status == null)
+				{
+					throw new Exception("Selecione o status.");
+				}
+				else
+				{
+					int.TryParse(obj.Status.ToString(), out codStatus);
+				}
+				int.TryParse(obj.Endereco.Numero.ToString(), out numero);
+				int.TryParse(obj.Endereco.CodCidade.ToString(), out codCidade);
+				int.TryParse(obj.Endereco.CodEstado.ToString(), out codEstado);
+
+				dao.AlterarMotoristaDAO(obj.Codigo, obj.Nome, dataNasc, (EnumCnhCategoriaMotorista)cnhCategoria, obj.CnhNumero,cnhVencimento, obj.Telefone,
+										obj.Email, codStatus, obj.Endereco.Cep, obj.Endereco.Logradouro, numero,
+										obj.Endereco.Bairro,codCidade, codEstado);
 			}
 			catch (Exception ex)
 			{
@@ -78,31 +133,46 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				DataTable table = dao.CarregarMotoristaDAO(obj.Codigo);
-				if (table != null)
+				if (obj.Codigo != 0)
 				{
-					Endereco end = new Endereco(table.Rows[0]["Cep"].ToString(),
-												table.Rows[0]["Logradouro"].ToString(),
-												Convert.ToInt32(table.Rows[0]["Numero"]),
-												table.Rows[0]["Bairro"].ToString(),
-												Convert.ToInt32(table.Rows[0]["Cod_Cidade"]),
-												Convert.ToInt32(table.Rows[0]["Cod_Estado"]));
+					DataTable table = dao.CarregarMotoristaDAO(obj.Codigo);
 
-					Motorista moto = new Motorista(Convert.ToInt32(table.Rows[0]["Cod_Motorista"]),
-												   table.Rows[0]["Nome_Motorista"].ToString(),
-												   Convert.ToDateTime(table.Rows[0]["Data_Nascimento"]),
-												   table.Rows[0]["Telefone_Motorista"].ToString(),
-												   table.Rows[0]["Email_Motorista"].ToString(),
-												   (EnumStatusMotorista)(table.Rows[0]["Status_Motorista"]), end,
-												   (EnumCnhCategoriaMotorista)table.Rows[0]["CNH_Categoria"],
-												   table.Rows[0]["CNH_Numero"].ToString(),
-												   Convert.ToDateTime(table.Rows[0]["CNH_Vencimento"]));
 
-					return moto;
+					if (table != null)
+					{
+						int.TryParse(table.Rows[0]["Numero"].ToString(), out numero);
+						int.TryParse(table.Rows[0]["Cod_Cidade"].ToString(), out codCidade);
+						int.TryParse(table.Rows[0]["Cod_Estado"].ToString(), out codEstado);
+
+						Endereco end = new Endereco(table.Rows[0]["Cep"].ToString(),
+													table.Rows[0]["Logradouro"].ToString(),
+													numero,
+													table.Rows[0]["Bairro"].ToString(),
+													codCidade, codEstado);
+
+						DateTime.TryParse(table.Rows[0]["Data_Nascimento"].ToString(), out dataNasc);
+						DateTime.TryParse(table.Rows[0]["CNH_Vencimento"].ToString(), out cnhVencimento);
+
+						Motorista moto = new Motorista(Convert.ToInt32(table.Rows[0]["Cod_Motorista"]),
+													   table.Rows[0]["Nome_Motorista"].ToString(),
+													   dataNasc,
+													   table.Rows[0]["Telefone_Motorista"].ToString(),
+													   table.Rows[0]["Email_Motorista"].ToString(),
+													   (EnumStatusMotorista)(table.Rows[0]["Status_Motorista"]), end,
+													   (EnumCnhCategoriaMotorista)table.Rows[0]["CNH_Categoria"],
+													   table.Rows[0]["CNH_Numero"].ToString(),
+													   cnhVencimento);
+
+						return moto;
+					}
+					else
+					{
+						throw new Exception("Dados não localizado.");
+					}
 				}
 				else
 				{
-					throw new Exception("Motorista não localizado.");
+					throw new Exception("É necessário o código do motorista para obter dados.");
 				}
 			}
 			catch (Exception ex)
@@ -114,12 +184,67 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				dao.InserirMotoristaDAO(obj.Nome, obj.DataNasc, obj.CnhCat, obj.CnhNumero.ToString(), obj.CnhVencimento, obj.Telefone, obj.Email, Convert.ToInt32(obj.Status), obj.Endereco.Cep, obj.Endereco.Logradouro, obj.Endereco.Numero,
-										obj.Endereco.Bairro, obj.Endereco.CodCidade, obj.Endereco.CodEstado);
+				if (obj.Nome == "")
+				{
+					throw new Exception("É obrigatório informar o nome para cadastrar motorista.");
+				}
+				if (obj.DataNasc.Value != System.DateTime.Now && obj.DataNasc.Value.Year > 18)
+				{
+					if (obj.DataNasc.Value.Year < 60)
+					{
+						DateTime.TryParse(obj.DataNasc.ToString(), out dataNasc);
+					}
+					else
+					{
+						throw new Exception("Não é possível cadastrar motorista com mais de 60 anos.");
+					}
+				}
+				else
+				{
+					throw new Exception("Informe uma data de nascimento válida, só é possível cadastrar motorista maiores de 18 anos.");
+				}
+				if (obj.CnhCat == 0)
+				{
+					throw new Exception("Selecione a categoria da CNH.");
+				}
+				else
+				{
+					int.TryParse(obj.CnhCat.ToString(), out cnhCategoria);
+				}
+				if(obj.CnhNumero.Length != 11)
+				{
+					throw new Exception("Verifique se o numero da CNH está corretamente preenchido.");
+				}
+				if (obj.CnhVencimento != System.DateTime.Now && obj.CnhVencimento.Value != null)
+				{
+					DateTime.TryParse(obj.DataNasc.ToString(), out cnhVencimento);
+				}
+				else
+				{
+					throw new Exception("Preencha a data de validade para CNH.");
+				}
+				if (obj.Telefone == "")
+				{
+					throw new Exception("Preencha o campo de Telefone.");
+				}
+				if (obj.Status == null)
+				{
+					throw new Exception("Selecione o status.");
+				}
+				else
+				{
+					int.TryParse(obj.Status.ToString(), out codStatus);
+				}
+				int.TryParse(obj.Endereco.Numero.ToString(), out numero);
+				int.TryParse(obj.Endereco.CodCidade.ToString(), out codCidade);
+				int.TryParse(obj.Endereco.CodEstado.ToString(), out codEstado);
+
+				dao.InserirMotoristaDAO(obj.Nome, dataNasc, (EnumCnhCategoriaMotorista)cnhCategoria, obj.CnhNumero , cnhVencimento,
+										obj.Telefone, obj.Email, codStatus, obj.Endereco.Cep, obj.Endereco.Logradouro, numero,
+										obj.Endereco.Bairro, codCidade, codEstado);
 			}
 			catch (Exception ex)
 			{
-
 				throw new Exception(ex.Message);
 			}
 		}
@@ -138,22 +263,31 @@ namespace SmartLogBusiness.Controller
 
 				foreach (DataRow item in table.Rows)
 				{
+					int.TryParse(table.Rows[0]["Numero"].ToString(), out numero);
+					int.TryParse(table.Rows[0]["Cod_Cidade"].ToString(), out codCidade);
+					int.TryParse(table.Rows[0]["Cod_Estado"].ToString(), out codEstado);
+
 					Endereco end = new Endereco(table.Rows[0]["Cep"].ToString(),
 												table.Rows[0]["Logradouro"].ToString(),
-												Convert.ToInt32(table.Rows[0]["Numero"]),
+												numero,
 												table.Rows[0]["Bairro"].ToString(),
-												Convert.ToInt32(table.Rows[0]["Cod_Cidade"]),
-												Convert.ToInt32(table.Rows[0]["Cod_Estado"]));
+												codCidade, codEstado);
+
+					DateTime.TryParse(table.Rows[0]["Data_Nascimento"].ToString(), out dataNasc);
+					DateTime.TryParse(table.Rows[0]["CNH_Vencimento"].ToString(), out cnhVencimento);
+					int.TryParse(table.Rows[0]["Status_Motorista"].ToString(), out codStatus);
+					int.TryParse(table.Rows[0]["CNH_Categoria"].ToString(), out cnhCategoria);
+
 
 					Motorista moto = new Motorista(Convert.ToInt32(table.Rows[0]["Cod_Motorista"]),
 												   table.Rows[0]["Nome_Motorista"].ToString(),
-												   Convert.ToDateTime(table.Rows[0]["Data_Nascimento"]),
+												   dataNasc,
 												   table.Rows[0]["Telefone_Motorista"].ToString(),
 												   table.Rows[0]["Email_Motorista"].ToString(),
-												   (EnumStatusMotorista)(table.Rows[0]["Status_Motorista"]), end,
-												   (EnumCnhCategoriaMotorista)table.Rows[0]["CNH_Categoria"],
+												   (EnumStatusMotorista)codStatus, end,
+												   (EnumCnhCategoriaMotorista)cnhCategoria,
 												   table.Rows[0]["CNH_Numero"].ToString(),
-												   Convert.ToDateTime(table.Rows[0]["CNH_Vencimento"]));
+												   cnhVencimento);
 
 					lista.Add(moto);
 				}

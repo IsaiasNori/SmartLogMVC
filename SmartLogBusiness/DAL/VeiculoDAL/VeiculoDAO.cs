@@ -8,7 +8,7 @@ namespace SmartLogBusiness.DAL
 {
 	public class VeiculoDAO : ConexaoBanco
 	{
-		public bool InserirVeiculoDAO(int codMarca, string modelo, string renavam, int codStatus, DateTime dataAquisicao, string anoFab,string kmAtual, string kmPrev, DateTime? ultimaRevisao)
+		public bool InserirVeiculoDAO(int codMarca, string modelo, string placa, string renavam, int codStatus, DateTime dataAquisicao, string anoFab,string kmInicial,string kmAtual, string kmPrev, DateTime? ultimaRevisao)
 		{
 			try
 			{
@@ -23,6 +23,8 @@ namespace SmartLogBusiness.DAL
 				AdicionarParametro("@KmAtual", SqlDbType.NVarChar, 10, kmAtual);
 				AdicionarParametro("@KmPrev", SqlDbType.NVarChar, 10, kmPrev);
 				AdicionarParametro("@UltimaRev", SqlDbType.Date, 10, ultimaRevisao);
+				AdicionarParametro("@KmInicial", SqlDbType.NVarChar,10, kmInicial);
+				AdicionarParametro("@Placa", SqlDbType.NVarChar, 7, placa);
 
 
 				ExecuteProcedure("pVeiculo");
@@ -37,7 +39,7 @@ namespace SmartLogBusiness.DAL
 
 
 		}
-		public bool AlterarVeiculoDAO(int codVei, int codMarca, string modelo, string renavam, int codStatus, DateTime dataAquisicao, string anoFab, string kmAtual, string kmPrev, DateTime? ultimaRevisao)
+		public bool AlterarVeiculoDAO(int codVei, int codMarca, string modelo, string placa,string renavam, int codStatus, DateTime dataAquisicao, string anoFab, string kmInicial,string kmAtual, string kmPrev, DateTime? ultimaRevisao)
 		{
 			try
 			{
@@ -53,7 +55,8 @@ namespace SmartLogBusiness.DAL
 				AdicionarParametro("@KmAtual", SqlDbType.NVarChar, 10, kmAtual);
 				AdicionarParametro("@KmPrev", SqlDbType.NVarChar, 10, kmPrev);
 				AdicionarParametro("@UltimaRev", SqlDbType.Date, 10, ultimaRevisao);
-
+				AdicionarParametro("@KmInicial", SqlDbType.NVarChar, 10, kmInicial);
+				AdicionarParametro("@Placa", SqlDbType.NVarChar, 7, placa);
 
 				ExecuteProcedure("pVeiculo");
 
@@ -107,6 +110,22 @@ namespace SmartLogBusiness.DAL
 			{
 				LimparParametro();
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "COMB");
+
+
+				return ExecuteProcedure("pVeiculo");
+			}
+			catch (Exception ex)
+			{
+
+				throw new Exception(ex.Message);
+			}
+		}
+		public DataTable CarregarVeiculoManutencaoDAO()
+		{
+			try
+			{
+				LimparParametro();
+				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "MANU");
 
 
 				return ExecuteProcedure("pVeiculo");

@@ -117,5 +117,11 @@ namespace SmartLog.WindowsForms
 		{
 			this.WindowState = FormWindowState.Minimized;
 		}
+
+		private void linkEsqueceuSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			frmRecuperarSenha recuperar = new frmRecuperarSenha();
+			recuperar.Show();
+		}
 	}
 }

@@ -81,6 +81,7 @@
 			this.lblTelMoto = new System.Windows.Forms.Label();
 			this.lblNome = new System.Windows.Forms.Label();
 			this.btnSalvar = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.tabCtrlMotorista.SuspendLayout();
 			this.tabConsultaMotorista.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgMotorista)).BeginInit();
@@ -92,14 +93,14 @@
 			// 
 			// tabCtrlMotorista
 			// 
-			this.tabCtrlMotorista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			this.tabCtrlMotorista.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabCtrlMotorista.Controls.Add(this.tabConsultaMotorista);
 			this.tabCtrlMotorista.Controls.Add(this.tabCadastroMotorista);
 			this.tabCtrlMotorista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.tabCtrlMotorista.Location = new System.Drawing.Point(62, 2);
+			this.tabCtrlMotorista.Location = new System.Drawing.Point(62, 40);
 			this.tabCtrlMotorista.Name = "tabCtrlMotorista";
+			this.tabCtrlMotorista.Padding = new System.Drawing.Point(50, 5);
 			this.tabCtrlMotorista.SelectedIndex = 0;
 			this.tabCtrlMotorista.Size = new System.Drawing.Size(853, 622);
 			this.tabCtrlMotorista.TabIndex = 0;
@@ -113,10 +114,10 @@
 			this.tabConsultaMotorista.Controls.Add(this.btnNovo);
 			this.tabConsultaMotorista.Controls.Add(this.dgMotorista);
 			this.tabConsultaMotorista.Controls.Add(this.gbFiltrarMotorista);
-			this.tabConsultaMotorista.Location = new System.Drawing.Point(4, 29);
+			this.tabConsultaMotorista.Location = new System.Drawing.Point(4, 33);
 			this.tabConsultaMotorista.Name = "tabConsultaMotorista";
 			this.tabConsultaMotorista.Padding = new System.Windows.Forms.Padding(3);
-			this.tabConsultaMotorista.Size = new System.Drawing.Size(845, 589);
+			this.tabConsultaMotorista.Size = new System.Drawing.Size(845, 585);
 			this.tabConsultaMotorista.TabIndex = 0;
 			this.tabConsultaMotorista.Text = "Consulta";
 			// 
@@ -281,15 +282,15 @@
 			this.pnlFiltrarCliente.Controls.Add(this.dtCnhVencFinal);
 			this.pnlFiltrarCliente.Controls.Add(this.lblIntervaloData);
 			this.pnlFiltrarCliente.Controls.Add(this.dtCnhVencPesquisa);
-			this.pnlFiltrarCliente.Location = new System.Drawing.Point(6, 34);
+			this.pnlFiltrarCliente.Location = new System.Drawing.Point(17, 34);
 			this.pnlFiltrarCliente.Name = "pnlFiltrarCliente";
-			this.pnlFiltrarCliente.Size = new System.Drawing.Size(681, 152);
+			this.pnlFiltrarCliente.Size = new System.Drawing.Size(656, 140);
 			this.pnlFiltrarCliente.TabIndex = 10;
 			// 
 			// chkVencimentoCnh
 			// 
 			this.chkVencimentoCnh.AutoSize = true;
-			this.chkVencimentoCnh.Location = new System.Drawing.Point(385, 6);
+			this.chkVencimentoCnh.Location = new System.Drawing.Point(354, 6);
 			this.chkVencimentoCnh.Name = "chkVencimentoCnh";
 			this.chkVencimentoCnh.Size = new System.Drawing.Size(222, 24);
 			this.chkVencimentoCnh.TabIndex = 2;
@@ -300,7 +301,7 @@
 			// lblMotoristaPesquisa
 			// 
 			this.lblMotoristaPesquisa.AutoSize = true;
-			this.lblMotoristaPesquisa.Location = new System.Drawing.Point(48, 10);
+			this.lblMotoristaPesquisa.Location = new System.Drawing.Point(28, 10);
 			this.lblMotoristaPesquisa.Name = "lblMotoristaPesquisa";
 			this.lblMotoristaPesquisa.Size = new System.Drawing.Size(75, 20);
 			this.lblMotoristaPesquisa.TabIndex = 0;
@@ -308,14 +309,16 @@
 			// 
 			// btnPesquisarMotorista
 			// 
-			this.btnPesquisarMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnPesquisarMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnPesquisarMotorista.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
 			this.btnPesquisarMotorista.FlatAppearance.BorderSize = 0;
 			this.btnPesquisarMotorista.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
 			this.btnPesquisarMotorista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnPesquisarMotorista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnPesquisarMotorista.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_search;
-			this.btnPesquisarMotorista.Location = new System.Drawing.Point(267, 99);
+			this.btnPesquisarMotorista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnPesquisarMotorista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnPesquisarMotorista.Image = global::SmartLog.WindowsForms.Properties.Resources.icoSearch_fw;
+			this.btnPesquisarMotorista.Location = new System.Drawing.Point(223, 87);
 			this.btnPesquisarMotorista.Name = "btnPesquisarMotorista";
 			this.btnPesquisarMotorista.Size = new System.Drawing.Size(207, 39);
 			this.btnPesquisarMotorista.TabIndex = 5;
@@ -328,17 +331,17 @@
 			// txtMotoristaPesquisa
 			// 
 			this.txtMotoristaPesquisa.CampoObrigatorio = false;
-			this.txtMotoristaPesquisa.Location = new System.Drawing.Point(52, 33);
+			this.txtMotoristaPesquisa.Location = new System.Drawing.Point(32, 39);
 			this.txtMotoristaPesquisa.MensagemObrigatorio = null;
 			this.txtMotoristaPesquisa.Name = "txtMotoristaPesquisa";
-			this.txtMotoristaPesquisa.Size = new System.Drawing.Size(233, 26);
+			this.txtMotoristaPesquisa.Size = new System.Drawing.Size(292, 26);
 			this.txtMotoristaPesquisa.TabIndex = 1;
 			this.txtMotoristaPesquisa.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
 			// 
 			// dtCnhVencFinal
 			// 
 			this.dtCnhVencFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtCnhVencFinal.Location = new System.Drawing.Point(543, 36);
+			this.dtCnhVencFinal.Location = new System.Drawing.Point(512, 36);
 			this.dtCnhVencFinal.Name = "dtCnhVencFinal";
 			this.dtCnhVencFinal.Size = new System.Drawing.Size(131, 26);
 			this.dtCnhVencFinal.TabIndex = 4;
@@ -346,7 +349,7 @@
 			// lblIntervaloData
 			// 
 			this.lblIntervaloData.AutoSize = true;
-			this.lblIntervaloData.Location = new System.Drawing.Point(519, 42);
+			this.lblIntervaloData.Location = new System.Drawing.Point(488, 42);
 			this.lblIntervaloData.Name = "lblIntervaloData";
 			this.lblIntervaloData.Size = new System.Drawing.Size(18, 20);
 			this.lblIntervaloData.TabIndex = 3;
@@ -355,7 +358,7 @@
 			// dtCnhVencPesquisa
 			// 
 			this.dtCnhVencPesquisa.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtCnhVencPesquisa.Location = new System.Drawing.Point(385, 36);
+			this.dtCnhVencPesquisa.Location = new System.Drawing.Point(354, 36);
 			this.dtCnhVencPesquisa.Name = "dtCnhVencPesquisa";
 			this.dtCnhVencPesquisa.Size = new System.Drawing.Size(128, 26);
 			this.dtCnhVencPesquisa.TabIndex = 3;
@@ -367,10 +370,10 @@
 			this.tabCadastroMotorista.Controls.Add(this.btnVoltar);
 			this.tabCadastroMotorista.Controls.Add(this.gbDadosMotorista);
 			this.tabCadastroMotorista.Controls.Add(this.btnSalvar);
-			this.tabCadastroMotorista.Location = new System.Drawing.Point(4, 29);
+			this.tabCadastroMotorista.Location = new System.Drawing.Point(4, 33);
 			this.tabCadastroMotorista.Name = "tabCadastroMotorista";
 			this.tabCadastroMotorista.Padding = new System.Windows.Forms.Padding(3);
-			this.tabCadastroMotorista.Size = new System.Drawing.Size(845, 589);
+			this.tabCadastroMotorista.Size = new System.Drawing.Size(845, 585);
 			this.tabCadastroMotorista.TabIndex = 1;
 			this.tabCadastroMotorista.Text = "Cadastro";
 			// 
@@ -417,6 +420,7 @@
 			// 
 			// gbDadosMotorista
 			// 
+			this.gbDadosMotorista.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.gbDadosMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
 			this.gbDadosMotorista.Controls.Add(this.cbCnhCategoria);
 			this.gbDadosMotorista.Controls.Add(this.cbCidade);
@@ -458,7 +462,7 @@
 			this.cbCnhCategoria.CampoObrigatorio = true;
 			this.cbCnhCategoria.FormattingEnabled = true;
 			this.cbCnhCategoria.Location = new System.Drawing.Point(355, 232);
-			this.cbCnhCategoria.MensagemCampoObrigatorio = null;
+			this.cbCnhCategoria.MensagemCampoObrigatorio = "É obrigatório informar a categoria da CNH.";
 			this.cbCnhCategoria.Name = "cbCnhCategoria";
 			this.cbCnhCategoria.Size = new System.Drawing.Size(116, 28);
 			this.cbCnhCategoria.TabIndex = 7;
@@ -468,7 +472,7 @@
 			this.cbCidade.CampoObrigatorio = true;
 			this.cbCidade.FormattingEnabled = true;
 			this.cbCidade.Location = new System.Drawing.Point(544, 288);
-			this.cbCidade.MensagemCampoObrigatorio = null;
+			this.cbCidade.MensagemCampoObrigatorio = "Informar cidade em que reside";
 			this.cbCidade.Name = "cbCidade";
 			this.cbCidade.Size = new System.Drawing.Size(194, 28);
 			this.cbCidade.TabIndex = 11;
@@ -478,7 +482,7 @@
 			this.cbEstado.CampoObrigatorio = true;
 			this.cbEstado.FormattingEnabled = true;
 			this.cbEstado.Location = new System.Drawing.Point(355, 288);
-			this.cbEstado.MensagemCampoObrigatorio = null;
+			this.cbEstado.MensagemCampoObrigatorio = "Informar Estado  em que reside";
 			this.cbEstado.Name = "cbEstado";
 			this.cbEstado.Size = new System.Drawing.Size(116, 28);
 			this.cbEstado.TabIndex = 10;
@@ -489,7 +493,7 @@
 			this.cbStatus.CampoObrigatorio = true;
 			this.cbStatus.FormattingEnabled = true;
 			this.cbStatus.Location = new System.Drawing.Point(78, 55);
-			this.cbStatus.MensagemCampoObrigatorio = null;
+			this.cbStatus.MensagemCampoObrigatorio = "Informar Status.";
 			this.cbStatus.Name = "cbStatus";
 			this.cbStatus.Size = new System.Drawing.Size(137, 28);
 			this.cbStatus.TabIndex = 1;
@@ -498,7 +502,7 @@
 			// 
 			this.txtEmail.CampoObrigatorio = true;
 			this.txtEmail.Location = new System.Drawing.Point(543, 169);
-			this.txtEmail.MensagemObrigatorio = null;
+			this.txtEmail.MensagemObrigatorio = "Informar o Email.";
 			this.txtEmail.Name = "txtEmail";
 			this.txtEmail.Size = new System.Drawing.Size(194, 26);
 			this.txtEmail.TabIndex = 5;
@@ -546,17 +550,17 @@
 			// 
 			this.txtCep.CampoObrigatorio = true;
 			this.txtCep.Location = new System.Drawing.Point(77, 290);
-			this.txtCep.MensagemObrigatorio = null;
+			this.txtCep.MensagemObrigatorio = "Informar o Cep do endereço";
 			this.txtCep.Name = "txtCep";
 			this.txtCep.Size = new System.Drawing.Size(168, 26);
 			this.txtCep.TabIndex = 9;
-			this.txtCep.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			this.txtCep.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
 			// 
 			// txtNumero
 			// 
 			this.txtNumero.CampoObrigatorio = true;
 			this.txtNumero.Location = new System.Drawing.Point(355, 358);
-			this.txtNumero.MensagemObrigatorio = null;
+			this.txtNumero.MensagemObrigatorio = "Informar o numero da residência.";
 			this.txtNumero.Name = "txtNumero";
 			this.txtNumero.Size = new System.Drawing.Size(107, 26);
 			this.txtNumero.TabIndex = 13;
@@ -566,7 +570,7 @@
 			// 
 			this.txtBairro.CampoObrigatorio = true;
 			this.txtBairro.Location = new System.Drawing.Point(543, 358);
-			this.txtBairro.MensagemObrigatorio = null;
+			this.txtBairro.MensagemObrigatorio = "Informar o bairro.";
 			this.txtBairro.Name = "txtBairro";
 			this.txtBairro.Size = new System.Drawing.Size(194, 26);
 			this.txtBairro.TabIndex = 14;
@@ -576,7 +580,7 @@
 			// 
 			this.txtLogra.CampoObrigatorio = true;
 			this.txtLogra.Location = new System.Drawing.Point(77, 358);
-			this.txtLogra.MensagemObrigatorio = null;
+			this.txtLogra.MensagemObrigatorio = "Informar a rua em que reside";
 			this.txtLogra.Name = "txtLogra";
 			this.txtLogra.Size = new System.Drawing.Size(249, 26);
 			this.txtLogra.TabIndex = 12;
@@ -586,11 +590,11 @@
 			// 
 			this.txtTelMoto.CampoObrigatorio = true;
 			this.txtTelMoto.Location = new System.Drawing.Point(355, 169);
-			this.txtTelMoto.MensagemObrigatorio = null;
+			this.txtTelMoto.MensagemObrigatorio = "Informar o telefone para contato.";
 			this.txtTelMoto.Name = "txtTelMoto";
 			this.txtTelMoto.Size = new System.Drawing.Size(167, 26);
 			this.txtTelMoto.TabIndex = 4;
-			this.txtTelMoto.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			this.txtTelMoto.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
 			// 
 			// txtNomeMoto
 			// 
@@ -614,8 +618,8 @@
 			// 
 			this.txtCnhNum.CampoObrigatorio = true;
 			this.txtCnhNum.Location = new System.Drawing.Point(77, 228);
-			this.txtCnhNum.MaxLength = 18;
-			this.txtCnhNum.MensagemObrigatorio = null;
+			this.txtCnhNum.MaxLength = 11;
+			this.txtCnhNum.MensagemObrigatorio = "É obrigatório informar o número da CNH.";
 			this.txtCnhNum.Name = "txtCnhNum";
 			this.txtCnhNum.Size = new System.Drawing.Size(190, 26);
 			this.txtCnhNum.TabIndex = 6;
@@ -752,12 +756,29 @@
 			this.btnSalvar.UseVisualStyleBackColor = false;
 			this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
 			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.SystemColors.InfoText;
+			this.button1.Location = new System.Drawing.Point(0, 0);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(976, 34);
+			this.button1.TabIndex = 81;
+			this.button1.Text = "Motoristas";
+			this.button1.UseVisualStyleBackColor = false;
+			// 
 			// frmMotorista
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.ClientSize = new System.Drawing.Size(976, 645);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.tabCtrlMotorista);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "frmMotorista";
@@ -827,5 +848,6 @@
 		private System.Windows.Forms.Button btnGridExcluir;
 		private System.Windows.Forms.Button btnGridAlterar;
 		private System.Windows.Forms.Button btnNovo;
+		private System.Windows.Forms.Button button1;
 	}
 }

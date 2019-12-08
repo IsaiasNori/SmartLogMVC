@@ -63,29 +63,9 @@ namespace SmartLog.WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_alert {
-            get {
-                object obj = ResourceManager.GetObject("icon_alert", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icon_CloseApp2 {
             get {
                 object obj = ResourceManager.GetObject("icon_CloseApp2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_erro {
-            get {
-                object obj = ResourceManager.GetObject("icon_erro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,19 +193,9 @@ namespace SmartLog.WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_search {
+        internal static System.Drawing.Bitmap iconAlert {
             get {
-                object obj = ResourceManager.GetObject("icon_search", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_sucess {
-            get {
-                object obj = ResourceManager.GetObject("icon_sucess", resourceCulture);
+                object obj = ResourceManager.GetObject("iconAlert", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +206,16 @@ namespace SmartLog.WindowsForms.Properties {
         internal static System.Drawing.Bitmap iconEdit {
             get {
                 object obj = ResourceManager.GetObject("iconEdit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconErro {
+            get {
+                object obj = ResourceManager.GetObject("iconErro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +243,29 @@ namespace SmartLog.WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconSucesso {
+            get {
+                object obj = ResourceManager.GetObject("iconSucesso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconVoltar_fw {
             get {
                 object obj = ResourceManager.GetObject("iconVoltar.fw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icoSearch_fw {
+            get {
+                object obj = ResourceManager.GetObject("icoSearch.fw", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -2,6 +2,7 @@
 using SmartLog.WindowsForms.UserControl;
 using SmartLog.WindowsForms.Util;
 using SmartLogBusiness.Controller;
+using SmartLogBusiness.Exceptions;
 using SmartLogBusiness.Model.Entidade;
 using SmartLogBusiness.Model.Entidade.pessoa;
 using SmartLogBusiness.Model.Entidade.veiculo;
@@ -22,7 +23,6 @@ namespace SmartLog.WindowsForms
 	public partial class frmViagem : Form
 	{
 		ViagemController viagemCtrl = new ViagemController();
-
 		int codigoViagem;
 		DataTable tableMotorista = null;
 		DataTable tableCliente = null;
@@ -56,17 +56,16 @@ namespace SmartLog.WindowsForms
 				{
 					return;
 				}
-				Endereco origem = new Endereco(txtCepOrigem.Text, txtLograOrigem.Text, Convert.ToInt32(txtNumeroOrigem.Text), txtBairroOrigem.Text, cbCidadeOrigem.PegarComboSelecionado(), cbEstadoDestino.PegarComboSelecionado());
+				Endereco origem = new Endereco(txtCepOrigem.Text, txtLograOrigem.Text, Convert.ToInt32(txtNumeroOrigem.Text), txtBairroOrigem.Text, cbCidadeOrigem.PegarComboSelecionado(), cbEstadoOrigem.PegarComboSelecionado());
 				Endereco destino = new Endereco(txtCepDestino.Text, txtLograDestino.Text, Convert.ToInt32(txtNumeroDestino.Text), txtBairroDestino.Text, cbCidadeDestino.PegarComboSelecionado(), cbEstadoDestino.PegarComboSelecionado());
 
 				Cliente cli = new Cliente(cbCliente.PegarComboSelecionado());
 
 				Veiculo veic = new Veiculo(cbVeiculo.PegarComboSelecionado());
-
 				Motorista moto = new Motorista(cbMotoristaViagem.PegarComboSelecionado());
 				Funcionario func = new Funcionario(cbAtendente.PegarComboSelecionado());
 
-				Viagem viagem = new Viagem(codigoViagem, dtDataViagem.Value, txtDistancia.Text, Convert.ToDecimal(txtValor.Text), origem, txtCompleOrigem.Text, destino, txtCompleDestino.Text, cli, veic, moto, func,(EnumStatusViagem)cbStatus.PegarComboSelecionado());
+				Viagem viagem = new Viagem(codigoViagem, dtDataViagem.Value, txtDistancia.Text, Convert.ToDecimal(txtValor.Text), origem, txtCompleOrigem.Text, destino, txtCompleDestino.Text, cli, veic, moto, func, (EnumStatusViagem)cbStatus.PegarComboSelecionado());
 
 				if (codigoViagem == 0)
 				{
@@ -75,8 +74,17 @@ namespace SmartLog.WindowsForms
 				}
 				else
 				{
-					viagemCtrl.AlterarController(viagem);
-					Utils.ExibirMensagem("Viagem alterada com sucesso", eTipoMensagem.Sucesso);
+					try
+					{
+						viagemCtrl.AlterarController(viagem);
+						Utils.ExibirMensagem("Viagem alterada com sucesso", eTipoMensagem.Sucesso);
+					}
+					catch (BusinessException ex)
+					{
+						Utils.ExibirMensagem(ex.Message, eTipoMensagem.Atencao);
+						Utils.ExibirMensagem("Viagem alterada com sucesso", eTipoMensagem.Sucesso);
+					}
+
 				}
 
 				Utils.LimparCampos(gbDadosDestinoViagem);
@@ -90,11 +98,97 @@ namespace SmartLog.WindowsForms
 		}
 		private void btnGridAlterar_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				if (dgViagem.SelectedRows.Count > 0)
+				{
+					string codigo = dgViagem.SelectedRows[0].Cells[0].Value.ToString();
+					int.TryParse(codigo, out codigoViagem);
 
+					if (codigoViagem > 0)
+					{
+						Viagem viagem = new Viagem(codigoViagem);
+
+						viagem = viagemCtrl.GetObj(viagem);
+
+						dtDataViagem.Value = Convert.ToDateTime(viagem.DataViagem);
+						cbStatus.PosicionarCombo(viagem.Status);
+						cbMotoristaViagem.PosicionarCombo(viagem.Motorista.Codigo);
+						cbVeiculo.PosicionarCombo(viagem.CodVeiculo.CodVei);
+						cbAtendente.PosicionarCombo(viagem.Atendente.Codigo);
+						cbCliente.PosicionarCombo(viagem.Cliente.Codigo);
+						txtValor.Text = viagem.Valor.ToString();
+						txtDistancia.Text = viagem.DistanciaKm;
+
+						txtCepOrigem.Text = viagem.Origem.Cep;
+						cbEstadoOrigem.PosicionarCombo(viagem.Origem.CodEstado);
+						cbCidadeOrigem.PosicionarCombo(viagem.Origem.CodCidade);
+						txtLograOrigem.Text = viagem.Origem.Logradouro;
+						txtNumeroOrigem.Text = viagem.Origem.Numero.ToString();
+						txtBairroOrigem.Text = viagem.Origem.Bairro;
+
+						txtCepDestino.Text = viagem.Destino.Cep;
+						cbEstadoDestino.PosicionarCombo(viagem.Destino.CodEstado);
+						cbCidadeDestino.PosicionarCombo(viagem.Destino.CodCidade);
+						txtLograDestino.Text = viagem.Destino.Logradouro;
+						txtNumeroDestino.Text = viagem.Destino.Numero.ToString();
+						txtBairroDestino.Text = viagem.Destino.Bairro;
+
+						tabCtrlViagem.SelectedTab = tabCadastroViagem;
+					}
+				}
+				else
+				{
+					Utils.ExibirMensagem("Selecione um registro para alterar.", eTipoMensagem.Atencao);
+				}
+			}
+			catch (Exception ex)
+			{
+				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+			}
 		}
 		private void btnGridExcluir_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				if (dgViagem.SelectedRows.Count > 0)
+				{
 
+					if (MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+					{
+
+						foreach(DataGridViewRow linha in dgViagem.SelectedRows)
+						{
+
+							string codigo = linha.Cells[0].Value.ToString();
+							int.TryParse(codigo, out codigoViagem);
+
+							if (codigoViagem > 0)
+							{
+								Viagem viagem = new Viagem(codigoViagem);
+
+
+								viagemCtrl.DeletarController(viagem);
+								
+							}
+
+						}
+
+						Utils.ExibirMensagem("Registro excluído com sucesso.", eTipoMensagem.Sucesso);
+						Pesquisar();
+
+
+					}
+				}
+				else
+				{
+					Utils.ExibirMensagem("Para excluir um registro, é necessário seleciona-lo.", eTipoMensagem.Atencao);
+				}
+			}
+			catch (Exception ex)
+			{
+				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+			}
 		}
 		private void BtnVoltar_Click(object sender, EventArgs e)
 		{
@@ -178,7 +272,7 @@ namespace SmartLog.WindowsForms
 				if (chkData.Checked)
 				{
 					dtInicio = dtDataInicio.Value;
-					dtFim = dtDataFim.Value; 
+					dtFim = dtDataFim.Value;
 				}
 				Cliente cli = new Cliente(cbClientePesquisa.PegarComboSelecionado());
 
@@ -264,7 +358,7 @@ namespace SmartLog.WindowsForms
 
 		private void dgViagem_DataSourceChanged(object sender, EventArgs e)
 		{
-			if(dgViagem.DataSource != null)
+			if (dgViagem.DataSource != null)
 			{
 				dgViagem.Columns[0].Visible = false;
 				dgViagem.AutoResizeColumns();
@@ -283,6 +377,11 @@ namespace SmartLog.WindowsForms
 				dtDataInicio.Enabled = false; ;
 				dtDataFim.Enabled = false;
 			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

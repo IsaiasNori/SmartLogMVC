@@ -225,6 +225,7 @@ namespace SmartLog.WindowsForms
 				DataTable table = cliController.GetDataTable(cli);
 
 				dgCliente.DataSource = table;
+				dgCliente.AutoResizeColumns();
 				dgCliente.ClearSelection();
 			}
 			catch (Exception ex)

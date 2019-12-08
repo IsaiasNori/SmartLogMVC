@@ -12,7 +12,9 @@ namespace SmartLogBusiness.Controller
 	public class FuncionarioController : IControllerBase<Funcionario>
 	{
 		FuncionarioDAO dao = new FuncionarioDAO();
-
+		int codTipoCargo, numero, codCidade, codEstado;
+		DateTime dataNasc;
+		 
 		public void AlterarController(Funcionario obj)
 		{
 			try
@@ -21,8 +23,41 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("Necessário informar o numero da matricula para efetuar alteração.");
 				}
-				dao.AlterarFuncionario(obj.Codigo, obj.Nome, obj.DataNasc, obj.Telefone, obj.Email,
-									   obj.Cpf, Convert.ToInt32(obj.TipoCargo), obj.Endereco.Cep, obj.Endereco.Logradouro, obj.Endereco.Numero, obj.Endereco.Bairro, obj.Endereco.CodCidade, obj.Endereco.CodEstado);
+				if (obj.Nome == "")
+				{
+					throw new Exception("É necessário informar nome do funcionário para salvar no sistema.");
+				}
+				if (obj.DataNasc.Value == System.DateTime.Now && obj.DataNasc.Value.Year < 15)
+				{
+					throw new Exception("Insira uma data de nascimento válida.");
+				}
+				else
+				{
+					DateTime.TryParse(obj.DataNasc.ToString(), out dataNasc);
+				}
+				if (obj.Email == "")
+				{
+					throw new Exception("Insira um endereço de e-mail válido.");
+				}
+				if (obj.Cpf.Length < 11 && obj.Cpf == "")
+				{
+					throw new Exception("É obrigatório preencher o CPF.");
+				}
+				if (obj.TipoCargo != null)
+				{
+					int.TryParse(obj.TipoCargo.ToString(), out codTipoCargo);
+				}
+				else
+				{
+					throw new Exception("É obrigatório selecionar um cargo para funcionário.");
+				}
+				int.TryParse(obj.Endereco.Numero.ToString(), out numero);
+				int.TryParse(obj.Endereco.CodCidade.ToString(), out codCidade);
+				int.TryParse(obj.Endereco.CodEstado.ToString(), out codEstado);
+				DateTime.TryParse(obj.DataNasc.ToString(), out dataNasc);
+
+				dao.AlterarFuncionario(obj.Codigo, obj.Nome, dataNasc, obj.Telefone, obj.Email,
+									   obj.Cpf, Convert.ToInt32(obj.TipoCargo), obj.Endereco.Cep, obj.Endereco.Logradouro, numero, obj.Endereco.Bairro, codCidade,codEstado);
 			}
 			catch (Exception ex)
 			{
@@ -36,7 +71,7 @@ namespace SmartLogBusiness.Controller
 			{
 				if (obj.Codigo == 0)
 				{
-					throw new Exception("Nessecário informar a matricula para excluir o registro.");
+					throw new Exception("É necessário informar o código de  matricula para excluir o registro.");
 				}
 				dao.DeletarFuncionario(obj.Codigo);
 			}
@@ -66,9 +101,6 @@ namespace SmartLogBusiness.Controller
 			{
 				DataTable table = dao.CarregarFuncionarioDAO(obj.Codigo);
 
-				int numero, cidade, estado;
-				DateTime dataNasc;
-
 				if (obj.Codigo == 0)
 				{
 					throw new Exception("Insira o código para localizar funcionário!");
@@ -77,15 +109,16 @@ namespace SmartLogBusiness.Controller
 				if (table != null)
 				{
 					int.TryParse(table.Rows[0]["Numero"].ToString(), out numero);
-					int.TryParse(table.Rows[0]["Cod_Cidade"].ToString(), out cidade);
-					int.TryParse(table.Rows[0]["Cod_Estado"].ToString(), out estado);
+					int.TryParse(table.Rows[0]["Cod_Cidade"].ToString(), out codCidade);
+					int.TryParse(table.Rows[0]["Cod_Estado"].ToString(), out codEstado);
 					DateTime.TryParse(table.Rows[0]["Data_Nascimento"].ToString(), out dataNasc);
+					int.TryParse(table.Rows[0]["Cod_Cargo"].ToString(), out codTipoCargo);
 
 					Endereco end = new Endereco(table.Rows[0]["Cep"].ToString(),
 												table.Rows[0]["Logradouro"].ToString(),
 												numero,
 												table.Rows[0]["Bairro"].ToString(),
-												cidade, estado);
+												codCidade, codEstado);
 
 					Funcionario func = new Funcionario(Convert.ToInt32(table.Rows[0]["Cod_Matricula"]),
 													  table.Rows[0]["Nome_Funcionario"].ToString(),
@@ -93,7 +126,7 @@ namespace SmartLogBusiness.Controller
 													  dataNasc,
 													  table.Rows[0]["Telefone_Funcionario"].ToString(),
 													  table.Rows[0]["Email_Funcionario"].ToString(),
-													  end, (EnumTipoCargo)Convert.ToInt32(table.Rows[0]["Cod_Cargo"]));
+													  end, (EnumTipoCargo)codTipoCargo);
 
 					return func;
 				}
@@ -114,11 +147,42 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				dao.InserirFuncionario(obj.Nome, obj.DataNasc, obj.Telefone, obj.Email, obj.Cpf, Convert.ToInt32(obj.TipoCargo), obj.Endereco.Cep, obj.Endereco.Logradouro, obj.Endereco.Numero, obj.Endereco.Bairro, obj.Endereco.CodCidade, obj.Endereco.CodEstado);
+				if(obj.Nome == "")
+				{
+					throw new Exception("É necessário informar nome do funcionário para cadastrar no sistema.");
+				}
+				if(obj.DataNasc.Value == System.DateTime.Now && obj.DataNasc.Value.Year < 15)
+				{
+					throw new Exception("Insira uma data de nascimento válida.");
+				}
+				else
+				{
+					DateTime.TryParse(obj.DataNasc.ToString(), out dataNasc);
+				}
+				if(obj.Email == "")
+				{
+					throw new Exception("Insira um endereço de e-mail válido, para obter um Usuário no sistema.");
+				}
+				if(obj.Cpf.Length < 11 || obj.Cpf == "")
+				{
+					throw new Exception("É obrigatório fornecer o CPF para o gerar sua primeira senha de acesso ao sistema.");
+				}
+				if(obj.TipoCargo != null)
+				{
+					int.TryParse(obj.TipoCargo.ToString(), out codTipoCargo);
+				}
+				else
+				{
+					throw new Exception("É obrigatório selecionar um cargo para funcionário.");
+				}
+				int.TryParse(obj.Endereco.Numero.ToString(), out numero);
+				int.TryParse(obj.Endereco.CodCidade.ToString(), out codCidade);
+				int.TryParse(obj.Endereco.CodEstado.ToString(), out codEstado);
+
+				dao.InserirFuncionario(obj.Nome, dataNasc, obj.Telefone, obj.Email, obj.Cpf, codTipoCargo, obj.Endereco.Cep, obj.Endereco.Logradouro,numero, obj.Endereco.Bairro, codCidade, codEstado);
 			}
 			catch (Exception ex)
 			{
-
 				throw new Exception(ex.Message);
 			}
 		}
@@ -136,21 +200,25 @@ namespace SmartLogBusiness.Controller
 
 				foreach (DataRow item in table.Rows)
 				{
+					int.TryParse(item["Numero"].ToString(), out numero);
+					int.TryParse(item["Cod_Cidade"].ToString(),out codCidade);
+					int.TryParse(item["Cod_Estado"].ToString(), out codEstado );
+					int.TryParse(item["Cod_Cargo"].ToString(), out codTipoCargo);
+					DateTime.TryParse(item["Data_Nascimento"].ToString(), out dataNasc);
+
 					Endereco end = new Endereco(item["Cep"].ToString(),
 												item["Logradouro"].ToString(),
-												Convert.ToInt32(item["Numero"]),
+												numero,
 												item["Bairro"].ToString(),
-												Convert.ToInt32(item["Cod_Cidade"]),
-												Convert.ToInt32(item["Cod_Estado"]));
+												codCidade,codEstado);
 
 					Funcionario func = new Funcionario(Convert.ToInt32(item["Cod_Matricula"]),
 													   item["Nome_Funcionario"].ToString(),
-														item["CPF_Funcionario"].ToString(),
-														Convert.ToDateTime(item["Data_Nascimento"]),
+													   item["CPF_Funcionario"].ToString(),
+													   dataNasc,
 													   item["Telefone_Funcionario"].ToString(),
 													   item["Email_Funcionario"].ToString(),
-
-													   end, (EnumTipoCargo)Convert.ToInt32(item["Cod_Cargo"]));
+													   end, (EnumTipoCargo)codTipoCargo);
 
 					lista.Add(func);
 				}
@@ -174,45 +242,40 @@ namespace SmartLogBusiness.Controller
 
 				if (table != null && table.Rows.Count != 0)
 				{
-					int numero;
+					
 					int.TryParse(table.Rows[0]["Numero"].ToString(), out numero);
+					
+					int.TryParse(table.Rows[0]["Cod_Cidade"].ToString(), out codCidade);
 
-					int cidade;
-					int.TryParse(table.Rows[0]["Cod_Cidade"].ToString(), out cidade);
-
-					int estado;
-					int.TryParse(table.Rows[0]["Cod_Estado"].ToString(), out estado);
-
-					DateTime data;
-					DateTime.TryParse(table.Rows[0]["Data_Nascimento"].ToString(), out data);
+					int.TryParse(table.Rows[0]["Cod_Estado"].ToString(), out codEstado);
+					
+					DateTime.TryParse(table.Rows[0]["Data_Nascimento"].ToString(), out dataNasc);
 
 					Endereco end = new Endereco(table.Rows[0]["Cep"].ToString(),
 												table.Rows[0]["Logradouro"].ToString(),
 												numero,
 												table.Rows[0]["Bairro"].ToString(),
-												cidade, estado);
-
-					int cargo;
-					int.TryParse(table.Rows[0]["Cod_Cargo"].ToString(), out cargo);
+												codCidade, codEstado);
+					
+					int.TryParse(table.Rows[0]["Cod_Cargo"].ToString(), out codTipoCargo);
 
 					EnumTipoCargo tipo;
 
-					if (cargo == 0)
+					if (codTipoCargo == 0)
 					{
 						tipo = EnumTipoCargo.Atendente;
 					}
 					else
 					{
-						tipo = (EnumTipoCargo)cargo;
+						tipo = (EnumTipoCargo)codTipoCargo;
 					}
 
 					Funcionario func = new Funcionario(Convert.ToInt32(table.Rows[0]["Cod_Matricula"]),
 													  table.Rows[0]["Nome_Funcionario"].ToString(),
 													  table.Rows[0]["CPF_Funcionario"].ToString(),
-													  data,
+													  dataNasc,
 													  table.Rows[0]["Telefone_Funcionario"].ToString(),
 													  table.Rows[0]["Email_Funcionario"].ToString(),
-
 													  end, tipo);
 
 					return func;

@@ -30,24 +30,24 @@ namespace SmartLog.WindowsForms
 			if(tipo == eTipoMensagem.Sucesso)
 			{
                 lblTitulo.Text = "Sucesso";
-                toolStripTop.BackColor =  Color.FromArgb (128, 255, 128);
-                toolStripBelow.BackColor = Color.FromArgb(128, 255, 128);
+                toolStripTop.BackColor =  Color.FromArgb (43, 100, 63);
+                toolStripBelow.BackColor = Color.FromArgb(43, 100, 63);
 
-                btnOK.Image = SmartLog.WindowsForms.Properties.Resources.icon_sucess;
+                btnIcon.Image = SmartLog.WindowsForms.Properties.Resources.iconSucesso;
 			}
 			else if(tipo == eTipoMensagem.Erro)
 			{
                 lblTitulo.Text = "Erro";
-                toolStripTop.BackColor = Color.FromArgb(236, 45, 30);
-                toolStripBelow.BackColor = Color.FromArgb(236, 45, 30);
-                btnOK.Image = SmartLog.WindowsForms.Properties.Resources.icon_erro;
+                toolStripTop.BackColor = Color.FromArgb(192, 0, 0);
+                toolStripBelow.BackColor = Color.FromArgb(192, 0, 0);
+                btnIcon.Image = SmartLog.WindowsForms.Properties.Resources.iconErro;
 			}
 			else
 			{
                 lblTitulo.Text = "Atenção";
-                toolStripTop.BackColor = Color.FromArgb(255, 255, 128);
-                toolStripBelow.BackColor = Color.FromArgb(255, 255, 128);
-                btnOK.Image = SmartLog.WindowsForms.Properties.Resources.icon_alert;
+				toolStripTop.BackColor = Color.Goldenrod;
+				toolStripBelow.BackColor = Color.Goldenrod;
+				btnIcon.Image = SmartLog.WindowsForms.Properties.Resources.iconAlert;
 			}
 
 		}
@@ -61,5 +61,10 @@ namespace SmartLog.WindowsForms
         {
             this.Close();
         }
-    }
+
+		private void toolStripTop_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
+
+		}
+	}
 }

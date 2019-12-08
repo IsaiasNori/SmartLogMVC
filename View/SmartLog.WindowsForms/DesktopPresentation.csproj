@@ -72,6 +72,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManutencao.Designer.cs">
+      <DependentUpon>frmManutencao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMensagem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     </Compile>
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecuperarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarSenha.Designer.cs">
+      <DependentUpon>frmRecuperarSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVeiculo.cs">
       <SubType>Form</SubType>
@@ -128,6 +140,9 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManutencao.resx">
+      <DependentUpon>frmManutencao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMensagem.resx">
       <DependentUpon>frmMensagem.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecuperarSenha.resx">
+      <DependentUpon>frmRecuperarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVeiculo.resx">
       <DependentUpon>frmVeiculo.cs</DependentUpon>
@@ -187,8 +205,6 @@
     <None Include="Resources\icon_CloseApp2.png" />
     <None Include="Resources\icon_MinimizarApp.png" />
     <None Include="Resources\icon_Logout.png" />
-    <None Include="Resources\icon_alert.png" />
-    <None Include="Resources\icon_erro.png" />
     <None Include="Resources\icon_Salvar.png.png" />
     <None Include="Resources\iconEdit1.png" />
     <None Include="Resources\icon_Limpar1.png" />
@@ -196,8 +212,28 @@
     <None Include="Resources\icon_New1.png" />
     <None Include="Resources\iconExcluir1.png" />
     <None Include="Resources\iconFechar5.png" />
-    <Content Include="Resources\icon_sucess.png" />
-    <None Include="Resources\icon_sucess1.png" />
+    <None Include="Resources\iconSucesso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconAlert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconErro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconSearch1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconSearch.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icoSearch.fw.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

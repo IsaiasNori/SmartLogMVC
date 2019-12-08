@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+			this.linkEsqueceuSenha = new System.Windows.Forms.LinkLabel();
 			this.btnLogin = new System.Windows.Forms.Button();
 			this.lblSenha = new System.Windows.Forms.Label();
 			this.lblUsuario = new System.Windows.Forms.Label();
@@ -37,22 +37,25 @@
 			this.pnlLogin = new System.Windows.Forms.Panel();
 			this.txtSenha = new System.Windows.Forms.TextBox();
 			this.txtUsuario = new System.Windows.Forms.TextBox();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.picLogoLogin = new System.Windows.Forms.PictureBox();
+			this.panelRodape = new System.Windows.Forms.Panel();
 			this.panelCabecalho.SuspendLayout();
 			this.pnlLogin.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picLogoLogin)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// linkLabel1
+			// linkEsqueceuSenha
 			// 
-			this.linkLabel1.AutoSize = true;
-			this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.linkLabel1.Location = new System.Drawing.Point(114, 116);
-			this.linkLabel1.Name = "linkLabel1";
-			this.linkLabel1.Size = new System.Drawing.Size(129, 15);
-			this.linkLabel1.TabIndex = 3;
-			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "Esqueceu sua senha?";
+			this.linkEsqueceuSenha.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.linkEsqueceuSenha.AutoSize = true;
+			this.linkEsqueceuSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.linkEsqueceuSenha.Location = new System.Drawing.Point(196, 118);
+			this.linkEsqueceuSenha.Name = "linkEsqueceuSenha";
+			this.linkEsqueceuSenha.Size = new System.Drawing.Size(129, 15);
+			this.linkEsqueceuSenha.TabIndex = 3;
+			this.linkEsqueceuSenha.TabStop = true;
+			this.linkEsqueceuSenha.Text = "Esqueceu sua senha?";
+			this.linkEsqueceuSenha.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkEsqueceuSenha_LinkClicked);
 			// 
 			// btnLogin
 			// 
@@ -63,9 +66,9 @@
 			this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.btnLogin.Location = new System.Drawing.Point(66, 143);
+			this.btnLogin.Location = new System.Drawing.Point(96, 150);
 			this.btnLogin.Name = "btnLogin";
-			this.btnLogin.Size = new System.Drawing.Size(177, 30);
+			this.btnLogin.Size = new System.Drawing.Size(229, 35);
 			this.btnLogin.TabIndex = 4;
 			this.btnLogin.Text = "Login";
 			this.btnLogin.UseVisualStyleBackColor = false;
@@ -75,8 +78,8 @@
 			// 
 			this.lblSenha.AutoSize = true;
 			this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblSenha.ForeColor = System.Drawing.Color.Black;
-			this.lblSenha.Location = new System.Drawing.Point(63, 67);
+			this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.lblSenha.Location = new System.Drawing.Point(92, 66);
 			this.lblSenha.Name = "lblSenha";
 			this.lblSenha.Size = new System.Drawing.Size(61, 20);
 			this.lblSenha.TabIndex = 5;
@@ -86,12 +89,12 @@
 			// 
 			this.lblUsuario.AutoSize = true;
 			this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblUsuario.ForeColor = System.Drawing.Color.Black;
-			this.lblUsuario.Location = new System.Drawing.Point(63, 15);
+			this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.lblUsuario.Location = new System.Drawing.Point(92, 17);
 			this.lblUsuario.Name = "lblUsuario";
-			this.lblUsuario.Size = new System.Drawing.Size(53, 20);
+			this.lblUsuario.Size = new System.Drawing.Size(71, 20);
 			this.lblUsuario.TabIndex = 6;
-			this.lblUsuario.Text = "Email";
+			this.lblUsuario.Text = "Usuário";
 			// 
 			// panelCabecalho
 			// 
@@ -127,26 +130,27 @@
 			// 
 			// pnlLogin
 			// 
-			this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.pnlLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(146)))), ((int)(((byte)(208)))));
 			this.pnlLogin.Controls.Add(this.txtSenha);
 			this.pnlLogin.Controls.Add(this.txtUsuario);
 			this.pnlLogin.Controls.Add(this.lblUsuario);
 			this.pnlLogin.Controls.Add(this.lblSenha);
-			this.pnlLogin.Controls.Add(this.linkLabel1);
+			this.pnlLogin.Controls.Add(this.linkEsqueceuSenha);
 			this.pnlLogin.Controls.Add(this.btnLogin);
 			this.pnlLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 			this.pnlLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.pnlLogin.Location = new System.Drawing.Point(130, 223);
+			this.pnlLogin.Location = new System.Drawing.Point(78, 223);
 			this.pnlLogin.Name = "pnlLogin";
-			this.pnlLogin.Size = new System.Drawing.Size(312, 198);
+			this.pnlLogin.Size = new System.Drawing.Size(426, 198);
 			this.pnlLogin.TabIndex = 8;
 			// 
 			// txtSenha
 			// 
 			this.txtSenha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtSenha.Location = new System.Drawing.Point(66, 87);
+			this.txtSenha.Location = new System.Drawing.Point(96, 89);
 			this.txtSenha.Name = "txtSenha";
-			this.txtSenha.Size = new System.Drawing.Size(177, 26);
+			this.txtSenha.Size = new System.Drawing.Size(229, 26);
 			this.txtSenha.TabIndex = 2;
 			this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
@@ -155,33 +159,44 @@
 			// txtUsuario
 			// 
 			this.txtUsuario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtUsuario.Location = new System.Drawing.Point(66, 38);
+			this.txtUsuario.Location = new System.Drawing.Point(96, 40);
 			this.txtUsuario.Name = "txtUsuario";
-			this.txtUsuario.Size = new System.Drawing.Size(177, 26);
+			this.txtUsuario.Size = new System.Drawing.Size(229, 26);
 			this.txtUsuario.TabIndex = 1;
 			this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
 			this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
 			// 
-			// pictureBox1
+			// picLogoLogin
 			// 
-			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox1.Image = global::SmartLog.WindowsForms.Properties.Resources.Logo;
-			this.pictureBox1.Location = new System.Drawing.Point(157, 37);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(265, 211);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 9;
-			this.pictureBox1.TabStop = false;
+			this.picLogoLogin.BackColor = System.Drawing.Color.Transparent;
+			this.picLogoLogin.Image = global::SmartLog.WindowsForms.Properties.Resources.Logo;
+			this.picLogoLogin.Location = new System.Drawing.Point(157, 37);
+			this.picLogoLogin.Name = "picLogoLogin";
+			this.picLogoLogin.Size = new System.Drawing.Size(265, 211);
+			this.picLogoLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.picLogoLogin.TabIndex = 9;
+			this.picLogoLogin.TabStop = false;
+			// 
+			// panelRodape
+			// 
+			this.panelRodape.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.panelRodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panelRodape.ForeColor = System.Drawing.Color.White;
+			this.panelRodape.Location = new System.Drawing.Point(0, 439);
+			this.panelRodape.Name = "panelRodape";
+			this.panelRodape.Size = new System.Drawing.Size(590, 35);
+			this.panelRodape.TabIndex = 10;
 			// 
 			// frmLogin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(590, 460);
+			this.ClientSize = new System.Drawing.Size(590, 474);
+			this.Controls.Add(this.panelRodape);
 			this.Controls.Add(this.pnlLogin);
 			this.Controls.Add(this.panelCabecalho);
-			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.picLogoLogin);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "frmLogin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -190,21 +205,22 @@
 			this.panelCabecalho.ResumeLayout(false);
 			this.pnlLogin.ResumeLayout(false);
 			this.pnlLogin.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picLogoLogin)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-		private System.Windows.Forms.LinkLabel linkLabel1;
+		private System.Windows.Forms.LinkLabel linkEsqueceuSenha;
 		private System.Windows.Forms.Button btnLogin;
 		private System.Windows.Forms.Label lblSenha;
 		private System.Windows.Forms.Label lblUsuario;
 		private System.Windows.Forms.Panel panelCabecalho;
 		private System.Windows.Forms.Button btnFechar;
 		private System.Windows.Forms.Panel pnlLogin;
-		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.PictureBox picLogoLogin;
 		private System.Windows.Forms.TextBox txtSenha;
 		private System.Windows.Forms.TextBox txtUsuario;
+		private System.Windows.Forms.Panel panelRodape;
 	}
 }

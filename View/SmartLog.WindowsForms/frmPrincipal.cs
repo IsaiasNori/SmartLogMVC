@@ -61,7 +61,11 @@ namespace SmartLog.WindowsForms
 
 		private void btnFechar_Click(object sender, EventArgs e)
 		{
-			this.Close();
+			if(MessageBox.Show("Deseja realmente encerrar a aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+				this.Close();
+			}
+			
 		}
 		private void btnCliente_Click(object sender, EventArgs e)
 		{
@@ -75,6 +79,8 @@ namespace SmartLog.WindowsForms
 				foreach (Form form in this.MdiChildren)
 				{
 					form.Close();
+
+					
 				}
 			}
 			formulario.MdiParent = this;
@@ -160,6 +166,12 @@ namespace SmartLog.WindowsForms
 				this.Close();
 
 			}
+		}
+
+		private void btnManutencao_Click(object sender, EventArgs e)
+		{
+			frmManutencao manu = new frmManutencao();
+			CarregarTela(manu, "Manutenção");
 		}
 	}
 }

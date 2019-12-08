@@ -16,6 +16,7 @@ namespace SmartLog.WindowsForms
 {
 	public partial class frmVeiculo : Form
 	{
+
 		private VeiculoController veiCtrl = new VeiculoController();
 		int codigoVeic;
 		public frmVeiculo()
@@ -27,6 +28,7 @@ namespace SmartLog.WindowsForms
 		{
 			CarregarMarca();
 			Utils.CarregarStatusVeiculo(ref cbStatus);
+			txtKmPrev.Text = "10.000";
 		}
 		private void btnNovoVeiculo_Click(object sender, EventArgs e)
 		{
@@ -50,7 +52,7 @@ namespace SmartLog.WindowsForms
 				{
 					dataUltima = Convert.ToDateTime(txtDataUltRev.Text);
 				}
-				if (System.DateTime.Now.Year - Convert.ToInt32(txtAnoFab.Text) >= 9 )
+				if (System.DateTime.Now.Year - Convert.ToInt32(txtAnoFab.Text) >= 9)
 				{
 					txtAnoFab.Focus();
 					Utils.ExibirMensagem("Não é possível cadastrar veículo com 9 anos ou mais de uso.", eTipoMensagem.Atencao);
@@ -59,10 +61,12 @@ namespace SmartLog.WindowsForms
 				Veiculo vei = new Veiculo(codigoVeic,
 										   cbMarca.PegarComboSelecionado(),
 										   txtModelo.Text,
+										   txtPlaca.Text,
 										   txtRenavam.Text,
 										   (enumStatusVeiculo)cbStatus.PegarComboSelecionado(),
 										   txtData.Value,
 										   txtAnoFab.Text,
+										   txtKmInicial.Text,
 										   txtKmAtual.Text,
 										   txtKmPrev.Text, dataUltima);
 				if (codigoVeic == 0)
@@ -75,8 +79,12 @@ namespace SmartLog.WindowsForms
 					veiCtrl.AlterarController(vei);
 					Utils.ExibirMensagem("Veiculo alterado com sucesso", eTipoMensagem.Sucesso);
 				}
+
+
 				Utils.LimparCampos(gbDadosVeiculo);
+
 				tabctrlVeiculo.SelectedTab = tabConsultaVeic;
+
 				Pesquisar();
 			}
 			catch (Exception ex)
@@ -162,6 +170,8 @@ namespace SmartLog.WindowsForms
 				if (table != null)
 				{
 					dgVeiculo.DataSource = table;
+					dgVeiculo.AutoResizeColumns();
+					dgVeiculo.ClearSelection();
 				}
 			}
 			catch (Exception ex)
@@ -196,10 +206,12 @@ namespace SmartLog.WindowsForms
 						cbStatus.PosicionarCombo((int)veic.Status);
 						cbMarca.PosicionarCombo(veic.CodMarca);
 						txtModelo.Text = veic.Modelo;
+						txtPlaca.Text = veic.Placa;
 						cbStatus.SelectedValue = veic.Status;
 						txtData.Text = veic.DataAquisicao.ToString();
 						txtAnoFab.Text = veic.AnoFabricacao;
 						txtRenavam.Text = veic.Renavam;
+						txtKmInicial.Text = veic.KmInicial;
 						txtKmAtual.Text = veic.KmAtual;
 						txtKmPrev.Text = veic.KmPrev;
 						txtDataUltRev.Text = veic.DataUltimaRevisão.ToString();
@@ -219,28 +231,50 @@ namespace SmartLog.WindowsForms
 		}
 		private void btnExcluir_Click(object sender, EventArgs e)
 		{
-			if (dgVeiculo.SelectedRows.Count > 0)
-			{
-				string codigo = dgVeiculo.SelectedRows[0].Cells[0].Value.ToString();
-				int.TryParse(codigo, out codigoVeic);
 
-				if (codigoVeic > 0)
+
+			try
+			{
+
+
+				if (dgVeiculo.SelectedRows.Count > 0)
 				{
+
+
 					if (MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
 					{
-						Veiculo vei = new Veiculo(codigoVeic);
-						veiCtrl.DeletarController(vei);
+
+						foreach (DataGridViewRow linha in dgVeiculo.SelectedRows)
+						{
+
+							string codigo = linha.Cells[0].Value.ToString();
+							int.TryParse(codigo, out codigoVeic);
+
+							if (codigoVeic > 0)
+							{
+								Veiculo vei = new Veiculo(codigoVeic);
+								veiCtrl.DeletarController(vei);
+							}
+						}
 
 						Utils.ExibirMensagem("Veículo excluído com sucesso.", eTipoMensagem.Sucesso);
 						Pesquisar();
 					}
+
 				}
+				else
+				{
+					Utils.ExibirMensagem("Selecione um registro para excluir.", eTipoMensagem.Atencao);
+				}
+
 			}
-			else
+			catch (Exception ex)
 			{
-				Utils.ExibirMensagem("Selecione um registro para excluir.", eTipoMensagem.Atencao);
+
+				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 			}
 		}
+
 		private void CarregarMarca()
 		{
 			try
@@ -263,5 +297,6 @@ namespace SmartLog.WindowsForms
 		{
 			Utils.LimparCampos(gbDadosVeiculo);
 		}
+
 	}
 }

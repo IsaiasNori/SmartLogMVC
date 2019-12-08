@@ -51,6 +51,10 @@
 			this.btnVoltar = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.gbDadosVeiculo = new System.Windows.Forms.GroupBox();
+			this.txtPlaca = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.lblPlaca = new System.Windows.Forms.Label();
+			this.txtKmInicial = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.lblKmInicial = new System.Windows.Forms.Label();
 			this.txtAnoFab = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.cbStatus = new SmartLog.WindowsForms.UserControl.SuperComboBox();
 			this.cbMarca = new SmartLog.WindowsForms.UserControl.SuperComboBox();
@@ -71,6 +75,7 @@
 			this.txtModelo = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblCodCli = new System.Windows.Forms.Label();
 			this.txtCodigoCli = new System.Windows.Forms.TextBox();
+			this.button1 = new System.Windows.Forms.Button();
 			this.tabctrlVeiculo.SuspendLayout();
 			this.tabConsultaVeic.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgVeiculo)).BeginInit();
@@ -89,7 +94,7 @@
 			this.tabctrlVeiculo.Controls.Add(this.tabCadastroVeic);
 			this.tabctrlVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tabctrlVeiculo.HotTrack = true;
-			this.tabctrlVeiculo.Location = new System.Drawing.Point(62, 2);
+			this.tabctrlVeiculo.Location = new System.Drawing.Point(62, 40);
 			this.tabctrlVeiculo.Name = "tabctrlVeiculo";
 			this.tabctrlVeiculo.Padding = new System.Drawing.Point(100, 5);
 			this.tabctrlVeiculo.SelectedIndex = 0;
@@ -283,7 +288,7 @@
 			this.cbMarcaPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.cbMarcaPesquisa.CampoObrigatorio = false;
 			this.cbMarcaPesquisa.FormattingEnabled = true;
-			this.cbMarcaPesquisa.Location = new System.Drawing.Point(44, 46);
+			this.cbMarcaPesquisa.Location = new System.Drawing.Point(29, 54);
 			this.cbMarcaPesquisa.MensagemCampoObrigatorio = null;
 			this.cbMarcaPesquisa.Name = "cbMarcaPesquisa";
 			this.cbMarcaPesquisa.Size = new System.Drawing.Size(174, 28);
@@ -294,7 +299,7 @@
 			this.lblMarcaPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblMarcaPesquisa.AutoSize = true;
 			this.lblMarcaPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblMarcaPesquisa.Location = new System.Drawing.Point(40, 23);
+			this.lblMarcaPesquisa.Location = new System.Drawing.Point(25, 31);
 			this.lblMarcaPesquisa.Name = "lblMarcaPesquisa";
 			this.lblMarcaPesquisa.Size = new System.Drawing.Size(53, 20);
 			this.lblMarcaPesquisa.TabIndex = 4;
@@ -303,16 +308,18 @@
 			// btnPesquisarVeiculo
 			// 
 			this.btnPesquisarVeiculo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnPesquisarVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.btnPesquisarVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnPesquisarVeiculo.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
 			this.btnPesquisarVeiculo.FlatAppearance.BorderSize = 0;
 			this.btnPesquisarVeiculo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
 			this.btnPesquisarVeiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnPesquisarVeiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnPesquisarVeiculo.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_search;
-			this.btnPesquisarVeiculo.Location = new System.Drawing.Point(479, 35);
+			this.btnPesquisarVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnPesquisarVeiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnPesquisarVeiculo.Image = global::SmartLog.WindowsForms.Properties.Resources.icoSearch_fw;
+			this.btnPesquisarVeiculo.Location = new System.Drawing.Point(439, 48);
 			this.btnPesquisarVeiculo.Name = "btnPesquisarVeiculo";
-			this.btnPesquisarVeiculo.Size = new System.Drawing.Size(139, 39);
+			this.btnPesquisarVeiculo.Size = new System.Drawing.Size(199, 39);
 			this.btnPesquisarVeiculo.TabIndex = 8;
 			this.btnPesquisarVeiculo.Text = "Pesquisar";
 			this.btnPesquisarVeiculo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -325,7 +332,7 @@
 			this.lblModeloPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblModeloPesquisa.AutoSize = true;
 			this.lblModeloPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblModeloPesquisa.Location = new System.Drawing.Point(245, 23);
+			this.lblModeloPesquisa.Location = new System.Drawing.Point(230, 31);
 			this.lblModeloPesquisa.Name = "lblModeloPesquisa";
 			this.lblModeloPesquisa.Size = new System.Drawing.Size(61, 20);
 			this.lblModeloPesquisa.TabIndex = 5;
@@ -336,7 +343,7 @@
 			this.txtModeloPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.txtModeloPesquisa.CampoObrigatorio = false;
 			this.txtModeloPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtModeloPesquisa.Location = new System.Drawing.Point(249, 46);
+			this.txtModeloPesquisa.Location = new System.Drawing.Point(234, 54);
 			this.txtModeloPesquisa.MaxLength = 18;
 			this.txtModeloPesquisa.MensagemObrigatorio = "Informar o Modelo";
 			this.txtModeloPesquisa.Multiline = true;
@@ -427,6 +434,10 @@
 			// 
 			this.gbDadosVeiculo.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.gbDadosVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.gbDadosVeiculo.Controls.Add(this.txtPlaca);
+			this.gbDadosVeiculo.Controls.Add(this.lblPlaca);
+			this.gbDadosVeiculo.Controls.Add(this.txtKmInicial);
+			this.gbDadosVeiculo.Controls.Add(this.lblKmInicial);
 			this.gbDadosVeiculo.Controls.Add(this.txtAnoFab);
 			this.gbDadosVeiculo.Controls.Add(this.cbStatus);
 			this.gbDadosVeiculo.Controls.Add(this.cbMarca);
@@ -447,10 +458,53 @@
 			this.gbDadosVeiculo.Controls.Add(this.txtModelo);
 			this.gbDadosVeiculo.Location = new System.Drawing.Point(105, 32);
 			this.gbDadosVeiculo.Name = "gbDadosVeiculo";
-			this.gbDadosVeiculo.Size = new System.Drawing.Size(774, 305);
+			this.gbDadosVeiculo.Size = new System.Drawing.Size(774, 331);
 			this.gbDadosVeiculo.TabIndex = 38;
 			this.gbDadosVeiculo.TabStop = false;
 			this.gbDadosVeiculo.Text = "Dados do Veículo";
+			// 
+			// txtPlaca
+			// 
+			this.txtPlaca.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtPlaca.CampoObrigatorio = true;
+			this.txtPlaca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtPlaca.Location = new System.Drawing.Point(558, 156);
+			this.txtPlaca.MensagemObrigatorio = "Informe a placa";
+			this.txtPlaca.Name = "txtPlaca";
+			this.txtPlaca.Size = new System.Drawing.Size(139, 26);
+			this.txtPlaca.TabIndex = 27;
+			this.txtPlaca.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
+			// lblPlaca
+			// 
+			this.lblPlaca.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.lblPlaca.AutoSize = true;
+			this.lblPlaca.Location = new System.Drawing.Point(554, 131);
+			this.lblPlaca.Name = "lblPlaca";
+			this.lblPlaca.Size = new System.Drawing.Size(48, 20);
+			this.lblPlaca.TabIndex = 26;
+			this.lblPlaca.Text = "Placa";
+			// 
+			// txtKmInicial
+			// 
+			this.txtKmInicial.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtKmInicial.CampoObrigatorio = true;
+			this.txtKmInicial.Location = new System.Drawing.Point(63, 290);
+			this.txtKmInicial.MensagemObrigatorio = "Informar Quilometragem do veículo";
+			this.txtKmInicial.Name = "txtKmInicial";
+			this.txtKmInicial.Size = new System.Drawing.Size(190, 26);
+			this.txtKmInicial.TabIndex = 25;
+			this.txtKmInicial.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// lblKmInicial
+			// 
+			this.lblKmInicial.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.lblKmInicial.AutoSize = true;
+			this.lblKmInicial.Location = new System.Drawing.Point(59, 265);
+			this.lblKmInicial.Name = "lblKmInicial";
+			this.lblKmInicial.Size = new System.Drawing.Size(76, 20);
+			this.lblKmInicial.TabIndex = 24;
+			this.lblKmInicial.Text = "KM Inicial";
 			// 
 			// txtAnoFab
 			// 
@@ -520,7 +574,7 @@
 			// 
 			this.txtKmAtual.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.txtKmAtual.CampoObrigatorio = false;
-			this.txtKmAtual.Location = new System.Drawing.Point(558, 156);
+			this.txtKmAtual.Location = new System.Drawing.Point(576, 299);
 			this.txtKmAtual.MensagemObrigatorio = null;
 			this.txtKmAtual.Name = "txtKmAtual";
 			this.txtKmAtual.Size = new System.Drawing.Size(190, 26);
@@ -531,7 +585,8 @@
 			// 
 			this.txtKmPrev.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.txtKmPrev.CampoObrigatorio = false;
-			this.txtKmPrev.Location = new System.Drawing.Point(558, 220);
+			this.txtKmPrev.Enabled = false;
+			this.txtKmPrev.Location = new System.Drawing.Point(319, 290);
 			this.txtKmPrev.MensagemObrigatorio = null;
 			this.txtKmPrev.Name = "txtKmPrev";
 			this.txtKmPrev.Size = new System.Drawing.Size(190, 26);
@@ -542,7 +597,7 @@
 			// 
 			this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(554, 195);
+			this.label5.Location = new System.Drawing.Point(315, 265);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(212, 20);
 			this.label5.TabIndex = 15;
@@ -552,7 +607,7 @@
 			// 
 			this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(554, 131);
+			this.label3.Location = new System.Drawing.Point(572, 274);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(73, 20);
 			this.label3.TabIndex = 14;
@@ -657,12 +712,29 @@
 			this.txtCodigoCli.Size = new System.Drawing.Size(100, 26);
 			this.txtCodigoCli.TabIndex = 36;
 			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.SystemColors.InfoText;
+			this.button1.Location = new System.Drawing.Point(0, 0);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(1130, 34);
+			this.button1.TabIndex = 13;
+			this.button1.Text = "Veículos";
+			this.button1.UseVisualStyleBackColor = false;
+			// 
 			// frmVeiculo
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.ClientSize = new System.Drawing.Size(1130, 735);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.tabctrlVeiculo);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "frmVeiculo";
@@ -723,5 +795,10 @@
 		private System.Windows.Forms.Button btnLimpar;
 		private System.Windows.Forms.Button btnVoltar;
 		private System.Windows.Forms.Button btnSalvar;
+		private UserControl.SuperTextbox txtKmInicial;
+		private System.Windows.Forms.Label lblKmInicial;
+		private UserControl.SuperTextbox txtPlaca;
+		private System.Windows.Forms.Label lblPlaca;
+		private System.Windows.Forms.Button button1;
 	}
 }

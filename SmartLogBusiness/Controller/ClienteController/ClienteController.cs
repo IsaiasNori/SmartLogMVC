@@ -14,6 +14,7 @@ namespace SmartLogBusiness.Controller
 	public class ClienteController : IControllerBase<Cliente>
 	{
 		ClienteDAO dao = new ClienteDAO();
+		int  numero, codCidade, codEstado;
 
 		public void AlterarController(Cliente obj)
 		{
@@ -23,6 +24,32 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("Informar o código.");
 				}
+				if (obj.Nome == "")
+				{
+					throw new Exception("É necessário informar o nome do cliente para cadastrar.");
+				}
+				if (obj.DataNasc.Value.Year < 18)
+				{
+					throw new Exception("Só é possível cadastrar Clientes maiores de 18 anos.");
+				}
+				if (obj.Telefone.Length < 8)
+				{
+					throw new Exception("Verifique se o campo Telefone, foi informado corretamente.");
+				}
+				if (obj.CpfCnpj.Length < 11 || obj.CpfCnpj.Length < 14)
+				{
+					throw new Exception("Verifique se o campo Cpf/Cnpj está corretamente preenchido.");
+				}
+				if (obj.CodTipoCli == null)
+				{
+					throw new Exception("Informe o tipo de cliente, ex: Física ou Jurídica.");
+				}
+
+				int.TryParse(obj.Endereco.Numero.ToString(), out numero);
+				int.TryParse(obj.Endereco.CodCidade.ToString(), out codCidade);
+				int.TryParse(obj.Endereco.CodEstado.ToString(), out codEstado);
+
+
 
 				dao.AlterarClienteDAO(obj.Codigo, obj.Nome, obj.DataNasc, obj.Telefone, obj.Email, obj.CpfCnpj, obj.CodTipoCli, obj.Endereco.Cep, obj.Endereco.Logradouro, obj.Endereco.Numero, obj.Endereco.Bairro, obj.Endereco.CodCidade, obj.Endereco.CodEstado);
 
@@ -51,6 +78,7 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
+
 				DataTable table = dao.FiltrarClienteDAO(obj.Nome, obj.CpfCnpj);
 
 				return table;
@@ -64,6 +92,10 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
+				if(obj.Codigo == 0)
+				{
+					throw new Exception("Código inválido.");
+				}
 				DataTable table = dao.ObterClienteDAO(obj.Codigo);
 
 				int numero, cidade, estado;
@@ -106,8 +138,34 @@ namespace SmartLogBusiness.Controller
 			{
 				int codigoCliente;
 
+				if (obj.Nome == "")
+				{
+					throw new Exception("É necessário informar o nome do cliente para cadastrar.");
+				}
+				if(obj.DataNasc.Value.Year < 18)
+				{
+					throw new Exception("Só é possível cadastrar Clientes maiores de 18 anos.");
+				}
+				if(obj.Telefone.Length < 8)
+				{
+					throw new Exception("Verifique se o campo Telefone, foi informado corretamente.");
+				}
+				if(obj.CpfCnpj.Length < 11 || obj.CpfCnpj.Length < 14)
+				{
+					throw new Exception("Verifique se o campo Cpf/Cnpj está corretamente preenchido.");
+				}
+				if(obj.CodTipoCli == null)
+				{
+					throw new Exception("Informe o tipo de cliente, ex: Física ou Jurídica.");
+				}
+
+				int.TryParse(obj.Endereco.Numero.ToString(), out numero);
+				int.TryParse(obj.Endereco.CodCidade.ToString(), out codCidade);
+				int.TryParse(obj.Endereco.CodEstado.ToString(), out codEstado);
+
 				codigoCliente = dao.InserirClienteDAO(obj.Nome, obj.DataNasc, obj.Telefone, obj.Email, obj.CpfCnpj, obj.CodTipoCli,
-								obj.Endereco.Cep, obj.Endereco.Logradouro, obj.Endereco.Numero, obj.Endereco.Bairro, obj.Endereco.CodCidade, obj.Endereco.CodEstado);
+								obj.Endereco.Cep, obj.Endereco.Logradouro, numero, obj.Endereco.Bairro, codCidade, codEstado);
+
 			}
 			catch (Exception ex)
 			{
@@ -118,6 +176,10 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
+				if(obj.Codigo == 0)
+				{
+					throw new Exception("Código inválido");
+				}
 				DataTable table = dao.ObterClienteDAO(obj.Codigo);
 
 				if (table == null)
@@ -127,13 +189,15 @@ namespace SmartLogBusiness.Controller
 				List<Cliente> lista = new List<Cliente>();
 				foreach (DataRow item in table.Rows)
 				{
+					int.TryParse(item["Numero"].ToString(), out numero);
+					int.TryParse(item["Cod_Cidade"].ToString(), out codCidade);
+					int.TryParse(item["Cod_Estado"].ToString(), out codEstado);
 
 					Endereco end = new Endereco(item["Cep"].ToString(),
 												item["Logradouro"].ToString(),
-												Convert.ToInt32(item["Numero"]),
+												numero,
 												item["Bairro"].ToString(),
-												Convert.ToInt32(item["Cod_Cidade"]),
-												Convert.ToInt32(item["Cod_Estado"]));
+												codCidade,codEstado);
 
 					Cliente cli = new Cliente(Convert.ToInt32(item["Cod_Matricula"]),
 											item["Nome_Cliente"].ToString(),

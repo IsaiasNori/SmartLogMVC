@@ -123,6 +123,7 @@ namespace SmartLog.WindowsForms
 
 				DataTable table = motoCtrl.GetDataTable(moto);
 				dgMotorista.DataSource = table;
+				dgMotorista.AutoResizeColumns();
 				dgMotorista.ClearSelection();
 			}
 			catch (Exception ex)

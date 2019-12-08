@@ -33,7 +33,7 @@
 			this.panelMenu = new System.Windows.Forms.Panel();
 			this.btnSair = new System.Windows.Forms.Button();
 			this.btnAjuda = new System.Windows.Forms.Button();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.picLogoPrincipal = new System.Windows.Forms.PictureBox();
 			this.btnManutencao = new System.Windows.Forms.Button();
 			this.btnViagem = new System.Windows.Forms.Button();
 			this.btnVeiculo = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
 			this.lblUsuario = new System.Windows.Forms.Label();
 			this.Relogio = new System.Windows.Forms.Timer(this.components);
 			this.panelMenu.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picLogoPrincipal)).BeginInit();
 			this.panelCabecalho.SuspendLayout();
 			this.panelRodape.SuspendLayout();
 			this.SuspendLayout();
@@ -61,7 +61,7 @@
 			this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.panelMenu.Controls.Add(this.btnSair);
 			this.panelMenu.Controls.Add(this.btnAjuda);
-			this.panelMenu.Controls.Add(this.pictureBox1);
+			this.panelMenu.Controls.Add(this.picLogoPrincipal);
 			this.panelMenu.Controls.Add(this.btnManutencao);
 			this.panelMenu.Controls.Add(this.btnViagem);
 			this.panelMenu.Controls.Add(this.btnVeiculo);
@@ -116,16 +116,16 @@
 			this.btnAjuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnAjuda.UseVisualStyleBackColor = false;
 			// 
-			// pictureBox1
+			// picLogoPrincipal
 			// 
-			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox1.Image = global::SmartLog.WindowsForms.Properties.Resources.Logo;
-			this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(190, 164);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 1;
-			this.pictureBox1.TabStop = false;
+			this.picLogoPrincipal.BackColor = System.Drawing.Color.Transparent;
+			this.picLogoPrincipal.Image = global::SmartLog.WindowsForms.Properties.Resources.Logo;
+			this.picLogoPrincipal.Location = new System.Drawing.Point(3, 0);
+			this.picLogoPrincipal.Name = "picLogoPrincipal";
+			this.picLogoPrincipal.Size = new System.Drawing.Size(190, 164);
+			this.picLogoPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.picLogoPrincipal.TabIndex = 1;
+			this.picLogoPrincipal.TabStop = false;
 			// 
 			// btnManutencao
 			// 
@@ -143,10 +143,11 @@
 			this.btnManutencao.Name = "btnManutencao";
 			this.btnManutencao.Size = new System.Drawing.Size(187, 51);
 			this.btnManutencao.TabIndex = 4;
-			this.btnManutencao.Text = "  Manutenção";
+			this.btnManutencao.Text = "  Manutenções";
 			this.btnManutencao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnManutencao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnManutencao.UseVisualStyleBackColor = false;
+			this.btnManutencao.Click += new System.EventHandler(this.btnManutencao_Click);
 			// 
 			// btnViagem
 			// 
@@ -164,7 +165,7 @@
 			this.btnViagem.Name = "btnViagem";
 			this.btnViagem.Size = new System.Drawing.Size(187, 51);
 			this.btnViagem.TabIndex = 3;
-			this.btnViagem.Text = "  Viagem";
+			this.btnViagem.Text = "  Viagens";
 			this.btnViagem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnViagem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnViagem.UseVisualStyleBackColor = false;
@@ -287,7 +288,7 @@
 			this.btnTituloTela.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(146)))), ((int)(((byte)(208)))));
 			this.btnTituloTela.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			this.btnTituloTela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnTituloTela.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnTituloTela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnTituloTela.Location = new System.Drawing.Point(191, 5);
 			this.btnTituloTela.Name = "btnTituloTela";
 			this.btnTituloTela.Size = new System.Drawing.Size(115, 30);
@@ -403,7 +404,7 @@
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Shown += new System.EventHandler(this.FrmPrincipal_Shown);
 			this.panelMenu.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picLogoPrincipal)).EndInit();
 			this.panelCabecalho.ResumeLayout(false);
 			this.panelCabecalho.PerformLayout();
 			this.panelRodape.ResumeLayout(false);
@@ -421,7 +422,7 @@
 		private System.Windows.Forms.Button btnCliente;
 		private System.Windows.Forms.Button btnManutencao;
 		private System.Windows.Forms.Button btnViagem;
-		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.PictureBox picLogoPrincipal;
 		private System.Windows.Forms.Button btnFechar;
 		private System.Windows.Forms.Button btnRestaurar;
 		private System.Windows.Forms.Button btnMinimizar;

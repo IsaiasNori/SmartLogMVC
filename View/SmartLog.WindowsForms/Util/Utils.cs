@@ -155,7 +155,7 @@ namespace SmartLog.WindowsForms.Util
 			}
 			catch (Exception ex)
 			{
-				Utils.ExibirMensagem(ex.Message,eTipoMensagem.Erro);
+				Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
 				return false;
 			}
 		}
