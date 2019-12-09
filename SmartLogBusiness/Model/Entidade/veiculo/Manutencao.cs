@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartLogBusiness.Model.Enums;
+using System;
 
 namespace SmartLogBusiness.Model.Entidade.veiculo
 {
@@ -9,22 +10,28 @@ namespace SmartLogBusiness.Model.Entidade.veiculo
 		public DateTime? DataentradaFinal { get; private set; }
         public DateTime? DataPrevistaSaida { get; private set; }
 		public DateTime? DataPrevSaidaFinal { get; private set; }
-   //     public StatusManutencao Status { get; private set; }
-		public string DescricaoServico { get; private set; }
+        public EnumStatusManutencao StatusManutencao { get; private set; }
+
+
+
+        //     public StatusManutencao Status { get; private set; }
+        public string DescricaoServico { get; private set; }
 		public int CodVeiculo { get; private set; }
 
-		public Manutencao(int cod, DateTime dataEntrada, DateTime dataSaida, string descricao, int codVeiculo)
+		public Manutencao(int cod, DateTime dataEntrada, DateTime dataSaida, string descricao, int codVeiculo,EnumStatusManutencao manutencao)
 		{
 			Codigo = cod;
 			DataEntrada = dataEntrada;
 			DataPrevistaSaida = dataSaida;
 			DescricaoServico = descricao;
 			CodVeiculo = codVeiculo;
-		}
+            StatusManutencao = manutencao;
+
+        }
 		public Manutencao(int cod)
 		{
-
-		}
+            Codigo = cod;
+        }
 	
 		public Manutencao(DateTime? dataEntrada, DateTime? dataSaida, string descricao, DateTime? dataEntradaFinal, DateTime? prevSaidaFinal)
 		{

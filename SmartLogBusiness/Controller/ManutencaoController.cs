@@ -19,8 +19,17 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("Informar o código da manutenção.");
 				}
-				dao.AlterarManutencaoDAO(obj.Codigo, obj.DataEntrada, obj.DataPrevistaSaida, obj.DescricaoServico, Convert.ToInt32(obj.CodVeiculo));
+				dao.AlterarManutencaoDAO(obj.Codigo, obj.DataEntrada, obj.DataPrevistaSaida, obj.DescricaoServico, Convert.ToInt32(obj.CodVeiculo),obj.StatusManutencao);
 
+                if(obj.StatusManutencao == Model.Enums.EnumStatusManutencao.Finalizado)
+                {
+                    VeiculoController veicCtrl = new VeiculoController();
+                    Veiculo ve = veicCtrl.GetObj(new Veiculo(obj.CodVeiculo));
+                    ve.DataUltimaRevisão = System.DateTime.Now;
+                    ve.Status = enumStatusVeiculo.Disponivel;
+
+                    veicCtrl.AlterarController(ve);
+                }
 			}
 			catch (Exception ex)
 			{
@@ -61,9 +70,15 @@ namespace SmartLogBusiness.Controller
 			{
 				DataTable table = dao.CarregarManutencaoDAO(obj.Codigo);
 
+                if(table == null && table.Rows.Count == 0)
+                {
+                    return null;
+                }
+
 				Manutencao manu = new Manutencao(Convert.ToInt32(table.Rows[0]["Cod_Manutencao"]), Convert.ToDateTime(table.Rows[0]["Data_Entrada"]),
 												Convert.ToDateTime(table.Rows[0]["Previsao_Saida"]),table.Rows[0]["Descricao_Servico"].ToString(),
-												Convert.ToInt32(table.Rows[0]["Cod_Veiculo"]));
+												Convert.ToInt32(table.Rows[0]["Cod_Veiculo"]),
+                                                (Model.Enums.EnumStatusManutencao)table.Rows[0]["cod_Status_Manutencao"]);
 
 				return manu;
 			}
@@ -76,8 +91,19 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
-				dao.InserirManutencaoDAO(obj.DataEntrada, obj.DataPrevistaSaida, obj.DescricaoServico, Convert.ToInt32(obj.CodVeiculo));
-			}
+				dao.InserirManutencaoDAO(obj.DataEntrada, obj.DataPrevistaSaida, obj.DescricaoServico, Convert.ToInt32(obj.CodVeiculo),obj.StatusManutencao);
+
+               
+                    VeiculoController veicCtrl = new VeiculoController();
+                    Veiculo ve = veicCtrl.GetObj(new Veiculo(obj.CodVeiculo));
+                  
+                    ve.Status = enumStatusVeiculo.Manutencao;
+
+                    veicCtrl.AlterarController(ve);
+                
+
+
+            }
 			catch (Exception ex)
 			{
 				throw new Exception(ex.Message);
@@ -98,8 +124,9 @@ namespace SmartLogBusiness.Controller
 				{
 					Manutencao manu = new Manutencao(Convert.ToInt32(table.Rows[0]["Cod_Manutencao"]), Convert.ToDateTime(table.Rows[0]["Data_Entrada"]), 
 													Convert.ToDateTime(table.Rows[0]["Previsao_Saida"]), table.Rows[0]["Descricao_Servico"].ToString(),
-													Convert.ToInt32(table.Rows[0]["Cod_Veiculo"]));
-					lista.Add(manu);
+													Convert.ToInt32(table.Rows[0]["Cod_Veiculo"]),
+                                                     (Model.Enums.EnumStatusManutencao)table.Rows[0]["cod_Status_Manutencao"]);
+                    lista.Add(manu);
 				}
 				return lista;
 			}

@@ -1,4 +1,5 @@
 ﻿using SmartLogBusiness.DAO;
+using SmartLogBusiness.Model.Enums;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +9,7 @@ namespace SmartLogBusiness.DAL
 {
 	public class ManutencaoDAO : ConexaoBanco
 	{
-		public void InserirManutencaoDAO(DateTime? dataEntrada, DateTime? prevSaida, string descricao, int codVei)
+		public void InserirManutencaoDAO(DateTime? dataEntrada, DateTime? prevSaida, string descricao, int codVei, EnumStatusManutencao codStatusManutencao)
 		{
 			try
 			{
@@ -18,8 +19,9 @@ namespace SmartLogBusiness.DAL
 				AdicionarParametro("@PrevSaida", SqlDbType.Date, 10, prevSaida);
 				AdicionarParametro("@DescServico", SqlDbType.NVarChar, 100, descricao);
 				AdicionarParametro("@CodVeic", SqlDbType.Int, 10, codVei);
+                AdicionarParametro("@codStatusManutencao", SqlDbType.Int, 10, codStatusManutencao);
 
-				ExecuteProcedure("pManutencao");
+                ExecuteProcedure("pManutencao");
 
 			}
 			catch (Exception ex)
@@ -28,7 +30,7 @@ namespace SmartLogBusiness.DAL
 				throw new Exception(ex.Message);
 			}
 		}
-		public void AlterarManutencaoDAO(int codManu, DateTime? dataEntrada, DateTime? prevSaida, string descricao, int codVeiculo)
+		public void AlterarManutencaoDAO(int codManu, DateTime? dataEntrada, DateTime? prevSaida, string descricao, int codVeiculo, EnumStatusManutencao codStatusManutencao)
 		{
 			try
 			{
@@ -39,8 +41,10 @@ namespace SmartLogBusiness.DAL
 				AdicionarParametro("@PrevSaida", SqlDbType.Date, 10, prevSaida);
 				AdicionarParametro("@DescServico", SqlDbType.NVarChar, 100, descricao);
 				AdicionarParametro("@CodVeic", SqlDbType.Int, 10, codVeiculo);
+                AdicionarParametro("@codStatusManutencao", SqlDbType.Int, 10, codStatusManutencao);
 
-				ExecuteProcedure("pManutencao");
+
+                ExecuteProcedure("pManutencao");
 
 			}
 			catch (Exception ex)

@@ -57,7 +57,7 @@ namespace SmartLogBusiness.Controller
 						veic.KmInicial = veic.KmAtual;
 
 						ManutencaoController manuCtrl = new ManutencaoController();
-						manuCtrl.InserirController(new Manutencao(0,System.DateTime.Now, System.DateTime.Now.AddDays(5), "Veiculo manutenção preventiva", veic.CodVei));
+						manuCtrl.InserirController(new Manutencao(0,System.DateTime.Now, System.DateTime.Now.AddDays(5), "Veiculo manutenção preventiva", veic.CodVei,Model.Enums.EnumStatusManutencao.Aberto));
 					}
 
 					veiCtrl.AlterarController(veic);

@@ -33,6 +33,8 @@ namespace SmartLog.WindowsForms
 		private void btnNovoVeiculo_Click(object sender, EventArgs e)
 		{
 			codigoVeic = 0;
+            txtKmAtual.Enabled = false;
+            txtKmInicial.Enabled = true;
 			Utils.LimparCampos(gbDadosVeiculo);
 			tabctrlVeiculo.SelectedTab = tabCadastroVeic;
 		}
@@ -214,6 +216,8 @@ namespace SmartLog.WindowsForms
 						txtKmInicial.Text = veic.KmInicial;
 						txtKmAtual.Text = veic.KmAtual;
 						txtKmPrev.Text = veic.KmPrev;
+                        txtKmInicial.Enabled = false;
+                        txtKmAtual.Enabled = true;
 						txtDataUltRev.Text = veic.DataUltimaRevisão.ToString();
 
 						tabctrlVeiculo.SelectedTab = tabCadastroVeic;
@@ -298,5 +302,13 @@ namespace SmartLog.WindowsForms
 			Utils.LimparCampos(gbDadosVeiculo);
 		}
 
-	}
+        private void txtKmInicial_Leave(object sender, EventArgs e)
+        {
+            if(codigoVeic == 0)
+            {
+                txtKmAtual.Text = txtKmInicial.Text;
+            }
+           
+        }
+    }
 }
