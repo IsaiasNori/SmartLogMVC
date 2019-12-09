@@ -239,6 +239,12 @@ namespace SmartLog.WindowsForms.Util
 						{
 							(cont.Controls[i] as ComboBox).SelectedValue = 0;
 						}
+
+						if (cont.Controls[i] is SuperComboBox)
+						{
+							(cont.Controls[i] as SuperComboBox).SelectedIndex = 0;
+						}
+
 					}
 				}
 			}

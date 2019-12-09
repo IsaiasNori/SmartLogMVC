@@ -94,7 +94,7 @@ namespace SmartLogBusiness.DAL
 				AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "GRID");
 				AdicionarParametro("@DataEntrada", SqlDbType.DateTime, 10, dataEntrada);
 				AdicionarParametro("@DataEntradaFinal", SqlDbType.DateTime, 10, dataEntradaFinal);
-				AdicionarParametro("@PrevSaida", SqlDbType.DateTime, 10, prevSaidaFinal);
+				AdicionarParametro("@PrevSaida", SqlDbType.DateTime, 10, prevSaida);
 				AdicionarParametro("@PrevSaidaFinal", SqlDbType.DateTime, 10, prevSaidaFinal);
 				AdicionarParametro("@DescServico", SqlDbType.NVarChar, 100, descServico);
 

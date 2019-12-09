@@ -85,8 +85,6 @@ namespace SmartLog.WindowsForms
 			}
 			formulario.MdiParent = this;
 			formulario.Dock = DockStyle.Fill;
-			btnTituloTela.Text = titulo;
-			btnTituloTela.Visible = true;
 			formulario.Show();
 		}
 		private void btnFuncionario_Click(object sender, EventArgs e)

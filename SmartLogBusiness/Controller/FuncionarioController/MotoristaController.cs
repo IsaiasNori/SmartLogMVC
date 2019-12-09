@@ -14,8 +14,8 @@ namespace SmartLogBusiness.Controller
 	{
 		MotoristaDAO dao = new MotoristaDAO();
 		DateTime dataNasc, cnhVencimento;
-		int cnhCategoria, codStatus, codCidade, codEstado, numero;
-		
+		int   codCidade, codEstado, numero;
+
 		public void AlterarController(Motorista obj)
 		{
 			try
@@ -28,29 +28,31 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("O campo nome deve estar preenchido, para salvar motorista.");
 				}
-				if (obj.DataNasc.Value != System.DateTime.Now && obj.DataNasc.Value.Year > 18)
+				if (obj.DataNasc.Value.ToShortDateString() != System.DateTime.Now.ToShortDateString())
 				{
-					if (obj.DataNasc.Value.Year < 60)
+					int idade;
+
+					idade = System.DateTime.Now.Year - obj.DataNasc.Value.Year;
+
+
+					if (idade < 18)
 					{
-						DateTime.TryParse(obj.DataNasc.ToString(), out dataNasc);
+						throw new Exception("só é possível cadastrar motorista maiores de 18 anos.");
+					}
+					else if (idade > 60)
+					{
+						throw new Exception("Não é possível cadastrar motorista com mais de 60 anos.");
 					}
 					else
 					{
-						throw new Exception("Não é possível salvar motorista com mais de 60 anos.");
+						DateTime.TryParse(obj.DataNasc.ToString(), out dataNasc);
 					}
 				}
 				else
 				{
-					throw new Exception("Informe uma data de nascimento válida.");
+					throw new Exception("Informe uma data de nascimento válida");
 				}
-				if (obj.CnhCat == 0)
-				{
-					throw new Exception("Selecione a categoria da CNH.");
-				}
-				else
-				{
-					int.TryParse(obj.CnhCat.ToString(), out cnhCategoria);
-				}
+				
 				if (obj.CnhVencimento != System.DateTime.Now && obj.CnhVencimento.Value != null)
 				{
 					DateTime.TryParse(obj.DataNasc.ToString(), out cnhVencimento);
@@ -67,17 +69,14 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("Selecione o status.");
 				}
-				else
-				{
-					int.TryParse(obj.Status.ToString(), out codStatus);
-				}
+				
 				int.TryParse(obj.Endereco.Numero.ToString(), out numero);
 				int.TryParse(obj.Endereco.CodCidade.ToString(), out codCidade);
 				int.TryParse(obj.Endereco.CodEstado.ToString(), out codEstado);
 
-				dao.AlterarMotoristaDAO(obj.Codigo, obj.Nome, dataNasc, (EnumCnhCategoriaMotorista)cnhCategoria, obj.CnhNumero,cnhVencimento, obj.Telefone,
-										obj.Email, codStatus, obj.Endereco.Cep, obj.Endereco.Logradouro, numero,
-										obj.Endereco.Bairro,codCidade, codEstado);
+				dao.AlterarMotoristaDAO(obj.Codigo, obj.Nome, dataNasc, (EnumCnhCategoriaMotorista)obj.CnhCat, obj.CnhNumero, cnhVencimento, obj.Telefone,
+										obj.Email, (int)obj.Status, obj.Endereco.Cep, obj.Endereco.Logradouro, numero,
+										obj.Endereco.Bairro, codCidade, codEstado);
 			}
 			catch (Exception ex)
 			{
@@ -188,34 +187,36 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("É obrigatório informar o nome para cadastrar motorista.");
 				}
-				if (obj.DataNasc.Value != System.DateTime.Now && obj.DataNasc.Value.Year > 18)
+				if (obj.DataNasc.Value.ToShortDateString() != System.DateTime.Now.ToShortDateString())
 				{
-					if (obj.DataNasc.Value.Year > 60)
+					int idade;
+
+					idade = System.DateTime.Now.Year - obj.DataNasc.Value.Year;
+
+
+					if (idade < 18)
 					{
-						DateTime.TryParse(obj.DataNasc.ToString(), out dataNasc);
+						throw new Exception("só é possível cadastrar motorista maiores de 18 anos.");
 					}
-					else
+					else if (idade > 60)
 					{
 						throw new Exception("Não é possível cadastrar motorista com mais de 60 anos.");
 					}
+					else
+					{
+						DateTime.TryParse(obj.DataNasc.ToString(), out dataNasc);
+					}
 				}
 				else
 				{
-					throw new Exception("Informe uma data de nascimento válida, só é possível cadastrar motorista maiores de 18 anos.");
+					throw new Exception("Informe uma data de nascimento válida");
 				}
-				if (obj.CnhCat == 0)
-				{
-					throw new Exception("Selecione a categoria da CNH.");
-				}
-				else
-				{
-					int.TryParse(obj.CnhCat.ToString(), out cnhCategoria);
-				}
-				if(obj.CnhNumero.Length != 11)
+
+				if (obj.CnhNumero.Length != 11)
 				{
 					throw new Exception("Verifique se o numero da CNH está corretamente preenchido.");
 				}
-				if (obj.CnhVencimento != System.DateTime.Now && obj.CnhVencimento.Value != null)
+				if (obj.CnhVencimento.Value.ToShortDateString() != System.DateTime.Now.ToShortDateString() && obj.CnhVencimento.Value != null)
 				{
 					DateTime.TryParse(obj.DataNasc.ToString(), out cnhVencimento);
 				}
@@ -227,20 +228,13 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("Preencha o campo de Telefone.");
 				}
-				if (obj.Status == null)
-				{
-					throw new Exception("Selecione o status.");
-				}
-				else
-				{
-					int.TryParse(obj.Status.ToString(), out codStatus);
-				}
+
 				int.TryParse(obj.Endereco.Numero.ToString(), out numero);
 				int.TryParse(obj.Endereco.CodCidade.ToString(), out codCidade);
 				int.TryParse(obj.Endereco.CodEstado.ToString(), out codEstado);
 
-				dao.InserirMotoristaDAO(obj.Nome, dataNasc, (EnumCnhCategoriaMotorista)cnhCategoria, obj.CnhNumero , cnhVencimento,
-										obj.Telefone, obj.Email, codStatus, obj.Endereco.Cep, obj.Endereco.Logradouro, numero,
+				dao.InserirMotoristaDAO(obj.Nome, dataNasc, (EnumCnhCategoriaMotorista)obj.CnhCat, obj.CnhNumero, cnhVencimento,
+										obj.Telefone, obj.Email, (int)obj.Status, obj.Endereco.Cep, obj.Endereco.Logradouro, numero,
 										obj.Endereco.Bairro, codCidade, codEstado);
 			}
 			catch (Exception ex)
@@ -255,6 +249,7 @@ namespace SmartLogBusiness.Controller
 			{
 				DataTable table = dao.FiltrarMotoristaDAO(obj.Nome, obj.CnhVencimento, obj.CnhVencFinal);
 				List<Motorista> lista = new List<Motorista>();
+				int cnhCategoria, codStatus;
 
 				if (table == null)
 				{

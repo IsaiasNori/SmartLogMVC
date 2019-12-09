@@ -18,7 +18,7 @@ namespace SmartLogBusiness.Controller
 
 		DateTime dataViagem;
 		int numOrigem, numDestino;
-		int cliente, atendente, motorista, veiculo, status;
+		int cliente, atendente, motorista, veiculo;
 		public void AlterarController(Viagem obj)
 		{
 			try
@@ -27,6 +27,91 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("Necessário informar código para alteração de registro.");
 				}
+
+				if (obj.DataViagem == null)
+				{
+					throw new Exception("Informe a data da viagem.");
+				}
+				else
+				{
+					DateTime.TryParse(obj.DataViagem.ToString(), out dataViagem);
+				}
+				if (obj.DistanciaKm == "")
+				{
+					throw new Exception("Informar a quilomentragem da viagem.");
+				}
+				if (obj.Valor == 0)
+				{
+					throw new Exception("Informe o valor da viagem.");
+				}
+				if (obj.Origem.Logradouro == "")
+				{
+					throw new Exception("Informe o logradouro de origem, para cadastrar a viagem.");
+				}
+				if (obj.Origem.Bairro == "")
+				{
+					throw new Exception("Informe o bairro de origem da viagem.");
+				}
+				if (obj.Origem.CodEstado == 0)
+				{
+					throw new Exception("Informe o estado de origem.");
+				}
+				if (obj.Origem.CodCidade == 0)
+				{
+					throw new Exception("Informe a cidade de origem da viagem.");
+				}
+				if (obj.Destino.CodEstado == 0)
+				{
+					throw new Exception("Informe o estado de destino.");
+				}
+				if (obj.Destino.CodCidade == 0)
+				{
+					throw new Exception("Informe a cidade de destino.");
+				}
+				if (obj.Cliente.Codigo == 0)
+				{
+					throw new Exception("Selecione um cliente.");
+				}
+				else
+				{
+					int.TryParse(obj.Cliente.Codigo.ToString(), out cliente);
+				}
+
+				if (obj.CodVeiculo.CodVei == 0)
+				{
+					throw new Exception("Informe o veiculo que realizará a viagem.");
+				}
+				else
+				{
+					int.TryParse(obj.CodVeiculo.CodVei.ToString(), out veiculo);
+				}
+
+				if (obj.Motorista.Codigo == 0)
+				{
+					throw new Exception("Informe o motorista.");
+				}
+				else
+				{
+					int.TryParse(obj.Motorista.Codigo.ToString(), out motorista);
+				}
+
+				if (obj.Atendente.Codigo == 0)
+				{
+					throw new Exception("Selecione um atendente.");
+				}
+				else
+				{
+					int.TryParse(obj.Atendente.Codigo.ToString(), out atendente);
+				}
+
+				if (obj.Status == 0)
+				{
+					throw new Exception("Selecione o status da viagem.");
+				}
+
+				int.TryParse(obj.Origem.Numero.ToString(), out numOrigem);
+				int.TryParse(obj.Destino.Numero.ToString(), out numDestino);
+
 				dao.AlterarViagemDAO(obj.CodViagem, obj.DataViagem, obj.DistanciaKm, obj.Valor, obj.Origem.Cep, obj.Origem.Logradouro,
 							  obj.Origem.Numero, obj.ComplementoOrigem, obj.Origem.Bairro, obj.Origem.CodCidade.ToString(), obj.Origem.CodEstado.ToString(),
 							  obj.Destino.Cep, obj.Destino.Logradouro, obj.Destino.Numero, obj.ComplementoDestino, obj.Destino.Bairro,
@@ -43,7 +128,6 @@ namespace SmartLogBusiness.Controller
 					veic = veiCtrl.GetObj(veic);
 
 					Decimal.TryParse(veic.KmInicial, out kmInicial);
-					//	kmInicial = Convert.ToDecimal(veic.KmInicial);
 					int.TryParse(obj.DistanciaKm, out distancia);
 					int.TryParse(veic.KmAtual, out kmAtual);
 
@@ -63,9 +147,8 @@ namespace SmartLogBusiness.Controller
 					veiCtrl.AlterarController(veic);
 					if (veic.Status == enumStatusVeiculo.Manutencao)
 					{
-						throw new BusinessException("Veículo ultrapassou a quilometragem de manutenção preventiva e o sistema alterou para Veículo em Manutenção.");
+						throw new BusinessException("Veículo ultrapassou a quilometragem de manutenção preventiva e o sistema alterou o status de Veículo para Manutenção.");
 					}
-
 				}
 			}
 			catch (BusinessException ex)

@@ -310,5 +310,7 @@ namespace SmartLog.WindowsForms
             }
            
         }
-    }
+
+		
+	}
 }

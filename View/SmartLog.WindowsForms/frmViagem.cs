@@ -45,7 +45,7 @@ namespace SmartLog.WindowsForms
 			CarregarComboVeiculo(ref cbVeiculo);
 
 			CarregarComboFuncionario(ref cbAtendente);
-			Session.Instance.UserID = 2;
+			//Session.Instance.UserID = 2;
 			cbAtendente.PosicionarCombo(Session.Instance.UserID);
 		}
 		private void BtnSalvar_Click(object sender, EventArgs e)
@@ -141,6 +141,7 @@ namespace SmartLog.WindowsForms
 						cbVeiculo.Enabled = false;
 						cbCliente.Enabled = false;
 						dtDataViagem.Enabled = false;
+						btnCalcular.Enabled = false;
 
 					}
 				}
@@ -203,12 +204,27 @@ namespace SmartLog.WindowsForms
 		}
 		private void BtnNovo_Click(object sender, EventArgs e)
 		{
+			gbDadosViagem1.Enabled = true;
+			gbDadosOrigemviagem.Enabled = true;
+			gbDadosDestinoViagem.Enabled = true;
+			cbVeiculo.Enabled = true;
+			cbAtendente.Enabled = true;
+			cbMotoristaViagem.Enabled = true;
+			cbCliente.Enabled = true;
+
+			
+
+
 			Util.Utils.LimparCampos(gbDadosViagem1);
 			Util.Utils.LimparCampos(gbDadosOrigemviagem);
 			Util.Utils.LimparCampos(gbDadosDestinoViagem);
 
+			cbAtendente.PosicionarCombo(Session.Instance.UserID);
+			cbAtendente.Enabled = false;
+
 			codigoViagem = 0;
 			tabCtrlViagem.SelectedTab = tabCadastroViagem;
+			btnCalcular.Enabled = true;
 		}
 		private void btnFechaViagem_Click(object sender, EventArgs e)
 		{

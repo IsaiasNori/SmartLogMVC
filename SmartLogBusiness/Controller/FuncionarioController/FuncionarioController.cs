@@ -12,7 +12,7 @@ namespace SmartLogBusiness.Controller
 	public class FuncionarioController : IControllerBase<Funcionario>
 	{
 		FuncionarioDAO dao = new FuncionarioDAO();
-		int codTipoCargo, numero, codCidade, codEstado;
+		int  numero, codCidade, codEstado;
 		DateTime dataNasc;
 		 
 		public void AlterarController(Funcionario obj)
@@ -43,21 +43,18 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("É obrigatório preencher o CPF.");
 				}
-				if (obj.TipoCargo != null)
-				{
-					int.TryParse(obj.TipoCargo.ToString(), out codTipoCargo);
-				}
-				else
+				if (obj.TipoCargo == null)
 				{
 					throw new Exception("É obrigatório selecionar um cargo para funcionário.");
 				}
+				
 				int.TryParse(obj.Endereco.Numero.ToString(), out numero);
 				int.TryParse(obj.Endereco.CodCidade.ToString(), out codCidade);
 				int.TryParse(obj.Endereco.CodEstado.ToString(), out codEstado);
 				DateTime.TryParse(obj.DataNasc.ToString(), out dataNasc);
 
 				dao.AlterarFuncionario(obj.Codigo, obj.Nome, dataNasc, obj.Telefone, obj.Email,
-									   obj.Cpf, Convert.ToInt32(obj.TipoCargo), obj.Endereco.Cep, obj.Endereco.Logradouro, numero, obj.Endereco.Bairro, codCidade,codEstado);
+									   obj.Cpf, (int)obj.TipoCargo, obj.Endereco.Cep, obj.Endereco.Logradouro, numero, obj.Endereco.Bairro, codCidade,codEstado);
 			}
 			catch (Exception ex)
 			{
@@ -116,7 +113,9 @@ namespace SmartLogBusiness.Controller
         {
             try
             {
-                DataTable table = dao.VerificarFuncionario(email, cpf, DataNasci);
+				int codTipoCargo;
+
+				DataTable table = dao.VerificarFuncionario(email, cpf, DataNasci);
 
                 if (table != null && table.Rows.Count > 0)
                 {
@@ -162,6 +161,7 @@ namespace SmartLogBusiness.Controller
 			try
 			{
 				DataTable table = dao.CarregarFuncionarioDAO(obj.Codigo);
+				int codTipoCargo;
 
 				if (obj.Codigo == 0)
 				{
@@ -229,19 +229,18 @@ namespace SmartLogBusiness.Controller
 				{
 					throw new Exception("É obrigatório fornecer o CPF para o gerar sua primeira senha de acesso ao sistema.");
 				}
-				if(obj.TipoCargo != null)
-				{
-					int.TryParse(obj.TipoCargo.ToString(), out codTipoCargo);
-				}
-				else
+
+
+				if(obj.TipoCargo == null)
 				{
 					throw new Exception("É obrigatório selecionar um cargo para funcionário.");
 				}
+				
 				int.TryParse(obj.Endereco.Numero.ToString(), out numero);
 				int.TryParse(obj.Endereco.CodCidade.ToString(), out codCidade);
 				int.TryParse(obj.Endereco.CodEstado.ToString(), out codEstado);
 
-				dao.InserirFuncionario(obj.Nome, dataNasc, obj.Telefone, obj.Email, obj.Cpf, codTipoCargo, obj.Endereco.Cep, obj.Endereco.Logradouro,numero, obj.Endereco.Bairro, codCidade, codEstado);
+				dao.InserirFuncionario(obj.Nome, dataNasc, obj.Telefone, obj.Email, obj.Cpf, (int)obj.TipoCargo, obj.Endereco.Cep, obj.Endereco.Logradouro,numero, obj.Endereco.Bairro, codCidade, codEstado);
 			}
 			catch (Exception ex)
 			{
@@ -255,6 +254,8 @@ namespace SmartLogBusiness.Controller
 			{
 				DataTable table = dao.FiltrarFuncionarioDAO(obj.Nome, obj.Cpf);
 				List<Funcionario> lista = new List<Funcionario>();
+				int codTipoCargo;
+
 				if (table == null)
 				{
 					throw new Exception("Funcionário não localizado.");
@@ -295,6 +296,8 @@ namespace SmartLogBusiness.Controller
 		{
 			try
 			{
+				int codTipoCargo;
+
 				if (obj.Email == "" || obj.Senha == "")
 				{
 					throw new Exception("Informe um usuário/senha.");

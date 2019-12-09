@@ -61,6 +61,8 @@ namespace SmartLog.WindowsForms.UserControl
 		{
 
 			string valor = "";
+			this.Items.Clear();
+
 
 			if (tipo == eTipoMensagem.Selecione)
 			{

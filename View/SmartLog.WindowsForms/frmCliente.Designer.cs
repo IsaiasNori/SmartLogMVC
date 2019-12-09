@@ -28,10 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabCtrlCliente = new System.Windows.Forms.TabControl();
 			this.tabConsultaCli = new System.Windows.Forms.TabPage();
 			this.btnFechaCliente = new System.Windows.Forms.Button();
@@ -41,10 +41,10 @@
 			this.dgCliente = new System.Windows.Forms.DataGridView();
 			this.gbFiltrarCliente = new System.Windows.Forms.GroupBox();
 			this.lblNomePesquisa = new System.Windows.Forms.Label();
-			this.btnPesquisarCli = new System.Windows.Forms.Button();
-			this.lblCpfPesquisa = new System.Windows.Forms.Label();
-			this.txtCpfPesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.txtNomePesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.btnPesquisarCli = new System.Windows.Forms.Button();
+			this.txtCpfPesquisar = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.lblCpfPesquisa = new System.Windows.Forms.Label();
 			this.tabCadastroCli = new System.Windows.Forms.TabPage();
 			this.btnLimpar = new System.Windows.Forms.Button();
 			this.gbDadosCliente = new System.Windows.Forms.GroupBox();
@@ -205,49 +205,49 @@
 			// 
 			this.dgCliente.AllowUserToAddRows = false;
 			this.dgCliente.AllowUserToDeleteRows = false;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.dgCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.dgCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.dgCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dgCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgCliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
 			this.dgCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.dgCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.dgCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
 			this.dgCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.dgCliente.ColumnHeadersHeight = 35;
-			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.InactiveBorder;
-			dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgCliente.DefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgCliente.DefaultCellStyle = dataGridViewCellStyle3;
 			this.dgCliente.EnableHeadersVisualStyles = false;
 			this.dgCliente.GridColor = System.Drawing.SystemColors.ActiveCaption;
 			this.dgCliente.Location = new System.Drawing.Point(101, 298);
 			this.dgCliente.Name = "dgCliente";
 			this.dgCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Menu;
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Menu;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.dgCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
 			this.dgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgCliente.Size = new System.Drawing.Size(859, 293);
@@ -283,6 +283,18 @@
 			this.lblNomePesquisa.TabIndex = 4;
 			this.lblNomePesquisa.Text = "Cliente";
 			// 
+			// txtNomePesquisar
+			// 
+			this.txtNomePesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtNomePesquisar.CampoObrigatorio = false;
+			this.txtNomePesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+			this.txtNomePesquisar.Location = new System.Drawing.Point(73, 67);
+			this.txtNomePesquisar.MensagemObrigatorio = null;
+			this.txtNomePesquisar.Name = "txtNomePesquisar";
+			this.txtNomePesquisar.Size = new System.Drawing.Size(252, 24);
+			this.txtNomePesquisar.TabIndex = 1;
+			this.txtNomePesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
 			// btnPesquisarCli
 			// 
 			this.btnPesquisarCli.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -305,17 +317,6 @@
 			this.btnPesquisarCli.UseVisualStyleBackColor = false;
 			this.btnPesquisarCli.Click += new System.EventHandler(this.btnPesquisarCli_Click);
 			// 
-			// lblCpfPesquisa
-			// 
-			this.lblCpfPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.lblCpfPesquisa.AutoSize = true;
-			this.lblCpfPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblCpfPesquisa.Location = new System.Drawing.Point(355, 44);
-			this.lblCpfPesquisa.Name = "lblCpfPesquisa";
-			this.lblCpfPesquisa.Size = new System.Drawing.Size(40, 20);
-			this.lblCpfPesquisa.TabIndex = 5;
-			this.lblCpfPesquisa.Text = "CPF";
-			// 
 			// txtCpfPesquisar
 			// 
 			this.txtCpfPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -329,17 +330,16 @@
 			this.txtCpfPesquisar.TabIndex = 2;
 			this.txtCpfPesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.cpf;
 			// 
-			// txtNomePesquisar
+			// lblCpfPesquisa
 			// 
-			this.txtNomePesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtNomePesquisar.CampoObrigatorio = false;
-			this.txtNomePesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtNomePesquisar.Location = new System.Drawing.Point(73, 67);
-			this.txtNomePesquisar.MensagemObrigatorio = null;
-			this.txtNomePesquisar.Name = "txtNomePesquisar";
-			this.txtNomePesquisar.Size = new System.Drawing.Size(252, 24);
-			this.txtNomePesquisar.TabIndex = 1;
-			this.txtNomePesquisar.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			this.lblCpfPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.lblCpfPesquisa.AutoSize = true;
+			this.lblCpfPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.lblCpfPesquisa.Location = new System.Drawing.Point(355, 44);
+			this.lblCpfPesquisa.Name = "lblCpfPesquisa";
+			this.lblCpfPesquisa.Size = new System.Drawing.Size(40, 20);
+			this.lblCpfPesquisa.TabIndex = 5;
+			this.lblCpfPesquisa.Text = "CPF";
 			// 
 			// tabCadastroCli
 			// 
