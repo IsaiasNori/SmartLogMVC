@@ -58,6 +58,24 @@ namespace SmartLog.WindowsForms
 					else
 					{
 						Session.Instance.UserID = func.Codigo;
+                        if(txtSenha.Text == func.Cpf)
+                        {
+                            frmNovaSenha frmNova = new frmNovaSenha(func.Codigo);
+                            frmNova.ShowDialog();
+
+                            if(frmNova.bAlterouSenha == false)
+                            {
+                                Util.Utils.ExibirMensagem("Necessário alterar a senha",eTipoMensagem.Erro);
+                                this.Close();
+                                return;
+                            }
+
+                            Util.Utils.ExibirMensagem("Por favor logar novamente com a nova senha",eTipoMensagem.Sucesso);
+                            txtSenha.Text = string.Empty;
+                            return;
+                            
+                        }
+
 						funcLogado = func;
 						this.Close();
 					}
