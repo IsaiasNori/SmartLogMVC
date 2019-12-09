@@ -81,6 +81,18 @@ namespace SmartLogBusiness.Controller
 			}
 		}
 
+        public void AlterarSenha(int cod,string senha)
+        {
+            try
+            {
+                dao.AlterarSenha(cod, senha);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
 		public DataTable GetDataTable(Funcionario obj)
 		{
 			try

@@ -40,6 +40,24 @@ namespace SmartLog.DAO
 			return 0;
 		}
 
+        public void AlterarSenha(int codFunc,string Senha)
+        {
+            try
+            {
+                LimparParametro();
+                AdicionarParametro("@Operacao", SqlDbType.NVarChar, 4, "SENH");
+                AdicionarParametro("@CodMatricula", SqlDbType.NVarChar, 100, codFunc);
+                AdicionarParametro("@Senha", SqlDbType.NVarChar, 100, Senha);
+
+                ExecuteProcedure("pFuncionario");
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
 		public void AlterarFuncionario(int codFunc, String nomeFunc, DateTime? dataNascFunc, string telFunc, string emailFunc, string cpfFunc, int codCargo, string cep, string logra, int numero, string bairro, int codCidade, int codEstado)
 		{
 			try
