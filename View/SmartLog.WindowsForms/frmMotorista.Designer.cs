@@ -40,14 +40,13 @@
 			this.btnNovo = new System.Windows.Forms.Button();
 			this.dgMotorista = new System.Windows.Forms.DataGridView();
 			this.gbFiltrarMotorista = new System.Windows.Forms.GroupBox();
-			this.pnlFiltrarCliente = new System.Windows.Forms.Panel();
 			this.chkVencimentoCnh = new System.Windows.Forms.CheckBox();
-			this.lblMotoristaPesquisa = new System.Windows.Forms.Label();
-			this.btnPesquisarMotorista = new System.Windows.Forms.Button();
 			this.txtMotoristaPesquisa = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.dtCnhVencFinal = new System.Windows.Forms.DateTimePicker();
-			this.lblIntervaloData = new System.Windows.Forms.Label();
+			this.lblMotoristaPesquisa = new System.Windows.Forms.Label();
 			this.dtCnhVencPesquisa = new System.Windows.Forms.DateTimePicker();
+			this.btnPesquisarMotorista = new System.Windows.Forms.Button();
+			this.lblIntervaloData = new System.Windows.Forms.Label();
+			this.dtCnhVencFinal = new System.Windows.Forms.DateTimePicker();
 			this.tabCadastroMotorista = new System.Windows.Forms.TabPage();
 			this.btnLimpar = new System.Windows.Forms.Button();
 			this.btnVoltar = new System.Windows.Forms.Button();
@@ -86,7 +85,6 @@
 			this.tabConsultaMotorista.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgMotorista)).BeginInit();
 			this.gbFiltrarMotorista.SuspendLayout();
-			this.pnlFiltrarCliente.SuspendLayout();
 			this.tabCadastroMotorista.SuspendLayout();
 			this.gbDadosMotorista.SuspendLayout();
 			this.SuspendLayout();
@@ -107,7 +105,7 @@
 			// 
 			// tabConsultaMotorista
 			// 
-			this.tabConsultaMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.tabConsultaMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
 			this.tabConsultaMotorista.Controls.Add(this.btnFechaMotorista);
 			this.tabConsultaMotorista.Controls.Add(this.btnGridExcluir);
 			this.tabConsultaMotorista.Controls.Add(this.btnGridAlterar);
@@ -216,7 +214,7 @@
 			this.dgMotorista.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgMotorista.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.dgMotorista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dgMotorista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgMotorista.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
 			this.dgMotorista.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.dgMotorista.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -262,8 +260,14 @@
 			// 
 			this.gbFiltrarMotorista.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.gbFiltrarMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.gbFiltrarMotorista.Controls.Add(this.pnlFiltrarCliente);
+			this.gbFiltrarMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.gbFiltrarMotorista.Controls.Add(this.chkVencimentoCnh);
+			this.gbFiltrarMotorista.Controls.Add(this.txtMotoristaPesquisa);
+			this.gbFiltrarMotorista.Controls.Add(this.lblMotoristaPesquisa);
+			this.gbFiltrarMotorista.Controls.Add(this.dtCnhVencPesquisa);
+			this.gbFiltrarMotorista.Controls.Add(this.btnPesquisarMotorista);
+			this.gbFiltrarMotorista.Controls.Add(this.lblIntervaloData);
+			this.gbFiltrarMotorista.Controls.Add(this.dtCnhVencFinal);
 			this.gbFiltrarMotorista.Location = new System.Drawing.Point(76, 29);
 			this.gbFiltrarMotorista.Name = "gbFiltrarMotorista";
 			this.gbFiltrarMotorista.Size = new System.Drawing.Size(693, 192);
@@ -271,26 +275,11 @@
 			this.gbFiltrarMotorista.TabStop = false;
 			this.gbFiltrarMotorista.Text = "Filtros";
 			// 
-			// pnlFiltrarCliente
-			// 
-			this.pnlFiltrarCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.pnlFiltrarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.pnlFiltrarCliente.Controls.Add(this.chkVencimentoCnh);
-			this.pnlFiltrarCliente.Controls.Add(this.lblMotoristaPesquisa);
-			this.pnlFiltrarCliente.Controls.Add(this.btnPesquisarMotorista);
-			this.pnlFiltrarCliente.Controls.Add(this.txtMotoristaPesquisa);
-			this.pnlFiltrarCliente.Controls.Add(this.dtCnhVencFinal);
-			this.pnlFiltrarCliente.Controls.Add(this.lblIntervaloData);
-			this.pnlFiltrarCliente.Controls.Add(this.dtCnhVencPesquisa);
-			this.pnlFiltrarCliente.Location = new System.Drawing.Point(17, 34);
-			this.pnlFiltrarCliente.Name = "pnlFiltrarCliente";
-			this.pnlFiltrarCliente.Size = new System.Drawing.Size(656, 140);
-			this.pnlFiltrarCliente.TabIndex = 10;
-			// 
 			// chkVencimentoCnh
 			// 
+			this.chkVencimentoCnh.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.chkVencimentoCnh.AutoSize = true;
-			this.chkVencimentoCnh.Location = new System.Drawing.Point(354, 6);
+			this.chkVencimentoCnh.Location = new System.Drawing.Point(375, 44);
 			this.chkVencimentoCnh.Name = "chkVencimentoCnh";
 			this.chkVencimentoCnh.Size = new System.Drawing.Size(222, 24);
 			this.chkVencimentoCnh.TabIndex = 2;
@@ -298,17 +287,39 @@
 			this.chkVencimentoCnh.UseVisualStyleBackColor = true;
 			this.chkVencimentoCnh.CheckedChanged += new System.EventHandler(this.chkVencimentoCnh_CheckedChanged);
 			// 
+			// txtMotoristaPesquisa
+			// 
+			this.txtMotoristaPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtMotoristaPesquisa.CampoObrigatorio = false;
+			this.txtMotoristaPesquisa.Location = new System.Drawing.Point(53, 77);
+			this.txtMotoristaPesquisa.MensagemObrigatorio = null;
+			this.txtMotoristaPesquisa.Name = "txtMotoristaPesquisa";
+			this.txtMotoristaPesquisa.Size = new System.Drawing.Size(292, 26);
+			this.txtMotoristaPesquisa.TabIndex = 1;
+			this.txtMotoristaPesquisa.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
 			// lblMotoristaPesquisa
 			// 
+			this.lblMotoristaPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblMotoristaPesquisa.AutoSize = true;
-			this.lblMotoristaPesquisa.Location = new System.Drawing.Point(28, 10);
+			this.lblMotoristaPesquisa.Location = new System.Drawing.Point(49, 48);
 			this.lblMotoristaPesquisa.Name = "lblMotoristaPesquisa";
 			this.lblMotoristaPesquisa.Size = new System.Drawing.Size(75, 20);
 			this.lblMotoristaPesquisa.TabIndex = 0;
 			this.lblMotoristaPesquisa.Text = "Motorista";
 			// 
+			// dtCnhVencPesquisa
+			// 
+			this.dtCnhVencPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.dtCnhVencPesquisa.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtCnhVencPesquisa.Location = new System.Drawing.Point(375, 74);
+			this.dtCnhVencPesquisa.Name = "dtCnhVencPesquisa";
+			this.dtCnhVencPesquisa.Size = new System.Drawing.Size(128, 26);
+			this.dtCnhVencPesquisa.TabIndex = 3;
+			// 
 			// btnPesquisarMotorista
 			// 
+			this.btnPesquisarMotorista.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.btnPesquisarMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.btnPesquisarMotorista.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
 			this.btnPesquisarMotorista.FlatAppearance.BorderSize = 0;
@@ -318,7 +329,7 @@
 			this.btnPesquisarMotorista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnPesquisarMotorista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnPesquisarMotorista.Image = global::SmartLog.WindowsForms.Properties.Resources.icoSearch_fw;
-			this.btnPesquisarMotorista.Location = new System.Drawing.Point(223, 87);
+			this.btnPesquisarMotorista.Location = new System.Drawing.Point(239, 130);
 			this.btnPesquisarMotorista.Name = "btnPesquisarMotorista";
 			this.btnPesquisarMotorista.Size = new System.Drawing.Size(207, 39);
 			this.btnPesquisarMotorista.TabIndex = 5;
@@ -328,44 +339,28 @@
 			this.btnPesquisarMotorista.UseVisualStyleBackColor = false;
 			this.btnPesquisarMotorista.Click += new System.EventHandler(this.btnPesquisarMotorista_Click);
 			// 
-			// txtMotoristaPesquisa
-			// 
-			this.txtMotoristaPesquisa.CampoObrigatorio = false;
-			this.txtMotoristaPesquisa.Location = new System.Drawing.Point(32, 39);
-			this.txtMotoristaPesquisa.MensagemObrigatorio = null;
-			this.txtMotoristaPesquisa.Name = "txtMotoristaPesquisa";
-			this.txtMotoristaPesquisa.Size = new System.Drawing.Size(292, 26);
-			this.txtMotoristaPesquisa.TabIndex = 1;
-			this.txtMotoristaPesquisa.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// dtCnhVencFinal
-			// 
-			this.dtCnhVencFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtCnhVencFinal.Location = new System.Drawing.Point(512, 36);
-			this.dtCnhVencFinal.Name = "dtCnhVencFinal";
-			this.dtCnhVencFinal.Size = new System.Drawing.Size(131, 26);
-			this.dtCnhVencFinal.TabIndex = 4;
-			// 
 			// lblIntervaloData
 			// 
+			this.lblIntervaloData.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblIntervaloData.AutoSize = true;
-			this.lblIntervaloData.Location = new System.Drawing.Point(488, 42);
+			this.lblIntervaloData.Location = new System.Drawing.Point(509, 80);
 			this.lblIntervaloData.Name = "lblIntervaloData";
 			this.lblIntervaloData.Size = new System.Drawing.Size(18, 20);
 			this.lblIntervaloData.TabIndex = 3;
 			this.lblIntervaloData.Text = "à";
 			// 
-			// dtCnhVencPesquisa
+			// dtCnhVencFinal
 			// 
-			this.dtCnhVencPesquisa.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtCnhVencPesquisa.Location = new System.Drawing.Point(354, 36);
-			this.dtCnhVencPesquisa.Name = "dtCnhVencPesquisa";
-			this.dtCnhVencPesquisa.Size = new System.Drawing.Size(128, 26);
-			this.dtCnhVencPesquisa.TabIndex = 3;
+			this.dtCnhVencFinal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.dtCnhVencFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtCnhVencFinal.Location = new System.Drawing.Point(533, 74);
+			this.dtCnhVencFinal.Name = "dtCnhVencFinal";
+			this.dtCnhVencFinal.Size = new System.Drawing.Size(131, 26);
+			this.dtCnhVencFinal.TabIndex = 4;
 			// 
 			// tabCadastroMotorista
 			// 
-			this.tabCadastroMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.tabCadastroMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
 			this.tabCadastroMotorista.Controls.Add(this.btnLimpar);
 			this.tabCadastroMotorista.Controls.Add(this.btnVoltar);
 			this.tabCadastroMotorista.Controls.Add(this.gbDadosMotorista);
@@ -421,7 +416,7 @@
 			// gbDadosMotorista
 			// 
 			this.gbDadosMotorista.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.gbDadosMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.gbDadosMotorista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.gbDadosMotorista.Controls.Add(this.cbCnhCategoria);
 			this.gbDadosMotorista.Controls.Add(this.cbCidade);
 			this.gbDadosMotorista.Controls.Add(this.cbEstado);
@@ -776,7 +771,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(146)))), ((int)(((byte)(208)))));
 			this.ClientSize = new System.Drawing.Size(976, 645);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.tabCtrlMotorista);
@@ -788,8 +783,7 @@
 			this.tabConsultaMotorista.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgMotorista)).EndInit();
 			this.gbFiltrarMotorista.ResumeLayout(false);
-			this.pnlFiltrarCliente.ResumeLayout(false);
-			this.pnlFiltrarCliente.PerformLayout();
+			this.gbFiltrarMotorista.PerformLayout();
 			this.tabCadastroMotorista.ResumeLayout(false);
 			this.gbDadosMotorista.ResumeLayout(false);
 			this.gbDadosMotorista.PerformLayout();
@@ -840,7 +834,6 @@
 		private UserControl.SuperComboBox cbEstado;
 		private UserControl.SuperComboBox cbStatus;
 		private System.Windows.Forms.DataGridView dgMotorista;
-		private System.Windows.Forms.Panel pnlFiltrarCliente;
 		private System.Windows.Forms.Button btnLimpar;
 		private System.Windows.Forms.Button btnVoltar;
 		private System.Windows.Forms.Button btnSalvar;

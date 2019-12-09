@@ -135,6 +135,13 @@ namespace SmartLog.WindowsForms
 						txtBairroDestino.Text = viagem.Destino.Bairro;
 
 						tabCtrlViagem.SelectedTab = tabCadastroViagem;
+						gbDadosOrigemviagem.Enabled = false;
+						gbDadosDestinoViagem.Enabled = false;
+						cbMotoristaViagem.Enabled = false;
+						cbVeiculo.Enabled = false;
+						cbCliente.Enabled = false;
+						dtDataViagem.Enabled = false;
+
 					}
 				}
 				else

@@ -28,7 +28,7 @@ namespace SmartLog.WindowsForms
 		private void FormCliente_Load(object sender, EventArgs e)
 		{
 			Util.Utils.CarregarEstado(ref cbEstado);
-		
+
 			CarregarTipoCliente();
 		}
 		private void btnPesquisarCli_Click(object sender, EventArgs e)
@@ -175,19 +175,22 @@ namespace SmartLog.WindowsForms
 		{
 			try
 			{
-				string codigo = dgCliente.SelectedRows[0].Cells[0].Value.ToString();
-
-				int.TryParse(codigo, out codigoCli);
-				if (codigoCli > 0)
+				if (dgCliente.SelectedRows.Count > 0)
 				{
+					string codigo = dgCliente.SelectedRows[0].Cells[0].Value.ToString();
 
-					if (MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de registro",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+					int.TryParse(codigo, out codigoCli);
+					if (codigoCli > 0)
 					{
-						Cliente cli = new Cliente(codigoCli);
-						cliController.DeletarController(cli);
 
-						Util.Utils.ExibirMensagem("Cliente excluído com sucesso.", eTipoMensagem.Sucesso);
-						PesquisarCliente();
+						if (MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de registro", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+						{
+							Cliente cli = new Cliente(codigoCli);
+							cliController.DeletarController(cli);
+
+							Util.Utils.ExibirMensagem("Cliente excluído com sucesso.", eTipoMensagem.Sucesso);
+							PesquisarCliente();
+						}
 					}
 				}
 				else
