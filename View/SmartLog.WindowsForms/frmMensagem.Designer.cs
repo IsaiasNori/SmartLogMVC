@@ -30,11 +30,11 @@
 		{
 			this.lblMensagem = new System.Windows.Forms.Label();
 			this.panelMensagem = new System.Windows.Forms.Panel();
+			this.btnIcon = new System.Windows.Forms.Button();
 			this.toolStripTop = new System.Windows.Forms.ToolStrip();
 			this.lblTitulo = new System.Windows.Forms.ToolStripLabel();
 			this.toolStripBelow = new System.Windows.Forms.ToolStrip();
 			this.btnOK = new System.Windows.Forms.Button();
-			this.btnIcon = new System.Windows.Forms.Button();
 			this.panelMensagem.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -61,8 +61,27 @@
 			this.panelMensagem.Location = new System.Drawing.Point(20, 30);
 			this.panelMensagem.Margin = new System.Windows.Forms.Padding(2);
 			this.panelMensagem.Name = "panelMensagem";
-			this.panelMensagem.Size = new System.Drawing.Size(505, 162);
+			this.panelMensagem.Size = new System.Drawing.Size(602, 162);
 			this.panelMensagem.TabIndex = 2;
+			// 
+			// btnIcon
+			// 
+			this.btnIcon.BackColor = System.Drawing.Color.Transparent;
+			this.btnIcon.FlatAppearance.BorderSize = 0;
+			this.btnIcon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
+			this.btnIcon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnIcon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnIcon.Image = global::SmartLog.WindowsForms.Properties.Resources.iconAlert;
+			this.btnIcon.Location = new System.Drawing.Point(2, 2);
+			this.btnIcon.Margin = new System.Windows.Forms.Padding(2);
+			this.btnIcon.Name = "btnIcon";
+			this.btnIcon.Size = new System.Drawing.Size(84, 42);
+			this.btnIcon.TabIndex = 6;
+			this.btnIcon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnIcon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnIcon.UseVisualStyleBackColor = false;
 			// 
 			// toolStripTop
 			// 
@@ -70,7 +89,7 @@
 			this.toolStripTop.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.toolStripTop.Location = new System.Drawing.Point(0, 0);
 			this.toolStripTop.Name = "toolStripTop";
-			this.toolStripTop.Size = new System.Drawing.Size(543, 25);
+			this.toolStripTop.Size = new System.Drawing.Size(633, 25);
 			this.toolStripTop.TabIndex = 3;
 			this.toolStripTop.Text = "toolStrip1";
 			this.toolStripTop.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStripTop_ItemClicked);
@@ -90,7 +109,7 @@
 			this.toolStripBelow.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.toolStripBelow.Location = new System.Drawing.Point(0, 267);
 			this.toolStripBelow.Name = "toolStripBelow";
-			this.toolStripBelow.Size = new System.Drawing.Size(543, 25);
+			this.toolStripBelow.Size = new System.Drawing.Size(633, 25);
 			this.toolStripBelow.TabIndex = 4;
 			this.toolStripBelow.Text = "toolStrip2";
 			// 
@@ -104,7 +123,7 @@
 			this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.btnOK.Location = new System.Drawing.Point(217, 210);
+			this.btnOK.Location = new System.Drawing.Point(262, 210);
 			this.btnOK.Margin = new System.Windows.Forms.Padding(2);
 			this.btnOK.Name = "btnOK";
 			this.btnOK.Size = new System.Drawing.Size(122, 37);
@@ -114,31 +133,12 @@
 			this.btnOK.UseVisualStyleBackColor = false;
 			this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
 			// 
-			// btnIcon
-			// 
-			this.btnIcon.BackColor = System.Drawing.Color.Transparent;
-			this.btnIcon.FlatAppearance.BorderSize = 0;
-			this.btnIcon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(153)))), ((int)(((byte)(215)))));
-			this.btnIcon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnIcon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.btnIcon.Image = global::SmartLog.WindowsForms.Properties.Resources.iconAlert;
-			this.btnIcon.Location = new System.Drawing.Point(2, 0);
-			this.btnIcon.Margin = new System.Windows.Forms.Padding(2);
-			this.btnIcon.Name = "btnIcon";
-			this.btnIcon.Size = new System.Drawing.Size(84, 42);
-			this.btnIcon.TabIndex = 6;
-			this.btnIcon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnIcon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnIcon.UseVisualStyleBackColor = false;
-			// 
 			// frmMensagem
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.ClientSize = new System.Drawing.Size(543, 292);
+			this.ClientSize = new System.Drawing.Size(633, 292);
 			this.ControlBox = false;
 			this.Controls.Add(this.btnOK);
 			this.Controls.Add(this.toolStripBelow);

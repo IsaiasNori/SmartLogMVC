@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,59 +41,35 @@
 			this.btnNovo = new System.Windows.Forms.Button();
 			this.dgViagem = new System.Windows.Forms.DataGridView();
 			this.gbFiltraViagem = new System.Windows.Forms.GroupBox();
-			this.pblFiltroViagem = new System.Windows.Forms.Panel();
 			this.chkData = new System.Windows.Forms.CheckBox();
-			this.cbClientePesquisa = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.cbMotoristaPesquisar = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.lblIntervaloData = new System.Windows.Forms.Label();
+			this.btnPesquisarViagem = new System.Windows.Forms.Button();
 			this.dtDataFim = new System.Windows.Forms.DateTimePicker();
 			this.dtDataInicio = new System.Windows.Forms.DateTimePicker();
-			this.btnPesquisarViagem = new System.Windows.Forms.Button();
-			this.lblMotoCliPesquisar = new System.Windows.Forms.Label();
+			this.lblIntervaloData = new System.Windows.Forms.Label();
 			this.lblMotoristaPesquisar = new System.Windows.Forms.Label();
+			this.lblMotoCliPesquisar = new System.Windows.Forms.Label();
 			this.tabCadastroViagem = new System.Windows.Forms.TabPage();
 			this.pnDadosViagem = new System.Windows.Forms.Panel();
 			this.gbDadosViagem1 = new System.Windows.Forms.GroupBox();
 			this.lblStatus = new System.Windows.Forms.Label();
-			this.cbStatus = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.cbAtendente = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.cbVeiculo = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.cbCliente = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.cbMotoristaViagem = new SmartLog.WindowsForms.UserControl.SuperComboBox();
 			this.dtDataViagem = new System.Windows.Forms.DateTimePicker();
 			this.lblDataViagem = new System.Windows.Forms.Label();
 			this.lblMotorista = new System.Windows.Forms.Label();
-			this.txtDistancia = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblDistancia = new System.Windows.Forms.Label();
 			this.lblCliente = new System.Windows.Forms.Label();
-			this.txtValor = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblValor = new System.Windows.Forms.Label();
 			this.lblVeiculo = new System.Windows.Forms.Label();
 			this.lblAtendente = new System.Windows.Forms.Label();
 			this.gbDadosOrigemviagem = new System.Windows.Forms.GroupBox();
-			this.txtCompleOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblCompleOrigem = new System.Windows.Forms.Label();
-			this.cbCidadeOrigem = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.txtCepOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtBairroOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.cbEstadoOrigem = new SmartLog.WindowsForms.UserControl.SuperComboBox();
 			this.lblCidadeOrigem = new System.Windows.Forms.Label();
-			this.txtLograOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtNumeroOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblLograOrigem = new System.Windows.Forms.Label();
 			this.lblNumOrigem = new System.Windows.Forms.Label();
 			this.lblBairroOrigem = new System.Windows.Forms.Label();
 			this.lblUfOrigem = new System.Windows.Forms.Label();
 			this.lblCepOrigem = new System.Windows.Forms.Label();
 			this.gbDadosDestinoViagem = new System.Windows.Forms.GroupBox();
-			this.txtCompleDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblCompleDestino = new System.Windows.Forms.Label();
-			this.cbCidadeDestino = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.cbEstadoDestino = new SmartLog.WindowsForms.UserControl.SuperComboBox();
-			this.txtBairroDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtLograDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtNumeroDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
-			this.txtCepDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.lblUfDestino = new System.Windows.Forms.Label();
 			this.lblCidadeDestino = new System.Windows.Forms.Label();
 			this.lblLograDestino = new System.Windows.Forms.Label();
@@ -105,11 +82,34 @@
 			this.lblCodCli = new System.Windows.Forms.Label();
 			this.txtCodigoCli = new System.Windows.Forms.TextBox();
 			this.button1 = new System.Windows.Forms.Button();
+			this.toolTipViagem = new System.Windows.Forms.ToolTip(this.components);
+			this.cbClientePesquisa = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbMotoristaPesquisar = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbStatus = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbAtendente = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbVeiculo = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbCliente = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbMotoristaViagem = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.txtDistancia = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtValor = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtCompleOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.cbCidadeOrigem = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.txtCepOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtBairroOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.cbEstadoOrigem = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.txtLograOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtNumeroOrigem = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtCompleDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.cbCidadeDestino = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.cbEstadoDestino = new SmartLog.WindowsForms.UserControl.SuperComboBox();
+			this.txtBairroDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtLograDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtNumeroDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
+			this.txtCepDestino = new SmartLog.WindowsForms.UserControl.SuperTextbox();
 			this.tabCtrlViagem.SuspendLayout();
 			this.tabConsultaViagem.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgViagem)).BeginInit();
 			this.gbFiltraViagem.SuspendLayout();
-			this.pblFiltroViagem.SuspendLayout();
 			this.tabCadastroViagem.SuspendLayout();
 			this.pnDadosViagem.SuspendLayout();
 			this.gbDadosViagem1.SuspendLayout();
@@ -119,6 +119,8 @@
 			// 
 			// tabCtrlViagem
 			// 
+			this.tabCtrlViagem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabCtrlViagem.Controls.Add(this.tabConsultaViagem);
 			this.tabCtrlViagem.Controls.Add(this.tabCadastroViagem);
 			this.tabCtrlViagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,12 +131,14 @@
 			this.tabCtrlViagem.Name = "tabCtrlViagem";
 			this.tabCtrlViagem.Padding = new System.Drawing.Point(100, 5);
 			this.tabCtrlViagem.SelectedIndex = 0;
-			this.tabCtrlViagem.Size = new System.Drawing.Size(993, 691);
+			this.tabCtrlViagem.Size = new System.Drawing.Size(993, 673);
 			this.tabCtrlViagem.TabIndex = 1;
+			this.toolTipViagem.SetToolTip(this.tabCtrlViagem, "Consulta de Viagens. Aqui você buscar , alterar e excluir todas viagens cadastrad" +
+        "as. ");
 			// 
 			// tabConsultaViagem
 			// 
-			this.tabConsultaViagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.tabConsultaViagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
 			this.tabConsultaViagem.Controls.Add(this.btnFechaViagem);
 			this.tabConsultaViagem.Controls.Add(this.btnGridExcluir);
 			this.tabConsultaViagem.Controls.Add(this.btnGridAlterar);
@@ -144,7 +148,7 @@
 			this.tabConsultaViagem.Location = new System.Drawing.Point(4, 33);
 			this.tabConsultaViagem.Name = "tabConsultaViagem";
 			this.tabConsultaViagem.Padding = new System.Windows.Forms.Padding(3);
-			this.tabConsultaViagem.Size = new System.Drawing.Size(985, 654);
+			this.tabConsultaViagem.Size = new System.Drawing.Size(985, 636);
 			this.tabConsultaViagem.TabIndex = 0;
 			this.tabConsultaViagem.Text = "Consulta";
 			// 
@@ -166,6 +170,7 @@
 			this.btnFechaViagem.Text = "Fechar";
 			this.btnFechaViagem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnFechaViagem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.toolTipViagem.SetToolTip(this.btnFechaViagem, "Fechar tela de Viagens.");
 			this.btnFechaViagem.UseVisualStyleBackColor = false;
 			this.btnFechaViagem.Click += new System.EventHandler(this.btnFechaViagem_Click);
 			// 
@@ -187,6 +192,7 @@
 			this.btnGridExcluir.Text = "Excluir";
 			this.btnGridExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnGridExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.toolTipViagem.SetToolTip(this.btnGridExcluir, "Clique aqui, para excluir uma Viagem.");
 			this.btnGridExcluir.UseVisualStyleBackColor = false;
 			this.btnGridExcluir.Click += new System.EventHandler(this.btnGridExcluir_Click);
 			// 
@@ -208,6 +214,7 @@
 			this.btnGridAlterar.Text = "Alterar";
 			this.btnGridAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnGridAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.toolTipViagem.SetToolTip(this.btnGridAlterar, "Clique aqui se desejar alterar alguma Viagem.");
 			this.btnGridAlterar.UseVisualStyleBackColor = false;
 			this.btnGridAlterar.Click += new System.EventHandler(this.btnGridAlterar_Click);
 			// 
@@ -229,6 +236,7 @@
 			this.btnNovo.Text = "Novo";
 			this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.toolTipViagem.SetToolTip(this.btnNovo, "Incluir nova Viagem");
 			this.btnNovo.UseVisualStyleBackColor = false;
 			this.btnNovo.Click += new System.EventHandler(this.BtnNovo_Click);
 			// 
@@ -282,14 +290,23 @@
 			this.dgViagem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgViagem.Size = new System.Drawing.Size(859, 293);
 			this.dgViagem.TabIndex = 10;
+			this.toolTipViagem.SetToolTip(this.dgViagem, "Vizualização de registros.");
 			this.dgViagem.DataSourceChanged += new System.EventHandler(this.dgViagem_DataSourceChanged);
 			// 
 			// gbFiltraViagem
 			// 
 			this.gbFiltraViagem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.gbFiltraViagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.gbFiltraViagem.Controls.Add(this.pblFiltroViagem);
+			this.gbFiltraViagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.gbFiltraViagem.Controls.Add(this.chkData);
+			this.gbFiltraViagem.Controls.Add(this.btnPesquisarViagem);
+			this.gbFiltraViagem.Controls.Add(this.dtDataFim);
+			this.gbFiltraViagem.Controls.Add(this.dtDataInicio);
+			this.gbFiltraViagem.Controls.Add(this.cbClientePesquisa);
+			this.gbFiltraViagem.Controls.Add(this.lblIntervaloData);
+			this.gbFiltraViagem.Controls.Add(this.lblMotoristaPesquisar);
+			this.gbFiltraViagem.Controls.Add(this.cbMotoristaPesquisar);
+			this.gbFiltraViagem.Controls.Add(this.lblMotoCliPesquisar);
 			this.gbFiltraViagem.Location = new System.Drawing.Point(64, 40);
 			this.gbFiltraViagem.Name = "gbFiltraViagem";
 			this.gbFiltraViagem.Size = new System.Drawing.Size(859, 212);
@@ -297,87 +314,17 @@
 			this.gbFiltraViagem.TabStop = false;
 			this.gbFiltraViagem.Text = "Filtrar viagem";
 			// 
-			// pblFiltroViagem
-			// 
-			this.pblFiltroViagem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.pblFiltroViagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.pblFiltroViagem.Controls.Add(this.chkData);
-			this.pblFiltroViagem.Controls.Add(this.cbClientePesquisa);
-			this.pblFiltroViagem.Controls.Add(this.cbMotoristaPesquisar);
-			this.pblFiltroViagem.Controls.Add(this.lblIntervaloData);
-			this.pblFiltroViagem.Controls.Add(this.dtDataFim);
-			this.pblFiltroViagem.Controls.Add(this.dtDataInicio);
-			this.pblFiltroViagem.Controls.Add(this.btnPesquisarViagem);
-			this.pblFiltroViagem.Controls.Add(this.lblMotoCliPesquisar);
-			this.pblFiltroViagem.Controls.Add(this.lblMotoristaPesquisar);
-			this.pblFiltroViagem.Location = new System.Drawing.Point(42, 25);
-			this.pblFiltroViagem.Name = "pblFiltroViagem";
-			this.pblFiltroViagem.Size = new System.Drawing.Size(775, 160);
-			this.pblFiltroViagem.TabIndex = 9;
-			// 
 			// chkData
 			// 
 			this.chkData.AutoSize = true;
-			this.chkData.Location = new System.Drawing.Point(79, 74);
+			this.chkData.Location = new System.Drawing.Point(139, 93);
 			this.chkData.Name = "chkData";
 			this.chkData.Size = new System.Drawing.Size(92, 24);
 			this.chkData.TabIndex = 19;
 			this.chkData.Text = "Por data:";
+			this.toolTipViagem.SetToolTip(this.chkData, "Marque esta opção para Filtrar Viagens por um intervalo de período.");
 			this.chkData.UseVisualStyleBackColor = true;
 			this.chkData.CheckedChanged += new System.EventHandler(this.chkData_CheckedChanged);
-			// 
-			// cbClientePesquisa
-			// 
-			this.cbClientePesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cbClientePesquisa.CampoObrigatorio = false;
-			this.cbClientePesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cbClientePesquisa.FormattingEnabled = true;
-			this.cbClientePesquisa.Location = new System.Drawing.Point(420, 39);
-			this.cbClientePesquisa.MensagemCampoObrigatorio = null;
-			this.cbClientePesquisa.Name = "cbClientePesquisa";
-			this.cbClientePesquisa.Size = new System.Drawing.Size(308, 28);
-			this.cbClientePesquisa.TabIndex = 2;
-			// 
-			// cbMotoristaPesquisar
-			// 
-			this.cbMotoristaPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cbMotoristaPesquisar.CampoObrigatorio = false;
-			this.cbMotoristaPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cbMotoristaPesquisar.FormattingEnabled = true;
-			this.cbMotoristaPesquisar.Location = new System.Drawing.Point(77, 39);
-			this.cbMotoristaPesquisar.MensagemCampoObrigatorio = null;
-			this.cbMotoristaPesquisar.Name = "cbMotoristaPesquisar";
-			this.cbMotoristaPesquisar.Size = new System.Drawing.Size(308, 28);
-			this.cbMotoristaPesquisar.TabIndex = 1;
-			// 
-			// lblIntervaloData
-			// 
-			this.lblIntervaloData.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.lblIntervaloData.AutoSize = true;
-			this.lblIntervaloData.BackColor = System.Drawing.Color.Transparent;
-			this.lblIntervaloData.Location = new System.Drawing.Point(222, 109);
-			this.lblIntervaloData.Name = "lblIntervaloData";
-			this.lblIntervaloData.Size = new System.Drawing.Size(18, 20);
-			this.lblIntervaloData.TabIndex = 18;
-			this.lblIntervaloData.Text = "à";
-			// 
-			// dtDataFim
-			// 
-			this.dtDataFim.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.dtDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtDataFim.Location = new System.Drawing.Point(246, 104);
-			this.dtDataFim.Name = "dtDataFim";
-			this.dtDataFim.Size = new System.Drawing.Size(139, 26);
-			this.dtDataFim.TabIndex = 4;
-			// 
-			// dtDataInicio
-			// 
-			this.dtDataInicio.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.dtDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtDataInicio.Location = new System.Drawing.Point(79, 104);
-			this.dtDataInicio.Name = "dtDataInicio";
-			this.dtDataInicio.Size = new System.Drawing.Size(139, 26);
-			this.dtDataInicio.TabIndex = 3;
 			// 
 			// btnPesquisarViagem
 			// 
@@ -392,39 +339,70 @@
 			this.btnPesquisarViagem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnPesquisarViagem.Image = global::SmartLog.WindowsForms.Properties.Resources.icoSearch_fw;
 			this.btnPesquisarViagem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnPesquisarViagem.Location = new System.Drawing.Point(493, 91);
+			this.btnPesquisarViagem.Location = new System.Drawing.Point(372, 167);
 			this.btnPesquisarViagem.Name = "btnPesquisarViagem";
 			this.btnPesquisarViagem.Size = new System.Drawing.Size(199, 39);
 			this.btnPesquisarViagem.TabIndex = 5;
 			this.btnPesquisarViagem.Text = "Pesquisar";
 			this.btnPesquisarViagem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.toolTipViagem.SetToolTip(this.btnPesquisarViagem, "Busca todos registros de viagens cadastradas no sistema, de acordo com sua opção " +
+        "de filtro.");
 			this.btnPesquisarViagem.UseVisualStyleBackColor = false;
 			this.btnPesquisarViagem.Click += new System.EventHandler(this.btnPesquisarViagem_Click);
 			// 
-			// lblMotoCliPesquisar
+			// dtDataFim
 			// 
-			this.lblMotoCliPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.lblMotoCliPesquisar.AutoSize = true;
-			this.lblMotoCliPesquisar.Location = new System.Drawing.Point(416, 12);
-			this.lblMotoCliPesquisar.Name = "lblMotoCliPesquisar";
-			this.lblMotoCliPesquisar.Size = new System.Drawing.Size(58, 20);
-			this.lblMotoCliPesquisar.TabIndex = 14;
-			this.lblMotoCliPesquisar.Text = "Cliente";
+			this.dtDataFim.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.dtDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtDataFim.Location = new System.Drawing.Point(306, 118);
+			this.dtDataFim.Name = "dtDataFim";
+			this.dtDataFim.Size = new System.Drawing.Size(139, 26);
+			this.dtDataFim.TabIndex = 4;
+			// 
+			// dtDataInicio
+			// 
+			this.dtDataInicio.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.dtDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtDataInicio.Location = new System.Drawing.Point(139, 118);
+			this.dtDataInicio.Name = "dtDataInicio";
+			this.dtDataInicio.Size = new System.Drawing.Size(139, 26);
+			this.dtDataInicio.TabIndex = 3;
+			// 
+			// lblIntervaloData
+			// 
+			this.lblIntervaloData.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.lblIntervaloData.AutoSize = true;
+			this.lblIntervaloData.BackColor = System.Drawing.Color.Transparent;
+			this.lblIntervaloData.Location = new System.Drawing.Point(282, 123);
+			this.lblIntervaloData.Name = "lblIntervaloData";
+			this.lblIntervaloData.Size = new System.Drawing.Size(18, 20);
+			this.lblIntervaloData.TabIndex = 18;
+			this.lblIntervaloData.Text = "à";
 			// 
 			// lblMotoristaPesquisar
 			// 
 			this.lblMotoristaPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblMotoristaPesquisar.AutoSize = true;
-			this.lblMotoristaPesquisar.Location = new System.Drawing.Point(75, 16);
+			this.lblMotoristaPesquisar.Location = new System.Drawing.Point(135, 30);
 			this.lblMotoristaPesquisar.Name = "lblMotoristaPesquisar";
 			this.lblMotoristaPesquisar.Size = new System.Drawing.Size(75, 20);
 			this.lblMotoristaPesquisar.TabIndex = 12;
 			this.lblMotoristaPesquisar.Text = "Motorista";
 			// 
+			// lblMotoCliPesquisar
+			// 
+			this.lblMotoCliPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.lblMotoCliPesquisar.AutoSize = true;
+			this.lblMotoCliPesquisar.Location = new System.Drawing.Point(471, 26);
+			this.lblMotoCliPesquisar.Name = "lblMotoCliPesquisar";
+			this.lblMotoCliPesquisar.Size = new System.Drawing.Size(58, 20);
+			this.lblMotoCliPesquisar.TabIndex = 14;
+			this.lblMotoCliPesquisar.Text = "Cliente";
+			// 
 			// tabCadastroViagem
 			// 
 			this.tabCadastroViagem.AutoScroll = true;
-			this.tabCadastroViagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.tabCadastroViagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
 			this.tabCadastroViagem.Controls.Add(this.pnDadosViagem);
 			this.tabCadastroViagem.Controls.Add(this.btnLimpar);
 			this.tabCadastroViagem.Controls.Add(this.btnVoltar);
@@ -450,11 +428,12 @@
 			this.pnDadosViagem.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.pnDadosViagem.Size = new System.Drawing.Size(922, 523);
 			this.pnDadosViagem.TabIndex = 101;
+			this.toolTipViagem.SetToolTip(this.pnDadosViagem, "Role para baixo para visualizar o restante do formulario.");
 			// 
 			// gbDadosViagem1
 			// 
 			this.gbDadosViagem1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.gbDadosViagem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.gbDadosViagem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.gbDadosViagem1.Controls.Add(this.lblStatus);
 			this.gbDadosViagem1.Controls.Add(this.cbStatus);
 			this.gbDadosViagem1.Controls.Add(this.cbAtendente);
@@ -471,12 +450,13 @@
 			this.gbDadosViagem1.Controls.Add(this.lblValor);
 			this.gbDadosViagem1.Controls.Add(this.lblVeiculo);
 			this.gbDadosViagem1.Controls.Add(this.lblAtendente);
-			this.gbDadosViagem1.Location = new System.Drawing.Point(3, 3);
+			this.gbDadosViagem1.Location = new System.Drawing.Point(-6, 3);
 			this.gbDadosViagem1.Name = "gbDadosViagem1";
 			this.gbDadosViagem1.Size = new System.Drawing.Size(903, 217);
 			this.gbDadosViagem1.TabIndex = 97;
 			this.gbDadosViagem1.TabStop = false;
 			this.gbDadosViagem1.Text = "Dados da Viagem";
+			this.toolTipViagem.SetToolTip(this.gbDadosViagem1, "Preencha aqui, os dados da Viagem.");
 			// 
 			// lblStatus
 			// 
@@ -487,63 +467,6 @@
 			this.lblStatus.Size = new System.Drawing.Size(56, 20);
 			this.lblStatus.TabIndex = 98;
 			this.lblStatus.Text = "Status";
-			// 
-			// cbStatus
-			// 
-			this.cbStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cbStatus.CampoObrigatorio = true;
-			this.cbStatus.FormattingEnabled = true;
-			this.cbStatus.Location = new System.Drawing.Point(389, 55);
-			this.cbStatus.MensagemCampoObrigatorio = "Informar o Status da Viagem";
-			this.cbStatus.Name = "cbStatus";
-			this.cbStatus.Size = new System.Drawing.Size(207, 28);
-			this.cbStatus.TabIndex = 97;
-			// 
-			// cbAtendente
-			// 
-			this.cbAtendente.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cbAtendente.CampoObrigatorio = false;
-			this.cbAtendente.Enabled = false;
-			this.cbAtendente.FormattingEnabled = true;
-			this.cbAtendente.Location = new System.Drawing.Point(672, 111);
-			this.cbAtendente.MensagemCampoObrigatorio = "Informar o Atendente";
-			this.cbAtendente.Name = "cbAtendente";
-			this.cbAtendente.Size = new System.Drawing.Size(206, 28);
-			this.cbAtendente.TabIndex = 96;
-			// 
-			// cbVeiculo
-			// 
-			this.cbVeiculo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cbVeiculo.CampoObrigatorio = true;
-			this.cbVeiculo.CausesValidation = false;
-			this.cbVeiculo.FormattingEnabled = true;
-			this.cbVeiculo.Location = new System.Drawing.Point(389, 113);
-			this.cbVeiculo.MensagemCampoObrigatorio = "Informar Veículo";
-			this.cbVeiculo.Name = "cbVeiculo";
-			this.cbVeiculo.Size = new System.Drawing.Size(207, 28);
-			this.cbVeiculo.TabIndex = 3;
-			// 
-			// cbCliente
-			// 
-			this.cbCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cbCliente.CampoObrigatorio = true;
-			this.cbCliente.FormattingEnabled = true;
-			this.cbCliente.Location = new System.Drawing.Point(40, 171);
-			this.cbCliente.MensagemCampoObrigatorio = "Informar Cliente";
-			this.cbCliente.Name = "cbCliente";
-			this.cbCliente.Size = new System.Drawing.Size(264, 28);
-			this.cbCliente.TabIndex = 4;
-			// 
-			// cbMotoristaViagem
-			// 
-			this.cbMotoristaViagem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cbMotoristaViagem.CampoObrigatorio = true;
-			this.cbMotoristaViagem.FormattingEnabled = true;
-			this.cbMotoristaViagem.Location = new System.Drawing.Point(40, 111);
-			this.cbMotoristaViagem.MensagemCampoObrigatorio = "Informar Motorista";
-			this.cbMotoristaViagem.Name = "cbMotoristaViagem";
-			this.cbMotoristaViagem.Size = new System.Drawing.Size(264, 28);
-			this.cbMotoristaViagem.TabIndex = 2;
 			// 
 			// dtDataViagem
 			// 
@@ -575,17 +498,6 @@
 			this.lblMotorista.TabIndex = 68;
 			this.lblMotorista.Text = "Motorista";
 			// 
-			// txtDistancia
-			// 
-			this.txtDistancia.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtDistancia.CampoObrigatorio = true;
-			this.txtDistancia.Location = new System.Drawing.Point(673, 173);
-			this.txtDistancia.MensagemObrigatorio = "Informar Distancia ";
-			this.txtDistancia.Name = "txtDistancia";
-			this.txtDistancia.Size = new System.Drawing.Size(205, 26);
-			this.txtDistancia.TabIndex = 6;
-			this.txtDistancia.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
 			// lblDistancia
 			// 
 			this.lblDistancia.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -606,17 +518,6 @@
 			this.lblCliente.Size = new System.Drawing.Size(58, 20);
 			this.lblCliente.TabIndex = 70;
 			this.lblCliente.Text = "Cliente";
-			// 
-			// txtValor
-			// 
-			this.txtValor.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtValor.CampoObrigatorio = true;
-			this.txtValor.Location = new System.Drawing.Point(389, 173);
-			this.txtValor.MensagemObrigatorio = "Informar Valor";
-			this.txtValor.Name = "txtValor";
-			this.txtValor.Size = new System.Drawing.Size(207, 26);
-			this.txtValor.TabIndex = 5;
-			this.txtValor.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.numerosDecimais;
 			// 
 			// lblValor
 			// 
@@ -652,7 +553,7 @@
 			// gbDadosOrigemviagem
 			// 
 			this.gbDadosOrigemviagem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.gbDadosOrigemviagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.gbDadosOrigemviagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.gbDadosOrigemviagem.Controls.Add(this.txtCompleOrigem);
 			this.gbDadosOrigemviagem.Controls.Add(this.lblCompleOrigem);
 			this.gbDadosOrigemviagem.Controls.Add(this.cbCidadeOrigem);
@@ -668,23 +569,13 @@
 			this.gbDadosOrigemviagem.Controls.Add(this.lblUfOrigem);
 			this.gbDadosOrigemviagem.Controls.Add(this.lblCepOrigem);
 			this.gbDadosOrigemviagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.gbDadosOrigemviagem.Location = new System.Drawing.Point(6, 226);
+			this.gbDadosOrigemviagem.Location = new System.Drawing.Point(-6, 226);
 			this.gbDadosOrigemviagem.Name = "gbDadosOrigemviagem";
 			this.gbDadosOrigemviagem.Size = new System.Drawing.Size(903, 171);
 			this.gbDadosOrigemviagem.TabIndex = 69;
 			this.gbDadosOrigemviagem.TabStop = false;
 			this.gbDadosOrigemviagem.Text = "Origem da Viagem";
-			// 
-			// txtCompleOrigem
-			// 
-			this.txtCompleOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtCompleOrigem.CampoObrigatorio = false;
-			this.txtCompleOrigem.Location = new System.Drawing.Point(589, 59);
-			this.txtCompleOrigem.MensagemObrigatorio = "Informar Complemento de Origem";
-			this.txtCompleOrigem.Name = "txtCompleOrigem";
-			this.txtCompleOrigem.Size = new System.Drawing.Size(289, 26);
-			this.txtCompleOrigem.TabIndex = 10;
-			this.txtCompleOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			this.toolTipViagem.SetToolTip(this.gbDadosOrigemviagem, "Preencha aqui o endereço de origem da viagem.");
 			// 
 			// lblCompleOrigem
 			// 
@@ -697,53 +588,6 @@
 			this.lblCompleOrigem.TabIndex = 85;
 			this.lblCompleOrigem.Text = "Complemento";
 			// 
-			// cbCidadeOrigem
-			// 
-			this.cbCidadeOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cbCidadeOrigem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-			this.cbCidadeOrigem.CampoObrigatorio = true;
-			this.cbCidadeOrigem.FormattingEnabled = true;
-			this.cbCidadeOrigem.Location = new System.Drawing.Point(229, 121);
-			this.cbCidadeOrigem.MensagemCampoObrigatorio = "Informar Cidade de Origem";
-			this.cbCidadeOrigem.Name = "cbCidadeOrigem";
-			this.cbCidadeOrigem.Size = new System.Drawing.Size(248, 28);
-			this.cbCidadeOrigem.TabIndex = 12;
-			// 
-			// txtCepOrigem
-			// 
-			this.txtCepOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtCepOrigem.CampoObrigatorio = true;
-			this.txtCepOrigem.Location = new System.Drawing.Point(40, 57);
-			this.txtCepOrigem.MaxLength = 9;
-			this.txtCepOrigem.MensagemObrigatorio = "Informar o Cep de Origem";
-			this.txtCepOrigem.Name = "txtCepOrigem";
-			this.txtCepOrigem.Size = new System.Drawing.Size(168, 26);
-			this.txtCepOrigem.TabIndex = 7;
-			this.txtCepOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
-			// 
-			// txtBairroOrigem
-			// 
-			this.txtBairroOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtBairroOrigem.CampoObrigatorio = true;
-			this.txtBairroOrigem.Location = new System.Drawing.Point(589, 119);
-			this.txtBairroOrigem.MensagemObrigatorio = "Informar Bairro de Origem";
-			this.txtBairroOrigem.Name = "txtBairroOrigem";
-			this.txtBairroOrigem.Size = new System.Drawing.Size(194, 26);
-			this.txtBairroOrigem.TabIndex = 13;
-			this.txtBairroOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// cbEstadoOrigem
-			// 
-			this.cbEstadoOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cbEstadoOrigem.CampoObrigatorio = true;
-			this.cbEstadoOrigem.FormattingEnabled = true;
-			this.cbEstadoOrigem.Location = new System.Drawing.Point(41, 119);
-			this.cbEstadoOrigem.MensagemCampoObrigatorio = "Informar Estado de Origem";
-			this.cbEstadoOrigem.Name = "cbEstadoOrigem";
-			this.cbEstadoOrigem.Size = new System.Drawing.Size(109, 28);
-			this.cbEstadoOrigem.TabIndex = 11;
-			this.cbEstadoOrigem.SelectedIndexChanged += new System.EventHandler(this.cbEstadoOrigem_SelectedIndexChanged);
-			// 
 			// lblCidadeOrigem
 			// 
 			this.lblCidadeOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -754,28 +598,6 @@
 			this.lblCidadeOrigem.Size = new System.Drawing.Size(59, 20);
 			this.lblCidadeOrigem.TabIndex = 73;
 			this.lblCidadeOrigem.Text = "Cidade";
-			// 
-			// txtLograOrigem
-			// 
-			this.txtLograOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtLograOrigem.CampoObrigatorio = true;
-			this.txtLograOrigem.Location = new System.Drawing.Point(229, 57);
-			this.txtLograOrigem.MensagemObrigatorio = "Informar Logradouro de Origem";
-			this.txtLograOrigem.Name = "txtLograOrigem";
-			this.txtLograOrigem.Size = new System.Drawing.Size(248, 26);
-			this.txtLograOrigem.TabIndex = 8;
-			this.txtLograOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtNumeroOrigem
-			// 
-			this.txtNumeroOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtNumeroOrigem.CampoObrigatorio = true;
-			this.txtNumeroOrigem.Location = new System.Drawing.Point(483, 57);
-			this.txtNumeroOrigem.MensagemObrigatorio = "Informar Numero de Origem";
-			this.txtNumeroOrigem.Name = "txtNumeroOrigem";
-			this.txtNumeroOrigem.Size = new System.Drawing.Size(80, 26);
-			this.txtNumeroOrigem.TabIndex = 9;
-			this.txtNumeroOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// lblLograOrigem
 			// 
@@ -835,7 +657,7 @@
 			// gbDadosDestinoViagem
 			// 
 			this.gbDadosDestinoViagem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.gbDadosDestinoViagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.gbDadosDestinoViagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.gbDadosDestinoViagem.Controls.Add(this.txtCompleDestino);
 			this.gbDadosDestinoViagem.Controls.Add(this.lblCompleDestino);
 			this.gbDadosDestinoViagem.Controls.Add(this.cbCidadeDestino);
@@ -850,23 +672,13 @@
 			this.gbDadosDestinoViagem.Controls.Add(this.lblNumDestino);
 			this.gbDadosDestinoViagem.Controls.Add(this.lblBairroDestino);
 			this.gbDadosDestinoViagem.Controls.Add(this.lblCepDestino);
-			this.gbDadosDestinoViagem.Location = new System.Drawing.Point(3, 403);
+			this.gbDadosDestinoViagem.Location = new System.Drawing.Point(-6, 403);
 			this.gbDadosDestinoViagem.Name = "gbDadosDestinoViagem";
 			this.gbDadosDestinoViagem.Size = new System.Drawing.Size(903, 170);
 			this.gbDadosDestinoViagem.TabIndex = 96;
 			this.gbDadosDestinoViagem.TabStop = false;
 			this.gbDadosDestinoViagem.Text = "Destino da Viagem";
-			// 
-			// txtCompleDestino
-			// 
-			this.txtCompleDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtCompleDestino.CampoObrigatorio = false;
-			this.txtCompleDestino.Location = new System.Drawing.Point(589, 57);
-			this.txtCompleDestino.MensagemObrigatorio = "nformar o Complemento de Destino";
-			this.txtCompleDestino.Name = "txtCompleDestino";
-			this.txtCompleDestino.Size = new System.Drawing.Size(289, 26);
-			this.txtCompleDestino.TabIndex = 17;
-			this.txtCompleDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			this.toolTipViagem.SetToolTip(this.gbDadosDestinoViagem, "Preencha aqui, o Endereço de Destino da Viagem.");
 			// 
 			// lblCompleDestino
 			// 
@@ -878,74 +690,6 @@
 			this.lblCompleDestino.Size = new System.Drawing.Size(108, 20);
 			this.lblCompleDestino.TabIndex = 87;
 			this.lblCompleDestino.Text = "Complemento";
-			// 
-			// cbCidadeDestino
-			// 
-			this.cbCidadeDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cbCidadeDestino.CampoObrigatorio = true;
-			this.cbCidadeDestino.FormattingEnabled = true;
-			this.cbCidadeDestino.Location = new System.Drawing.Point(229, 124);
-			this.cbCidadeDestino.MensagemCampoObrigatorio = "nformar Cidade de Destino";
-			this.cbCidadeDestino.Name = "cbCidadeDestino";
-			this.cbCidadeDestino.Size = new System.Drawing.Size(248, 28);
-			this.cbCidadeDestino.TabIndex = 19;
-			// 
-			// cbEstadoDestino
-			// 
-			this.cbEstadoDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cbEstadoDestino.CampoObrigatorio = true;
-			this.cbEstadoDestino.FormattingEnabled = true;
-			this.cbEstadoDestino.Location = new System.Drawing.Point(40, 122);
-			this.cbEstadoDestino.MensagemCampoObrigatorio = "nformar o UF de Destino";
-			this.cbEstadoDestino.Name = "cbEstadoDestino";
-			this.cbEstadoDestino.Size = new System.Drawing.Size(110, 28);
-			this.cbEstadoDestino.TabIndex = 18;
-			this.cbEstadoDestino.SelectedIndexChanged += new System.EventHandler(this.cbEstadoDestino_SelectedIndexChanged_1);
-			// 
-			// txtBairroDestino
-			// 
-			this.txtBairroDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtBairroDestino.CampoObrigatorio = true;
-			this.txtBairroDestino.Location = new System.Drawing.Point(589, 126);
-			this.txtBairroDestino.MensagemObrigatorio = "nformar o Bairro de Destino";
-			this.txtBairroDestino.Name = "txtBairroDestino";
-			this.txtBairroDestino.Size = new System.Drawing.Size(194, 26);
-			this.txtBairroDestino.TabIndex = 21;
-			this.txtBairroDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtLograDestino
-			// 
-			this.txtLograDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtLograDestino.CampoObrigatorio = true;
-			this.txtLograDestino.Location = new System.Drawing.Point(229, 59);
-			this.txtLograDestino.MensagemObrigatorio = "nformar Logradouro de Destino";
-			this.txtLograDestino.Name = "txtLograDestino";
-			this.txtLograDestino.Size = new System.Drawing.Size(248, 26);
-			this.txtLograDestino.TabIndex = 15;
-			this.txtLograDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
-			// 
-			// txtNumeroDestino
-			// 
-			this.txtNumeroDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtNumeroDestino.CampoObrigatorio = true;
-			this.txtNumeroDestino.Location = new System.Drawing.Point(483, 59);
-			this.txtNumeroDestino.MensagemObrigatorio = "nformar o Nº de Destino";
-			this.txtNumeroDestino.Name = "txtNumeroDestino";
-			this.txtNumeroDestino.Size = new System.Drawing.Size(80, 26);
-			this.txtNumeroDestino.TabIndex = 16;
-			this.txtNumeroDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
-			// 
-			// txtCepDestino
-			// 
-			this.txtCepDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtCepDestino.CampoObrigatorio = true;
-			this.txtCepDestino.Location = new System.Drawing.Point(40, 59);
-			this.txtCepDestino.MaxLength = 8;
-			this.txtCepDestino.MensagemObrigatorio = "Informar o Cep de Destino";
-			this.txtCepDestino.Name = "txtCepDestino";
-			this.txtCepDestino.Size = new System.Drawing.Size(168, 26);
-			this.txtCepDestino.TabIndex = 14;
-			this.txtCepDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// lblUfDestino
 			// 
@@ -1030,6 +774,7 @@
 			this.btnLimpar.TabIndex = 99;
 			this.btnLimpar.Text = "Limpar";
 			this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.toolTipViagem.SetToolTip(this.btnLimpar, "Limpa todos os campos do formulário.");
 			this.btnLimpar.UseVisualStyleBackColor = false;
 			this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
 			// 
@@ -1051,6 +796,7 @@
 			this.btnVoltar.Text = "Voltar";
 			this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.toolTipViagem.SetToolTip(this.btnVoltar, "Redireciona para a tela anterior > Consulta de Viagens.");
 			this.btnVoltar.UseVisualStyleBackColor = false;
 			this.btnVoltar.Click += new System.EventHandler(this.BtnVoltar_Click);
 			// 
@@ -1072,6 +818,7 @@
 			this.btnSalvar.Text = "Salvar";
 			this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.toolTipViagem.SetToolTip(this.btnSalvar, "Cadastra uma viagem.");
 			this.btnSalvar.UseVisualStyleBackColor = false;
 			this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
 			// 
@@ -1106,15 +853,283 @@
 			this.button1.Size = new System.Drawing.Size(1144, 34);
 			this.button1.TabIndex = 13;
 			this.button1.Text = "Viagens";
+			this.toolTipViagem.SetToolTip(this.button1, "Você está em tela de Viagens.");
 			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// toolTipViagem
+			// 
+			this.toolTipViagem.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+			// 
+			// cbClientePesquisa
+			// 
+			this.cbClientePesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cbClientePesquisa.CampoObrigatorio = false;
+			this.cbClientePesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.cbClientePesquisa.FormattingEnabled = true;
+			this.cbClientePesquisa.Location = new System.Drawing.Point(475, 53);
+			this.cbClientePesquisa.MensagemCampoObrigatorio = null;
+			this.cbClientePesquisa.Name = "cbClientePesquisa";
+			this.cbClientePesquisa.Size = new System.Drawing.Size(308, 28);
+			this.cbClientePesquisa.TabIndex = 2;
+			this.toolTipViagem.SetToolTip(this.cbClientePesquisa, "Selecione um cliente, para filtrar todas Viagens solicitadas por este.");
+			// 
+			// cbMotoristaPesquisar
+			// 
+			this.cbMotoristaPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cbMotoristaPesquisar.CampoObrigatorio = false;
+			this.cbMotoristaPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.cbMotoristaPesquisar.FormattingEnabled = true;
+			this.cbMotoristaPesquisar.Location = new System.Drawing.Point(137, 53);
+			this.cbMotoristaPesquisar.MensagemCampoObrigatorio = null;
+			this.cbMotoristaPesquisar.Name = "cbMotoristaPesquisar";
+			this.cbMotoristaPesquisar.Size = new System.Drawing.Size(308, 28);
+			this.cbMotoristaPesquisar.TabIndex = 1;
+			this.toolTipViagem.SetToolTip(this.cbMotoristaPesquisar, "Selecione um Motorista, se deseja filtrar todas Viagens realizadas por este.");
+			// 
+			// cbStatus
+			// 
+			this.cbStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cbStatus.CampoObrigatorio = true;
+			this.cbStatus.FormattingEnabled = true;
+			this.cbStatus.Location = new System.Drawing.Point(389, 55);
+			this.cbStatus.MensagemCampoObrigatorio = "Informar o Status da Viagem";
+			this.cbStatus.Name = "cbStatus";
+			this.cbStatus.Size = new System.Drawing.Size(207, 28);
+			this.cbStatus.TabIndex = 97;
+			// 
+			// cbAtendente
+			// 
+			this.cbAtendente.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cbAtendente.CampoObrigatorio = false;
+			this.cbAtendente.Enabled = false;
+			this.cbAtendente.FormattingEnabled = true;
+			this.cbAtendente.Location = new System.Drawing.Point(672, 111);
+			this.cbAtendente.MensagemCampoObrigatorio = "Informar o Atendente";
+			this.cbAtendente.Name = "cbAtendente";
+			this.cbAtendente.Size = new System.Drawing.Size(206, 28);
+			this.cbAtendente.TabIndex = 96;
+			// 
+			// cbVeiculo
+			// 
+			this.cbVeiculo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cbVeiculo.CampoObrigatorio = true;
+			this.cbVeiculo.CausesValidation = false;
+			this.cbVeiculo.FormattingEnabled = true;
+			this.cbVeiculo.Location = new System.Drawing.Point(389, 113);
+			this.cbVeiculo.MensagemCampoObrigatorio = "Informar Veículo";
+			this.cbVeiculo.Name = "cbVeiculo";
+			this.cbVeiculo.Size = new System.Drawing.Size(207, 28);
+			this.cbVeiculo.TabIndex = 3;
+			// 
+			// cbCliente
+			// 
+			this.cbCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cbCliente.CampoObrigatorio = true;
+			this.cbCliente.FormattingEnabled = true;
+			this.cbCliente.Location = new System.Drawing.Point(40, 171);
+			this.cbCliente.MensagemCampoObrigatorio = "Informar Cliente";
+			this.cbCliente.Name = "cbCliente";
+			this.cbCliente.Size = new System.Drawing.Size(264, 28);
+			this.cbCliente.TabIndex = 4;
+			// 
+			// cbMotoristaViagem
+			// 
+			this.cbMotoristaViagem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cbMotoristaViagem.CampoObrigatorio = true;
+			this.cbMotoristaViagem.FormattingEnabled = true;
+			this.cbMotoristaViagem.Location = new System.Drawing.Point(40, 111);
+			this.cbMotoristaViagem.MensagemCampoObrigatorio = "Informar Motorista";
+			this.cbMotoristaViagem.Name = "cbMotoristaViagem";
+			this.cbMotoristaViagem.Size = new System.Drawing.Size(264, 28);
+			this.cbMotoristaViagem.TabIndex = 2;
+			// 
+			// txtDistancia
+			// 
+			this.txtDistancia.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtDistancia.CampoObrigatorio = true;
+			this.txtDistancia.Location = new System.Drawing.Point(673, 173);
+			this.txtDistancia.MensagemObrigatorio = "Informar Distancia ";
+			this.txtDistancia.Name = "txtDistancia";
+			this.txtDistancia.Size = new System.Drawing.Size(205, 26);
+			this.txtDistancia.TabIndex = 6;
+			this.txtDistancia.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// txtValor
+			// 
+			this.txtValor.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtValor.CampoObrigatorio = true;
+			this.txtValor.Location = new System.Drawing.Point(389, 173);
+			this.txtValor.MensagemObrigatorio = "Informar Valor";
+			this.txtValor.Name = "txtValor";
+			this.txtValor.Size = new System.Drawing.Size(207, 26);
+			this.txtValor.TabIndex = 5;
+			this.txtValor.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.numerosDecimais;
+			// 
+			// txtCompleOrigem
+			// 
+			this.txtCompleOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtCompleOrigem.CampoObrigatorio = false;
+			this.txtCompleOrigem.Location = new System.Drawing.Point(589, 59);
+			this.txtCompleOrigem.MensagemObrigatorio = "Informar Complemento de Origem";
+			this.txtCompleOrigem.Name = "txtCompleOrigem";
+			this.txtCompleOrigem.Size = new System.Drawing.Size(289, 26);
+			this.txtCompleOrigem.TabIndex = 10;
+			this.txtCompleOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
+			// cbCidadeOrigem
+			// 
+			this.cbCidadeOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cbCidadeOrigem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+			this.cbCidadeOrigem.CampoObrigatorio = true;
+			this.cbCidadeOrigem.FormattingEnabled = true;
+			this.cbCidadeOrigem.Location = new System.Drawing.Point(229, 121);
+			this.cbCidadeOrigem.MensagemCampoObrigatorio = "Informar Cidade de Origem";
+			this.cbCidadeOrigem.Name = "cbCidadeOrigem";
+			this.cbCidadeOrigem.Size = new System.Drawing.Size(248, 28);
+			this.cbCidadeOrigem.TabIndex = 12;
+			// 
+			// txtCepOrigem
+			// 
+			this.txtCepOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtCepOrigem.CampoObrigatorio = true;
+			this.txtCepOrigem.Location = new System.Drawing.Point(40, 57);
+			this.txtCepOrigem.MaxLength = 9;
+			this.txtCepOrigem.MensagemObrigatorio = "Informar o Cep de Origem";
+			this.txtCepOrigem.Name = "txtCepOrigem";
+			this.txtCepOrigem.Size = new System.Drawing.Size(168, 26);
+			this.txtCepOrigem.TabIndex = 7;
+			this.txtCepOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
+			// txtBairroOrigem
+			// 
+			this.txtBairroOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtBairroOrigem.CampoObrigatorio = true;
+			this.txtBairroOrigem.Location = new System.Drawing.Point(589, 119);
+			this.txtBairroOrigem.MensagemObrigatorio = "Informar Bairro de Origem";
+			this.txtBairroOrigem.Name = "txtBairroOrigem";
+			this.txtBairroOrigem.Size = new System.Drawing.Size(194, 26);
+			this.txtBairroOrigem.TabIndex = 13;
+			this.txtBairroOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// cbEstadoOrigem
+			// 
+			this.cbEstadoOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cbEstadoOrigem.CampoObrigatorio = true;
+			this.cbEstadoOrigem.FormattingEnabled = true;
+			this.cbEstadoOrigem.Location = new System.Drawing.Point(41, 119);
+			this.cbEstadoOrigem.MensagemCampoObrigatorio = "Informar Estado de Origem";
+			this.cbEstadoOrigem.Name = "cbEstadoOrigem";
+			this.cbEstadoOrigem.Size = new System.Drawing.Size(109, 28);
+			this.cbEstadoOrigem.TabIndex = 11;
+			this.cbEstadoOrigem.SelectedIndexChanged += new System.EventHandler(this.cbEstadoOrigem_SelectedIndexChanged);
+			// 
+			// txtLograOrigem
+			// 
+			this.txtLograOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtLograOrigem.CampoObrigatorio = true;
+			this.txtLograOrigem.Location = new System.Drawing.Point(229, 57);
+			this.txtLograOrigem.MensagemObrigatorio = "Informar Logradouro de Origem";
+			this.txtLograOrigem.Name = "txtLograOrigem";
+			this.txtLograOrigem.Size = new System.Drawing.Size(248, 26);
+			this.txtLograOrigem.TabIndex = 8;
+			this.txtLograOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtNumeroOrigem
+			// 
+			this.txtNumeroOrigem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtNumeroOrigem.CampoObrigatorio = true;
+			this.txtNumeroOrigem.Location = new System.Drawing.Point(483, 57);
+			this.txtNumeroOrigem.MensagemObrigatorio = "Informar Numero de Origem";
+			this.txtNumeroOrigem.Name = "txtNumeroOrigem";
+			this.txtNumeroOrigem.Size = new System.Drawing.Size(80, 26);
+			this.txtNumeroOrigem.TabIndex = 9;
+			this.txtNumeroOrigem.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// txtCompleDestino
+			// 
+			this.txtCompleDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtCompleDestino.CampoObrigatorio = false;
+			this.txtCompleDestino.Location = new System.Drawing.Point(589, 57);
+			this.txtCompleDestino.MensagemObrigatorio = "nformar o Complemento de Destino";
+			this.txtCompleDestino.Name = "txtCompleDestino";
+			this.txtCompleDestino.Size = new System.Drawing.Size(289, 26);
+			this.txtCompleDestino.TabIndex = 17;
+			this.txtCompleDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
+			// 
+			// cbCidadeDestino
+			// 
+			this.cbCidadeDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cbCidadeDestino.CampoObrigatorio = true;
+			this.cbCidadeDestino.FormattingEnabled = true;
+			this.cbCidadeDestino.Location = new System.Drawing.Point(229, 124);
+			this.cbCidadeDestino.MensagemCampoObrigatorio = "nformar Cidade de Destino";
+			this.cbCidadeDestino.Name = "cbCidadeDestino";
+			this.cbCidadeDestino.Size = new System.Drawing.Size(248, 28);
+			this.cbCidadeDestino.TabIndex = 19;
+			// 
+			// cbEstadoDestino
+			// 
+			this.cbEstadoDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cbEstadoDestino.CampoObrigatorio = true;
+			this.cbEstadoDestino.FormattingEnabled = true;
+			this.cbEstadoDestino.Location = new System.Drawing.Point(40, 122);
+			this.cbEstadoDestino.MensagemCampoObrigatorio = "nformar o UF de Destino";
+			this.cbEstadoDestino.Name = "cbEstadoDestino";
+			this.cbEstadoDestino.Size = new System.Drawing.Size(110, 28);
+			this.cbEstadoDestino.TabIndex = 18;
+			this.cbEstadoDestino.SelectedIndexChanged += new System.EventHandler(this.cbEstadoDestino_SelectedIndexChanged_1);
+			// 
+			// txtBairroDestino
+			// 
+			this.txtBairroDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtBairroDestino.CampoObrigatorio = true;
+			this.txtBairroDestino.Location = new System.Drawing.Point(589, 126);
+			this.txtBairroDestino.MensagemObrigatorio = "nformar o Bairro de Destino";
+			this.txtBairroDestino.Name = "txtBairroDestino";
+			this.txtBairroDestino.Size = new System.Drawing.Size(194, 26);
+			this.txtBairroDestino.TabIndex = 21;
+			this.txtBairroDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtLograDestino
+			// 
+			this.txtLograDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtLograDestino.CampoObrigatorio = true;
+			this.txtLograDestino.Location = new System.Drawing.Point(229, 59);
+			this.txtLograDestino.MensagemObrigatorio = "nformar Logradouro de Destino";
+			this.txtLograDestino.Name = "txtLograDestino";
+			this.txtLograDestino.Size = new System.Drawing.Size(248, 26);
+			this.txtLograDestino.TabIndex = 15;
+			this.txtLograDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteLetra;
+			// 
+			// txtNumeroDestino
+			// 
+			this.txtNumeroDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtNumeroDestino.CampoObrigatorio = true;
+			this.txtNumeroDestino.Location = new System.Drawing.Point(483, 59);
+			this.txtNumeroDestino.MensagemObrigatorio = "nformar o Nº de Destino";
+			this.txtNumeroDestino.Name = "txtNumeroDestino";
+			this.txtNumeroDestino.Size = new System.Drawing.Size(80, 26);
+			this.txtNumeroDestino.TabIndex = 16;
+			this.txtNumeroDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
+			// 
+			// txtCepDestino
+			// 
+			this.txtCepDestino.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtCepDestino.CampoObrigatorio = true;
+			this.txtCepDestino.Location = new System.Drawing.Point(40, 59);
+			this.txtCepDestino.MaxLength = 8;
+			this.txtCepDestino.MensagemObrigatorio = "Informar o Cep de Destino";
+			this.txtCepDestino.Name = "txtCepDestino";
+			this.txtCepDestino.Size = new System.Drawing.Size(168, 26);
+			this.txtCepDestino.TabIndex = 14;
+			this.txtCepDestino.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.somenteNumero;
 			// 
 			// frmViagem
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoScroll = true;
-			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(146)))), ((int)(((byte)(208)))));
 			this.ClientSize = new System.Drawing.Size(1144, 739);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.tabCtrlViagem);
@@ -1126,8 +1141,7 @@
 			this.tabConsultaViagem.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgViagem)).EndInit();
 			this.gbFiltraViagem.ResumeLayout(false);
-			this.pblFiltroViagem.ResumeLayout(false);
-			this.pblFiltroViagem.PerformLayout();
+			this.gbFiltraViagem.PerformLayout();
 			this.tabCadastroViagem.ResumeLayout(false);
 			this.tabCadastroViagem.PerformLayout();
 			this.pnDadosViagem.ResumeLayout(false);
@@ -1145,7 +1159,6 @@
 
 		private System.Windows.Forms.TabControl tabCtrlViagem;
 		private System.Windows.Forms.TabPage tabConsultaViagem;
-		private System.Windows.Forms.Panel pblFiltroViagem;
 		private System.Windows.Forms.Button btnPesquisarViagem;
 		private System.Windows.Forms.TabPage tabCadastroViagem;
 		private System.Windows.Forms.Label lblDataViagem;
@@ -1216,5 +1229,6 @@
 		private System.Windows.Forms.Button btnNovo;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Panel pnDadosViagem;
+		private System.Windows.Forms.ToolTip toolTipViagem;
 	}
 }

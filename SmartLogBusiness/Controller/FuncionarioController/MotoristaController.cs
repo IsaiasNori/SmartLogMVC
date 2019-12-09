@@ -190,7 +190,7 @@ namespace SmartLogBusiness.Controller
 				}
 				if (obj.DataNasc.Value != System.DateTime.Now && obj.DataNasc.Value.Year > 18)
 				{
-					if (obj.DataNasc.Value.Year < 60)
+					if (obj.DataNasc.Value.Year > 60)
 					{
 						DateTime.TryParse(obj.DataNasc.ToString(), out dataNasc);
 					}

@@ -28,10 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabctrlVeiculo = new System.Windows.Forms.TabControl();
 			this.tabConsultaVeic = new System.Windows.Forms.TabPage();
 			this.btnFechaVeiculo = new System.Windows.Forms.Button();
@@ -40,7 +40,6 @@
 			this.btnNovoVeiculo = new System.Windows.Forms.Button();
 			this.dgVeiculo = new System.Windows.Forms.DataGridView();
 			this.gbFiltraVeiculo = new System.Windows.Forms.GroupBox();
-			this.panel3 = new System.Windows.Forms.Panel();
 			this.cbMarcaPesquisa = new SmartLog.WindowsForms.UserControl.SuperComboBox();
 			this.lblMarcaPesquisa = new System.Windows.Forms.Label();
 			this.btnPesquisarVeiculo = new System.Windows.Forms.Button();
@@ -80,7 +79,6 @@
 			this.tabConsultaVeic.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgVeiculo)).BeginInit();
 			this.gbFiltraVeiculo.SuspendLayout();
-			this.panel3.SuspendLayout();
 			this.tabCadastroVeic.SuspendLayout();
 			this.gbDadosVeiculo.SuspendLayout();
 			this.SuspendLayout();
@@ -103,7 +101,7 @@
 			// 
 			// tabConsultaVeic
 			// 
-			this.tabConsultaVeic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.tabConsultaVeic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
 			this.tabConsultaVeic.Controls.Add(this.btnFechaVeiculo);
 			this.tabConsultaVeic.Controls.Add(this.btnExcluir);
 			this.tabConsultaVeic.Controls.Add(this.btnAlterar);
@@ -128,7 +126,7 @@
 			this.btnFechaVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnFechaVeiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnFechaVeiculo.Image = global::SmartLog.WindowsForms.Properties.Resources.iconFechar;
-			this.btnFechaVeiculo.Location = new System.Drawing.Point(698, 254);
+			this.btnFechaVeiculo.Location = new System.Drawing.Point(688, 235);
 			this.btnFechaVeiculo.Name = "btnFechaVeiculo";
 			this.btnFechaVeiculo.Size = new System.Drawing.Size(139, 39);
 			this.btnFechaVeiculo.TabIndex = 25;
@@ -149,7 +147,7 @@
 			this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnExcluir.Image = global::SmartLog.WindowsForms.Properties.Resources.iconExcluir;
-			this.btnExcluir.Location = new System.Drawing.Point(524, 254);
+			this.btnExcluir.Location = new System.Drawing.Point(514, 235);
 			this.btnExcluir.Name = "btnExcluir";
 			this.btnExcluir.Size = new System.Drawing.Size(139, 39);
 			this.btnExcluir.TabIndex = 24;
@@ -170,7 +168,7 @@
 			this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnAlterar.Image = global::SmartLog.WindowsForms.Properties.Resources.iconEdit;
-			this.btnAlterar.Location = new System.Drawing.Point(352, 254);
+			this.btnAlterar.Location = new System.Drawing.Point(342, 235);
 			this.btnAlterar.Name = "btnAlterar";
 			this.btnAlterar.Size = new System.Drawing.Size(139, 39);
 			this.btnAlterar.TabIndex = 23;
@@ -191,7 +189,7 @@
 			this.btnNovoVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnNovoVeiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnNovoVeiculo.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_New;
-			this.btnNovoVeiculo.Location = new System.Drawing.Point(181, 254);
+			this.btnNovoVeiculo.Location = new System.Drawing.Point(171, 235);
 			this.btnNovoVeiculo.Name = "btnNovoVeiculo";
 			this.btnNovoVeiculo.Size = new System.Drawing.Size(139, 39);
 			this.btnNovoVeiculo.TabIndex = 22;
@@ -205,11 +203,11 @@
 			// 
 			this.dgVeiculo.AllowUserToAddRows = false;
 			this.dgVeiculo.AllowUserToDeleteRows = false;
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.dgVeiculo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.dgVeiculo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
 			this.dgVeiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -219,36 +217,36 @@
 			this.dgVeiculo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.dgVeiculo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
 			this.dgVeiculo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgVeiculo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Transparent;
+			dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgVeiculo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
 			this.dgVeiculo.ColumnHeadersHeight = 35;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgVeiculo.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.InactiveBorder;
+			dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgVeiculo.DefaultCellStyle = dataGridViewCellStyle19;
 			this.dgVeiculo.EnableHeadersVisualStyles = false;
 			this.dgVeiculo.GridColor = System.Drawing.SystemColors.ActiveCaption;
 			this.dgVeiculo.Location = new System.Drawing.Point(38, 325);
 			this.dgVeiculo.Name = "dgVeiculo";
 			this.dgVeiculo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Menu;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgVeiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Menu;
+			dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgVeiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
 			this.dgVeiculo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
 			this.dgVeiculo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgVeiculo.Size = new System.Drawing.Size(922, 293);
@@ -259,39 +257,28 @@
 			// 
 			this.gbFiltraVeiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.gbFiltraVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
-			this.gbFiltraVeiculo.Controls.Add(this.panel3);
-			this.gbFiltraVeiculo.Location = new System.Drawing.Point(38, 21);
+			this.gbFiltraVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.gbFiltraVeiculo.Controls.Add(this.cbMarcaPesquisa);
+			this.gbFiltraVeiculo.Controls.Add(this.txtModeloPesquisa);
+			this.gbFiltraVeiculo.Controls.Add(this.lblModeloPesquisa);
+			this.gbFiltraVeiculo.Controls.Add(this.lblMarcaPesquisa);
+			this.gbFiltraVeiculo.Controls.Add(this.btnPesquisarVeiculo);
+			this.gbFiltraVeiculo.Location = new System.Drawing.Point(38, 45);
 			this.gbFiltraVeiculo.Name = "gbFiltraVeiculo";
-			this.gbFiltraVeiculo.Size = new System.Drawing.Size(922, 187);
+			this.gbFiltraVeiculo.Size = new System.Drawing.Size(922, 155);
 			this.gbFiltraVeiculo.TabIndex = 10;
 			this.gbFiltraVeiculo.TabStop = false;
 			this.gbFiltraVeiculo.Text = "Filtrar Veículos";
-			// 
-			// panel3
-			// 
-			this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel3.Controls.Add(this.cbMarcaPesquisa);
-			this.panel3.Controls.Add(this.lblMarcaPesquisa);
-			this.panel3.Controls.Add(this.btnPesquisarVeiculo);
-			this.panel3.Controls.Add(this.lblModeloPesquisa);
-			this.panel3.Controls.Add(this.txtModeloPesquisa);
-			this.panel3.Location = new System.Drawing.Point(106, 28);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(652, 121);
-			this.panel3.TabIndex = 9;
 			// 
 			// cbMarcaPesquisa
 			// 
 			this.cbMarcaPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.cbMarcaPesquisa.CampoObrigatorio = false;
 			this.cbMarcaPesquisa.FormattingEnabled = true;
-			this.cbMarcaPesquisa.Location = new System.Drawing.Point(29, 54);
+			this.cbMarcaPesquisa.Location = new System.Drawing.Point(124, 72);
 			this.cbMarcaPesquisa.MensagemCampoObrigatorio = null;
 			this.cbMarcaPesquisa.Name = "cbMarcaPesquisa";
-			this.cbMarcaPesquisa.Size = new System.Drawing.Size(174, 28);
+			this.cbMarcaPesquisa.Size = new System.Drawing.Size(207, 28);
 			this.cbMarcaPesquisa.TabIndex = 9;
 			// 
 			// lblMarcaPesquisa
@@ -299,7 +286,7 @@
 			this.lblMarcaPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblMarcaPesquisa.AutoSize = true;
 			this.lblMarcaPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblMarcaPesquisa.Location = new System.Drawing.Point(25, 31);
+			this.lblMarcaPesquisa.Location = new System.Drawing.Point(120, 49);
 			this.lblMarcaPesquisa.Name = "lblMarcaPesquisa";
 			this.lblMarcaPesquisa.Size = new System.Drawing.Size(53, 20);
 			this.lblMarcaPesquisa.TabIndex = 4;
@@ -317,7 +304,7 @@
 			this.btnPesquisarVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnPesquisarVeiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.btnPesquisarVeiculo.Image = global::SmartLog.WindowsForms.Properties.Resources.icoSearch_fw;
-			this.btnPesquisarVeiculo.Location = new System.Drawing.Point(439, 48);
+			this.btnPesquisarVeiculo.Location = new System.Drawing.Point(577, 66);
 			this.btnPesquisarVeiculo.Name = "btnPesquisarVeiculo";
 			this.btnPesquisarVeiculo.Size = new System.Drawing.Size(199, 39);
 			this.btnPesquisarVeiculo.TabIndex = 8;
@@ -332,7 +319,7 @@
 			this.lblModeloPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblModeloPesquisa.AutoSize = true;
 			this.lblModeloPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.lblModeloPesquisa.Location = new System.Drawing.Point(230, 31);
+			this.lblModeloPesquisa.Location = new System.Drawing.Point(356, 49);
 			this.lblModeloPesquisa.Name = "lblModeloPesquisa";
 			this.lblModeloPesquisa.Size = new System.Drawing.Size(61, 20);
 			this.lblModeloPesquisa.TabIndex = 5;
@@ -343,7 +330,7 @@
 			this.txtModeloPesquisa.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.txtModeloPesquisa.CampoObrigatorio = false;
 			this.txtModeloPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-			this.txtModeloPesquisa.Location = new System.Drawing.Point(234, 54);
+			this.txtModeloPesquisa.Location = new System.Drawing.Point(360, 72);
 			this.txtModeloPesquisa.MaxLength = 18;
 			this.txtModeloPesquisa.MensagemObrigatorio = "Informar o Modelo";
 			this.txtModeloPesquisa.Multiline = true;
@@ -354,7 +341,7 @@
 			// 
 			// tabCadastroVeic
 			// 
-			this.tabCadastroVeic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.tabCadastroVeic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
 			this.tabCadastroVeic.Controls.Add(this.btnLimpar);
 			this.tabCadastroVeic.Controls.Add(this.btnVoltar);
 			this.tabCadastroVeic.Controls.Add(this.btnSalvar);
@@ -433,7 +420,7 @@
 			// gbDadosVeiculo
 			// 
 			this.gbDadosVeiculo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.gbDadosVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
+			this.gbDadosVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.gbDadosVeiculo.Controls.Add(this.txtPlaca);
 			this.gbDadosVeiculo.Controls.Add(this.lblPlaca);
 			this.gbDadosVeiculo.Controls.Add(this.txtKmInicial);
@@ -732,7 +719,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(146)))), ((int)(((byte)(208)))));
 			this.ClientSize = new System.Drawing.Size(1130, 735);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.tabctrlVeiculo);
@@ -744,8 +731,7 @@
 			this.tabConsultaVeic.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgVeiculo)).EndInit();
 			this.gbFiltraVeiculo.ResumeLayout(false);
-			this.panel3.ResumeLayout(false);
-			this.panel3.PerformLayout();
+			this.gbFiltraVeiculo.PerformLayout();
 			this.tabCadastroVeic.ResumeLayout(false);
 			this.tabCadastroVeic.PerformLayout();
 			this.gbDadosVeiculo.ResumeLayout(false);
@@ -758,7 +744,6 @@
 
 		private System.Windows.Forms.TabControl tabctrlVeiculo;
 		private System.Windows.Forms.TabPage tabConsultaVeic;
-		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label lblMarcaPesquisa;
 		private System.Windows.Forms.Button btnPesquisarVeiculo;
 		private System.Windows.Forms.Label lblModeloPesquisa;
