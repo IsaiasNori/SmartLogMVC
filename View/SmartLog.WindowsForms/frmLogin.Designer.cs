@@ -78,7 +78,7 @@
 			// 
 			this.lblSenha.AutoSize = true;
 			this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.lblSenha.ForeColor = System.Drawing.Color.Black;
 			this.lblSenha.Location = new System.Drawing.Point(92, 66);
 			this.lblSenha.Name = "lblSenha";
 			this.lblSenha.Size = new System.Drawing.Size(61, 20);
@@ -89,7 +89,7 @@
 			// 
 			this.lblUsuario.AutoSize = true;
 			this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.lblUsuario.ForeColor = System.Drawing.Color.Black;
 			this.lblUsuario.Location = new System.Drawing.Point(92, 17);
 			this.lblUsuario.Name = "lblUsuario";
 			this.lblUsuario.Size = new System.Drawing.Size(71, 20);
@@ -131,7 +131,7 @@
 			// pnlLogin
 			// 
 			this.pnlLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(146)))), ((int)(((byte)(208)))));
+			this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
 			this.pnlLogin.Controls.Add(this.txtSenha);
 			this.pnlLogin.Controls.Add(this.txtUsuario);
 			this.pnlLogin.Controls.Add(this.lblUsuario);
@@ -192,6 +192,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(146)))), ((int)(((byte)(208)))));
 			this.ClientSize = new System.Drawing.Size(590, 474);
 			this.Controls.Add(this.panelRodape);
 			this.Controls.Add(this.pnlLogin);
