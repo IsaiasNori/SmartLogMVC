@@ -410,6 +410,27 @@ namespace SmartLog.WindowsForms
                 Utils.ExibirMensagem(ex.Message,eTipoMensagem.Erro);
             }
         }
+
+        private void btnCalcular_Click_1(object sender, EventArgs e)
+        {
+
+            try
+            {
+                frmCalculaValor valor = new frmCalculaValor();
+                valor.ShowDialog();
+
+                if(valor.valorTotal > 0)
+                {
+                    txtValor.Text = valor.valorTotal.ToString();
+                    txtDistancia.Text = valor.distancia.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+            }
+        }
     }
 }
 
