@@ -93,7 +93,11 @@ namespace SmartLogBusiness.Controller
                 throw new Exception(ex.Message);
             }
         }
-		public DataTable GetDataTable(Funcionario obj)
+
+
+       
+
+        public DataTable GetDataTable(Funcionario obj)
 		{
 			try
 			{
@@ -107,7 +111,53 @@ namespace SmartLogBusiness.Controller
 			}
 		}
 
-		public Funcionario GetObj(Funcionario obj)
+
+        public Funcionario VerificarFuncionario(string cpf,string email, DateTime DataNasci)
+        {
+            try
+            {
+                DataTable table = dao.VerificarFuncionario(email, cpf, DataNasci);
+
+                if (table != null && table.Rows.Count > 0)
+                {
+                    int.TryParse(table.Rows[0]["Numero"].ToString(), out numero);
+                    int.TryParse(table.Rows[0]["Cod_Cidade"].ToString(), out codCidade);
+                    int.TryParse(table.Rows[0]["Cod_Estado"].ToString(), out codEstado);
+                    DateTime.TryParse(table.Rows[0]["Data_Nascimento"].ToString(), out dataNasc);
+                    int.TryParse(table.Rows[0]["Cod_Cargo"].ToString(), out codTipoCargo);
+
+                    Endereco end = new Endereco(table.Rows[0]["Cep"].ToString(),
+                                                table.Rows[0]["Logradouro"].ToString(),
+                                                numero,
+                                                table.Rows[0]["Bairro"].ToString(),
+                                                codCidade, codEstado);
+
+                    Funcionario func = new Funcionario(Convert.ToInt32(table.Rows[0]["Cod_Matricula"]),
+                                                      table.Rows[0]["Nome_Funcionario"].ToString(),
+                                                      table.Rows[0]["CPF_Funcionario"].ToString(),
+                                                      dataNasc,
+                                                      table.Rows[0]["Telefone_Funcionario"].ToString(),
+                                                      table.Rows[0]["Email_Funcionario"].ToString(),
+                                                      end, (EnumTipoCargo)codTipoCargo);
+
+                    return func;
+                }
+                else
+                {
+                    throw new Exception("Funcionário não localizado");
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+
+        public Funcionario GetObj(Funcionario obj)
 		{
 			try
 			{

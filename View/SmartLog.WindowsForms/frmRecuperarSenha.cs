@@ -1,4 +1,5 @@
 ﻿using SmartLogBusiness.Controller;
+using SmartLogBusiness.Model.Entidade.pessoa;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,9 +37,39 @@ namespace SmartLog.WindowsForms
 				return;
 			}
 
-		
-			
+            try
+            {
+                DateTime dataNasc = new DateTime();
+                if (Util.Utils.IsDate(txtDataNasc.Text))
+                {
+                    dataNasc = Convert.ToDateTime(txtDataNasc.Text);
+                }
+                else
+                {
+                    Util.Utils.ExibirMensagem("Data inválida", eTipoMensagem.Atencao);
+                    txtDataNasc.Focus();
+                    return;
+                }
+                Funcionario func =  funcCtrl.VerificarFuncionario(txtCpf.Text.Replace(".", "").Replace("-", ""), txtEmail.Text, dataNasc);
+                if(func != null)
+                {
+                    funcCtrl.AlterarSenha(func.Codigo, txtNovaSenha.Text);
+                }
+                Util.Utils.ExibirMensagem("Senha alterado com sucesso", eTipoMensagem.Sucesso);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
 
-		}
+                Util.Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+            }
+           
+
+
+
+
+
+
+        }
 	}
 }
