@@ -173,5 +173,11 @@ namespace SmartLog.WindowsForms
 			frmManutencao manu = new frmManutencao();
 			CarregarTela(manu, "Manutenção");
 		}
+
+		private void btnSobre_Click(object sender, EventArgs e)
+		{
+			frmSobre about = new frmSobre();
+			about.ShowDialog();
+		}
 	}
 }

@@ -200,8 +200,10 @@
 			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.dgManutencao.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-			this.dgManutencao.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.dgManutencao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dgManutencao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dgManutencao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgManutencao.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
 			this.dgManutencao.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.dgManutencao.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -226,7 +228,7 @@
 			this.dgManutencao.DefaultCellStyle = dataGridViewCellStyle7;
 			this.dgManutencao.EnableHeadersVisualStyles = false;
 			this.dgManutencao.GridColor = System.Drawing.SystemColors.ActiveCaption;
-			this.dgManutencao.Location = new System.Drawing.Point(69, 364);
+			this.dgManutencao.Location = new System.Drawing.Point(69, 349);
 			this.dgManutencao.Name = "dgManutencao";
 			this.dgManutencao.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -428,7 +430,7 @@
 			// 
 			// tabCadastroManu
 			// 
-			this.tabCadastroManu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.tabCadastroManu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(219)))));
 			this.tabCadastroManu.Controls.Add(this.btnLimpar);
 			this.tabCadastroManu.Controls.Add(this.btnVoltar);
 			this.tabCadastroManu.Controls.Add(this.btnSalvar);
@@ -524,16 +526,18 @@
 			// 
 			// dtSaidaCadastro
 			// 
+			this.dtSaidaCadastro.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.dtSaidaCadastro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtSaidaCadastro.Location = new System.Drawing.Point(203, 60);
+			this.dtSaidaCadastro.Location = new System.Drawing.Point(341, 61);
 			this.dtSaidaCadastro.Name = "dtSaidaCadastro";
 			this.dtSaidaCadastro.Size = new System.Drawing.Size(127, 26);
 			this.dtSaidaCadastro.TabIndex = 7;
 			// 
 			// lblSaida
 			// 
+			this.lblSaida.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblSaida.AutoSize = true;
-			this.lblSaida.Location = new System.Drawing.Point(199, 37);
+			this.lblSaida.Location = new System.Drawing.Point(337, 38);
 			this.lblSaida.Name = "lblSaida";
 			this.lblSaida.Size = new System.Drawing.Size(140, 20);
 			this.lblSaida.TabIndex = 6;
@@ -541,6 +545,7 @@
 			// 
 			// dtDataEntradaCadastro
 			// 
+			this.dtDataEntradaCadastro.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.dtDataEntradaCadastro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dtDataEntradaCadastro.Location = new System.Drawing.Point(49, 61);
 			this.dtDataEntradaCadastro.Name = "dtDataEntradaCadastro";
@@ -549,6 +554,7 @@
 			// 
 			// lblDataEntradaCadastro
 			// 
+			this.lblDataEntradaCadastro.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblDataEntradaCadastro.AutoSize = true;
 			this.lblDataEntradaCadastro.Location = new System.Drawing.Point(45, 37);
 			this.lblDataEntradaCadastro.Name = "lblDataEntradaCadastro";
@@ -558,6 +564,7 @@
 			// 
 			// label1
 			// 
+			this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.label1.AutoSize = true;
 			this.label1.BackColor = System.Drawing.Color.Transparent;
 			this.label1.Location = new System.Drawing.Point(337, 100);
@@ -568,6 +575,7 @@
 			// 
 			// txtDescServico
 			// 
+			this.txtDescServico.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.txtDescServico.CampoObrigatorio = true;
 			this.txtDescServico.Location = new System.Drawing.Point(337, 123);
 			this.txtDescServico.MensagemObrigatorio = "Informe o serviço realizado.";
@@ -579,6 +587,7 @@
 			// 
 			// lblVeiculo
 			// 
+			this.lblVeiculo.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblVeiculo.AutoSize = true;
 			this.lblVeiculo.Location = new System.Drawing.Point(45, 100);
 			this.lblVeiculo.Name = "lblVeiculo";
@@ -588,6 +597,7 @@
 			// 
 			// cbVeiculo
 			// 
+			this.cbVeiculo.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.cbVeiculo.CampoObrigatorio = true;
 			this.cbVeiculo.FormattingEnabled = true;
 			this.cbVeiculo.Location = new System.Drawing.Point(49, 123);

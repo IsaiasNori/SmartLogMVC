@@ -102,6 +102,12 @@
     <Compile Include="frmRecuperarSenha.Designer.cs">
       <DependentUpon>frmRecuperarSenha.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSobre.Designer.cs">
+      <DependentUpon>frmSobre.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     <EmbeddedResource Include="frmRecuperarSenha.resx">
       <DependentUpon>frmRecuperarSenha.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSobre.resx">
+      <DependentUpon>frmSobre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVeiculo.resx">
       <DependentUpon>frmVeiculo.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +175,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Manual\Manual.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -234,6 +246,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icoSearch.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_CloseApplication1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconHelp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

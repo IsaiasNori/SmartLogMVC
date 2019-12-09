@@ -87,8 +87,7 @@
 			// 
 			// tabctrlVeiculo
 			// 
-			this.tabctrlVeiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			this.tabctrlVeiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabctrlVeiculo.Controls.Add(this.tabConsultaVeic);
 			this.tabctrlVeiculo.Controls.Add(this.tabCadastroVeic);
@@ -211,9 +210,10 @@
 			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
 			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.dgVeiculo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-			this.dgVeiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.dgVeiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.dgVeiculo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dgVeiculo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgVeiculo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
 			this.dgVeiculo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
 			this.dgVeiculo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -468,10 +468,10 @@
 			this.txtPlaca.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.txtPlaca.CampoObrigatorio = true;
 			this.txtPlaca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtPlaca.Location = new System.Drawing.Point(558, 156);
+			this.txtPlaca.Location = new System.Drawing.Point(319, 154);
 			this.txtPlaca.MensagemObrigatorio = "Informe a placa";
 			this.txtPlaca.Name = "txtPlaca";
-			this.txtPlaca.Size = new System.Drawing.Size(139, 26);
+			this.txtPlaca.Size = new System.Drawing.Size(147, 26);
 			this.txtPlaca.TabIndex = 27;
 			this.txtPlaca.tipoTextbox = SmartLog.WindowsForms.UserControl.etipoTextbox.normal;
 			// 
@@ -479,7 +479,7 @@
 			// 
 			this.lblPlaca.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblPlaca.AutoSize = true;
-			this.lblPlaca.Location = new System.Drawing.Point(554, 131);
+			this.lblPlaca.Location = new System.Drawing.Point(315, 129);
 			this.lblPlaca.Name = "lblPlaca";
 			this.lblPlaca.Size = new System.Drawing.Size(48, 20);
 			this.lblPlaca.TabIndex = 26;
@@ -510,7 +510,7 @@
 			// 
 			this.txtAnoFab.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.txtAnoFab.CampoObrigatorio = false;
-			this.txtAnoFab.Location = new System.Drawing.Point(319, 156);
+			this.txtAnoFab.Location = new System.Drawing.Point(558, 154);
 			this.txtAnoFab.MensagemObrigatorio = null;
 			this.txtAnoFab.Name = "txtAnoFab";
 			this.txtAnoFab.Size = new System.Drawing.Size(139, 26);
@@ -574,7 +574,7 @@
 			// 
 			this.txtKmAtual.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.txtKmAtual.CampoObrigatorio = false;
-			this.txtKmAtual.Location = new System.Drawing.Point(576, 299);
+			this.txtKmAtual.Location = new System.Drawing.Point(578, 290);
 			this.txtKmAtual.MensagemObrigatorio = null;
 			this.txtKmAtual.Name = "txtKmAtual";
 			this.txtKmAtual.Size = new System.Drawing.Size(190, 26);
@@ -607,7 +607,7 @@
 			// 
 			this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(572, 274);
+			this.label3.Location = new System.Drawing.Point(574, 265);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(73, 20);
 			this.label3.TabIndex = 14;
@@ -617,7 +617,7 @@
 			// 
 			this.lblAnoFab.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblAnoFab.AutoSize = true;
-			this.lblAnoFab.Location = new System.Drawing.Point(315, 131);
+			this.lblAnoFab.Location = new System.Drawing.Point(554, 131);
 			this.lblAnoFab.Name = "lblAnoFab";
 			this.lblAnoFab.Size = new System.Drawing.Size(143, 20);
 			this.lblAnoFab.TabIndex = 11;

@@ -31,36 +31,36 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
 			this.panelMenu = new System.Windows.Forms.Panel();
+			this.panelCabecalho = new System.Windows.Forms.Panel();
+			this.lblTituloTela = new System.Windows.Forms.Label();
+			this.btnTituloTela = new System.Windows.Forms.Button();
+			this.panelRodape = new System.Windows.Forms.Panel();
+			this.lblNomeUsuario = new System.Windows.Forms.Label();
+			this.lblData = new System.Windows.Forms.Label();
+			this.lblUsuario = new System.Windows.Forms.Label();
+			this.Relogio = new System.Windows.Forms.Timer(this.components);
 			this.btnSair = new System.Windows.Forms.Button();
-			this.btnAjuda = new System.Windows.Forms.Button();
+			this.btnSobre = new System.Windows.Forms.Button();
 			this.picLogoPrincipal = new System.Windows.Forms.PictureBox();
 			this.btnManutencao = new System.Windows.Forms.Button();
 			this.btnViagem = new System.Windows.Forms.Button();
 			this.btnVeiculo = new System.Windows.Forms.Button();
 			this.btnFuncionario = new System.Windows.Forms.Button();
 			this.btnCliente = new System.Windows.Forms.Button();
-			this.panelCabecalho = new System.Windows.Forms.Panel();
-			this.lblTituloTela = new System.Windows.Forms.Label();
 			this.btnMinimizar = new System.Windows.Forms.Button();
-			this.btnTituloTela = new System.Windows.Forms.Button();
 			this.btnRestaurar = new System.Windows.Forms.Button();
 			this.btnFechar = new System.Windows.Forms.Button();
-			this.panelRodape = new System.Windows.Forms.Panel();
-			this.lblNomeUsuario = new System.Windows.Forms.Label();
-			this.lblData = new System.Windows.Forms.Label();
-			this.lblUsuario = new System.Windows.Forms.Label();
-			this.Relogio = new System.Windows.Forms.Timer(this.components);
 			this.panelMenu.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.picLogoPrincipal)).BeginInit();
 			this.panelCabecalho.SuspendLayout();
 			this.panelRodape.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picLogoPrincipal)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelMenu
 			// 
 			this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
 			this.panelMenu.Controls.Add(this.btnSair);
-			this.panelMenu.Controls.Add(this.btnAjuda);
+			this.panelMenu.Controls.Add(this.btnSobre);
 			this.panelMenu.Controls.Add(this.picLogoPrincipal);
 			this.panelMenu.Controls.Add(this.btnManutencao);
 			this.panelMenu.Controls.Add(this.btnViagem);
@@ -72,6 +72,100 @@
 			this.panelMenu.Name = "panelMenu";
 			this.panelMenu.Size = new System.Drawing.Size(190, 665);
 			this.panelMenu.TabIndex = 0;
+			// 
+			// panelCabecalho
+			// 
+			this.panelCabecalho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.panelCabecalho.Controls.Add(this.lblTituloTela);
+			this.panelCabecalho.Controls.Add(this.btnMinimizar);
+			this.panelCabecalho.Controls.Add(this.btnTituloTela);
+			this.panelCabecalho.Controls.Add(this.btnRestaurar);
+			this.panelCabecalho.Controls.Add(this.btnFechar);
+			this.panelCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelCabecalho.Location = new System.Drawing.Point(0, 0);
+			this.panelCabecalho.Name = "panelCabecalho";
+			this.panelCabecalho.Size = new System.Drawing.Size(873, 35);
+			this.panelCabecalho.TabIndex = 0;
+			this.panelCabecalho.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCabecalho_MouseDown);
+			this.panelCabecalho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCabecalho_MouseMove);
+			this.panelCabecalho.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelCabecalho_MouseUp);
+			// 
+			// lblTituloTela
+			// 
+			this.lblTituloTela.AutoSize = true;
+			this.lblTituloTela.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTituloTela.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.lblTituloTela.Location = new System.Drawing.Point(52, 5);
+			this.lblTituloTela.Name = "lblTituloTela";
+			this.lblTituloTela.Size = new System.Drawing.Size(90, 24);
+			this.lblTituloTela.TabIndex = 5;
+			this.lblTituloTela.Text = "SmartLog";
+			// 
+			// btnTituloTela
+			// 
+			this.btnTituloTela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnTituloTela.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(146)))), ((int)(((byte)(208)))));
+			this.btnTituloTela.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnTituloTela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnTituloTela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnTituloTela.Location = new System.Drawing.Point(191, 5);
+			this.btnTituloTela.Name = "btnTituloTela";
+			this.btnTituloTela.Size = new System.Drawing.Size(115, 30);
+			this.btnTituloTela.TabIndex = 4;
+			this.btnTituloTela.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnTituloTela.UseVisualStyleBackColor = false;
+			this.btnTituloTela.Visible = false;
+			// 
+			// panelRodape
+			// 
+			this.panelRodape.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panelRodape.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
+			this.panelRodape.Controls.Add(this.lblNomeUsuario);
+			this.panelRodape.Controls.Add(this.lblData);
+			this.panelRodape.Controls.Add(this.lblUsuario);
+			this.panelRodape.ForeColor = System.Drawing.Color.White;
+			this.panelRodape.Location = new System.Drawing.Point(187, 669);
+			this.panelRodape.Name = "panelRodape";
+			this.panelRodape.Size = new System.Drawing.Size(686, 35);
+			this.panelRodape.TabIndex = 2;
+			// 
+			// lblNomeUsuario
+			// 
+			this.lblNomeUsuario.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.lblNomeUsuario.AutoSize = true;
+			this.lblNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblNomeUsuario.Location = new System.Drawing.Point(392, 6);
+			this.lblNomeUsuario.Name = "lblNomeUsuario";
+			this.lblNomeUsuario.Size = new System.Drawing.Size(0, 16);
+			this.lblNomeUsuario.TabIndex = 3;
+			// 
+			// lblData
+			// 
+			this.lblData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblData.AutoSize = true;
+			this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblData.Location = new System.Drawing.Point(539, 6);
+			this.lblData.Name = "lblData";
+			this.lblData.Size = new System.Drawing.Size(82, 16);
+			this.lblData.TabIndex = 2;
+			this.lblData.Text = "17/11/2019";
+			// 
+			// lblUsuario
+			// 
+			this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblUsuario.AutoSize = true;
+			this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblUsuario.Location = new System.Drawing.Point(320, 6);
+			this.lblUsuario.Name = "lblUsuario";
+			this.lblUsuario.Size = new System.Drawing.Size(66, 16);
+			this.lblUsuario.TabIndex = 1;
+			this.lblUsuario.Text = "Usuário:";
+			// 
+			// Relogio
+			// 
+			this.Relogio.Interval = 1000;
+			this.Relogio.Tick += new System.EventHandler(this.Relogio_Tick);
 			// 
 			// btnSair
 			// 
@@ -95,26 +189,27 @@
 			this.btnSair.UseVisualStyleBackColor = false;
 			this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
 			// 
-			// btnAjuda
+			// btnSobre
 			// 
-			this.btnAjuda.BackColor = System.Drawing.Color.Transparent;
-			this.btnAjuda.FlatAppearance.BorderSize = 0;
-			this.btnAjuda.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
-			this.btnAjuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.btnAjuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnAjuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAjuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-			this.btnAjuda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.btnAjuda.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MenuAjuda;
-			this.btnAjuda.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-			this.btnAjuda.Location = new System.Drawing.Point(3, 430);
-			this.btnAjuda.Name = "btnAjuda";
-			this.btnAjuda.Size = new System.Drawing.Size(187, 51);
-			this.btnAjuda.TabIndex = 5;
-			this.btnAjuda.Text = "  Ajuda";
-			this.btnAjuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnAjuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnAjuda.UseVisualStyleBackColor = false;
+			this.btnSobre.BackColor = System.Drawing.Color.Transparent;
+			this.btnSobre.FlatAppearance.BorderSize = 0;
+			this.btnSobre.FlatAppearance.CheckedBackColor = System.Drawing.Color.Black;
+			this.btnSobre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnSobre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
+			this.btnSobre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnSobre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+			this.btnSobre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
+			this.btnSobre.Image = global::SmartLog.WindowsForms.Properties.Resources.icon_MenuAjuda;
+			this.btnSobre.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+			this.btnSobre.Location = new System.Drawing.Point(3, 430);
+			this.btnSobre.Name = "btnSobre";
+			this.btnSobre.Size = new System.Drawing.Size(187, 51);
+			this.btnSobre.TabIndex = 5;
+			this.btnSobre.Text = "  Sobre";
+			this.btnSobre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnSobre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnSobre.UseVisualStyleBackColor = false;
+			this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
 			// 
 			// picLogoPrincipal
 			// 
@@ -238,34 +333,6 @@
 			this.btnCliente.UseVisualStyleBackColor = false;
 			this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
 			// 
-			// panelCabecalho
-			// 
-			this.panelCabecalho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
-			this.panelCabecalho.Controls.Add(this.lblTituloTela);
-			this.panelCabecalho.Controls.Add(this.btnMinimizar);
-			this.panelCabecalho.Controls.Add(this.btnTituloTela);
-			this.panelCabecalho.Controls.Add(this.btnRestaurar);
-			this.panelCabecalho.Controls.Add(this.btnFechar);
-			this.panelCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panelCabecalho.Location = new System.Drawing.Point(0, 0);
-			this.panelCabecalho.Name = "panelCabecalho";
-			this.panelCabecalho.Size = new System.Drawing.Size(873, 35);
-			this.panelCabecalho.TabIndex = 0;
-			this.panelCabecalho.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCabecalho_MouseDown);
-			this.panelCabecalho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCabecalho_MouseMove);
-			this.panelCabecalho.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelCabecalho_MouseUp);
-			// 
-			// lblTituloTela
-			// 
-			this.lblTituloTela.AutoSize = true;
-			this.lblTituloTela.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTituloTela.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.lblTituloTela.Location = new System.Drawing.Point(52, 5);
-			this.lblTituloTela.Name = "lblTituloTela";
-			this.lblTituloTela.Size = new System.Drawing.Size(90, 24);
-			this.lblTituloTela.TabIndex = 5;
-			this.lblTituloTela.Text = "SmartLog";
-			// 
 			// btnMinimizar
 			// 
 			this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -281,21 +348,6 @@
 			this.btnMinimizar.TabIndex = 3;
 			this.btnMinimizar.UseVisualStyleBackColor = false;
 			this.btnMinimizar.Click += new System.EventHandler(this.button4_Click_1);
-			// 
-			// btnTituloTela
-			// 
-			this.btnTituloTela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(217)))), ((int)(((byte)(228)))));
-			this.btnTituloTela.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(146)))), ((int)(((byte)(208)))));
-			this.btnTituloTela.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(152)))), ((int)(((byte)(181)))));
-			this.btnTituloTela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnTituloTela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnTituloTela.Location = new System.Drawing.Point(191, 5);
-			this.btnTituloTela.Name = "btnTituloTela";
-			this.btnTituloTela.Size = new System.Drawing.Size(115, 30);
-			this.btnTituloTela.TabIndex = 4;
-			this.btnTituloTela.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnTituloTela.UseVisualStyleBackColor = false;
-			this.btnTituloTela.Visible = false;
 			// 
 			// btnRestaurar
 			// 
@@ -335,57 +387,6 @@
 			this.btnFechar.UseVisualStyleBackColor = false;
 			this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
 			// 
-			// panelRodape
-			// 
-			this.panelRodape.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.panelRodape.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(79)))));
-			this.panelRodape.Controls.Add(this.lblNomeUsuario);
-			this.panelRodape.Controls.Add(this.lblData);
-			this.panelRodape.Controls.Add(this.lblUsuario);
-			this.panelRodape.ForeColor = System.Drawing.Color.White;
-			this.panelRodape.Location = new System.Drawing.Point(187, 669);
-			this.panelRodape.Name = "panelRodape";
-			this.panelRodape.Size = new System.Drawing.Size(686, 35);
-			this.panelRodape.TabIndex = 2;
-			// 
-			// lblNomeUsuario
-			// 
-			this.lblNomeUsuario.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.lblNomeUsuario.AutoSize = true;
-			this.lblNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNomeUsuario.Location = new System.Drawing.Point(392, 6);
-			this.lblNomeUsuario.Name = "lblNomeUsuario";
-			this.lblNomeUsuario.Size = new System.Drawing.Size(0, 16);
-			this.lblNomeUsuario.TabIndex = 3;
-			// 
-			// lblData
-			// 
-			this.lblData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblData.AutoSize = true;
-			this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblData.Location = new System.Drawing.Point(539, 6);
-			this.lblData.Name = "lblData";
-			this.lblData.Size = new System.Drawing.Size(82, 16);
-			this.lblData.TabIndex = 2;
-			this.lblData.Text = "17/11/2019";
-			// 
-			// lblUsuario
-			// 
-			this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblUsuario.AutoSize = true;
-			this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblUsuario.Location = new System.Drawing.Point(320, 6);
-			this.lblUsuario.Name = "lblUsuario";
-			this.lblUsuario.Size = new System.Drawing.Size(66, 16);
-			this.lblUsuario.TabIndex = 1;
-			this.lblUsuario.Text = "Usuário:";
-			// 
-			// Relogio
-			// 
-			this.Relogio.Interval = 1000;
-			this.Relogio.Tick += new System.EventHandler(this.Relogio_Tick);
-			// 
 			// frmPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,11 +405,11 @@
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Shown += new System.EventHandler(this.FrmPrincipal_Shown);
 			this.panelMenu.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.picLogoPrincipal)).EndInit();
 			this.panelCabecalho.ResumeLayout(false);
 			this.panelCabecalho.PerformLayout();
 			this.panelRodape.ResumeLayout(false);
 			this.panelRodape.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picLogoPrincipal)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -431,7 +432,7 @@
 		private System.Windows.Forms.Label lblData;
 		private System.Windows.Forms.Timer Relogio;
 		private System.Windows.Forms.Label lblNomeUsuario;
-		private System.Windows.Forms.Button btnAjuda;
+		private System.Windows.Forms.Button btnSobre;
 		private System.Windows.Forms.Button btnTituloTela;
 		private System.Windows.Forms.Label lblTituloTela;
 		private System.Windows.Forms.Button btnSair;

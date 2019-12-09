@@ -73,6 +73,16 @@ namespace SmartLog.WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_CloseApplication {
+            get {
+                object obj = ResourceManager.GetObject("icon_CloseApplication", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_Limpar {
             get {
                 object obj = ResourceManager.GetObject("icon_Limpar", resourceCulture);
@@ -236,6 +246,16 @@ namespace SmartLog.WindowsForms.Properties {
         internal static System.Drawing.Bitmap iconFechar {
             get {
                 object obj = ResourceManager.GetObject("iconFechar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconHelp {
+            get {
+                object obj = ResourceManager.GetObject("iconHelp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
