@@ -18,8 +18,9 @@ namespace SmartLog.WindowsForms.UserControl
 		somenteLetra = 3,
 		cpf = 4,
 		data = 5,
-		numerosDecimais = 6
-	}
+		numerosDecimais = 6,
+            numerosInteiros = 7
+    }
 	public partial class SuperTextbox : TextBox
 	{
 		public ErrorProvider provider = new ErrorProvider();
@@ -252,7 +253,7 @@ namespace SmartLog.WindowsForms.UserControl
 				return;
 			}
 
-			if (tipoTextbox == etipoTextbox.somenteNumero || tipoTextbox == etipoTextbox.data)
+			if (tipoTextbox == etipoTextbox.somenteNumero || tipoTextbox == etipoTextbox.data || tipoTextbox == etipoTextbox.numerosInteiros)
 			{
 				if (!char.IsDigit(e.KeyChar))
 				{

@@ -390,6 +390,47 @@ namespace SmartLog.WindowsForms
 		{
 
 		}
-	}
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmCalculaValor calcula = new frmCalculaValor();
+                calcula.ShowDialog();
+
+                if(calcula.valorTotal > 0)
+                {
+                    txtValor.Text = calcula.valorTotal.ToString();
+                    txtDistancia.Text = calcula.distancia.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Utils.ExibirMensagem(ex.Message,eTipoMensagem.Erro);
+            }
+        }
+
+        private void btnCalcular_Click_1(object sender, EventArgs e)
+        {
+
+            try
+            {
+                frmCalculaValor valor = new frmCalculaValor();
+                valor.ShowDialog();
+
+                if(valor.valorTotal > 0)
+                {
+                    txtValor.Text = valor.valorTotal.ToString();
+                    txtDistancia.Text = valor.distancia.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Utils.ExibirMensagem(ex.Message, eTipoMensagem.Erro);
+            }
+        }
+    }
 }
 
