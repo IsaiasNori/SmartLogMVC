@@ -107,9 +107,62 @@ namespace SmartLog.WindowsForms.UserControl
 				this.Text = FormatCPF(this.Text);
 				this.SelectionStart = this.Text.Length;
 			}
+            else if(tipoTextbox == etipoTextbox.data)
+            {
+                if (isControle)
+                {
+                    return;
+                }
+
+               
+
+                this.Text = FormataData(this.Text);
+                this.SelectionStart = this.Text.Length;
+
+            }
 			
 		}
-		private string FormatCPF(string cpfVelho)
+
+        private string FormataData(string data)
+        {
+            string ret = "";
+
+
+            if (data == "")
+            {
+                return "";
+            }
+
+
+            data = data.Replace(".", "").Replace("-", "").Replace("/", "");
+
+
+            // formata CPF
+            if (data.Length < 10)
+            {
+                for (int i = 1; i <= data.Length; i++)
+                {
+
+                    ret += data.Substring(i - 1, 1);
+
+                    if (i == 2 || i == 4)
+                    {
+                        ret += "/";
+                    }
+                    
+
+                }
+            }
+           
+
+
+            return ret;
+
+
+
+        }
+
+        private string FormatCPF(string cpfVelho)
 		{
 			string ret = "";
 
@@ -199,7 +252,7 @@ namespace SmartLog.WindowsForms.UserControl
 				return;
 			}
 
-			if (tipoTextbox == etipoTextbox.somenteNumero)
+			if (tipoTextbox == etipoTextbox.somenteNumero || tipoTextbox == etipoTextbox.data)
 			{
 				if (!char.IsDigit(e.KeyChar))
 				{
